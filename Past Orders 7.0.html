@@ -9,7 +9,7 @@
  <meta http-equiv="X-UA-Compatible" content="IE=10" /> 
  <meta name="google-translate-customization" content="c658242a1e553665-d4caf8e723ca0892-gee255db5dfcb55af-a" /> 
  <LINK rel="STYLESHEET" type="text/css" href="../../sunsettesttemplates/sunset.css?v=35"> 
- <title>My Invoices 7.0 
+ <title>Past Orders 7.0 
  </title> 
  <meta http-equiv="content-type" content="text/html;charset=utf-8"/> 
  <link rel="shortcut icon" href="https://sunset.tshinc.com/rd/rd.php?defpath=https://sunset.tshinc.com/sunset/images/&imagename=favicon.ico" /> 
@@ -22,14 +22,14 @@ var ShowSalesmanProdCreate = 'N' ;
 var ShowInventory = 'Y' ;
 var ShowPricingWidget = 'Y' ; 
 //Added Info for Chat 
-var ChatCustomer = 'YAZ2680' ;
-var ChatLogon = 'DAVID' ;
-var ChatSalesman = '' ;
+var ChatCustomer = 'YCA0950' ;
+var ChatLogon = 'YCA0950-01' ;
+var ChatSalesman = 'SALESREP' ;
 var ChatID = '' ;
 // Added Web link Code ;
 var xweblink = '' ;
-var CID = 'DAVID' ;
-var OID = '300705' ;
+var CID = 'YCA0950-01' ;
+var OID = '300710' ;
 var TotLines = '0' ;
 var StyleID = '../../sunsettesttemplates/sunset.css'
 var SUFFIX = '890B' ;
@@ -47,7 +47,7 @@ var MDSSpecialsTemplate = '35' ;
 // Added Sales Visibility info 
 var SalesVisible ; 
 // Added Customer Item Number Support
-var intcust = '100658' ; 
+var intcust = '100747' ; 
 var mastcust = '' ; 
 var custassoc = '' ; 
 var autorec = '25000' ;
@@ -686,12 +686,12 @@ if(ns4)_d.write("<script language=Javascript src='../../sunsettesttemplates/mmen
  else _d.write("<script language=Javascript src='../../sunsettesttemplates/mmenudom.js?v=35'><\/script>");
  $("#clickme").click(function() {
  $("#currentorderwidget").toggle( "slow", function() {
- var dummy = widgetload('login890B?orderno=300705&dboption=WEBORD&LOGINPATH=STX&pageid=31&TARGETVAL=300705&ITEMSPAGE=5','#currentorderwidget');
+ var dummy = widgetload('login890B?orderno=300710&dboption=WEBORD&LOGINPATH=STX&pageid=31&TARGETVAL=300710&ITEMSPAGE=5','#currentorderwidget');
  });
 });
 function TopCart() { 
  $("#currentorderwidget").toggle( "slow", function() {
- var dummy = widgetload('login890B?orderno=300705&dboption=WEBORD&LOGINPATH=STX&pageid=31&TARGETVAL=300705&ITEMSPAGE=5','#currentorderwidget');
+ var dummy = widgetload('login890B?orderno=300710&dboption=WEBORD&LOGINPATH=STX&pageid=31&TARGETVAL=300710&ITEMSPAGE=5','#currentorderwidget');
  });
 }
 function togglemenu() {
@@ -844,7 +844,7 @@ function Ajax_To_Order(prod, qtyid, um) {
  }
 }
 function TopFrt() { 
- var dummy = widgetload_callback('login890B?orderno=300705&dboption=WEBORD&LOGINPATH=FRTX&pageid=31&TARGETVAL=300705&ITEMSPAGE=5','#FrtHolder', function () {
+ var dummy = widgetload_callback('login890B?orderno=300710&dboption=WEBORD&LOGINPATH=FRTX&pageid=31&TARGETVAL=300710&ITEMSPAGE=5','#FrtHolder', function () {
  var cartlines = $("#RnTotLines").html() ; 
  $("#RnCartLines").html(cartlines) ;
  });
@@ -889,8 +889,8 @@ TopFrt() ;
 <script lang=javascript>
 function loadvalues() { 
  //function to set values in drop down boxes ; 
- document.template.itemspage.value = "";
- document.template.Changesort.value = "-DSND FIRST.DATE";
+ document.template.itemspage.value = "10";
+ document.template.Changesort.value = "-DSND ORD.DATE";
 }
 function changepath(x,sflag) { 
  document.template.startptr.value = 1 ; 
@@ -914,7 +914,7 @@ function Move_page(startptr,direction,loginpath) {
  startptr = 1
  }
  //if startptr is greater than total lines then set it to 1 
- if (startptr > 0) { 
+ if (startptr > 4) { 
  startptr = 1
  }
  //if itemspage or changesort changed value then set startptr to 1 
@@ -963,7 +963,7 @@ function proddisp() {
  document.template.aprodno.focus() ;
 }
 function saleshist_prt(ordno,user,path,sort) { 
-var pageurl = 'login890B?orderno=300705&CUSTOMERID=DAVID&LOGINPATH=' + path + '&pageid=31'+ '&NUM=' + $( "#NUM" ).val();
+var pageurl = 'login890B?orderno=300710&CUSTOMERID=YCA0950-01&LOGINPATH=' + path + '&pageid=31'+ '&NUM=' + $( "#NUM" ).val();
 var dummy = showmodalrnpopup(pageurl) ;
 }
 function saleshist_prt_save(ordno,user,path,sort) { 
@@ -1159,7 +1159,7 @@ function user_select(x,member) {
  </div>
  <div class="head3 header-row-2" style="padding-top: 0px;">
  <!-- added login links --> 
- <div onclick="javascript:togglemyaccount()" class="mini-login" style="float: left;"> Hello <span style="width: auto;" class="button-quicklogin">DAVID
+ <div onclick="javascript:togglemyaccount()" class="mini-login" style="float: left;"> Hello <span style="width: auto;" class="button-quicklogin">YCA0950-01
  </span>
  <a href="#">Your account</a> 
  <div class="block-content-saved mini-login-menu" style="display: none;"> 
@@ -2047,7 +2047,7 @@ function user_select(x,member) {
  <div class="block-content"> 
  <div class="custom2" > 
  <p> 
- <div style="display: none ; "> <strong>Your Sales Consultant</strong> <br /> <br /> Call: 
+ <div style=""> <strong>Your Sales Consultant</strong> <br /> SALESREP <br /> Call: 
  <a href="#"></A> <br /> E-mail: 
  <a href="mailto:"> </a> <br /> <br /> 
  </DIV> Main Office Phone: 888-950-1950 <br /> Main Office E-mail: 
@@ -2101,7 +2101,7 @@ function user_select(x,member) {
  <div class="block-title col-md-12"> 
  <h2 class="title"> 
  <span class="topname2">
- Invoices 
+ Past Orders 
  </span></h2> 
  </div> 
  <div class="quick-access block-title hidden-xs" id=right style="margin-top: 130px; height: auto !important;"> 
@@ -2120,203 +2120,9 @@ function user_select(x,member) {
 
 
 
-
-
-
-<script lang=javascript>
-function showmodalarcc() {
-// return ; 
-//Get the screen height and width 
-var maskHeight = $(document).height(); 
-var maskWidth = $(window).width(); 
-//Set heigth and width to mask to fill up the whole screen 
-$('#mask').css({'width':maskWidth,'height':maskHeight,'position':'absolute','left':'0','top':'0','z-index':'9000','background-color':'#000','display':'none'});
-//transition effect 
- $('#mask').fadeIn(1000); 
- $('#mask').fadeTo("slow",0.6); 
-//Get the window height and width 
-var winH = $(document).height(); 
-var winW = $(window).width(); 
-//Set the popup window to center 
-$('#ARLoader').css({'width':'auto','height':'auto','padding':'20px','background': 'white'});
-// Added Rounded corders - djf 6-28-13
-$('#ARLoader').css({'-webkit-border-radius': '50px','-moz-border-radius': '50px', 'border-radius': '50px', 'border' :'2px solid #363600', 'background-color': '#FFFFFF' , '-webkit-box-shadow' : '#CCCCCC 10px 10px 10px' , '-moz-box-shadow' : '#CCCCCC 10px 10px 10px', 'box-shadow': '#CCCCCC 10px 10px 10px'}) ;
-$('#ARLoader').css({'display':'none','z-index':'9999','position':'absolute','color':'black'});
-$('#ARLoader').prepend('<div style="font-family:arial;font-size:20px;"> <div style=float:right> <img id="closepop" src="https://sunset.tshinc.com/rd/rd.php?defpath=https://sunset.tshinc.com/sunset/images/&imagename=close_pop.png" style="padding-right: 33px;" > </div> </div> <div id="SessContent"> </div> ') ;
-$('#ARLoader').css({'position':'fixed','top':'50%','left':'50%','margin-top':'-250px','margin-left':'-130px'});
- var arinfo = $("#Payinfo").html() ; 
-// $("#StatusMsg").remove()
- $('#SessContent').html(arinfo) ;
-$('select[name=CardNumber]').SelectCustomizer();
-// $(".addallbutton").hide();
-//transition effect 
-$('#ARLoader').fadeIn(2000); 
-//if clicked hide
- $('#closepop').click(function () {
- $('#ARLoader').hide(); $('#mask').fadeOut(1000)
- $(".addallbutton").show();
- $("#ARLoader").html('<div id="StatusMsg"></div> ') ; 
-// remove the info if they cancel
- } 
- );
-}
-function release_detail(path,x) {
- document.template.loginpath.value = path ;
- document.template.pageid.value = 6 ;
- document.template.startptr.value = 1 ;
- document.template.mdsorderno.value = x ;
- document.template.submit() ;
-}
-function ardetailinq(ordno,arkey) { 
- var pageurl = 'login890B?orderno=300705&CUSTOMERID=DAVID&LOGINPATH=ARD&pageid=31&ARKEY=' + arkey
-var dummy = showmodalrnpopup(pageurl) ;
- }
-function getTotal(isInit) {
- var total = 0;
- var selector = isInit ? ".add2:checked" : ".add:checked";
- $(selector).each(function() {
- total += parseFloat($(this).data("invamt"));
- });
- if (total == 0) {
- var xtotal = total.toFixed(2) ; 
- $('#PayAmt').data("totamt","0");
- $('#PayAmt').html(xtotal);
- } else {
- var xtotal = total.toFixed(2) ; 
- $('#PayAmt').html(xtotal);
- $('#PayAmt').data("totamt",xtotal);
- }
-}
- $(document).ready(function() {
-$('#invhistflag').click(function(){ if (this.checked) {changepath("ARQ","Y") ; }})
-getTotal(true); 
-var ShowARCC = 'Y' ;
-if (ShowARCC =="Y") { $('.ShowARCC').show() ; } ;
- $("#addall").change(function() {
- $('.add').attr('checked', this.checked);
- getTotal();
- }); 
- $(".add").change(function() { 
- getTotal(); 
- if($(".add").length == $(".add:checked").length) { 
- $("#addall").attr("checked", "checked");
- } else {
- $("#addall").removeAttr("checked");
- } 
- });
-});
-$(document).ready(function(){
- $(".addallbutton").click(function() {
- var cval = [];
- var result = ""; var total = 0;
- var invstr = '' ; var amtstr = '' ; 
- $('.add:checkbox:checked').each(function(i) {
- total += parseFloat($(this).data("invamt"));
- invstr += $(this).data("invno") + "|";
- amtstr += $(this).data("invamt") + "|";
- // widgetload_append('login890B?orderno=300705&CUSTOMERID=DAVID&LOGINPATH=CBO&APRODNO=' + aprod + '&SUBMITVAR=' + oln + '&PAGEID=31','#BOBodyHead');
- });
-var xtotal = total.toFixed(2) ;
- result = invstr + "^" + amtstr + "^" + xtotal + "^"
- ShowPayOffOptions(result);
- });
- });
-function ShowPayOffOptions(result) {
-// display the CC info for them to change or submit 
- // CCTable
- var url = location.href ; 
- var content = 'orderno=300705&CUSTOMERID=DAVID&LOGINPATH=SO&PAGEID=31' 
- var posting = $.post(url, content);
- // Put the results in a div
- posting.done(function(data) {
- var cctable = $( data ).find( "#CCTable" );
- var paybutton = " <input onclick='javascript:SendPayOffOptions(\"" + result + " \");' " ; 
- paybutton += ' style="display: inline;" type="Button" height="40px" align="center" value="Submit Payment" class="button1" > <div id="CCResult"> </div>'
- $("#StatusMsg").html("Getting Credit Card Information...");
- $("#StatusMsg").html(cctable.html() + paybutton);
-showmodalarcc() ; 
- });
- 
-} ; 
-function SendPayOffOptions(result) {
- if (CheckCardInfo(document.template)) {
- // document.template.submit();
- // Send the charge requests and show results.. 
- var content = $("form[name='template']").serialize(); 
- var ncontent = "&LOGINPATH=CCP&SUBMITVAR=" + result + "&PAGEID=31"
- var scontent = content + ncontent;
- var url = location.href
- $("#StatusMsg").html("Authorizing Charge..."); 
- var posting = $.post( url, scontent ); 
- posting.done(function( data ) {
- //var cmsg = "<a class=\"menuItem\" href=\"#\" onclick=\"javascript:changepath('ARQ')\">Reload your list of invoices</a> "
- var refbutton = " <input onclick='javascript:changepath(\"ARQ\");' " ; 
- refbutton += ' style="display: inline;" type="Button" height="40px" align="center" value="Reload Invoices" class="button1" >'
- $("#StatusMsg").html(data + refbutton); 
- });
- // added to update the Ar Records and Dcash etc.. 
- }
-} ;
- 
- function CheckCardInfo(form) {
- if (form.CardNumber.value != "" && form.CardNumber2.value != "") {
- jAlert("Please use only one Credit Card Number.") ;
- form.CardNumber.focus() ;
- return false;
- }
- if (form.CardNumber.value.length != 0) {
- return true;
- } else {
- if (form.CardType.value.length == 0) {
- jAlert("Please enter a Credit Card Type.") ;
- form.CardType.focus() ;
- return false;
- }
- if (form.CardNumber2.value.length == 0) {
- jAlert("Please enter a Credit Card Number.") ;
- form.CardNumber2.focus() ;
- return false;
- }
- if (form.CardValCode.value.length == 0) {
- jAlert("Please enter a Credit Card Validation Code.") ;
- form.CardValCode.focus() ;
- return false;
- }
- if (form.ccname.value.length == 0) {
- jAlert("Please enter the Name on the Credit Card.") ;
- form.ccname.focus() ;
- return false;
- }
- if (form.ExpMonth.value.length == 0) {
- jAlert("Please enter the Expiration Month.");
- form.ExpMonth.focus();
- return false;
- }
- if (form.ExpYear.value.length == 0) {
- jAlert("Please enter the Expiration Year.");
- form.ExpYear.focus();
- return false;
- }
- if (form.ccaddr.value != "" && form.cczip.value == "") {
- jAlert("Bill-To Address and Zipcode must be entered or left blank.") ;
- form.ccaddr.focus() ;
- return false;
- }
- if (form.ccaddr.value == "" && form.cczip.value != "") {
- jAlert("Bill-To Address and Zipcode must be entered or left blank.") ;
- form.ccaddr.focus() ;
- return false;
- }
- return true;
- }
-}
-
-
-</script>
  <!-- Rebuilding Main Section with Bootstrap --> 
  <div class="container"> 
  <div class="col-md-12 ssfirstrow"> 
- 
 <form name=template action="login890B" method=post>
 <input type=hidden name=Aprod_string value="">
 <input type=hidden name=prod_string value="">
@@ -2325,105 +2131,165 @@ function SendPayOffOptions(result) {
 <input type=hidden name=price_string value="">
 <input type=hidden name=comment_string value="">
 <input type=hidden name=manufact_string value="">
-<input type=hidden name=loginpath value="ARQ">
+<input type=hidden name=loginpath value="COO">
 <input type=hidden name=searchflag value="Y">
 <input type=hidden name=pageid value="6">
 <input type=hidden name=startptr value="1">
-<input type=hidden name=CustomerId value="DAVID">
-<input type=hidden name=orderno value="300705">
-<input type=hidden name=old_loginpath value="ARQ">
-<input type=hidden name=prev_changesort value="-DSND FIRST.DATE">
+<input type=hidden name=CustomerId value="YCA0950-01">
+<input type=hidden name=orderno value="300710">
+<input type=hidden name=old_loginpath value="COO">
+<input type=hidden name=prev_changesort value="-DSND ORD.DATE">
 <input type=hidden name=prev_itemspage value="10">
 <input type=hidden name=mdsorderno value="">
-<input type=hidden name=aprodno value="">
+<input type=hidden name=aprodno value="00591-2136-51">
 <input type=hidden name=slsmno value="ALL">
 <input type=hidden name=slsmn_id value="DAVID">
-
-<div class="error" style="display: none" >
-Your Account is on Credit Hold
-<br>
-<a href="#" onclick="javascript:changepath('ARQ')">View My Invoices</a>
-</div>
-<!-- New Responsive Customer Info Section --> 
+<style>
+td.datsml {
+ padding: 7px;
+}
+.Salesinfo {
+ position: relative;
+ left: 0px;
+ top: 0px;
+ float: left;
+}
+.OrdStatOpen { color: orange; } 
+.OrdStatHold { color: red; } 
+.OrdStatComplete { color: green; } 
+.OrdStatCancel { color: gray; } 
+</style>
+<!-- New Top Info Section --> 
+<!-- 
 <div class="row">
- <div class="col-md-4">
- <div class="roundedbox">
- <h4>Customer #</h4>
- <p>YAZ2680</p>
+ <div class="col-md-6">
+ <table class="ssInfoTable" border="0" cellpadding="0" cellspacing="0">
+ <tr>
+ <td>
+ Customer:
+ </td>
+ <td>
+ YCA0950
+ </td>
+ </tr>
+ <tr>
+ <td>
+ Company:
+ </td>
+ <td>
+ 01 - Sunset Pharmaceuticals, Inc.
+ </td>
+ </tr>
+ <tr>
+ <td>
+ Name:
+ </td>
+ <td>
+ 3RD STREET SURGICAL CENTER
+ </td>
+ </tr>
+ <tr>
+ <td>
+ Address 1:
+ </td>
+ <td>
+ ATTN: TOMOKO OKUDA
+ </td>
+ </tr>
+ <tr>
+ <td>
+ Address 2:
+ </td>
+ <td>
+ 420 E 3RD ST
+ </td>
+ </tr>
+ <tr>
+ <td>
+ City, State, Zip:
+ </td>
+ <td>
+ LOS ANGELES CA 90013
+ </td>
+ </tr>
+ </table>
  </div>
- <div class="roundedbox">
- <h4>Phone</h4>
- <p>480-747-6240</p>
- </div>
- </div>
- <div class="col-md-4">
- <div class="roundedbox">
- <h4>Salesrep</h4>
- <p>SALESREP</p>
- </div>
- <div class="roundedbox">
- <h4>Fax</h4>
- <p>480-747-6238</p>
- </div>
- </div>
- <div class="col-md-4">
- <div class="roundedbox fillgray">
- <h4>Customer Name</h4>
- AHWATUKEE SC<br>
- ATTN: JAN PRIDEMORE<br>
- 15810 S 45TH ST<br>
- SUITE 150<br>
- PHOENIX AZ 85048<br />
- U.S.A.<br>
- </div>
+ <div class="col-md-6">
+ <table class="ssInfoTable" border="0" cellpadding="0" cellspacing="0">
+ <tr>
+ <td>
+ Contact:
+ </td>
+ <td>
+ TOMOKO OKUDA
+ </td>
+ </tr>
+ <tr>
+ <td>
+ Phone:
+ </td>
+ <td>
+ 213-617-9194
+ </td>
+ </tr>
+ <tr>
+ <td>
+ Fax:
+ </td>
+ <td>
+ 213-617-0605
+ </td>
+ </tr>
+ <tr>
+ <td>
+ E-Mail:
+ </td>
+ <td>
+ 
+ </td>
+ </tr>
+ <tr>
+ <td>
+ Salesrep:
+ </td>
+ <td>
+ SALESREP
+ </td>
+ </tr>
+ </table>
  </div>
 </div>
-<!-- New Responsive Account Status Section --> 
-<div class="row ssOrangeH4">
- <div class="col-md-3">
- <div class="roundedbox">
- <h4>Highest Credit</h4>
- <p>$0.00</p>
+--> 
+<div class="row">
+ <div class="col-md-12 ssfirstrow">
+ <h3>4 orders have been placed for this account.</h3>
+ <p>If you don't see the desired Web Order#, <a href="#" class="ssLinkFix" onclick="javascript:changepath('OOH','Y')">
+ Click here</a> to view Orders on Hold.</p>
  </div>
- </div>
- <div class="col-md-3">
- <div class="roundedbox">
- <h4>Last Payment</h4>
- <p>$0.00</p>
- </div>
- </div>
- <div class="col-md-3">
- <div class="roundedbox arbalbox">
- <h4>AR Balance</h4>
- <p>$0.00</p>
- </div>
- </div>
- <div class="col-md-3">
- <div class="roundedbox">
- <h4>Oldest Invoice</h4>
- <p></p>
- </div>
+</div> 
+<div class="row">
+ <div class="col-md-12 ssfirstrow roundedbox2 fillgray">
+ <p>To see order detail, <b>Click on the Web Order# below</b>.</p>
+ <p>Please Note: This inquiry is only showing orders after 07/09/18.</p>
+ <p>To find a specific order please enter a <b>Web Order # (6 digit)</b> or <b>Co#Order#</b> (8 digit) or <b>CustomerPO#</b> below and <b>click GO</b>.</p>
+ <input type="text" name="ordervar" value="" size="20" class="tallselect" style="margin-left: 0px;">
+ <input type="button" class="gobutton" name="GO3" value="GO" onclick="javascript:changepath('COO','N')" onmouseover="this.className='gobutton gobuttonhov' ; 
+ window.status='Go to Order Inquiry'" onmouseout="this.className='gobutton' ; window.status=''">
  </div>
 </div>
-<!-- New Responsive Invoice Sort Section --> 
-<div class="row ssfirstrow">
- <div class="col-md-4">
- <div class="fillgray roundedbox">
- <h5 style="font-weight: bold; margin-top: 0px; font-size: 16px;">Here are your open invoices:</h5>
- <input type="checkbox" id="invhistflag" name="HISTFLAG" value="Y" style="margin-top: -2px;">&nbsp;&nbsp;To show account history including closed invoices check this box.<br>
- <a class="ssLinkFix" title="View your Statements" href="#" onclick="javascript:loadarchive('STM','')">
- <img alt="View as PDF" class="ExportOrder" src="https://sunset.tshinc.com/rd/rd.php?defpath=https://sunset.tshinc.com/sunset/images/&imagename=pdf.png" > Click here to view your Account Statements </a>
- </div>
- <div class="backordersort" style="padding-top: 20px;">
+<!-- New Sort and Items Selection Section --> 
+<div class="row" style="padding-top: 10px;">
+ <div class="col-md-5 col-sm-6 col-xs-12 col-lg-4">
+ <div class="backordersort" style="float: left;">
  <strong>Sort By:</strong>
  <select class="tallselect" name="Changesort" size="1" style="width: 160px;">
- 
 
 
 
 
 
- <option selected value="-DSND FIRST.DATE">Newest Invoice 
+
+ <option value="ORDER.REL">Order#-Release# 
  </option> 
 
 
@@ -2436,7 +2302,7 @@ Your Account is on Credit Hold
 
 
 
- <option value="FIRST.TYPE">Document Type 
+ <option value="WEB.ORDER#">Web Order# 
  </option> 
 
 
@@ -2449,7 +2315,7 @@ Your Account is on Credit Hold
 
 
 
- <option value="INV#">Invoice # 
+ <option value="CUST.PO.NO">Customer PO# 
  </option> 
 
 
@@ -2462,7 +2328,7 @@ Your Account is on Credit Hold
 
 
 
- <option value="FIRST.DATE">Oldest Invoice 
+ <option selected value="-DSND ORD.DATE">Order Date 
  </option> 
 
 
@@ -2475,7 +2341,7 @@ Your Account is on Credit Hold
 
 
 
- <option value="-DSND OPEN.BAL">Open Amount 
+ <option value="-DSND TOT.AMT">Order Amount 
  </option> 
 
 
@@ -2488,7 +2354,7 @@ Your Account is on Credit Hold
 
 
 
- <option value="REF.DATA">Customer Ref. 
+ <option value="STATUS">Order Status 
  </option> 
 
 
@@ -2496,67 +2362,204 @@ Your Account is on Credit Hold
 
 
 
-
-
-
-
-
- <option value="REL.NO">Order# Rel# 
- </option> 
-
-
-
-
-
- 
  </select>
- <input type="button" class="gobutton" name="GO1" value="GO" onclick="javascript:changepath('ARQ','N')" onmouseover="this.className='gobutton gobuttonhov' ; window.status='Change Sort Method'" onmouseout="this.className='gobutton' ; window.status=''">
+ <input type="button" class="gobutton" name="GO1" value="GO" onclick='javascript:changepath("COO","N")' onmouseover="this.className='gobutton gobuttonhov' ; window.status='Change Sort Method'" onmouseout="this.className='gobutton' ; window.status=''">
  </div>
- <div class="backordersort">
+ </div>
+ <div class="col-md-7 col-sm-6 col-xs-12 col-lg-8">
+ <div class="backordersort" style="float: right;">
  <strong>Items per page:</strong>
  <select class="tallselect" name="itemspage" size="1" style="width: 111px;">
  <option selected value="10">10</option> <option value="15">15</option> <option value="25">25</option> <option value="50">50</option> <option value="100">100</option>
  </select>
- <input type="button" class="gobutton" name="GO2" value="GO" onclick='javascript:changepath("ARQ","N")' onmouseover="this.className='gobutton gobuttonhov' ; window.status='Change Items Per Page'" onmouseout="this.className='gobutton' ; window.status=''">
- </div>
- </div>
- <div class="col-md-8">
- <div class="ShowARCC roundedbox fillyellow" style="display: block;">
- <h3 style="margin-top: 0px;">Pay Your Invoices Online</h3>
- Check the box to the right of each Invoice to add it to your payment list. <br>
- Once you are done click the "Pay Now" button to pay off your invoices using a credit card. <br>
- <br>
- <h4 id="Payinfo" style="font-size: 18px !important; margin-bottom: 10px;"> 
- Total amount of invoices selected for payment : $<div style="display: inline;" id="PayAmt" data-totamt="0">0.00</div>
- </h4>
- <input style="display: inline;" type="Button" height="40px" align="center" value="Pay Now" class="button1 addallbutton"> 
- <div id="mask"> </div>
- <div id="ARLoader">
- <div id="StatusMsg"></div>
- </div>
+ <input type="button" class="gobutton" name="GO2" value="GO" onclick='javascript:changepath("COO","N")' onmouseover="this.className='gobutton gobuttonhov' ; window.status='Change Items Per Page'" onmouseout="this.className='gobutton' ; window.status=''">
  </div>
  </div>
 </div>
-
-
-<table class="ng-table" > 
-<!-- <table border=0 cellpadding=3 cellspacing=0 width=100%> -->
- <tr>
- <td id=colhdg width=20><font size=2><b>Line No.</b></font></td>
- <td id=colhdg width=45><font size=2><b>Type</b></font></td>
- <td id=colhdg width=100><font size=2><b>Invoice #</b></font></td>
- <td id=colhdg width=80><font size=2><b>Inv. Date</b></font></td>
- <td id=colhdg align=left><font size=2><b>Customer Ref.</b></font></td>
- <td id=colhdg width=95 nowrap><font size=2><b>Order#-Rel#</b></font></td>
- <td id=colhdg width=95 align=center><font size=2><b>Original Amt.</b></font></td>
- <td id=colhdg width=95 align=center><font size=2><b>Open Amt.</b></font></td>
- <td id="colhdg" width="250" class="ShowARCC" style="display: table-cell;" ><font size=2>
-Invoices for Payment </font> <br>
-<div style="color: #717171;" > (Select All <input type=checkbox name=addall id=addall>) </div> </td>
+ 
+<table class="ng-table">
+ <tr class="ssHeadRow">
+ <td id="colhdg" >
+ <font size="2"><b>Line No.</b></font>
+ </td>
+ <td class="rollsort" >
+ <div id='link1' onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Open Orders by Order#/Release#'; "
+ onmouseout="this.className='rollsort' ; window.status=''; " onclick='javascript:changesort_toggle("COO","N","ORDER.REL")'>
+ <font size="2"><b>Order#-Rel#</b></font>
+ </div>
+ </td>
+ <td class="rollsort" >
+ <div id='link1' onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Open Orders by Order#/Release#'; " onmouseout="this.className='rollsort' ; window.status='';">
+ <font size="2"><b>Invoice# </b></font>
+ </div>
+ </td>
+ <td class="rollsort" >
+ <div id='link1' onmouseover="this.className='rollsort rollsorthov' ; " onmouseout="this.className='rollsort' ; window.status='';">
+ <font size="2"><b>Invoice Date</b></font>
+ </div>
+ </td>
+ <td class="rollsort">
+ <div id='link2' onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Open Orders by Web Order#'; "
+ onmouseout="this.className='rollsort' ; window.status=''; " onclick='javascript:changesort_toggle("COO","N","WEB.ORDER#")'>
+ <font size="2"><b>Web Order#</b></font>
+ </div>
+ </td>
+ <td class="rollsort">
+ <div id='link3' onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Open Orders by Customer PO#'; "
+ onmouseout="this.className='rollsort' ; window.status=''; " onclick='javascript:changesort_toggle("COO","N","CUST.PO.NO")'>
+ <font size="2"><b>Cust. PO# </b></font>
+ </div>
+ </td>
+ <td id="colhdg" align="center" >
+ <font size="2"><b>Shipto Name</b></font>
+ </td>
+ <td class="rollsort" align="center" >
+ <div id='link4' onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Open Orders by Order Date'; "
+ onmouseout="this.className='rollsort' ; window.status=''; " onclick='javascript:changesort_toggle("COO","N","ORD.DATE")'>
+ <font size="2"><b>Order Date</b></font>
+ </div>
+ </td>
+ <td id="colhdg" align="center" >
+ <font size="2"><b>Ship Date</b></font>
+ </td>
+ <td class="rollsort" align="center" nowrap>
+ <div id='link5' onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Open Orders by Total Order Amount'; "
+ onmouseout="this.className='rollsort' ; window.status=''; " onclick='javascript:changesort_toggle("COO","N","TOT.AMT")'>
+ <font size="2"><b>Rel $ Amt.</b></font>
+ </div>
+ </td>
+ <td class="rollsort" align="center" >
+ <div id='link6' onmouseover="this.className='rollsort rollsorthov';" onmouseout="this.className='rollsort'; " '>
+ <font size="2"><b>BO Lines</b></font>
+ </div>
+ </td>
+ <td class="rollsort" align="center" >
+ <div id='link7' onmouseover="this.className='rollsort rollsorthov';" onmouseout="this.className='rollsort'; " '>
+ <font size="2"><b>Total Lines</b></font>
+ </div>
+ </td>
+ <td class="rollsort" align="center" >
+ <div id='link6' onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Open Orders by Order Status'; "
+ onmouseout="this.className='rollsort' ; window.status=''; " onclick='javascript:changesort_toggle("COO","N","STATUS")'>
+ <font size="2"><b>Status</b></font>
+ </div>
+ </td>
  </tr>
-<div class="warning">You have no OPEN Invoices Available at this time</div>
-</table>
+ 
 
+
+
+ <tr id="lcolor1"">
+ 
+ <td class="datsml" valign=top align=left>1</td>
+ <td class="datsml" valign=top> <a href=# onclick='javascript:release_detail("RQ","01141834")'> 01141834</a> </td>
+ <td class="datsml" valign=top>
+ <a style="float: left;display: none; " title="View Invoice" href=# onclick="javascript:loadarchive('INV','None')" > None
+ </a>
+ </td>
+ <td class="datsml" valign=top> 
+ <div class="Salesinfo"> DS# None </div>
+ </td>
+ <td class="datsml" valign=top> <a href=# onclick='javascript:release_detail("RQ","01141834")'> 300639</a></td>
+ <td class="datsml" valign=top> <a href=# onclick='javascript:release_detail("RQ","01141834")'> 300639</a></td>
+ <td class="datsml" valign=top align=left> 3RD STREET SURGICAL CENTER</td>
+ <td class="datsml" valign=top align=left> 07/09/19</td>
+ <td class="datsml" valign=top align=left> </td>
+ <td class="datsml" valign=top align=right> $6,503.42</td>
+ <td class="datsml" valign=top align=left> 4 </td>
+ <td class="datsml" valign=top align=left> 4 </td>
+ <td class="datsml OrdStatOpen" valign=top align=left> Backordered </td> 
+ </tr>
+
+
+
+
+
+
+
+ <tr id="lcolor2"">
+ 
+ <td class="datsml" valign=top align=left>2</td>
+ <td class="datsml" valign=top> <a href=# onclick='javascript:release_detail("RQ","01141833")'> 01141833</a> </td>
+ <td class="datsml" valign=top>
+ <a style="float: left;display: none; " title="View Invoice" href=# onclick="javascript:loadarchive('INV','None')" > None
+ </a>
+ </td>
+ <td class="datsml" valign=top> 
+ <div class="Salesinfo"> DS# None </div>
+ </td>
+ <td class="datsml" valign=top> <a href=# onclick='javascript:release_detail("RQ","01141833")'> </a></td>
+ <td class="datsml" valign=top> <a href=# onclick='javascript:release_detail("RQ","01141833")'> 123</a></td>
+ <td class="datsml" valign=top align=left> 3RD STREET SURGICAL CENTER</td>
+ <td class="datsml" valign=top align=left> 06/27/19</td>
+ <td class="datsml" valign=top align=left> </td>
+ <td class="datsml" valign=top align=right> $0.00</td>
+ <td class="datsml" valign=top align=left> 0 </td>
+ <td class="datsml" valign=top align=left> 1 </td>
+ <td class="datsml OrdStatCancel" valign=top align=left> Cancelled </td> 
+ </tr>
+
+
+
+
+
+
+
+ <tr id="lcolor1"">
+ 
+ <td class="datsml" valign=top align=left>3</td>
+ <td class="datsml" valign=top> <a href=# onclick='javascript:release_detail("RQ","01141830")'> 01141830</a> </td>
+ <td class="datsml" valign=top>
+ <a style="float: left;display: none; " title="View Invoice" href=# onclick="javascript:loadarchive('INV','None')" > None
+ </a>
+ </td>
+ <td class="datsml" valign=top> 
+ <div class="Salesinfo"> DS# None </div>
+ </td>
+ <td class="datsml" valign=top> <a href=# onclick='javascript:release_detail("RQ","01141830")'> 300609</a></td>
+ <td class="datsml" valign=top> <a href=# onclick='javascript:release_detail("RQ","01141830")'> 300609</a></td>
+ <td class="datsml" valign=top align=left> 3RD STREET SURGICAL CENTER</td>
+ <td class="datsml" valign=top align=left> 05/22/19</td>
+ <td class="datsml" valign=top align=left> </td>
+ <td class="datsml" valign=top align=right> $38.24</td>
+ <td class="datsml" valign=top align=left> 0 </td>
+ <td class="datsml" valign=top align=left> 6 </td>
+ <td class="datsml OrdStatOpen" valign=top align=left> In Process </td> 
+ </tr>
+
+
+
+
+
+
+
+ <tr id="lcolor2"">
+ 
+ <td class="datsml" valign=top align=left>4</td>
+ <td class="datsml" valign=top> <a href=# onclick='javascript:release_detail("RQ","01141830001")'> 01141830-001</a> </td>
+ <td class="datsml" valign=top>
+ <a style="float: left;display: none; " title="View Invoice" href=# onclick="javascript:loadarchive('INV','None')" > None
+ </a>
+ </td>
+ <td class="datsml" valign=top> 
+ <div class="Salesinfo"> DS# None </div>
+ </td>
+ <td class="datsml" valign=top> <a href=# onclick='javascript:release_detail("RQ","01141830001")'> 300609</a></td>
+ <td class="datsml" valign=top> <a href=# onclick='javascript:release_detail("RQ","01141830001")'> 300609</a></td>
+ <td class="datsml" valign=top align=left> 3RD STREET SURGICAL CENTER</td>
+ <td class="datsml" valign=top align=left> 05/22/19</td>
+ <td class="datsml" valign=top align=left> 06/06/19</td>
+ <td class="datsml" valign=top align=right> $38.24</td>
+ <td class="datsml" valign=top align=left> 0 </td>
+ <td class="datsml" valign=top align=left> 6 </td>
+ <td class="datsml OrdStatOpen" valign=top align=left> In Process </td> 
+ </tr>
+
+
+
+
+ </table>
+ 
 
 
 
@@ -2573,12 +2576,12 @@ Invoices for Payment </font> <br>
  </div> 
  <div class="visible-md-block visible-lg-block col-lg-2 col-md-8">
  <div class="cartinfo"> 
- 0 Item on 0 Page 
+ 4 Items on 1 Page 
  </div>
  </div>
  <div class="visible-lg-block col-lg-6 col-md-6">
  <div class="cartinfo"> 
- <a href="#" class="cartjump" onclick="javascript:Move_page('1','B','ARQ')">Previous</a>
+ <a href="#" class="cartjump" onclick="javascript:Move_page('1','B','COO')">Previous</a>
 
 
 
@@ -2596,7 +2599,27 @@ Invoices for Payment </font> <br>
 
 
 
- <a href=# class="cartjump" onclick="javascript:Move_page('1','F','ARQ')"> Next</a> 
+ <span class="cartinfospacer">&vert;</span>
+ <a href="#" class="cartpagejump">1 </a>
+ <span class="cartinfospacer">&vert;</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <a href=# class="cartjump" onclick="javascript:Move_page('1','F','COO')"> Next</a> 
  </div>
  </div> 
 
@@ -2608,6 +2631,9 @@ Invoices for Payment </font> <br>
 
 
 
+ <!--end of page movement -->
+<!--run the load script--> 
+<script language="javascript"> loadvalues() ; </script>
  </div>
  </div>
  </div>
@@ -2622,7 +2648,7 @@ CHECKLOCK
 UPDATE.CURR.ORDER
 CHECK.PAGEID
 GET.USER.SORTS
-WEB.SHOW.AR.BODY012
+WEB.SHOW.COO.BODY012
 BUILDBODY
 BUILDHTMLHDR
 GET.USER.SORTS
@@ -2634,19 +2660,6 @@ LOADVALUES
 BUILDFOOTER
 WRITEIT
 ADDCONTENTTYPE -->
-
-
-
-
-
-
-
-<script language=javascript>
-<!--run the load script-->
- loadvalues()
-</script>
-
-
 
 
 
