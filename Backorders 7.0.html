@@ -1,0 +1,159 @@
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 transitional//EN" "http://www.w3.org/TR/xhtml 1/DTD/xhtml1-transitional.dtd"> 
+ <head> 
+ <meta http-equiv="X-UA-Compatible-Saved" content="IE=9" /> 
+ <title> Website Information Message 
+ </title> 
+ </head> 
+ <body> 
+ <LINK rel="STYLESHEET" type="text/css" href="../../sunsettesttemplates/sunset.css">
+<script language='JavaScript' type="text/javascript" src='../../sunsettesttemplates/jqfunctions.js?v=35'></script>
+<script>
+$.getDocHeight = function(){
+ return Math.max(
+ $(document).height(),
+ $(window).height(),
+ /* For opera: */
+ document.documentElement.clientHeight
+ );
+};
+ function showmodal() { 
+ //Get the screen height and width 
+ var maskHeight = $(document).height();
+ var maskWidth = $(window).width();
+ //Set heigth and width to mask to fill up the whole screen 
+ $('#mask').css({'width':maskWidth,'height':maskHeight});
+ //transition effect 
+ $('#mask').fadeIn(1000);
+ $('#mask').fadeTo("slow",0.8); 
+ //Get the window height and width 
+ // FF BUG var winH = $(window).height(); 
+var winH = $.getDocHeight() ; 
+ var winW = $(window).width(); 
+ //Set the popup window to center
+ $('#dialog').css('top', winH/2-$('#dialog').height()/2);
+ $('#dialog').css('left', winW/2-$('#dialog').width()/2); 
+ //transition effect 
+ $('#dialog').fadeIn(2000); }
+ 
+ var t=setTimeout("showmodal()",1000);
+ </script> 
+ <div id=boxes > 
+ <!-- Start of Sticky Note --> 
+ <div id="dialog" class="window"> 
+ <!-- We are sorry, but we had an error while trying to do what you asked. Please let us know if you need assistance. <br> 
+ --> 
+ 
+ <img id=rnlogo src="../../sunset/images/RNlogocrp.jpg" alt="Logo" border="0" >
+ <BR> 
+ <div class=warning> 
+ <div style="text-align: center" > 
+ <div class="emsg">We are sorry we don't know what to do for login path: 
+ </div> 
+ <div class="button bordered back"> 
+ <span class="pointer"> 
+ </span> 
+ <div class="content"> 
+ <span class="label"> 
+ <a href=# onclick="javascript:history.go(-1)" > Go Back </a> 
+ </span> 
+ </div> 
+ </div> 
+ <div class="button bordered next"> 
+ <span class="pointer"> 
+ </span> 
+ <span class="label"> 
+ <a href=# onclick="javascript:$('#mask').hide();$('#dialog').hide()" > Ignore </a> 
+ </span> 
+ </div> 
+ <br> 
+ <a href="https://sunset.tshinc.com/sunset/">Click here to log out</a> 
+ <br> 
+ <br> 
+ <br> 
+ <a id="auditinfo" href=# onclick="javascript:$('#moreinfo').show()">
+ Click Here for Additional Information </a> 
+ <div style="display: none" id="moreinfo" class="error"> PROCESSPAGE-PATHCHECK-PARSE.FORMDICT-CHECKIP-CHECKLOCK-CHECKORDERNUMBER-Current Web Order: -GETORDERNUMBER-NEW Web Order: 300707-ERRORSUB-Contents of Error: ERR|1|User "" not found in User database-ERRORSUB-Contents of Error: ERR|0|We are sorry we don't know what to do for login path: 
+ </div> 
+ </div> 
+ </div> 
+ </div> 
+ <style>body{font-family:verdana;font-size:15px;} a{ color: #00529b; /* color:#333; text-decoration:none */ } a:hover{color:#ccc;text-decoration:none}.emsg {color:red;text-decoration:none; padding: 10px;} #mask{position:absolute;left:0;top:0;z-index:9000;background-color:#000;display:none;} #boxes .window{position:absolute;left:0;top:0;width:440px;height:200px;display:none;z-index:9999;padding:20px;} #boxes #dialog{ width:500px;height:260px;padding:10px;background-color:#ffffff; border-style: solid; border-width: 5px; border-radius: 15px; } #boxes #dialog2{background:url(images/notice.png) no-repeat 0 0 transparent;width:326px;height:229px;padding:50px 0 20px 25px;} /* CSS Document */ /* Bordered Button Styles */.button.bordered{-webkit-box-shadow:0 1px 1px #9aa5bb,0 -1px 1px #8e96a5; border:solid 1px #54617d;border-color:#484e59 #54617d #4c5c7a #54617d; display:inline-block;cursor:pointer;padding:0px 10px;font-size:12px;line-height:28px;height:30px;margin-top:1px;-webkit-box-sizing:border-box;-webkit-border-radius:5px;background-image:-webkit-gradient(linear,left top,left bottom,from(#92a1bf),color-stop(0.25,#798aad), color-stop(0.5,#6276a0),color-stop(0.5,#556a97),color-stop(0.75,#566c98), to(#546993)); color:#fff;-webkit-tap-highlight-color:transparent;-webkit-user-select:none;}.button.bordered:hover,.button.bordered.touched{background-image:-webkit-gradient(linear,left top,left bottom,from(#7d88a5),color-stop(0.25,#58698c), color-stop(0.5,#3a4e78),color-stop(0.5,#253c6a),color-stop(0.75,#273f6d), to(#273f6d));-webkit-tap-highlight-color:transparent;} /* End Bordered Button Styles */ /* Back Bordered Button Styles */.button.bordered.back{padding:0px 7px 0px 3px;margin-left:10px;position:relative;}.button.bordered.back > span{position:relative;z-index:1;}.button.bordered.back > span.pointer{z-index:0;background-image:-webkit-gradient(linear,left top,right bottom,from(#92a1bf),color-stop(0.3,#798aad), color-stop(0.51,#6276a0),color-stop(0.51,#556a97),color-stop(0.75,#566c98), to(#546993)); border-left:solid 1px #484e59;border-bottom:solid 1px #9aa5bb;-webkit-border-top-left-radius:5px;-webkit-border-bottom-right-radius:5px;-webkit-border-bottom-left-radius:4px;height:23.5px;width:23.5px;display:inline-block;-webkit-transform:rotate(45deg);-webkit-mask-image:-webkit-gradient(linear,left bottom,right top,from(#000000),color-stop(0.5,#000000),color-stop(0.5,transparent),to(transparent));position:absolute;left:-9px;top:2.5px;-webkit-background-clip:content;}.button.bordered.back:hover > span.pointer,.button.bordered.back.touched > span.pointer{background-image:-webkit-gradient(linear,left top,right bottom,from(#7d88a5),color-stop(0.3,#58698c), color-stop(0.51,#3a4e78),color-stop(0.51,#253c6a),color-stop(0.75,#273f6d), to(#273f6d)); } /* End Back Bordered Button Styles */ /* Next Bordered Button Styles */.button.bordered.next{padding:0px 3px 0px 7px;margin-right:10px;position:relative;}.button.bordered.next > span{position:relative;z-index:1;}.button.bordered.next > span.pointer{z-index:0;background-image:-webkit-gradient(linear,left top,right bottom,from(#92a1bf),color-stop(0.3,#798aad), color-stop(0.51,#6276a0),color-stop(0.51,#556a97),color-stop(0.75,#566c98), to(#546993)); border-right:solid 1px #9aa5bb;border-top:solid 1px #484e59;-webkit-border-top-left-radius:5px;-webkit-border-bottom-right-radius:5px;-webkit-border-top-right-radius:4px; height:23.5px;width:23.5px;display:inline-block;-webkit-transform:rotate(45deg);-webkit-mask-image:-webkit-gradient(linear,right top,left bottom,from(#000000),color-stop(0.5,#000000),color-stop(0.5,transparent),to(transparent));position:absolute;right:-9px;top:2.5px;-webkit-background-clip:content;}.button.bordered.next:hover > span.pointer,.button.bordered.next.touched > span.pointer{background-image:-webkit-gradient(linear,left top,right bottom,from(#7d88a5),color-stop(0.3,#58698c), color-stop(0.51,#3a4e78),color-stop(0.51,#253c6a),color-stop(0.75,#273f6d), to(#273f6d)); } /* End Next Bordered Button Styles */.label { background-color: transparent ; color: #FFF; font-size: 14pt; text-align: right; }.label a { color: white ; } 
+ </style> 
+ <!-- End of Sticky Note --> 
+ <!-- Mask to cover the whole screen --> 
+ 
+ <!-- Added Login for to bottom of page --->
+ <div class=warning> 
+ <div class="emsg">We are sorry we don't know what to do for login path: </div> 
+</div>
+ <div class="button bordered back"> 
+ <span class="pointer"> 
+ </span> 
+ <div class="content"> 
+ <span class="label"> 
+ <a href=# onclick="javascript:history.go(-1)" > Go Back </a> 
+ </span> 
+ </div> 
+ </div> 
+ <div class="button bordered next"> 
+ <span class="pointer"> 
+ </span> 
+ <span class="label"> 
+ <a href=# onclick="javascript:$('#mask').hide();$('#dialog').hide()" > Ignore </a> 
+ </span> 
+ </div> 
+ <br> 
+</div>
+ <br> 
+ <div class=info style="width: 80%" > 
+ <img id=rnlogo src="../../sunset/images/RNlogocrp.jpg" alt="Logo" border="0" >
+ <form class="LoginForm" action="login890B" id="LoginForm" method="post"> 
+ <input type="hidden" name="pageid" value="0"> 
+ <input type=hidden name=submitvar value=""> 
+ <!-- used by search pages --> 
+ <input type="hidden" name="loginpath" value="OE"> 
+ <p style="margin: 5px; font-size: 20px;" > Having Trouble? 
+ Enter your Information Below to Login 
+ </p> 
+ <input style="margin: 5px; font-size: 20px; text-align: center;width: 50%" class="inputText" id="username" maxlength="50" size="15" name="CustomerId" placeholder="Enter Username"> 
+ <br> 
+ <input style="margin: 5px;font-size: 20px; text-align: center;width: 50%" class="inputText" id="password" type="password" maxlength="50" size="15" name="Password" placeholder="Enter Password"> 
+ <br> 
+ <input style="font-size: 20px; text-align: center;width: 50%" type="submit" class="button1" value="Login"> 
+ 
+ </form> 
+ <br> 
+ <p style="margin: 5px; font-size: 20px;" > Forget your password? 
+ </p>
+ <form name="email" method="post" action="login890B">
+ <font size="2">Enter your email address and we will send you your password.</font> <br>
+ <input style="margin: 5px;font-size: 20px; text-align: center;width: 50%" class="inputText" type="text" name="email" size="15" maxsize="50" maxlength="50" size="15" placeholder="Enter Email.."> 
+ 
+<br>
+ <button style="font-size: 20px; text-align: center;width: 50%" type="submit" class="button1" title="Get Password" name="send" id="send2"><span>Get Password</span></button>
+ <br> <br>
+ <font size="2">*Please note: To receive your login information, the email address entered here MUST match the email address on file for your account.</font>
+ 
+<input type="hidden" name="pageid" value="13">
+<input type="hidden" name="loginpath" value="EM">
+</form> 
+</div> 
+ <div id="mask"> 
+ </div> 
+ </div> 
+<style> 
+#boxes #dialog {
+ width: 80%;
+ height: 80%;
+ padding: 10px;
+ background-color: #ffffff;
+ border-style: solid;
+ border-width: 5px;
+ border-radius: 15px;
+}
+</style>
+ </body>
+</html>
