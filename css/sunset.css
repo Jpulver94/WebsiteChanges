@@ -491,7 +491,7 @@ input,select,textarea{border:solid 1px #d3d4d6;font-size:11px;}
 #stylemenu{background:#0D115B;color:#fff;font-size:smaller;font-style:normal;}
 #style5{background-color:#0D115B;color:#fff;font-size:xx-small;font-style:italic;text-align:right;}
 #style6{color:#0D115B;font-size:smaller;font-style:normal;text-align:left;}
-#colhdg{background-image:url(//hosting.tshinc.com/rn/images/bluemenu.jpg);border-bottom:solid #CCC 1pt;border-left:none;border-right:solid #CCC 1pt;border-top:none;color:#FFF;font-family:Tahoma,sans-serif;font-size:9pt;margin:0 0 .0001pt;padding:.75pt;text-align:left;}
+#colhdg{background-image:url(//hosting.tshinc.com/rn/images/bluemenu.jpg);border-bottom:solid #CCC 1pt;border-left:none;border-right:solid #CCC 1pt;border-top:none;color:#FFF;font-family:Tahoma,sans-serif;font-size:9pt;margin:0 0 .0001pt;padding:.75pt;text-align:left;padding-left: 6px !important}
 #taghdg{color:#0D115B;font-family:Tahoma;font-size:10px;}
 #datsml{font-size:smaller; padding: inherit !important ;font-style:normal;}
 #datnorm{color:#000;}
@@ -1383,7 +1383,8 @@ a{color:#000000; }
 input,select,textarea{border:solid 1px #d3d4d6;font-size:11px;}
 #colhdg ,.rollsort{
 /* Added new Heading */
-    padding: 6px ; 
+	padding-bottom: 3px !important;
+	padding-top: 20px !important;
     background: #f4f4f4;
     position: relative;
     font-size: 21px;
@@ -1394,6 +1395,13 @@ input,select,textarea{border:solid 1px #d3d4d6;font-size:11px;}
     font-size: 12px;
     line-height: 18px;
     border: none;
+}
+#colhdg {
+	padding-left: 6px !important;
+
+}
+.rollsort {
+	padding-right: 0px !important
 }
 #datgrey { font-size: 14px ; }
 #lcolor1{
@@ -2117,3 +2125,5 @@ img.PricingFormularyButton {
 a:hover, a:focus {
     color: #FF7900 !important ;
 }
+.no-side-pad{padding-left: 0px !important;padding-right: 0px !important;}
+.center{text-align: center;}
