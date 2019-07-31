@@ -1,0 +1,9 @@
+      <Item>
+        <OrderDetailID>[PSDETAILID]</OrderDetailID>
+        <ItemStatus>[ITEMSTATUS]</ItemStatus>
+        <NDC>[NDC]</NDC>
+        <ItemNumber>[A.PROD.NO]</ItemNumber>
+        <LotNumber>[LOT.NO]</LotNumber>
+        <QuantityShipped>[QTYSHIP]</QuantityShipped>
+        <Price>[PRICE]</Price>
+      </Item>

@@ -1,0 +1,3 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="urn:amerisourcebergen.com/BT/OTC/2964/ATPCheck/Customer_To_ECC">   <soapenv:Header/>   <soapenv:Body>      <cus:ATPCheckRequest>         <AccountInfo>            <cus:CustomerNumber>[CUSTOMER]</cus:CustomerNumber>            
+<!--1 or more repetitions:-->            <ItemInfo>               <cus:ItemNumber>[ITEM]</cus:ItemNumber>            </ItemInfo>
+         </AccountInfo>      </cus:ATPCheckRequest>   </soapenv:Body></soapenv:Envelope>

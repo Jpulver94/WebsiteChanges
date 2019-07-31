@@ -1,0 +1,17 @@
+
+<span class=gridlink style="[STDSTYLE]">
+<input class="QtyBox" data-prodno="[A.PROD.NO]" data-um="[UN.MEAS]" tabindex=[LINE.NO] type=text size=2 maxlength=6 name="[A.PROD.NO]|[MFR.PROD.NO]|[UN.MEAS]|[PRICE]|[MFR.CODE]|" onchange=qtychk2(value,name) id="HotQty[A.PROD.NO]" >
+<input type="Button"  height="20px" align="center" value="Add" class="button1" onclick='javascript:HotAdd_To_Order("[A.PROD.NO]","HotQty[A.PROD.NO]","[UN.MEAS]")'>
+ </span>
+ <!-- Added Grid Order Function -->
+ <span class=gridlink style="[GRIDSTYLE]">
+<a href=# onclick="javascript:ordergrid('[PROD.NO]')" title="Order item in a Grid">
+  <img src="[IMAGE.PATH]/grid.jpg" alt="Order item in a Grid">
+ <br>Click to Order
+ </a>
+ </span>
+ <!-- Added Superceded Order Function -->
+ <span class=scedelink style="[SCEDESTYLE]">
+[SCMSG]
+ </span>
+

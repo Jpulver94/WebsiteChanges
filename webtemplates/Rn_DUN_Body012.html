@@ -1,0 +1,49 @@
+<form id=template action="login[SUFFIX]" method=post name=template>
+<input type=hidden name=pageid value="13">
+<input type=hidden name=orderno value="[ORDERNO]">
+<input type=hidden name=CustomerId value="[CUSTOMERID]">
+<input type=hidden name=loginpath value="[LOGINPATH]">
+<input type=hidden name=loginname value="[LOGINNAME]">
+<input type=hidden name=memberid value="[MEMBERID]">
+<input type=hidden name=acustno value="[ACUSTNO]">
+<input type=hidden name=weborderno value="[WEB.ORDER.NO">
+<input type=hidden name=old_loginpath value="[LOGINPATH]">
+<input type=hidden name=prev_changesort value="[CHANGESORT]">
+<input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+<input type=hidden name=slsmno value="[SLSMNO]">
+<input type=hidden name=slsmn_id value="[SLSMN_ID]">
+<!-- beginning of delete_user_note -->
+<table border=0 cellspacing=0 cellpadding=0 width=100%>
+  <tr>
+    <td id=warning><font size=4><span class=subhead>CAUTION!</span></font></td>
+  </tr>
+  <tr>
+    <td id=datnorm align=left valign=top><b>You are about to PERMANENTLY DELETE the login: &nbsp;[USER.ID]
+    </b></td>
+  </tr>
+  <tr>
+    <td id=datnorm align=left valign=top><p><b>Note: This will not delete pending orders for this login,
+however, it will prevent this User ID from using our website.</b></p>
+<p><b>Do you really want to do this?</b></p></td>
+  </tr>
+  <tr>
+    <td height=7></td>
+  </tr>
+  <tr>
+    <td id=spacerline height=4 width=100% align=left></td>
+  </tr>
+  <tr>
+    <td height=7></td>
+  </tr>
+</table>
+<table border=0 cellspacing=0 cellpadding=0 width=100%>
+  <tr>
+    <td align=center valign=center>
+     <input type=button class=button1 value="No! Cancel Action" name="No" onclick="javascript:history.go(-1)"
+       onmouseover="this.className='button1 buttonhov1'" onmouseout="this.className='button1'">
+     <input type=button class=button1 value="Yes! Delete User ID" name="DU" onclick="javascript:changepath(name)"
+       onmouseover="this.className='button1 buttonhov1'" onmouseout="this.className='button1'">
+    </td>
+  </tr>
+</table>
+<!-- end of delete_user_note -->

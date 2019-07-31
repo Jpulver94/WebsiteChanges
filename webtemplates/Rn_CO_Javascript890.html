@@ -1,0 +1,206 @@
+
+<script lang=javascript>
+function sendorder(x,sflag) {
+ resp = FormOrderEntry(document.forms[0]) ; 
+ if (resp) {
+   var aprod_array = document.template.Aprod_string.value
+   if (aprod_array == "") {
+      jAlert ("\nThere are no items on this order. ")
+      return (false); 
+   }
+   var msg = "Are you sure you want to send this order to your supplier?" ;
+//  "Are you sure you want to send this order to your supplier?"
+   resp = jConfirm(msg,"Please Confirm",function(resp) {
+   if (resp) {
+      document.template.startptr.value = 1  ; 
+      document.template.searchflag.value = sflag  ; 
+       //for sunset force to EO instead of SO
+      document.template.loginpath.value = 'EO'  ; 
+      document.template.submit(); 
+   } else {
+     return  (false);
+   }
+});
+  }  // for resp
+}
+//function to set qty to 0 so user does not have to enter it.
+function del_item(X,msg) { 
+  // var msg = "Are you sure you want to delete this line item?"
+   resp = jConfirm("Are you sure you want to " + msg + "?","Delete Item", function(resp) {
+   if (resp) {
+      var len = document.template.elements.length
+//loop to put into arrays
+      for (var i = 0; i < len; i++) {
+          var lname = document.template.elements[i].name ;
+          if(lname == X) { 
+            document.template.elements[i].value = 0 ;
+            process_order(0) ; 
+            document.template.loginpath.value = "CO" ; 
+            document.template.submit() ; 
+          } 
+      } 
+   } else {
+     return false ;
+   }
+}) ; 
+} // for resp
+//function to read in name and value and push to prodstring
+function process_order(popup) {
+   var X = 0 ;
+   var len = document.template.elements.length
+//loop to put into arrays
+   for (var i = 0; i < len; i++) {
+       var lname = document.template.elements[i].name
+       var lvalue = document.template.elements[i].value
+       var e_type = document.template.elements[i].type
+//do a qty chk on lvalue here
+   if (lvalue != "" && e_type == "text") {
+//check to make sure name has a pipe
+//is a text type and if so process
+       if (is_pipe(lname)) {
+//add one to I to acct for array starting at 0
+           if (qtychk2(lvalue,i)) {
+// assumes a good qty was entered so set qty_array
+           data_array = string_decode(lname)
+            var lum = document.template.elements[i+1].value
+           xctr = data_array[0] - 1 // to account for line 0 in array ;
+           update_qty(xctr,lvalue,lum) ;
+           X = X + 1 ;
+           } else {
+           return false ;
+           //for qtychk failure ; 
+           }
+        } else {
+ //           return false ;
+           //for pipe failure ; 
+        }
+       //for type=text and lvalue!= 
+      }
+       //for next loop in array (length of form) 
+    }
+ // we have our data in arrays so recode to pipe and send to variable
+//       var msg = "Do you want to update these items?"
+//           if(popup) { ;
+//               resp = jConfirm(msg) ;
+//               if (resp) {            return true ;
+//               } else {
+//               return false ;
+//               }
+//           }
+           return true ;
+}
+function update_qty(j,lvalue,um) {
+    var qty_array = new Array
+    var um_array = new Array
+    aprod_array = string_decode(document.template.Aprod_string.value)
+    qty_array = string_decode(document.template.qty_string.value)
+    um_array = string_decode(document.template.um_string.value)
+               qty_array[j] = lvalue
+               document.template.qty_string.value = string_recode(qty_array)
+               um_array[j] = um
+               document.template.um_string.value = string_recode(um_array)
+}
+function searchpath(x,sflag) { 
+   document.template.loginpath.value = x ; 
+   document.template.searchflag.value = sflag  ; 
+   document.template.submitvar.value = ''  ; 
+   document.template.startptr.value = "1" ; 
+   document.template.searchptr.value = "1" ; 
+   document.template.Changesort.value = "6" ; 
+   document.template.itemspage.value = "10" ; 
+   document.template.submit(); 
+}
+function Move_page(startptr,direction,loginpath) {
+// code to get startpointer
+  if(process_order(0)) { ; 
+  // process order - 1=popup 0=no popup and if true submit
+       if (startptr < 1 ) {
+          startptr = 1
+       }
+ //if startptr is greater than total lines then set it to 1  
+       if (startptr > [TOTALLINES]) {
+          startptr = 1
+       }
+ //if itemspage or changesort changed value then set startptr to 1 
+       var sort = document.template.Changesort.value
+       var prev_sort = document.template.prev_changesort.value
+       var items = document.template.itemspage.value
+       var prev_items = document.template.prev_itemspage.value
+       if (sort != prev_sort||items != prev_items) { 
+          startptr = 1
+       }
+   document.template.startptr.value = startptr  ;
+   document.template.searchflag.value = 'N' ;
+   document.template.loginpath.value = loginpath ;
+   document.template.submit()  ; 
+  }
+}
+function prod_inquiry(loginpath,sflag,aprodno) { 
+ document.template.aprodno.value = aprodno  ; 
+ changepath(loginpath,sflag) ; 
+}
+function changesort(path,sflag,sort) { 
+  document.template.startptr.value = 1 ; 
+  document.template.searchflag.value = sflag ; 
+  document.template.loginpath.value = path ; 
+  document.template.Changesort.value = sort ; 
+  document.template.submit(); 
+}
+function FormOrderEntry(theForm) {
+//   var msg = "\nCannot Send Order.\nRequired fields on Order Entry Header\npage must be entered."
+var msg = "Please update your missing information - " ;
+  var X = 0 ;
+  var fld =  '' ;
+  [REQDDT.TEST]
+  [DEPTNO.TEST]
+  [CUSTPO.TEST]
+  [REQNO.TEST]
+  [ORDBY.TEST]
+  // FOR SUNSET MAKE PO ALWAYS REQUIRED
+  if (theForm.custpo.value == "" )
+  {
+   X = X + 1 ;fld = fld + 'Customer PO'  ;
+  }
+  if (theForm.Shiptoname.value == "")
+  {
+     X = X + 1 ;  fld = fld + 'Shipto Name'  ;
+  }
+  if ((theForm.Shiptodesc.value == "") && (theForm.Shiptodesc2.value == ""))
+  {
+     X = X + 1 ; fld = fld + 'Shipto Address'  ;
+  }
+  if (theForm.Shiptocity.value == "")
+  {
+     X = X + 1 ;  fld = fld + 'Shipto City'  ;
+  }
+  if (theForm.Shiptostate.value == "")
+  {
+     X = X + 1 ;  fld = fld + 'Shipto State'  ;
+  }
+  if (theForm.Shiptozip.value == "")
+  {
+     X = X + 1 ; fld = fld + 'Shipto Zip'  ;
+  }
+  if (theForm.Shipmethod.value == "")
+  {
+     X = X + 1 ;  fld = fld + 'Shipping Method'  ;
+  }
+  if (X == '0') {
+     return (true) ;
+     } else {
+     jAlert(msg + "Missing " + fld) ;
+     return false ;
+  }
+}
+// Add Hook of change path to call process order since this page adds items potentially 
+function changepath(x,sflag) { 
+ if(process_order(0)) { ; 
+ // process order - 1=popup 0=no popup and if true submit
+ document.template.startptr.value = 1 ; 
+ document.template.searchflag.value = sflag ; 
+ document.template.loginpath.value = x ; 
+ document.template.submit(); 
+ }
+} 
+</script> 
+

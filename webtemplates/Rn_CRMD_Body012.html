@@ -1,0 +1,806 @@
+
+         
+        <link type="text/css" rel="stylesheet" href="//hosting.tshinc.com/rn/timedate/jquery.timepicker.css">
+<script type="text/javascript" src="//hosting.tshinc.com/rn/timedate/jquery.timepicker.js"></script>
+<script type="text/javascript" src="//hosting.tshinc.com/rn/timedate/datepair.js"></script>
+<script type="text/javascript" src="//hosting.tshinc.com/rn/timedate/jquery.datepair.js"></script>   
+<style>
+.col-6{width:16% !important;}
+.TopCRMLinks{float:left;padding:3px;}
+.switch{position:relative;display:inline-block;width:27px;height:12px;}
+.switch input{display:none;}
+.slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background-color:#ccc;-webkit-transition:.4s;transition:.4s;}
+.slider:before{position:absolute;content:"";height:12px;width:12px;left:2px;bottom:2px;background-color:white;-webkit-transition:.4s;transition:.4s;}
+input:checked + .slider{background-color:#2196F3;}
+input:focus + .slider{box-shadow:0 0 1px #2196F3;}
+input:checked + .slider:before{-webkit-transform:translateX(12px);-ms-transform:translateX(12px);transform:translateX(12px);}
+/* Rounded sliders */
+.slider.round{border-radius:10px;}
+.slider.round:before{border-radius:50%;}
+.arrow-up{width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:7px solid rgb(8,67,106);display:inline-block;}
+.arrow-down{width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-top:7px solid rgb(8,67,106);display:inline-block;}
+.GPSales{display:none;}
+.GPSales table{border-collapse:collapse;width:100%;}
+.GPSales th,.GPSales td{text-align:left;padding:5px;}
+.GPSales tr:nth-child(even){background-color:#EBF4FB;color:#313131;}
+.GPSales th{background-color:#cccccc;color:black;}
+#my-table tr:nth-child(even){background-color:#EBF4FB;color:#313131;}
+#my-table th{background-color:#cccccc;color:black;}
+table.center{width:95%;margin-left:2%;margin-right:2%;}
+#GraphBox{border:none;height:100%;width:100%;min-height:600px;display:none;}
+#CustomerGraphBox{border:none;height:100%;width:100%;min-height:600px;}
+.CRMPage h2{padding:3px 0px 3px 0px;}
+.CRMCustNoteEntry, #datepairNote{float:left;}
+.CRMHeading{width:40%;font-weight:700;font-size:12px;float:left;padding:2px;}
+.CRMData{min-height: 20px; width:50%;font-weight:200;font-size:12px;float:left;padding:2px;}
+.CRMCust1,.CRMCust2 ,.CRMCust3 ,.CRMCust4{width:25%;float:left;}
+.CRMGraphs,.CRMContacts,.CRMCustNotesAdd,.CRMCustNotes,.CRMCustomerDetails,.CRMInfo{float:left;padding:5px;border:1px solid black;width:100%;border-radius:3px;}
+.CRMReorder,.CRMReorderProduct,.CRMCompanyTopSeller{width:32%;float:left;}
+#CustomerGraphBox{border:none;width:100%;
+/*  min-height:300px;display:none;*/
+}
+table.CRMNotesTable{width:100%;}
+table.CRMNotesTable tr:nth-child(even){background-color:#f8f8f8;}
+table.CRMNotesTable th{background-color:#ddd;}
+textarea#notedata{width:100%;}
+textarea#notedata:focus{height:14em;}
+.edittext{margin-top:8px;font-size:14px;color:#545454;-moz-border-radius:2px;-webkit-border-radius:2px;-border-radius:2px;display:none;}
+.CRMData.edit:hover{border:1px solid grey;}
+.CRMData.edit{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
+.edit:before{content:"\270E";color:#4682b4;}
+/* Table */
+.toptable{border-collapse:collapse;font-size:14px;}
+.toptable th,.toptable td{padding:7px 17px;}
+.toptable .title{margin-bottom:12px;}
+/* Table Header */
+.toptable thead th,.toptable thead th:last-child{text-transform:uppercase;border-bottom:2px solid #c7c7c7;color:#656565;font-weight:normal;}
+/* Table Body */
+.toptable tbody td,.toptable tbody td:last-child{color:#353535;background-color:#fff2e6;text-align:center;border-bottom:1px solid #ffe8d2;}
+.toptable tbody th{text-align:left;font-weight:normal;background-color:#f9f9f9;padding-right:45px;color:#696969;border-bottom:1px solid #efefef;}
+.toptable tbody tr:nth-child(odd) th{background-color:#ffffff;}
+.toptable tbody tr:nth-child(odd) td{background-color:#fff9f3;}
+.toptable tbody tr:last-child td{border:0;}
+.toptable tbody tr:hover td{background-color:#ffffa2;border-color:#ffff0f;}
+/* Table Footer */
+.toptable tfoot th,.toptable tfoot th:last-child{border-top:1px dashed #ff8100;}
+.toptable tfoot th:first-child{text-align:right;}
+.home_tab_content{float:left;width:95%;padding:3px;}
+.homeactive{color:black;}
+#center_status .homeactive a.HomeTabLink{color:red}
+.saved-HomeTabs {width:100%;list-style-type:none;margin:0;padding:0;}
+.saved-HomeTabs ul{list-style-type:none;margin:0;padding:0;width:100%;}
+.saved-HomeTabs li a{background:#FFF;border:1px solid #ccc;border-bottom:1px solid black;border-radius:5px 10px 0 0;color:#000;float:left;left:1px;margin-left:1px;
+/* border-right:none;*/
+padding:10px 10px;position:relative;text-decoration:none;font-size:11px;text-align:center;font-weight:700;width:14%;}
+.homeactive{background:lightblue;color:white; border-top: 5px solid black;}
+textarea.notedetail{width:100%;}
+textarea.notedetail:focus{height:14em;}
+.CRMDataNW{word-break:break-all;overflow-wrap:break-word;font-weight:200;font-size:12px;float:left;padding:2px;}
+.CRMHeadingNW{font-weight:700;font-size:12px;float:left;padding:2px;}
+.HomeTabs{display:table;  table-layout:fixed;  width:100%;  -webkit-transform:translateY(5px);  transform:translateY(5px);}
+.HomeTabs > li{    border-radius: 6px 6px 0px 0px; border-left: 1px solid lightblue; transition-duration:.25s;  display:table-cell;  font-size: larger; list-style:none;  text-align:center;  padding: 10px 10px 15px 10px;  position:relative;  overflow:hidden;  cursor:pointer;  color:white;}
+.HomeTabs > li:before{z-index:-1;  position:absolute;  content:"";  width:100%;  height:120%;  top:0;  left:0;  background-color:rgba(255,255,255,0.3);  -webkit-transform:translateY(100%);  transform:translateY(100%);  transition-duration:.25s;  border-radius:5px 5px 0 0;}
+.HomeTabs > li:hover:before{-webkit-transform:translateY(70%);  transform:translateY(70%);}
+.HomeTabs > li.active{color:#50555a;}
+.HomeTabs > li.active:before{transition-duration:.5s;  background-color:white;  -webkit-transform:translateY(0);  transform:translateY(0);}
+.home_tab_content{background-color:white;  position:relative;  width:100%;  border-radius:5px; border: solid 4px lightblue; padding: 20px ;}        
+#UpdateStatus { float: left ; } 
+</style>
+           
+<script lang=javascript> 
+function showgraph(custfilter,target) {
+// target should be an iframe.. so javascript doesnt fight.. 
+var slsm = $('input[name=slsmno]').val() ;
+var rpt = 120 ; // sales history 24 month for graphs
+var acustno = custfilter ; 
+var dummy = widgetload_callback('login[SUFFIX]?orderno=' + OID + '&CUSTOMERID=' + CID + '&LOGINPATH=SOS&ACUSTNO=' + acustno + '&NUM=' + rpt + '&SLSMNO=' + slsm +'&PAGEID=31','#RptName',
+  function() { 
+      var srpt = $('#Report').text() ;
+      if (srpt == '') { $('#RptName').html('Your Report Could not be processed..') ; return ; }
+         var pageurl = "[script_path]CRMSales.html?dataurl=" + srpt ;
+//          var pageurl = "//hosting.tshinc.com/rn/rndashboard/CRMSales.html?dataurl=" + srpt ;
+         if (custfilter) { pageurl = pageurl + "&custfilter=" + custfilter ; } 
+            $(target).attr("src", pageurl);
+      }) ;        
+}
+function slsmsg(val) {
+if (val !== 'NO') {
+$("#SlsCheck").html("Your Salesman Pricing Tools are Currently Showing (Click to Change Settings)") ; 
+} else {
+$("#SlsCheck").html("Your Salesman Pricing Tools are NOT Currently Showing (Click to Change Settings)") ; 
+}
+}
+$(document).ready(function() {
+$("#ErrorDetails").click(function() { $("#FileDetails").show() ;   }) ; 
+    $('#QuickNotes').on('change',function(){
+        //var optionValue = $(this).val();
+        //var optionText = $('#dropdownList option[value="'+optionValue+'"]').text();
+        var optionText = $("#QuickNotes option:selected").text();
+        //alert("Selected Option Text: "+optionText);
+        $("#notedata").append(optionText) ;
+   });
+  document.title = '[ACUSTNO] CRM Detail ';
+var val = $.cookie('RnSalesCheck')
+slsmsg(val) ; 
+$("#SlsCheck").click(function() { 
+var cval = $.cookie('RnSalesCheck')
+if (cval == "NO") { val = "YES" ; } else { val = "NO"; } ; 
+$.cookie('RnSalesCheck', val);
+slsmsg(val) ;
+});
+var ShowSalesGP = '[SALESGP]' ;
+if (ShowSalesGP == "Y") { $(".GPSales").show() ; } ; 
+// HIDE THE sidebars for the salesman login 
+$('#center').css({'width':'100%'}) ;
+$('.col-main').css({'float':'none'}) ;
+$('#left').hide() ;
+$('.col-left').hide() ;
+$('#left_menucontent').hide() ;
+$('#right').hide() ;
+});
+function showbox(custid) {
+var pageurl = 'login[SUFFIX]' + '?ORDERNO=' + document.forms[0].orderno.value + '&CUSTOMERID=' + custid + '&LOGINPATH=BOX&pageid=31&CTR=50' ;
+var dummy = showmodalrnpopup(pageurl) ;
+}
+function showreport() { 
+var slsm = $('input[name=slsmno]').val() ;
+var acustno = $('input[name=acustno]').val() ;
+var rpt = $('#SlsReports').val() ;
+var dummy = widgetload_callback('login[SUFFIX]?orderno=' + OID + '&CUSTOMERID=' + CID + '&LOGINPATH=SOS&ACUSTNO=' + acustno + '&NUM=' + rpt + '&SLSMNO=' + slsm +'&PAGEID=31','#RptName',
+function() {   
+   var srpt = $('#Report').text() ;
+if (srpt == '') { $('#RptName').html('Your Report Could not be processed..') ; return}
+   var pageurl = 'login[SUFFIX]' + '?orderno=' + OID + '&CUSTOMERID=' + CID + '&LOGINPATH=RV&FILENAME=' + srpt +'&PAGEID=31';
+//    var dummy = showmodalrnpopup(pageurl) ;
+var iframewin=dhtmlwindow.open('iframebox', 'iframe', pageurl, 'Remotenet Sales Reporting', 'width=650px,height=400px,left=20px,top=100px,resize=1,scrolling=1');
+ }  );
+}
+function changesort_toggle(path,sflag,sort) {
+ var csort = document.template.prev_changesort.value ; 
+if (csort == sort ) { 
+ if (sort.substring(1, 5) == '-DSND') {
+    var tlen = len(sort) - 5 ;
+    sort = sort.substring(6,tlen) ;
+    } else {
+    sort = '-DSND ' + sort ;  
+ } ;
+} ;
+ document.template.startptr.value = 1 ; 
+ document.template.searchflag.value = sflag ; 
+ document.template.loginpath.value = path ; 
+ document.template.Changesort.value = sort ; 
+ document.template.submit(); 
+} 
+</script>                              
+<script>
+$(document).ready(function(){
+	$('.edit').click(function(){
+		$(this).hide();
+		$(this).next().show();
+		$(this).next().select();
+	});
+	$('.edittext').blur(function() {  
+     if ($.trim(this.value) == ''){  
+			 this.value = (this.defaultValue ? this.defaultValue : '');  
+		 }
+		 else{
+			 $(this).prev().html(this.value);
+		 }
+		 $(this).hide();
+		 $(this).prev().show();
+     pathstring = 'login[SUFFIX]?orderno=[WEB.ORDERNO]&CUSTOMERID=[ACUSTNO]&LOGINPATH=FLDU&MODE=U&pageid=31&FILEINFO=' + $(this).attr("data-fileinfo") + '&TARGETVAL=' + this.value  ;
+     var dummy =  widgetload(pathstring, "#UpdateStatus") ; 
+     });
+	  $('.edittext').keypress(function(event) {
+		  if (event.keyCode == '13') {
+			  if ($.trim(this.value) == ''){  
+				 this.value = (this.defaultValue ? this.defaultValue : '');  
+			 }
+			 else
+			 {
+				 $(this).prev().html(this.value);
+			 }
+			 $(this).hide();
+			 $(this).prev().show();
+         pathstring = 'login[SUFFIX]?orderno=[WEB.ORDERNO]&CUSTOMERID=[ACUSTNO]&LOGINPATH=FLDU&MODE=U&pageid=31&FILEINFO=' + $(this).attr("data-fileinfo") + '&TARGETVAL=' + this.value  ;
+         var dummy =  widgetload(pathstring, "#UpdateStatus") ; 
+		  }
+	  });
+});
+$(document).ready(function() {
+$('.time').timepicker({
+        'showDuration': true,
+        'timeFormat': 'g:ia',
+         'scrollDefault': 'now' 
+    });
+    $('.date').datepicker({
+        'format': 'mm/dd/yy',
+        'autoclose': true
+    });
+    // initialize datepair
+    $('#datepairNote').datepair();
+ // add path for each tab in order 1,2,3 etc 
+var CustomerFlag = [CUSTOMERFLAG] ;
+if (CustomerFlag) {  
+ // note this all assumes they have a remotenet web customer setup using the A.cust.no 
+  var pathstring  = [] ;  // 0,1 are not loaded via ajax.. 
+  pathstring[2] = 'login[SUFFIX]?orderno=[WEB.ORDERNO]&CUSTOMERID=[ACUSTNO]&LOGINPATH=REOO&pageid=31&ITEMSPAGE=25&changesort=-DSND ORD.DATE' ;
+  pathstring[3] = 'login[SUFFIX]?orderno=[WEB.ORDERNO]&CUSTOMERID=[ACUSTNO]&LOGINPATH=REOI&pageid=31&ITEMSPAGE=25&changesort=-DSND RN.LAST.SALE.DT&CUSTOMLIST=1'  ;
+  pathstring[4] = 'login[SUFFIX]?orderno=[WEB.ORDERNO]&CUSTOMERID=[ACUSTNO]&LOGINPATH=HOT&pageid=31&CUSTOMLIST=WEB*35' ;
+  pathstring[5] = 'login[SUFFIX]?orderno=[WEB.ORDERNO]&CUSTOMERID=[ACUSTNO]&LOGINPATH=OOHX&pageid=31&ITEMSPAGE=25&changesort=-DSND ORD.DATE' ;
+$(".home_tab_content").hide(); //Hide all cont
+ //On Click Event
+ $("ul.HomeTabs li").click(function() {
+ $("ul.HomeTabs li").removeClass("homeactive"); //Remove any "active" class
+ $(this).addClass("homeactive"); //Add "active" class to selected tab
+ $(".home_tab_content").hide(); //Hide all tab content again
+ var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
+   $(activeTab).fadeIn(); 
+ var n = $(this).parent().children().index(this);
+  // $("#UpdateStatus").html("Loading Content for " + n + ' Tab ' + activeTab); 
+// var nmsg = "<a href=# onclick='javascript:sendquote()'> Email this order as a quote to a customer </a>" ;
+var nmsg = "   <a href=# onclick='javascript:sendquote()'> &#x2709;  Email this web order [WEB.ORDERNO] - [WEB.ORDERAMT] as a quote to a customer or prospect. To place a new order use your salesman dashboard and choose your customer login. </a> "
+ $("#UpdateStatus").html(nmsg) ; 
+ switch(n) {
+       case 0:
+         // default tab 
+        break;
+    case 1:
+        showgraph("[ACUSTNO]","#CustomerGraphBox")
+        break;
+    default:
+       $(activeTab).html("Loading Content..."); 
+       var dummy = widgetload(pathstring[n], activeTab) ; 
+ }  
+ return false;
+ });
+ $("ul.HomeTabs li:first").addClass("homeactive").show(); //Activate first tab
+ $(".home_tab_content:first").show(); //Show first tab content
+} else {
+ var smsg = "Sorry, We have no customer sales information to display. Please verify you have a customer for this prospect. Alternately you can setup a Remotenet Web Customer Record using the Customer Account Code as the username."  ;
+ var smsg = smsg + "<BR><a href=\"#\" class=\"CreateProspect\" onclick=\"javascript:pcrm('PCRM','[ACUSTNO]','C')\" title=\"Click here to create a new Customer from this Prospect\"> Click Here to Convert to New Customer  </a> " ; 
+  $("#UpdateStatus").html(smsg);
+}
+});
+// added global popup for crm
+function AddNote(lpath,acustno,mode) {
+  var pageurl = window.location + '?ORDERNO=' + document.forms[0].orderno.value + '&CUSTOMERID=' + document.forms[0].CustomerId.value + '&LOGINPATH=' + lpath + '&pageid=31&ACUSTNO=' + acustno;
+if (mode == 'U') { 
+$("#NoteStatus").html("Updating Note....") ; 
+if (!$.trim($("#notedata").val())) {
+$("#NoteStatus").html("Please enter a note to update. Our Apologies, We can't seem to find your note..") ; 
+return ; 
+}
+var notedata = $("#notedata").val() ;
+var notecontact = $("#notecontact").val() ;
+var notelimit = $("#notelimit").val() ;
+var notedate = $("#notedate").val() ;
+var notetime = $("#notetime").val() ;
+var notedata = notedata.replace(/\r\n|\r|\n/g,"~");
+  var pageurl = window.location + '?ORDERNO=' + document.forms[0].orderno.value + '&CUSTOMERID=' + document.forms[0].CustomerId.value + '&LOGINPATH=' + lpath + '&pageid=31&ACUSTNO=' + acustno + '&MODE=U&NOTEDATA=' + notedata + '&NOTETIME=' + notetime + '&NOTEDATE=' + notedate + '&NOTELIMIT=' + notelimit + '&NOTECONTACT=' + notecontact ; 
+}
+if (mode == 'C') { 
+  var pageurl = window.location + '?ORDERNO=' + document.forms[0].orderno.value + '&CUSTOMERID=' + document.forms[0].CustomerId.value + '&LOGINPATH=' + lpath + '&pageid=31&ACUSTNO=' + acustno + '&MODE=C&NOTEDATA=' + notedata + '&NOTETIME=' + notetime + '&NOTEDATE=' + notedate ; 
+}
+var dummy = widgetload_callback(pageurl,"#UpdateStatus", function() { ; 
+ //  divcrm=dhtmlwindow.open('divcrmid', 'div', 'CRMHolderPopup', 'Remotenet CRM ', 'width=800px,height=600px,left=20px,top=20px,resize=1,scrolling=1');
+// $("#CRMHolderPopup").html("Load Completed....") ; 
+       document.template.submit() ; 
+}) ; // for call back
+} 
+</script>           
+        <form name=template id=template action="login[SUFFIX]" method=post>                                     
+          <input type=hidden name=pageid value="31">             
+          <!-- Added for order updates --> 
+          <input type=hidden name=Aprod_string value="[APROD_STRING]">
+          <input type=hidden name=prod_string value="[PROD_STRING]">
+          <input type=hidden name=qty_string value="[QTY_STRING]">
+          <input type=hidden name=um_string value="[UM_STRING]">
+          <input type=hidden name=price_string value="[PRICE_STRING]">
+          <input type=hidden name=comment_string value="[COMMENT_STRING]">
+          <input type=hidden name=manufact_string value="[MANUFACT_STRING]">                                   
+          <input type=hidden name=loginpath value="[LOGINPATH]">                                     
+          <input type=hidden name=searchflag value="[SEARCHFLAG]">                                     
+          <input type=hidden name=startptr value="[STARTPTR]">                                     
+          <input type=hidden name=CustomerId value="[CUSTOMERID]">                                     
+          <input type=hidden name=orderno value="[ORDERNO]">                                     
+          <input type=hidden name=old_loginpath value="[LOGINPATH]">                                     
+          <input type=hidden name=prev_changesort value="[CHANGESORT]">                                     
+          <input type=hidden name=prev_itemspage value="[ITEMSPAGE]">                           
+          <!-- setup to single line for CRM Page -->                                   
+          <input type=hidden name=mdsorderno value="[MDSORDERNO]">                                     
+          <input type=hidden name=aprodno value="[APRODNO]">                                  
+          <input type=hidden name=acustno value="[ACUSTNO]">                                    
+          <input type=hidden name=slsmno value="[SLSMNO]">                                     
+          <input type=hidden name=slsmn_id value="[SLSMN_ID]">          
+          <div class="CRMCustomerDetails" >           
+           <h2> Details for Account: [ACUSTNO] Assigned to Salesman: [SLSM] Email: [SLSM.EMAIL]  </h2> 
+          <div class="TopHeader" >          
+            <table class="toptable">          
+              <tr>          
+                <th> # Initial Daily Contacts: 
+                </th> <td> [INIT.CALLS] </td>          
+                <th> # Initial Monthly Contacts: 
+                </th> <td> [MTD.INIT.CALLS] </td>          
+                <th> # Initial Yearly Contacts: 
+                </th> <td> [YTD.INIT.CALLS] </td>          
+              </tr>          
+              <tr>          
+                <th> # Daily Contacts: 
+                </th> <td> [DAILY.CALLS] </td>          
+                <th> # Monthly Contacts: 
+                </th> <td> [MTD.CALLS] </td>          
+                <th> # Yearly Contacts: 
+                </th> <td> [YTD.CALLS] </td>          
+              </tr>          
+            </table>          
+          </div> 
+            </div>          
+          <BR>          
+          <div style="display: none ;" id="RptName">                       
+          </div>           
+          <div id="UpdateStatus">  
+          </div>                     
+          <div class="TabWrap">                            
+            <ul class="HomeTabs">                             
+              <li class="homeactive">                                 
+                <a class="HomeTabLink" href="#Tab10">Prospect/Customer Info</a>                             
+              </li>                             
+              <li>                               
+              <a class="HomeTabLink " href="#Tab20">Visualize Sales</a>                             
+              </li>                             
+              <li>                               
+              <a class="HomeTabLink" href="#Tab30">Last 25 Orders</a>                               
+              </li>                             
+              <li>                               
+              <a class="HomeTabLink" href="#Tab40">Last 25 Items</a>                             
+              </li>                             
+              <li>                               
+              <a class="HomeTabLink" href="#Tab50">Daily Deals</a>                             
+              </li>                
+              <li>                               
+              <a class="HomeTabLink" href="#Tab60">Pending Web Quotes/Orders </a>                             
+              </li>                         
+            </ul>                         
+            <div class="home_tab_container">                               
+              <div class="home_tab_content" id="Tab10" style="display: block;">                                 
+                <div xstyle="display: none" id="CRMHolderPopup">   
+                </div>                                     
+                <!-- crmholder popup -->                                                           
+                <div class="CRMPage">                                           [DOCMESSAGE]                                          
+                  <br> [PAGESTAMP]                                           
+                  <div class="CRMCustomerDetails" >  <h2>Customer Details  </h2>                                             
+                    <div class="CRMCust1">                                                         
+                      <div class="CRMHeading" >Customer Number:                                                   
+                      </div>                                                   
+                      <div class="CRMData">[$CNV$CUST.MAST$A.CUST.NO$]                                                  
+                      </div>                                                       
+                      <div class="CRMHeading" >Customer Name:                                                   
+                      </div>                                                   
+                      <div class="CRMData">[$CNV$CUST.MAST$CUST.NAME$]                                                  
+                      </div>                                                       
+                      <div class="CRMHeading" >Create Date:                                                   
+                      </div>                                                   
+                      <div class="CRMData">[$CNV$CUST.MAST$CREATE.DT$]                                                  
+                      </div>                                                       
+                      <div class="CRMHeading" >City State Zip:                                                   
+                      </div>                                                   
+                      <div class="CRMData">[$CNV$CUST.MAST$CITY.ALL$]                                                  
+                      </div>                                                       
+                      <div class="CRMHeading" >GPO:                                                   
+                      </div>                                                   
+                      <div class="CRMData">[$CNV$CUST.MAST$GPO$] [$CNV$CUST.MAST$GPO.DESC$]                                                  
+                      </div>                                               
+                    </div>                                               
+                    <div class="CRMCust2">                                                         
+                      <div class="CRMHeading" >Salesman:                                                   
+                      </div>                                                   
+                      <div class="CRMData">[$CNV$CUST.MAST$SLSM#$] [$CNV$CUST.MAST$SLSNAME$] / [$CNV$CUST.MAST$SLSM2$] [$CNV$CUST.MAST$SLS2NAME$]                                                   
+                      </div>                                                         
+                      <div class="CRMHeading" >Class:                                                   
+                      </div>                                                   
+                      <div class="CRMData">[$CNV$CUST.MAST$CUST.CLS$] [$CNV$CUST.MAST$CUST.CLS.DESC$]                                                  
+                      </div>                                                         
+                      <div class="CRMHeading" >Type:                                                   
+                      </div>                                                   
+                      <div class="CRMData">[$CNV$CUST.MAST$CUST.TYP$] [$CNV$CUST.MAST$CUST.TYP.DESC$]                                                  
+                      </div>                                                         
+                      <div class="CRMHeading" >Pricing Contract:                                                   
+                      </div>                                                   
+                      <div class="CRMData">[$CNV$CUST.MAST$CONTRACT.NO$]                                                  
+                      </div>                                                         
+                      <div class="CRMHeading" >Ship Method:                                                   
+                      </div>                                                   
+                      <div class="CRMData">[$CNV$CUST.MAST$SHIP.METH$] [$CNV$CUST.MAST$SHIP.METH.DESC$]                                                  
+                      </div>                                                 
+                    </div>                                                
+                    <div class="CRMCust3">                                                         
+                      <div class="CRMHeading" >Terms Code:                                                   
+                      </div>                                                   
+                      <div class="CRMData">[$CNV$CUST.MAST$TERMS.CODE$] [$CNV$CUST.MAST$TERMS.DESC$]                                                  
+                      </div>                                                         
+                      <div class="CRMHeading" >Credit Limit:                                                   
+                      </div>                                                   
+                      <div class="CRMData">[$CNV$CUST.MAST$CRED.LIMIT$]                                                   
+                      </div>                                                         
+                      <div class="CRMHeading" >Open AR:                                                   
+                      </div>                                                   
+                      <div class="CRMData">[$CNV$CUST.MAST$AR.BAL$]                                                   
+                      </div>                                                         
+                      <div class="CRMHeading" >Last Order:                                                   
+                      </div>                                                   
+                      <div class="CRMData"> [$CNV$CUST.MAST$LAST.ORD.AMT$]  on [$CNV$CUST.MAST$LAST.ORD.DT$]                                                   
+                      </div>                                                         
+                      <div class="CRMHeading" >Last Payment:                                                   
+                      </div>                                                   
+                      <div class="CRMData">[$CNV$CUST.MAST$LAST.PMT.DT$]                                                   
+                      </div>                                                  
+                    </div>                                                 
+                    <div class="CRMCust4">                                                         
+                      <div class="CRMHeading" >YTD Sales:                                                   
+                      </div>                                                   
+                      <div class="CRMData">[$CNV$CUST.MAST$YTD.SALES$]                                                   
+                      </div>                                                            
+                      <div class="CRMHeading" >MTD Sales:                                                   
+                      </div>                                                   
+                      <div class="CRMData">[$CNV$CUST.MAST$MTD.SALES$]                                                   
+                      </div>                                                            
+                      <div class="CRMHeading" >YTD GP Dollars:                                                   
+                      </div>                                                   
+                      <div class="CRMData">[$CNV$CUST.MAST$YTD.GP$]                                                   
+                      </div>                                                             
+                      <div class="CRMHeading" >MTD GP Dollars:                                                   
+                      </div>                                                   
+                      <div class="CRMData">[$CNV$CUST.MAST$MTD.GP$]                                                   
+                      </div>                                                                 
+                      <div class="CRMHeading" >DEA License:                                                   
+                      </div>                                                    
+                      <div class="CRMData"> [DEA.LIC] Expires: [DEA.EXP.DT]                                                   
+                      </div>                                                
+                    </div>                                            
+                  </div>                                           
+                  <div class="CRMContacts"> <h2> Prospect Details </h2>   
+                   <div class="CRMCust1" >        
+                      <div class="CRMHeading" >Name:    
+                      </div> 
+                        <div class="CRMData edit"> [$CNV$PROSPECT.MAST$PROS.NAME$]  
+                      </div>                              
+                      <input class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|1|1|1" type="text" value="[$CNV$PROSPECT.MAST$PROS.NAME$]" />                            
+                                                   
+                      <div class="CRMHeading" >Address1: 
+                      </div>                        
+                          <div class=" CRMData edit"> [$CNV$PROSPECT.MAST$PROS.ADD1$]  
+                      </div>                              
+                      <input class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|2|1|1" type="text" value="[$CNV$PROSPECT.MAST$PROS.ADD1$]" />                            
+                 
+                      <div class="CRMHeading" >Address2:   
+                      </div>                        
+                           <div class=" CRMData edit"> [$CNV$PROSPECT.MAST$PROS.ADD2$]  
+                      </div>                              
+                      <input class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|3|1|1" type="text" value="[$CNV$PROSPECT.MAST$PROS.ADD2$]" />                            
+                
+                      <div class="CRMHeading" >Address3:    
+                      </div>                        
+                           <div class=" CRMData edit"> [$CNV$PROSPECT.MAST$PROS.ADD3$]  
+                      </div>                              
+                      <input class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|4|1|1" type="text" value="[$CNV$PROSPECT.MAST$PROS.ADD3$]" />                            
+                
+                      <div class="CRMHeading" >City State Zip:  
+                      </div>     
+                          <!-- data here -->                          
+                       <div class=" CRMData "> [$CNV$PROSPECT.MAST$C.ST.ZIP$]  
+                      </div>                              
+                                     
+                      <div class="CRMHeading" >Web Url:  
+                      </div>
+                       <div class=" CRMData edit"> [$CNV$PROSPECT.MAST$WEB.SITE.ADDRESS$]  
+                      </div> 
+                      <input class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|50|1|1" type="text" value="[$CNV$PROSPECT.MAST$WEB.SITE.ADDRESS$]" />                            
+                    </div>                        
+                    <div class="CRMCust2"  >                                                           
+                      <div class="CRMHeading" >Primary Contact:  
+                      </div>                                                   
+                      <div class="CRMData edit">       [$CNV$PROSPECT.MAST$PROS.CONTACT1$]   
+                      </div>                           
+                      <input class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|26|1|1" type="text" value="[$CNV$PROSPECT.MAST$PROS.CONTACT$]" />                                                   
+                      <div class="CRMHeading" >      Title:
+                      </div>                            
+                      <div class="CRMData edit"> [$CNV$PROSPECT.MAST$TITLE.CONTACT1$] [$CNV$PROSPECT.MAST$TITLE.CONTACT1.DESC$]  
+                      </div>                         
+                      <select id="Title" class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|51|1|1" >  [TITLE.SELECT]   
+                      </select>                                                          
+                      <div class="CRMHeading" >      Phone:
+                      </div>  
+                      <div class="CRMData edit"> [$CNV$PROSPECT.MAST$PROS.PHONE.NO$]  
+                      </div>                              
+                      <input class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|22|1|1" type="text" value="[$CNV$PROSPECT.MAST$PROS.PHONE.NO$]" />                            
+                      <div class="CRMHeading" > Fax: 
+                      </div>  
+                      <div class="CRMData edit"> [$CNV$PROSPECT.MAST$PROS.FAX.NO$]  
+                      </div>                           
+                      <input class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|23|1|1" type="text" value="[$CNV$PROSPECT.MAST$PROS.FAX.NO$]" />                                                    
+                      <div class="CRMHeading" >     Email:  
+                      </div> 
+                      <div class="CRMData edit">  [$CNV$PROSPECT.MAST$E-MAIL1$] 
+                      </div>                         
+                      <input class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|34|1|1" type="text" value="[$CNV$PROSPECT.MAST$E-MAIL1$]" />                                                       
+                    </div>                         
+                    <div class="CRMCust3"  >                                                           
+                      <div class="CRMHeading" > Second Contact :  
+                      </div>                                                   
+                      <div class="CRMData edit">       [$CNV$PROSPECT.MAST$C2NAME$]   
+                      </div>                           
+                      <input class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|27|1|1" type="text" value="[$CNV$PROSPECT.MAST$C2NAME$]" />                                                   
+                      <div class="CRMHeading" >      Title:
+                      </div>                            
+                      <div class="CRMData edit"> [$CNV$PROSPECT.MAST$C2TITLE$]  
+                      </div>                         
+                      <select id="Title" class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|52|1|1" >  [TITLE.SELECT]   
+                      </select>                                                          
+                      <div class="CRMHeading" >      Phone:
+                      </div>  
+                      <div class="CRMData edit"> [$CNV$PROSPECT.MAST$C2PHONE$]  
+                      </div>                              
+                      <input class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|57|1|1" type="text" value="[$CNV$PROSPECT.MAST$C2PHONE$]" />                             
+                      <div class="CRMHeading" > Extension: 
+                      </div>  
+                      <div class="CRMData edit"> [$CNV$PROSPECT.MAST$C2EXT$]  
+                      </div>                           
+                      <input class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|58|1|1" type="text" value="[$CNV$PROSPECT.MAST$C2EXT$]" />                                   
+                      <div class="CRMHeading" > Mobile: 
+                      </div>  
+                      <div class="CRMData edit"> [$CNV$PROSPECT.MAST$C2CELL$]  
+                      </div>                           
+                      <input class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|61|1|1" type="text" value="[$CNV$PROSPECT.MAST$C2CELL$]" />                                 
+                      <div class="CRMHeading" > Fax: 
+                      </div>  
+                      <div class="CRMData edit"> [$CNV$PROSPECT.MAST$C2FAX$]  
+                      </div>                           
+                      <input class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|60|1|1" type="text" value="[$CNV$PROSPECT.MAST$C2FAX$]" />                                                    
+                      <div class="CRMHeading" >     Email:  
+                      </div> 
+                      <div class="CRMData edit">  [$CNV$PROSPECT.MAST$C2EMAIL$] 
+                      </div>                         
+                      <input class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|59|1|1" type="text" value="[$CNV$PROSPECT.MAST$C2EMAIL$]" />                                                                                                     
+                    </div>                                                    
+                    <div class="CRMCust4"  >                                                           
+                      <div class="CRMHeading" > Third Contact :  
+                      </div>                                                   
+                      <div class="CRMData edit">       [$CNV$PROSPECT.MAST$C3NAME$]   
+                      </div>                           
+                      <input class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|27|2|1" type="text" value="[$CNV$PROSPECT.MAST$C3NAME$]" />                                                   
+                      <div class="CRMHeading" >      Title:
+                      </div>                            
+                      <div class="CRMData edit"> [$CNV$PROSPECT.MAST$C3TITLE$]  
+                      </div>                         
+                      <select id="Title" class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|52|2|1" >  [TITLE.SELECT]   
+                      </select>                                                          
+                      <div class="CRMHeading" >      Phone:
+                      </div>  
+                      <div class="CRMData edit"> [$CNV$PROSPECT.MAST$C3PHONE$]  
+                      </div>                              
+                      <input class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|57|2|1" type="text" value="[$CNV$PROSPECT.MAST$C3PHONE$]" />                             
+                      <div class="CRMHeading" > Extension: 
+                      </div>  
+                      <div class="CRMData edit"> [$CNV$PROSPECT.MAST$C3EXT$]  
+                      </div>                           
+                      <input class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|58|2|1" type="text" value="[$CNV$PROSPECT.MAST$C3EXT$]" />                                   
+                      <div class="CRMHeading" > Mobile: 
+                      </div>  
+                      <div class="CRMData edit"> [$CNV$PROSPECT.MAST$C3CELL$]  
+                      </div>                           
+                      <input class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|61|2|1" type="text" value="[$CNV$PROSPECT.MAST$C3CELL$]" />                                 
+                      <div class="CRMHeading" > Fax: 
+                      </div>  
+                      <div class="CRMData edit"> [$CNV$PROSPECT.MAST$C3FAX$]  
+                      </div>                           
+                      <input class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|60|2|1" type="text" value="[$CNV$PROSPECT.MAST$C3FAX$]" />                                                    
+                      <div class="CRMHeading" >     Email:  
+                      </div> 
+                      <div class="CRMData edit">  [$CNV$PROSPECT.MAST$C3EMAIL$] 
+                      </div>                         
+                      <input class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|59|2|1" type="text" value="[$CNV$PROSPECT.MAST$C3EMAIL$]" />                                                                                                     
+                    </div>                                            
+                    <div class="CRMCust4" style="border-top: 2px solid black;padding-top: 5px;width: 100%;">        
+                      <div class="col-6 CRMHeading" >All Additional Contacts:    
+                      </div>                                 
+                      <div class="col-6 CRMHeading" >Title: 
+                      </div>                        
+                      <div class="col-6 CRMHeading" >Phone:  
+                      </div>                        
+                      <div class="col-6 CRMHeading" >Fax:  
+                      </div>                        
+                      <div class="col-6 CRMHeading" >Cell: 
+                      </div>                         
+                      <div class="col-6 CRMHeading" >Email: 
+                      </div>
+                      <!-- data here -->                          
+                      <div class="col-6 CRMData">[$CNV$PROSPECT.MAST$PROS.CONTACT2$Y$] 
+                      </div>  
+                      <div class="col-6 CRMData"> [$CNV$PROSPECT.MAST$TITLE.CONTACT2.DESC$Y$]    
+                      </div>                         
+                      <div class="col-6 CRMData">[$CNV$PROSPECT.MAST$ADD.CONT.PHONE$Y$] 
+                      </div> 
+                      <div class="col-6 CRMData">[$CNV$PROSPECT.MAST$ADD.CONT.FAX$Y$]  
+                      </div>                            
+                      <div class="col-6 CRMData"> [$CNV$PROSPECT.MAST$ADD.CONT.CELL$Y$] 
+                      </div>                             
+                      <div class="col-6 CRMData"> [$CNV$PROSPECT.MAST$ADD.CONT.EMAIL$Y$]    
+                      </div>                                             
+                    </div>                        
+                  </div>                      
+                  <div class="CRMInfo"> <h2> Custom Data Fields </h2>                              
+                    <div class="CRMCust1" style="width: 33%" >                                                       
+                      <div class="CRMHeading" > [USERLABEL1] 
+                      </div>                                                   
+                      <div class="CRMData edit"> [USERFIELD1]   
+                      </div>                           
+                      <input class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|41|1|1|[USERDATATYPE1]" type="text" value="[USERFIELD1]" />                                                    
+                     </div>  
+                    <div class="CRMCust1" style="width: 33%" >                                                                     
+                      <div class="CRMHeading" > [USERLABEL2] 
+                      </div>                                                   
+                      <div class="CRMData edit"> [USERFIELD2]   
+                      </div> 
+                      <input class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|42|1|1|[USERDATATYPE2]" type="text" value="[USERFIELD2]" />                                                      
+                   
+                   </div>  
+                    <div class="CRMCust1" style="width: 33%" >                            
+                      <div class="CRMHeading" > [USERLABEL3] 
+                      </div>                                                   
+                      <div class="CRMData edit"> [USERFIELD3]   
+                      </div>                           
+                      <input class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|43|1|1|[USERDATATYPE3]" type="text" value="[USERFIELD3]" />                                                  
+                    </div>                     
+                  </div>                                               
+                  <div class="CRMCustNotesAdd">   <h2> Follow-up and Notes 
+                      <span style="font-style: italic; font-size: smaller;">                     Showing [TOTAL.NOTES] Notes. Limited to  
+                        <input style="width: 25px; " id="notelimit" name=notelimit type="text" value="[NOTELIMIT]" />  
+                      </span>  </h2>                                                
+                    <div class="CRMCust1" style="width: 33%">                                                      
+                      <div class="CRMHeading" >   Prospect Status:                                                   
+                      </div>                                                   
+                      <div class="CRMData edit">[$CNV$PROSPECT.MAST$STATUS.CODE$]                          [$CNV$PROSPECT.MAST$STATUS.DESC$]                                                   
+                      </div>                          
+                      <select id="statustype" class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|28|1|1" >  [STATUS.SELECT]   
+                      </select>                           
+                      <div class="CRMHeading" > Next Step:                                                   
+                      </div>                                                   
+                      <div class="CRMData edit">[$CNV$PROSPECT.MAST$NEXT.STEP$]                                                   
+                      </div>                                                    
+                      <input class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|49|1|1" type="text" value="[$CNV$PROSPECT.MAST$NEXT.STEP$]" />                                                       
+                      <div class="CRMHeading" > Lead Source:                                                   
+                      </div>                                                   
+                      <div class="CRMData edit">[$CNV$PROSPECT.MAST$LEAD.SRC$]                                                   
+                      </div>                                                   
+                      <input class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|40|1|1" type="text" value="[$CNV$PROSPECT.MAST$LEAD.SRC$]" />                            
+                      <div class="CRMHeading" >      Business Type:
+                      </div>                            
+                      <div class="CRMData edit">  [$CNV$PROSPECT.MAST$TYPE.BUSINESS$] - [$CNV$PROSPECT.MAST$TYPE.BUS.DESC$]                           
+                      </div>                         
+                      <select class="edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|38|1|1" id="bustype" >  [BUSTYPE.SELECT]   
+                      </select>                         
+                    </div>                                                
+                    <div class="CRMCust2" style="width: 33%">                                                      
+                      <div class="CRMCustNoteEntry">                            
+                        <!-- Added timepickers -->    
+                        <div class="CRMHeading" > Note Contact: 
+                        </div>
+                        <div class="CRMData">                            
+                          <select id='notecontact'  >                                 [CONTACT.SELECT]                                                            
+                          </select>                                   
+                        </div>                          
+                        <div id="datepairNote">
+                          <div class="CRMHeading" > 	&#128197;  Date: 
+                          </div>
+                          <div class="CRMData">                            
+                            <input type="text" placeholder="Note Date" id="notedate" class="date start" />                                  
+                          </div>
+                          <div class="CRMHeading" >                             
+                            <a href="#!" onclick="$('#notetime').timepicker('setTime', new Date());" title="Default time to Current time" > &#128338; </a>                                Time: 
+                          </div>
+                          <div class="CRMData">                            
+                            <input type="text" placeholder="Note Time" id="notetime" class="time start" />                                
+                          </div>                          
+                        </div>            
+                        <select id='QuickNotes' > [QUICKNOTE.SELECT]    
+                        </select>                                                          
+                        <input type=button class=button1 name="ANOTE" value="Add Note" onclick='javascript:AddNote("PCRM","[ACUSTNO]","U")' >                                                                           
+                        <div id="NoteStatus" >                                                           
+                        </div>                                                     
+<textarea id="notedata"  name="notedata">  </textarea>                                                        
+                      </div>                                                  
+                    </div>                      
+                    <div class="CRMCust3" style="width: 33%">                       
+                      <div class="CRMHeading" > Follow Up Date:                                            
+                      </div>                                                   
+                      <div class="CRMData edit">[$CNV$PROSPECT.MAST$STATUS.DATE$]
+                      </div>                           
+                      <input class="date edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|29|1|1|D" type="text" value="[$CNV$PROSPECT.MAST$STATUS.DATE$]" />                          
+                      <div class="CRMHeading" > Follow Up Time:                                            
+                      </div>                                                       
+                      <div class="CRMData edit"> [$CNV$PROSPECT.MAST$STATUS.TIME$] 
+                      </div>                            
+                      <input class="time edittext" data-fileinfo="PROSPECT.MAST|[$CNV$PROSPECT.MAST$CUST.NO$]|36|1|1|MTH" type="text" value="[$CNV$PROSPECT.MAST$STATUS.TIME$]" />                                                      
+                      <div class="CRMHeading" > Days Until Call:                                                   
+                      </div>                                                   
+                      <div class="CRMData">[$CNV$PROSPECT.MAST$RECALL.DAYS$]                                                   
+                      </div>                          
+                      <div class="CRMHeading" > Schedule Appointment:                                                   
+                      </div>                          
+                      <div class="CRMData">                         
+                        <input type=text name="aptemail" id="aptemail" value="[SLSM.EMAIL]"  >                            
+                        <br>                            
+                        <input type=button class=button1 name="AddApt" value="Email/Add Appointment to Calendar" onclick='javascript:pcrm("PCRM","[ACUSTNO]","V")' >                                  
+                      </div>                                                    
+                    </div>                                           
+                  </div>                                             
+                  <div class="CRMCustNotes">                                               
+                    <table class="CRMNotesTable">                                                   
+                      <tr>
+                        <th style="width: 35px; text-align: center;" >                                                           
+                          <div class="CRMHeadingNW"> Note Line#                                                           
+                          </div>                                                         
+                        </th>                                                      
+                        <th style="width: 120px; text-align: center;">                                                           
+                          <div  class="CRMHeadingNW"> Date Time                                                           
+                          </div>                                                         
+                        </th>                                                     
+                                                                            
+                        <!--
+                                                                            <th><div class="CRMHeading"> Inbound/Outbound </div>  </th>
+                                                                            -->                                                      
+                        <th style="width: 90px; text-align: center;">                                                         
+                          <div  class="CRMHeadingNW"> Created by                                                           
+                          </div>                                                        
+                        </th>                                                     
+                        <th style="width: 130px; text-align: center;">                                                         
+                          <div  class="CRMHeadingNW"> Contact Person                                                           
+                          </div>                                                        
+                        </th>                                                     
+                        <!--
+                                                                            <th><div class="CRMHeading"> Contact Media </div>   </th>
+                                                                            -->                                                      
+                        <th>                                                         
+                          <div class="CRMHeadingNW"> Notes                                                           
+                          </div>                                                           
+                        </th>                                                 
+                      </tr>
+ [NOTE.LINES]                                                
+                    </table>                                           
+                  </div>                                              
+                </div>                               
+              </div>                                 
+              <div class="home_tab_content" id="Tab20" style="display: none;">                                     
+                <div class="CRMGraphs" >  <h2> Sales Information </h2>                                                 
+                  <a href=# title="To filter data click on an item on your charts, or drag across the timeline to view sales for a period, as you click the data will filter. To reset or reload hide and view your charts" onclick='javascript:showgraph("[ACUSTNO]","#CustomerGraphBox");$("#CustomerGraphBox").toggle();'> View/Hide Sales Charts </a>                                                        
+                  <iframe id="CustomerGraphBox">                                          
+                  </iframe>                                            
+                </div>                                 
+              </div>                                 
+              <div class="home_tab_content" id="Tab30" style="display: none;">                                     
+                <div class="CRMInfo"  style="[HIDEDISPLAY]" >                                       
+                  <div id="CG1" class="CRMReorder"> Customer Reorders                                          
+                  </div>                                     
+                </div>                                   
+              </div>                                 
+              <div class="home_tab_content" id="Tab40" style="display: none;">                                      
+                <div class="CRMInfo"  style="[HIDEDISPLAY]" >                                          
+                  <div id="CG2" class="CRMReorderProduct"> Customer Reorder by Item                                         
+                  </div>                                      
+                </div>                                   
+              </div>                               
+              <div class="home_tab_content" id="Tab50" style="display: none;">                                     
+                <div class="CRMInfo"  style="[HIDEDISPLAY]" >                                         
+                  <div id="CG0" class="CRMCompanyTopSeller"> Company Best Sellers                                         
+                  </div>                                   
+                </div>                                 
+              </div>                 
+              <div class="home_tab_content" id="Tab60" style="display: none;">                                                    
+              </div>                               
+            </div>   
+            <!-- Tab Container -->                           
+          </div>    
+          <!-- Tab wrap -->               
+          
+

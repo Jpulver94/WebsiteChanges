@@ -1,0 +1,120 @@
+<style>
+.gridqty {  border: 2px solid rgb(0, 0, 0); }
+.itemgridwrapper a { text-decoration:none; }
+.itemgridwrapper table  {
+font-family:"Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+font-size:10px;
+text-align:center;
+border: rgb(0, 0, 0) 2px solid;
+border-collapse:collapse;
+width:100% ;
+}
+.itemgridwrapper table th {
+width: 50px ; 
+font-size:10px;
+font-weight:normal;
+padding:2px;
+border-bottom: 2px solid rgb(0, 0, 0);
+border-right: 2px solid rgb(0, 0, 0);
+/*
+padding:8px;
+background-color: rgb(37, 85, 140) ;
+background:#add8e6;
+color: rgb(255, 255, 255);
+*/
+}
+.htext {
+/* font-family:"Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+font-size:12px;
+text-align:center;
+border-collapse:collapse;
+ width:100% ;
+padding: 10px;
+background-color: rgb(37, 85, 140) ;
+color: rgb(255, 255, 255);
+*/
+}
+.itemgridwrapper table tbody {
+display: block;	max-height: 400px;	width: auto ; overflow: auto ; 
+}
+.itemgridwrapper table thead {
+display: block;	height: auto;	overflow: auto ;
+}
+.itemgridwrapper table td {
+width: 52px ; 
+color:#669;
+background: white ;
+vertical-align: top;
+text-align: center;
+font-size: 1.2em;
+/*
+padding:4px;
+*/
+}
+.itemgridwrapper table td:hover {
+/*
+background-color: rgb(37, 85, 140) ;
+*/
+}
+.itemgridwrapper table td:hover a {
+}
+
+.vertical-text {
+-ms-transform: rotate(90deg);
+-moz-transform: rotate(90deg);
+-webkit-transform: rotate(90deg);
+transform: rotate(90deg);
+-ms-transform-origin: left top 0;
+-moz-transform-origin: left top 0;
+-webkit-transform-origin: left top 0;
+transform-origin: left top 0;
+margin-left: 27px;
+padding: 10px;
+float: left;
+/*
+background-color: rgb(37, 85, 140) ;
+*/
+background: rgb(173, 216, 230); 
+width: 60%; 
+/*
+font-family:"Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+font-size:12px;
+border-collapse:collapse;
+ width:100% ;
+color: rgb(255, 255, 255);
+*/
+}
+</style>
+<div id="GridOrderItem" >
+<div style="float:right" >
+ <input type="button" class="gobutton" name="GO1" value="Add Items and View as PDF" onclick="javascript:ExportGrid('[PROD.NO]','PDF');" onmouseover="this.className='gobutton gobuttonhov' ; window.status='Export and Save as PDF'" onmouseout="this.className='gobutton' ; window.status=''">
+ <input type="button" class="gobutton" name="GO1" value="Add Items and View as XLS" onclick="javascript:ExportGrid('[PROD.NO]','XLS');" onmouseover="this.className='gobutton gobuttonhov' ; window.status='Export and Save as XLS'" onmouseout="this.className='gobutton' ; window.status=''">
+</div>
+<div class=itemgridwrapper>
+<P> [A.PROD.NO]: [PROD.DESC] </P>
+<p>
+[GRID.MESSAGE]
+</p>
+<table class="itemgridsheet" >
+<thead>
+<tr>
+ <th colspan=[COLSPAN] > 
+ <div class="htext">[Y.AXIS]</div>
+</th>
+</tr>
+<tr>
+    <th > [X.AXIS]</th>
+[Y.HDR.LINE]
+</tr>
+</thead>
+<tbody>
+[GRID.LINES]
+
+</tbody>
+</table>
+</div>
+<div style="text-align: center" >
+ <input type="button" class="gobutton" name="GO1" value="Add Items and View as PDF" onclick="javascript:ExportGrid('[PROD.NO]','PDF');" onmouseover="this.className='gobutton gobuttonhov' ; window.status='Export and Save as PDF'" onmouseout="this.className='gobutton' ; window.status=''">
+ <input type="button" class="gobutton" name="GO1" value="Add Items and View as XLS" onclick="javascript:ExportGrid('[PROD.NO]','XLS');" onmouseover="this.className='gobutton gobuttonhov' ; window.status='Export and Save as XLS'" onmouseout="this.className='gobutton' ; window.status=''">
+</div>
+</div>

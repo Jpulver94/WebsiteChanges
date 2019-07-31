@@ -1,0 +1,232 @@
+
+<div class="PurchHistMainPage" >
+
+<form name=template action="login[SUFFIX]" method=post>
+<input type=hidden name=Aprod_string value="[APROD_STRING]">
+<input type=hidden name=prod_string value="[PROD_STRING]">
+<input type=hidden name=qty_string value="[QTY_STRING]">
+<input type=hidden name=um_string value="[UM_STRING]">
+<input type=hidden name=price_string value="[PRICE_STRING]">
+<input type=hidden name=comment_string value="[COMMENT_STRING]">
+<input type=hidden name=manufact_string value="[MANUFACT_STRING]">
+<input type=hidden name=loginpath value="[LOGINPATH]">
+<input type=hidden name=searchflag value="[SEARCHFLAG]">
+<input type=hidden name=pageid value="6">
+<input type=hidden name=startptr value="[STARTPTR]">
+<input type=hidden name=CustomerId value="[CUSTOMERID]">
+<input type=hidden name=orderno value="[ORDERNO]">
+<input type=hidden name=old_loginpath value="[LOGINPATH]">
+<input type=hidden name=prev_changesort value="[CHANGESORT]">
+<input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+<input type=hidden name=mdsorderno value="[MDSORDERNO]">
+<input type=hidden name=aprodno value="[APRODNO]">
+<input type=hidden name=slsmno value="[SLSMNO]">
+<input type=hidden name=slsmn_id value="[SLSMN_ID]">
+<table border=0  cellspacing=0 cellpadding=0 width=100%>
+<tr>
+  <td colspan=2>
+    <table border=0 cellpadding=2 cellspacing=2 width=100%>
+      <tr>
+        <td id=colhdg nowrap><font size=2><b>Customer #</b></font></td>
+        <td id=colhdg nowrap><font size=2><b>Salesrep</b></font></td>
+        <td id=colhdg nowrap><font size=2><b>Customer Name</b></font></td>
+      </tr>
+      <tr >
+        <td id=datnorm nowrap valign=top>[A.CUST.NO]</td>
+        <td id=datnorm nowrap valign=top>[SLSMN]</td>
+        <td id=datnorm nowrap valign=top>[CUST.NAME]<br>
+[CUST.CITY], [CUST.ST]&nbsp;[CUST.ZIP]
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td>
+ <table border=0 cellpadding=0 cellspacing=2>
+  <tr>
+   <td id=taghdg width=150 align=right nowrap><b>Number of Months to Export:</b></td>
+   <td>&nbsp;
+<select id="NUM" name="NUM" size="1"> <option selected="" value="6">6</option> <option value="12">12</option> <option value="18">18</option> <option value="24">24</option> <option value="30">30</option> <option value="36">36</option> </select>
+   </td>
+   <td valign=center>
+   </td>
+   <td width=20></td>
+  </tr>
+ </table>
+</td>
+<td id=datnorm>
+<b>
+  <a href=# onclick="javascript:loadreorderguide('[WEB.ORDERNO]')">
+Click here to Print a Barcoded ReOrder Guide</a></b>
+</td>
+</TR>
+<tr>
+<td>
+ <table border=0 cellpadding=0 cellspacing=2>
+  <tr>
+   <td id=taghdg width=60 align=right nowrap><b>Sort By:</b></td>
+   <td>&nbsp;
+     <select name="Changesort" size=1>
+[SORT.BY]
+     </select>
+   </td>
+   <td valign=center>
+    <input type=button class=gobutton name="GO1" value="GO" onclick='javascript:changepath("PUH","N")'
+      onmouseover="this.className='gobutton gobuttonhov' ; window.status='Change Sort Method'"
+      onmouseout="this.className='gobutton' ; window.status=''">
+   </td>
+   <td width=20></td>
+  </tr>
+ </table>
+</td>
+<td id=datnorm>
+<b>
+  <a href=# onclick='javascript:saleshist_prt("[WEB.ORDERNO]","[CUSTOMERID]","PHP","2")'>
+Click here to
+print customer purchasing history or export to Excel.</a></b>
+</td>
+</TR>
+<tr>
+<td>
+ <table border=0 cellpadding=0 cellspacing=2>
+  <tr>
+   <td id=taghdg width=60 align=right nowrap><b>Items per page:</b></td>
+   <td>&nbsp;
+     <select name="itemspage" size=1>
+[ITEMS.PG]
+     </select>
+   </td>
+   <td valign=center>
+    <input type=button class=gobutton name="GO2" value="GO" onclick='javascript:changepath("PUH","N")'
+      onmouseover="this.className='gobutton gobuttonhov' ; window.status='Change Items Per Page'"
+      onmouseout="this.className='gobutton' ; window.status=''">
+   </td>
+   <td width=20></td>
+  </tr>
+ </table>
+</td>
+<td id=datnorm>
+<b>
+  <a href=# onclick='javascript:saleshist_prt("[WEB.ORDERNO]","[CUSTOMERID]","PHP2","2")'>
+Click here to print ship-to purchasing history or export to Excel.</a></b>
+</td>
+</tr>
+</table>
+<table border=0 cellpadding=0 cellspacing=0>
+  <tr>
+   <td height=10 align=left></td>
+  </tr>
+  <tr>
+   <td id=taghdg><font size=4>
+<b>Your recent product usage [SHIPTOMSG] is as follows:</b></font>
+   </td>
+  </tr>
+  <tr>
+   <td height=10 align=left></td>
+  </tr>
+  <tr>
+   <td id=datnorm><font size=2>
+<b>Click on any product description for additional product information.</b></font>
+   </td>
+  </tr>
+  <tr>
+   <td height=10 align=left></td>
+  </tr>
+</table>
+  <table border=0 cellpadding=1 cellspacing=0 width=100%>
+  <tr>
+    <td id=colhdg valign=top width=80>&nbsp;
+    </td>
+    <td id=colhdg valign=top>&nbsp;
+    </td>
+    <td id=colhdg valign=top align=center colspan=7 width=210>
+---------- Monthly Usage ----------
+    </td>
+    <td id=colhdg valign=top width=30>
+Tot
+    </td>
+    <td id=colhdg valign=top width=20>
+Sell
+    </td>
+    <td id=colhdg valign=top align=center width=80>
+Last
+    </td>
+    <td id=colhdg valign=top width=20>
+Last
+    </td>
+    <td id=colhdg valign=top align=center width=80>
+Total
+    </td>
+  </tr>
+ <!-- end first line table for heading line on data-->
+ <!--begin second line  for heading line on data-->
+  <tr>
+    <td id=colhdg valign=top nowrap>
+Product No.
+    </td>
+    <td id=colhdg valign=top>
+Product Description
+    </td>
+    <td id=colhdg valign=top width=30>
+[MONTH1]
+    </td>
+    <td id=colhdg valign=top width=30>
+[MONTH2]
+    </td>
+    <td id=colhdg valign=top width=30>
+[MONTH3]
+    </td>
+    <td id=colhdg valign=top width=30>
+[MONTH4]
+    </td>
+    <td id=colhdg valign=top width=30>
+[MONTH5]
+    </td>
+    <td id=colhdg valign=top width=30>
+[MONTH6]
+    </td>
+    <td id=colhdg valign=top width=30>
+Avg
+    </td>
+    <td id=colhdg valign=top width=30>
+YTD
+    </td>
+    <td id=colhdg valign=top width=20>
+UM
+    </td>
+    <td id=colhdg valign=top align=center width=80>
+Price
+    </td>
+    <td id=colhdg valign=top width=20>
+UM
+    </td>
+    <td id=colhdg valign=top align=center width=80>
+Expend.
+    </td>
+[PUH.DETAIL]
+</table>
+
+[PAGE.MOVEMENT]
+<!--end of page movement -->
+<table border=0 cellpadding=0 cellspacing=0 width=100%>
+  <tr>
+    <td height=5></td>
+  </tr>
+  <tr>
+    <td align=center valign=center>
+        &nbsp;</td>
+  </tr>
+</table>
+<!--run the load script--> 
+<script language=javascript> 
+ loadvalues() 
+</script>
+
+</td>
+</tr>
+</table>
+
+
+</div>

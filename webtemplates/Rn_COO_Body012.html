@@ -1,0 +1,259 @@
+
+<form name=template action="login[SUFFIX]" method=post>
+<input type=hidden name=Aprod_string value="[APROD_STRING]">
+<input type=hidden name=prod_string value="[PROD_STRING]">
+<input type=hidden name=qty_string value="[QTY_STRING]">
+<input type=hidden name=um_string value="[UM_STRING]">
+<input type=hidden name=price_string value="[PRICE_STRING]">
+<input type=hidden name=comment_string value="[COMMENT_STRING]">
+<input type=hidden name=manufact_string value="[MANUFACT_STRING]">
+<input type=hidden name=loginpath value="[LOGINPATH]">
+<input type=hidden name=searchflag value="[SEARCHFLAG]">
+<input type=hidden name=pageid value="6">
+<input type=hidden name=startptr value="[STARTPTR]">
+<input type=hidden name=CustomerId value="[CUSTOMERID]">
+<input type=hidden name=orderno value="[ORDERNO]">
+<input type=hidden name=old_loginpath value="[LOGINPATH]">
+<input type=hidden name=prev_changesort value="[CHANGESORT]">
+<input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+<input type=hidden name=mdsorderno value="[MDSORDERNO]">
+<input type=hidden name=aprodno value="[APRODNO]">
+<input type=hidden name=slsmno value="[SLSMNO]">
+<input type=hidden name=slsmn_id value="[SLSMN_ID]">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                            <td>
+                                <table border="0" cellpadding="2" cellspacing="2" width="100%">
+                                    <tr>
+                                        <td id="colhdg" width="100" align="right" nowrap>
+                                            <font size="2"><b>Customer:</b></font>
+                                        </td>
+                                        <td nowrap>
+                                            [A.CUST.NO]
+                                        </td>
+                                        <td id="colhdg" width="100" align="right" nowrap>
+                                            <font size="2"><b>Contact:</b></font>
+                                        </td>
+                                        <td>
+                                            [CONTACT]
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="colhdg" width="100" align="right" nowrap>
+                                            <font size="2"><b>Company:</b></font>
+                                        </td>
+                                        <td nowrap>
+                                            [CO.NO]
+                                        </td>
+                                        <td id="colhdg" width="100" align="right" nowrap>
+                                            <font size="2"><b>Phone:</b></font>
+                                        </td>
+                                        <td>
+                                            [PHONE]
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="colhdg" width="100" align="right" nowrap>
+                                            <font size="2"><b>Name:</b></font>
+                                        </td>
+                                        <td>
+                                            [CUST.NAME]
+                                        </td>
+                                        <td id="colhdg" width="100" align="right" nowrap>
+                                            <font size="2"><b>Fax:</b></font>
+                                        </td>
+                                        <td>
+                                            [FAX]
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="colhdg" width="100" align="right" nowrap>
+                                            <font size="2"><b>Address 1:</b></font>
+                                        </td>
+                                        <td>
+                                            [CUST.ADDR1]
+                                        </td>
+                                        <td id="colhdg" width="100" align="right" nowrap>
+                                            <font size="2"><b>E-Mail:</b></font>
+                                        </td>
+                                        <td>
+                                            [EMAIL]
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="colhdg" width="100" align="right" nowrap>
+                                            <font size="2"><b>Address 2:</b></font>
+                                        </td>
+                                        <td>
+                                            [CUST.ADDR2]
+                                        </td>
+                                        <td id="colhdg" width="100" align="right" nowrap>
+                                            <font size="2"><b>Salesrep:</b></font>
+                                        </td>
+                                        <td>
+                                            [SLSMN]
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="colhdg" width="100" align="right" nowrap>
+                                            <font size="2"><b>City, State, Zip:</b></font>
+                                        </td>
+                                        <td>
+                                            [CITY.ST.ZIP]
+                                        </td>
+                                        <td id="colhdg" width="100" align="right">
+                                            &nbsp;
+                                        </td>
+                                        <td>
+                                            &nbsp;
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table border="0" cellpadding="2" cellspacing="0" width="100%">
+                                    <tr>
+                                        <td colspan="3" height="10">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="datnorm" colspan="3">
+                                            <font size="4"><b>[NO.ORDERS] orders have been placed for this account. </b></font>
+                                        </td>
+                                      </tr>
+                                   <tr>
+                                       <td height="10">
+                                        </td>
+                                        <td id="taghdg" align="right" nowrap>
+                                            <b>Sort By:</b> &nbsp;
+                                            <select name="Changesort" size="1">
+[SORT.BY]
+                                            </select>
+                                            <input type="button" class="gobutton" name="GO1" value="GO" onclick='javascript:changepath("COO","N")'
+                                                onmouseover="this.className='gobutton gobuttonhov' ; window.status='Change Sort Method'"
+                                                onmouseout="this.className='gobutton' ; window.status=''">
+                                        </td>
+                                        <td id="taghdg" align="right" nowrap>
+                                            <b>Items per page:</b> &nbsp;
+                                            <select name="itemspage" size="1">
+[ITEMS.PG]
+                                            </select>
+                                            <input type="button" class="gobutton" name="GO2" value="GO" onclick='javascript:changepath("COO","N")'
+                                                onmouseover="this.className='gobutton gobuttonhov' ; window.status='Change Items Per Page'"
+                                                onmouseout="this.className='gobutton' ; window.status=''">
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td id="datnorm" colspan="3">
+                                            If you don't see the desired Web Order#, <a href=# onclick='javascript:changepath("OOH","Y")'>
+                                                Click here</a> to view Orders on Hold.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="spacerline" height="4" width="100%" colspan="3">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" height="5">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="blkblush" colspan="3">
+                                            To see order detail,
+ <b>Click on the Web Order# below</b>,
+ Please Note: This inquiry is only showing orders after [WEB.ORDER.INQ.DATE].
+ To find a specific order please  enter a <b>Web Order #
+                                            (6 digit)</b> or <b>Co#Order#</b> (8 digit) or <b>CustomerPO#</b> below and <b>click GO</b>.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="blkblush" align="center" colspan="3">
+                                            <table border="0" cellpadding="0" cellspacing="2">
+                                                <tr>
+                                                    <td align="center">
+                                                        <input type="text" name="ordervar" value="[ORDERVAR]" size="20">
+                                                    </td>
+                                                    <td valign="center">
+                                                        <input type="button" class="gobutton" name="GO3" value="GO" onclick='javascript:changepath("COO","N")'
+                                                            onmouseover="this.className='gobutton gobuttonhov' ; window.status='Go to Order Inquiry'"
+                                                            onmouseout="this.className='gobutton' ; window.status=''">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" height="5">
+                                        </td>
+                                    </tr>
+                                </table>
+<table class="ng-table">
+<!--                                 <table border="0" cellpadding="3" cellspacing="0" width="100%">
+-->
+                                    <tr>
+                                        <td id="colhdg" >
+                                            <font size="2"><b>Line No.</b></font>
+                                        </td>
+                                        <td class="rollsort" >
+                                            <div id='link1' onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Open Orders by Order#/Release#'; "
+                                                onmouseout="this.className='rollsort' ; window.status=''; " onclick='javascript:changesort_toggle("COO","N","ORDER.REL")'>
+                                                <font size="2"><b>Order#-Rel#</b></font>
+                                            </div>
+                                        </td>
+                                        <td class="rollsort" >
+                                            <div id='link1' onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Open Orders by Order#/Release#'; "                                                onmouseout="this.className='rollsort' ; window.status='';">
+                                                <font size="2"><b>Invoice# <br> Invoice Date</b></font>
+                                            </div>
+                                        </td>
+                                        <td class="rollsort">
+                                            <div id='link2' onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Open Orders by Web Order#'; "
+                                                onmouseout="this.className='rollsort' ; window.status=''; " onclick='javascript:changesort_toggle("COO","N","WEB.ORDER#")'>
+                                                <font size="2"><b>Web Order#</b></font>
+                                            </div>
+                                        </td>
+                                        <td class="rollsort">
+                                            <div id='link3' onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Open Orders by Customer PO#'; "
+                                                onmouseout="this.className='rollsort' ; window.status=''; " onclick='javascript:changesort_toggle("COO","N","CUST.PO.NO")'>
+                                                <font size="2"><b>Cust. PO# </b></font>
+                                            </div>
+                                        </td>
+                                        <td id="colhdg" align="center" >
+                                            <font size="2"><b>Shipto Name</b></font>
+                                        </td>
+                                        <td class="rollsort" align="center" >
+                                            <div id='link4' onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Open Orders by Order Date'; "
+                                                onmouseout="this.className='rollsort' ; window.status=''; " onclick='javascript:changesort_toggle("COO","N","ORD.DATE")'>
+                                                <font size="2"><b>Order Date</b></font>
+                                            </div>
+                                        </td>
+                                        <td id="colhdg" align="center" >
+                                            <font size="2"><b>Ship Date</b></font>
+                                        </td>
+                                        <td class="rollsort" align="center" nowrap>
+                                            <div id='link5' onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Open Orders by Total Order Amount'; "
+                                                onmouseout="this.className='rollsort' ; window.status=''; " onclick='javascript:changesort_toggle("COO","N","TOT.AMT")'>
+                                                <font size="2"><b>Rel $ Amt.</b></font>
+                                            </div>
+                                        </td>
+                                        <td class="rollsort" align="center" >
+                                            <div id='link6' onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Open Orders by Order Status'; "
+                                                onmouseout="this.className='rollsort' ; window.status=''; " onclick='javascript:changesort_toggle("COO","N","STATUS")'>
+                                                <font size="2"><b>Status
+ <br> BO/Tot Lines</b></font>
+                                            </div>
+                                        </td>
+<td class="rollsort" align="center" nowrap="" style="width: 120px;">
+                                            <div id='link6' onmouseover="this.className='rollsort rollsorthov' ; window.status='Options'; ">
+                                                <font size="2"><b>Options</b></font>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    [COO.LINES]
+                                </table>
+                                [PAGE.MOVEMENT]
+                                <!--end of page movement -->
+<!--run the load script--> 
+<script language="javascript">  loadvalues() ; </script>
+    </td>
+  </tr>
+</table>
+

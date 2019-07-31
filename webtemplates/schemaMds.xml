@@ -1,0 +1,1 @@
+<field name="[FIELDNAME]" type="[FLDTYPE]" indexed="true" stored="true" multiValued="[MULTI]" omitNorms="true" termVectors="true" />

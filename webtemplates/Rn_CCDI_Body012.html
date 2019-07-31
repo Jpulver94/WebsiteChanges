@@ -1,0 +1,129 @@
+<form name=template action="login[SUFFIX]" method=post>
+<input type=hidden name=Aprod_string value="[APROD_STRING]">
+<input type=hidden name=prod_string value="[PROD_STRING]">
+<input type=hidden name=qty_string value="[QTY_STRING]">
+<input type=hidden name=um_string value="[UM_STRING]">
+<input type=hidden name=price_string value="[PRICE_STRING]">
+<input type=hidden name=comment_string value="[COMMENT_STRING]">
+<input type=hidden name=manufact_string value="[MANUFACT_STRING]">
+<input type=hidden name=loginpath value="[LOGINPATH]">
+<input type=hidden name=searchflag value="[SEARCHFLAG]">
+<input type=hidden name=pageid value="6">
+<input type=hidden name=startptr value="[STARTPTR]">
+<input type=hidden name=CustomerId value="[CUSTOMERID]">
+<input type=hidden name=orderno value="[ORDERNO]">
+<input type=hidden name=inquiryflag value="">
+<input type=hidden name=invinqflag value="">
+<input type=hidden name=submitvar value="">
+<input type=hidden name=searchptr value="1">
+<input type=hidden name=acustno value="">
+<input type=hidden name=vendorID value="">
+<input type=hidden name=contractno value="">
+<input type=hidden name=old_loginpath value="[LOGINPATH]">
+<input type=hidden name=prev_changesort value="[CHANGESORT]">
+<input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+<input type=hidden name=mdsorderno value="[MDSORDERNO]">
+<input type=hidden name=aprodno value="[APRODNO]">
+<input type=hidden name=slsmno value="[SLSMNO]">
+<input type=hidden name=slsmn_id value="[SLSMN_ID]">
+<table border=0  cellspacing=0 cellpadding=0 width=100%>
+<tr>
+  <td colspan=2>
+    <table border=0 cellpadding=2 cellspacing=2 width=100%>
+      <tr>
+        <td id=colhdg nowrap><font size=2><b>Customer #</b></font></td>
+        <td id=colhdg nowrap><font size=2><b>Salesrep</b></font></td>
+        <td id=colhdg nowrap><font size=2><b>Customer Name</b></font></td>
+      </tr>
+      <tr >
+        <td id=datnorm nowrap valign=top>[A.CUST.NO]</td>
+        <td id=datnorm nowrap valign=top>[SLSMN]</td>
+        <td id=datnorm nowrap valign=[CUST.NAME]<br>
+[CUST.CITY], [CUST.ST]&nbsp;[CUST.ZIP]
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<table border=0 cellpadding=0 cellspacing=2>
+  <tr>
+   <td id=taghdg width=150 align=right nowrap><b>Sort By:</b></td>
+   <td>&nbsp;
+     <select name="Changesort" size=1>
+[SORT.BY]
+     </select>
+   </td>
+   <td valign=center>
+    <input type=button class=gobutton name="GO1" value="GO" onclick='javascript:results_sort("CCDI","N")'
+      onmouseover="this.className='gobutton gobuttonhov' ; window.status='Change Sort Method'"
+      onmouseout="this.className='gobutton' ; window.status=''">
+   </td>
+  </tr>
+  <tr>
+   <td id=taghdg width=150 align=right nowrap><b>Items per page:</b></td>
+   <td>&nbsp;
+     <select name="itemspage" size=1>
+[ITEMS.PG]
+     </select>
+   </td>
+   <td valign=center>
+    <input type=button class=gobutton name="GO2" value="GO" onclick='javascript:results_sort("CCDI","N")'
+      onmouseover="this.className='gobutton gobuttonhov' ; window.status='Change Items Per Page'"
+      onmouseout="this.className='gobutton' ; window.status=''">
+   </td>
+  </tr>
+</table>
+<table border=0 cellpadding=0 cellspacing=0 width=100%>
+  <tr>
+    <td height=10 colspan=4></td>
+  </tr>
+  <tr>
+    <td id=taghdg width=80 nowrap><b>Vendor#</b></td>
+    <td id=datnorm nowrap>[VEND.NO] [VEND.NAME]</td>
+  </tr>
+  <tr>
+    <td id=taghdg width=80 nowrap><b>Contract#</b></td>
+    <td id=datnorm nowrap colspan=3>[CONTRACT#]</td>
+  </tr>
+  <tr>
+    <td height=10 colspan=4></td>
+  </tr>
+</table>
+<table border=0 cellpadding=0 cellspacing=0 width=100%>
+  <tr>
+    <td class=rollsort width=200>
+      <font size=2><b>Product Code</b></font>
+      </div>
+    </td>
+    <td class=rollsort width=130>
+      <font size=2><b>Vendor Part#</b></font>
+      </div>
+    </td>
+    <td class=rollsort nowrap width=110>
+      <font size=2><b>Customer Item#</b></font>
+      </div>
+    </td>
+    <td id=colhdg align=right width=90><font size=2><b>Price</b></font></td>
+    <td id=colhdg width=40><font size=2><b>UM</b></font></td>
+    <td id=colhdg align=right><font size=2><b>PrcQty</b></font></td>
+  </tr>
+  <tr>
+    <td class=rollsort width=200>
+      <font size=2><b>Description</b></font>
+      </div>
+    </td>
+    <td class=rollsort width=130>
+      <font size=2><b>Manufacturer Part#</b></font>
+      </div>
+    </td>
+    <td id=colhdg align=right width=110><font size=2><b>Qty Avail</b></font></td>
+    <td id=colhdg align=right width=90><font size=2><b>PurchPrce</b></font></td>
+    <td id=colhdg width=40><font size=2><b>PurchUM</b></font></td>
+    <td id=colhdg align=right><font size=2><b>PurchQty</b></font></td>
+  </tr>
+[CCDI.LINE]
+</table>
+[PAGE.MOVEMENT]
+<!--end of page movement -->
+
+

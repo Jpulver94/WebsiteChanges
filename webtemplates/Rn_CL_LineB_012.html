@@ -1,0 +1,41 @@
+  <tr id=[LNCOLOR]>
+    <td nowrap class=datsml valign=bottom width=100>
+<!-- Added Superceded Order Function -->  <span class=scedelink style="[SCEDESTYLE]"> [SCMSG]  </span>
+ <span class=gridlink style="[STDSTYLE]">
+       <input class="QtyBox" data-prodno="[A.PROD.NO]" data-um="[PRICE.UM]" tabindex=[TAB.NO] type=text size=2 maxlength=6  name="[A.PROD.NO]|[MFR.PROD.NO]|[PRICE.UM]|[PRICE]|[MFR.CODE]|" onchange=qtychk(value,name)>
+&nbsp;&nbsp;[PRICE.UM]
+ <a title="Add Item to Cart"  href="#" onclick="javascript:Add_To_Order();" > 
+  <div class="icon-cart" style="float: left">
+    <div class="cart-line-1" ></div>
+    <div class="cart-line-2" ></div>
+    <div class="cart-line-3" ></div>
+    <div class="cart-wheel" ></div>
+  </div>
+  </a>
+</span>
+ <!-- Added Grid Order Function -->
+ <span class=gridlink style="[GRIDSTYLE]">
+<a href=# onclick="javascript:ordergrid('[PROD.NO]')" title="Order item in a Grid">
+  <img src="[IMAGE.PATH]/grid.jpg" alt="Order item in a Grid">
+ <br>Click to Order
+ </a>
+ </span>
+    </td>
+    <td nowrap class=datsml valign=bottom width=37>
+<a title="Add this item to My Favorites" class=ReorderLine href=# onclick="javascript:fav_template('[A.PROD.NO]')" >
+ <img style="width: 10px ; height: 10px" alt="Add this item to My Favorites" class="ExportOrder" src="[IMAGE.PATH]Favorites.png">  </a>
+[AVG.MTHLY.USAGE]
+    </td>
+    <td nowrap class=datsml valign=bottom align=left>
+[PRICE]&nbsp;&nbsp;[PRICE.UM]&nbsp;/&nbsp;[PRICEUM.QTY]
+    </td>
+    <td nowrap class=datsml valign=bottom width=20>&nbsp;</td>
+    <td nowrap class=datsml valign=bottom width=100>
+[MFR.PROD.NO]
+    </td>
+    <td nowrap class=datsml valign=bottom width=102 align=center>
+[PURCH.HIST.DTL2]
+    </td>
+    <td class=datsml valign=top width=70>
+&nbsp;</td>
+  </tr>

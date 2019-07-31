@@ -1,0 +1,25 @@
+<TradingPartners>
+<ControlRecord>
+<SchemaVersion>Express222 V2.1</SchemaVersion>
+<DatePrepared>[DATE.PREP]</DatePrepared> 
+<TimePrepared>[TIME.PREP]</TimePrepared> 
+<ServiceContract>[CONTRACT.ID]</ServiceContract>
+</ControlRecord>
+<PartnerRecord>
+    <ActionCode>[PART.ACTION]</ActionCode> 
+<CompanyCode>[A.CUST.NO]</CompanyCode>
+<CompanyDeaNumber>[CUST.DEA]</CompanyDeaNumber>
+<CompanyDeaName>[CUST.NAME]</CompanyDeaName>
+<AddressLine1>[CUST.ADD1]</AddressLine1>
+<AddressLine2>[CUST.ADD2]</AddressLine2>
+<AddressLine3>[CUST.ADD3]</AddressLine3>
+<City>[CUST.CITY]</City>
+<State>[CUST.STATE]</State>
+<ZipCode>[CUST.ZIP]</ZipCode>
+<CompanyEmail>[CUST.EMAIL]</CompanyEmail>
+<CompanyPhone>[CUST.PHONE]</CompanyPhone>
+<OrderFormat>[PART.ORDERFORMAT]</OrderFormat>
+<SendSetupEmail>[PART.SENDSETUPEMAIL]</SendSetupEmail>
+<SuppressNotificationEmails>[PART.SUPPRESSEMAILS]</SuppressNotificationEmails>
+</PartnerRecord>
+</TradingPartners>

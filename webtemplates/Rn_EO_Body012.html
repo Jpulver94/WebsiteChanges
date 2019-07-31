@@ -1,0 +1,235 @@
+
+
+<script>
+var autosubmit = "[AUTOSUBMIT]"
+if (autosubmit == "Y") { setTimeout(eprolink(),"2000") ; } 
+function eprolink() {
+var form_content = ''
+var form_content = form_content + '    <form id="EproForm" name="goExpressEpro" action="[XML.URL]" method="post"> ';
+// var form_content = form_content + '      <input type="hidden" name="cxml-base64" value="[XML.STRNG]" /> ';
+ var form_content = form_content + '      <input type="hidden" name="cXML-urlencoded" value="[XML.STRNG]" /> ';
+submitOtherForm(form_content, "EproForm") ;
+}
+</script>
+<form name=template action="login[SUFFIX]" method=post>
+<input type=hidden name=pageid value="20">
+<input type=hidden name=CustomerId value="[CUSTOMERID]">
+<input type=hidden name=loginpath value="[LOGINPATH]">
+<input type=hidden name=orderno value="">
+<!-- Since this is the final page set order number to blank
+ and pageid to 20 to have it get a new order automatically
+ -->
+<input type=hidden name=old_loginpath value="[LOGINPATH]">
+<input type=hidden name=prev_changesort value="[CHANGESORT]">
+<input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+<input type=hidden name=slsmno value="[SLSMNO]">
+<input type=hidden name=slsmn_id value="[SLSMN_ID]">
+<div id=RnMenu> </div> <!-- Added for search bar compatibility -->
+<div id=Veil> </div> <!-- Added for search bar compatibility -->
+<div id=Container> </div> <!-- Added for search bar compatibility -->
+    <ol class="steps">
+      <li class="step1 current">        <span><a>Review Order  </a>
+        </span>
+      </li>
+      <li class="step2 current">
+        <span><a>Shipping and Payment </a>
+        </span>
+      </li>
+      <li class="step3 current">
+        <span>Order Complete        </span>
+      </li>
+    </ol>
+<table border=0 cellpadding=0 cellspacing=2 width=95%>
+ <tr>
+   <td></td>
+   <td id=datnorm align=center><font size=6><b>
+Order Confirmation for<br>Web Order Number : 
+[WEB.ORD.NO]
+</b></font><font size=3>
+<p>Your order has been sent. Please print this confirmation for your records.<br>
+    <a style="[STD.STYLE]"  href='javascript:changepath("[CHANGEPATH]")'><b>
+After printing click here to continue</b>
+</a>
+<a class=button1 style="[EPRO.STYLE]" href=# onclick="javascript:eprolink()" > Please wait while we submit your order to your EProcurement site </a>
+</p>
+<p>Thank you for using our website.</p></font>
+   </td>
+ </tr>
+ <tr>
+   <td></td>
+   <td height=10>
+<p><div id="ErrorMsg" > [HOLD.ERR.MSG] </div> </p>
+&nbsp;</td>
+ </tr>
+ <tr>
+   <td></td>
+   <td>
+     <table border=0 cellpadding=2 cellspacing=2 width=100%>
+       <tr>
+         <td id=colhdg nowrap><font size=2><b>Web Order #</b></font></td>
+         <td id=colhdg colspan=2 nowrap><font size=2><b>Sold To</b></font></td>
+         <td id=colhdg colspan=2 nowrap><font size=2><b>Ship To</b></font></td>
+       </tr>
+       <tr>
+         <td id=datnorm valign=top>[WEB.ORD.NO]</td>
+         <td id=datnorm width=250 colspan=2 valign=top nowrap>
+[BILLTO.NAME]<br>
+[BILLTO.ADDR1]<br>
+[BILLTO.ADDR2]<br>
+[BILLTO.ADDR3]
+         </td>
+         <td id=datnorm width=250 colspan=2 valign=top nowrap>
+[SHIPTO.NAME]<br>
+[SHIPTO.ADDR1]<br>
+[SHIPTO.ADDR2]<br>
+[SHIPTO.ADDR3]
+         </td>
+       </tr>
+       <tr>
+         <td id=colhdg><font size=2><b>Required Date</b></font></td>
+         <td id=datnorm width=250 colspan=2 valign=top nowrap>
+[BILLTO.CITY],&nbsp;[BILLTO.ST]&nbsp;[BILLTO.ZIP]
+         </td>
+         <td id=datnorm width=250 colspan=2 valign=top nowrap>
+[SHIPTO.CITY],&nbsp;[SHIPTO.ST]&nbsp;[SHIPTO.ZIP]</td>
+         </td>
+       </tr>
+       <tr>
+         <td id=datnorm align=center>
+[REQD.DATE]
+         </td>
+         <td id=datnorm width=250 colspan=2 valign=top nowrap>
+[BILLTO.CNTRY]
+         </td>
+         <td id=datnorm width=250 colspan=2 valign=top nowrap>
+[SHIPTO.CNTRY]
+         </td>
+       </tr>
+       <tr>
+         <td id=colhdg nowrap><font size=2><b>Customer PO#</b></font></td>
+         <td id=colhdg><font size=2><b>Dept No.</b></font></td>
+         <td id=colhdg><font size=2><b>Req. No.</b></font></td>
+         <td id=colhdg><font size=2><b>Ordered By</b></font></td>
+         <td id=colhdg><font size=2><b>Ship Method</b></font></td>
+       </tr>
+       <tr>
+         <td id=datnorm>
+[CUST.PO.NO]
+         </td>
+         <td id=datnorm>
+[DEPT.NO]
+         </td>
+         <td id=datnorm>
+[REQ.NO]
+         </td>
+         <td id=datnorm>
+[ORD.BY]
+         </td>
+         <td id=datnorm>
+[SHIP.METH]
+         </td>
+       </tr>
+       <tr>
+         <td id=colhdg colspan=5><font size=2><b>Special Instructions:</b></font></td>
+       </tr>
+       <tr>
+         <td id=datnorm colspan=5 align=left><textarea size=10 cols=60 rows=4 name="specins" STYLE="overflow:auto" wrap=true readonly>[SPCL.INST]</textarea>
+          </textarea></td>
+       </tr>
+     </table>
+   </td>
+ </tr>
+ <tr>
+   <td></td>
+   <td>
+     <table border=0 cellpadding=1 cellspacing=0 width=100%>
+       <tr>
+         <td id=colhdg width=30><font size=2><b>Line No.</b></font></td>
+         <td id=colhdg width=90><font size=2><b>Product No. </b></font></td>
+         <td id=colhdg width=180><font size=2><b>Product Description </b></font></td>
+         <td id=colhdg width=80><font size=2><b>Manufacturer</b></font></td>
+         <td id=colhdg width=20 align=center><font size=2><b>ORD<br>QTY </b></font></td>
+         <td id=colhdg width=20><font size=2><b>UM</b></font></td>
+         <td id=colhdg width=60 align=center><font size=2><b>Price</b></font></td>
+         <td id=colhdg width=60 align=center><font size=2><b>Ext. Price</b></font></td>
+       </tr>
+[EO.LINES]
+       <tr>
+         <td id=colhdg colspan=8 align=left><font size=2><b>
+ORDER TOTALS </b></font></td>
+       </tr>
+       <tr>
+         <td class=datsml width=120 align=left colspan=2>
+[TOT.RECS] Items
+         </td>
+         <td width=180></td>
+         <td width=80></td>
+         <td class=datsml align=right colspan=3><b>Total Merchandise:</b>&nbsp;</td>
+         <td class=datsml width=60 align=right>[TOT.MERCH]</td>
+       </tr>
+       <tr>
+         <td class=datsml align=right colspan=7><b>Tax Amount:</b>&nbsp;</td>
+         <td class=datsml width=60 align=right>[TAX.AMT]</td>
+       </tr>
+       <tr>
+         <td class=datsml align=right colspan=7><b>Shipping/Handling:</b>&nbsp;</td>
+         <td class=datsml width=60 align=right>[FRT.AMT]</td>
+       </tr>
+       <tr>
+         <td class=datsml align=right colspan=7><b>Total Order Amount:</b>&nbsp;</td>
+         <td class=datsml width=60 align=right>[TOT.ORD.AMT]</td>
+       </tr>
+       <tr>
+         <td height=5 colspan=8></td>
+       </tr>
+       <tr>
+         <td id=taghdg colspan=8 align=center><b>
+[SPCL.TEXT]
+</b></td>
+       </tr>
+       <tr>
+         <td height=5 colspan=8></td>
+       </tr>
+       <tr>
+         <td id=colhdg colspan=8><font size=2><b>Order Comments:</b></font></td>
+       </tr>
+       <tr>
+         <td id=datnorm colspan=8 align=left><textarea size=10 cols=60 rows=4 name="comment_string" STYLE="overflow:auto" wrap=true readonly>[COMMENTS]</textarea></td>
+       </tr>
+     </table>
+   </td>
+ </tr>
+ <tr>
+   <td></td>
+   <td id=spacerline height=4 width=100%></td>
+ </tr>
+ <tr>
+   <td></td>
+   <td></td>
+ </tr>
+ <tr>
+   <td></td>
+   <td id=taghdg>
+    <center>
+    <b>Your Web Confirmation Number is: 
+[WEB.ORD.NO]
+    </b><br>
+    <b>Please Print this confirmation for your records.</b>
+    <p><b><font color=black>TO PRINT:</font><br>
+    </b><font color=black size=2>click the printer icon OR press CTRL and P at the same time. </font>    </center>
+   </td>
+ </tr>
+ <tr>
+   <td></td>
+   <td id=datnorm>
+    <center>
+    <a style="[STD.STYLE]"  href='javascript:changepath("[CHANGEPATH]")'><b>
+After printing click here to continue</b>
+</a>
+<a class=button1 style="[EPRO.STYLE]" href=# onclick="javascript:eprolink()" > Submit your Order to your EProcurement Site </a>
+    </center>
+   </td>
+ </tr>
+</table>
+
+

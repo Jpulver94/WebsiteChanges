@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Envelope>
+  <Header>
+    <APIKey>[APIKEY]</APIKey>
+    <Action>ShippingConfirmation</Action>
+    <Version>1</Version>
+    <OrderHeader>
+      <OrderNumber>[PSORDNO]</OrderNumber>
+      <PONumber>[CUSTPONO]</PONumber>
+      <OrderStatus>[ORDERSTATUS]</OrderStatus>
+      <ShippedDate>[SHIPDATE]</ShippedDate>
+      <ShippingCost>[FRT.COST]</ShippingCost>
+      <TrackingNumber>[TRACK.NO]</TrackingNumber>
+      <RejectReason>[REJECTREASON]</RejectReason>
+    </OrderHeader>
+  </Header>
+  <Body>
+    <OrderDetail>
+      [DTL.LINES]
+    </OrderDetail>
+  </Body>
+</Envelope>

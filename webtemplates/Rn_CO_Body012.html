@@ -1,0 +1,199 @@
+
+
+
+
+<form name=template action="login[SUFFIX]" method=post onSubmit="return process_order(0)">
+<input type=hidden name=Aprod_string value="[APROD_STRING]">
+<input type=hidden name=prod_string value="[PROD_STRING]">
+<input type=hidden name=qty_string value="[QTY_STRING]">
+<input type=hidden name=um_string value="[UM_STRING]">
+<input type=hidden name=price_string value="[PRICE_STRING]">
+<input type=hidden name=manufact_string value="[MANUFACT_STRING]">
+<input type=hidden name=loginpath value="[LOGINPATH]">
+<input type=hidden name=searchflag value="[SEARCHFLAG]">
+<input type=hidden name=pageid value="5">
+<input type=hidden name=aprodno value="[APRODNO]">
+<input type=hidden name=startptr value="[STARTPTR]">
+<input type=hidden name=CustomerId value="[CUSTOMERID]">
+<input type=hidden name=orderno value="[ORDERNO]">
+<input type=hidden name=customlist_save value="">
+<input type=hidden name=searchptr value="1">
+<input type=hidden name=submitvar value="">
+<input type=hidden name=old_loginpath value="[LOGINPATH]">
+<input type=hidden name=prev_changesort value="[CHANGESORT]">
+<input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+<input type=hidden name=attn value="[ATTN]">
+<input type=hidden name=reqddt value="[REQDDT]">
+<input type=hidden name=deptno value="[DEPTNO]">
+<input type=hidden name=custpo value="[CUSTPO]">
+<input type=hidden name=reqno value="[REQNO]">
+<input type=hidden name=Shiptoname value="[SHIPTONAME]">
+<input type=hidden name=Shiptodesc value="[SHIPTODESC]">
+<input type=hidden name=Shiptodesc2 value="[SHIPTODESC2]">
+<input type=hidden name=Shiptocity value="[SHIPTOCITY]">
+<input type=hidden name=Shiptostate value="[SHIPTOSTATE]">
+<input type=hidden name=Shiptozip value="[SHIPTOZIP]">
+<input type=hidden name=Shipmethod value="[SHIPMETHOD]">
+<input type=hidden name=slsmno value="[SLSMNO]">
+<input type=hidden name=slsmn_id value="[SLSMN_ID]">
+<!-- 
+<div class="checkoutbar" >
+<a class="success" href=# onclick="javascript:changepath('CO')" >1. Review Order Details </a> 
+<a class="warning" href=# onclick="javascript:changepath('SO')">2. Review Shipping and Payment Details </a> 
+<a class="warning" href="#">3. Order Completed</a>
+</div>
+-->
+
+    <ol class="steps">    
+      <li class="step1 current">
+        <span><a href=# onclick="javascript:changepath('CO')" >Review Order  </a>
+        </span>
+      </li>    
+      <li class="step2">
+        <span><a href=# onclick="javascript:changepath('SO')">Shipping and Payment  </a>
+        </span>
+      </li>    
+      <li class="step3">
+        <span>Order Complete
+        </span>
+      </li>
+    </ol>
+
+<table border=0 cellpadding=0 cellspacing=2>
+  <tr>
+   <td id=taghdg ><b>Sort By:</b></td>
+   <td >&nbsp;     <select name="Changesort" size=1>[SORT.BY]     </select>
+   </td>
+   <td >
+    <input type=button class=gobutton name="GO1" value="GO" onclick='javascript:changepath("CO","N")'
+      onmouseover="this.className='gobutton gobuttonhov' ; window.status='Change Sort Method'"
+      onmouseout="this.className='gobutton' ; window.status=''">
+   </td>
+   <td class=datsml width=10></td>
+   <td nowrap class=datsml >
+     <input type=checkbox name="save_Sort" value="Y">
+   </td>
+   <td nowrap id=taghdg><b>Save as Default</b></td>
+   <td class=datsml width=10></td>
+   <td id=taghdg ><b>Items per page:</b></td>
+   <td >&nbsp; <select name="itemspage" size=1>[ITEMS.PG]
+     </select>   </td>
+   <td >
+    <input type=button class=gobutton name="GO2" value="GO" onclick='javascript:changepath("CO","N")'
+      onmouseover="this.className='gobutton gobuttonhov' ; window.status='Change Items Per Page'"
+      onmouseout="this.className='gobutton' ; window.status=''">
+   </td>
+   <td class=datsml width=10></td>
+   <td nowrap class=datsml >
+     <input type=checkbox name="save_Items" value="Y">
+   </td>
+   <td nowrap id=taghdg ><b>Save as Default</b></td>
+  </tr>
+</table>
+<!-- beginning of line comments -->
+<table border=0 cellpadding=0 cellspacing=0 width=100%>
+<tr>
+  <td id=datnorm colspan=2>
+<!-- Checkout Bar -->
+<b>[SYSTEM.MSG] <br>
+<div id="ErrorMsg">  [ERROR_STRING] </div>
+</b>
+</td>
+  <td></td>
+</tr>
+</table>
+<div style="float:right"> 
+<a href=# onclick="javascript:loadlabel('[WEB.ORDERNO]','1')" TITLE='Click here to generate barcode labels' >  <img src='[IMAGE.PATH]Label.png' alt='Click here to generate barcode labels'  border=0> </a>  
+</div>
+<!-- end of line comments -->
+<!-- <table border=0 cellpadding=1 cellspacing=0 width=100%>  -->
+<table class="ng-table">
+  <tr>
+    <td id=colhdg >
+      <font size=2><b>Line No.</b></font>
+    </td>
+    <td class=rollsort >
+      <div id='link1'
+      onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Current Order by Product No.'; "
+      onmouseout="this.className='rollsort' ; window.status=''; "
+      onClick='javascript:changesort_toggle("CO","N","1")'>
+      <font size=2><b>Product<br>No.</b></font>
+      </div>
+    </td>
+    <td class=rollsort>
+      <div id='link2'
+      onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Current Order by Product Description'; "
+      onmouseout="this.className='rollsort' ; window.status=''; "
+      onClick='javascript:changesort_toggle("CO","N","4")'>
+      <font size=2><b>Product Description</b></font>
+      </div>
+    </td>
+    <td class=rollsort >
+      <div id='link3'
+      onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Current Order by Manufacturer Name'; "
+      onmouseout="this.className='rollsort' ; window.status=''; "
+      onClick='javascript:changesort_toggle("CO","N","2")'>
+      <font size=2><b>Manufacturer</b></font>
+      </div>
+    </td>
+    <td id=colhdg align=center>
+      <font size=2><b>In<br>Stock</b></font>
+    </td>
+    <td id=colhdg  align=center>
+      <font size=2><b>ORD<br>QTY</b></font>
+    </td>
+    <td id=colhdg>
+      <font size=2><b>UM</b></font>
+    </td>
+    <td id=colhdg align=center>
+      <font size=2><b>Price</b></font>
+    </td>
+    <td class=rollsort align=center>
+      <div id='link4'
+      onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Current Order by Extended Price'; "
+      onmouseout="this.className='rollsort' ; window.status=''; "
+      onClick='javascript:changesort_toggle("CO","N","5")'>
+      <font size=2><b>Ext. Price</b></font>
+      </div>
+    </td>
+    <td id=colhdg align=center>
+      <font size=2><b>Delete<br> Item</b></font>
+    </td>
+  </tr>
+[CO.LINES]
+  <tr>
+    <td id=colhdg colspan=8 align=left><font size=2><b>
+ORDER TOTALS [TOT.ITEMS] Items </b></font></td>
+    <td id=colhdg align=right>
+[TOT.ORD.AMT]
+    </td>
+    <td id=colhdg> </td>
+  </tr>
+</table>
+[PAGE.MOVEMENT]
+<!--end of page movement -->
+<table border=0 cellpadding=0 cellspacing=0 width=100%>
+<tr>
+  <td>
+    <table border=0 cellpadding=0 cellspacing=2 width=200>
+     <tr>
+      <td class=rollsort nowrap><b>Order Comments:</b>&nbsp;</td>
+      <td align=left><textarea cols=40 rows=4 name="comment_string" style="overflow:auto" wrap=true>[COMMENT_STRING]</textarea></td>
+      <td valign=center>
+       <input type=button class=gobutton name="GO3" value="GO" onclick='javascript:changepath("CO","N")'
+        onmouseover="this.className='gobutton gobuttonhov' ; window.status='Update Order Comments'"
+        onmouseout="this.className='gobutton' ; window.status=''">
+      </td>
+     </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<table border=0 cellpadding=0 cellspacing=0 width=100%>
+<tr>
+  <td id=spacerline height=4 width=100% nowrap></td>
+</tr>
+</table>
+
+
+

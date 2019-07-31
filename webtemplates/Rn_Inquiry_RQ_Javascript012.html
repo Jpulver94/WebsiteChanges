@@ -1,0 +1,106 @@
+
+
+<script lang=javascript>
+function track_detail(website_link) { 
+  var pgm = website_link ; 
+  var name = "sub" ; 
+  var parms = "toolbar=no,top=50,left=50,width=900,height=600,directories=no,status=yes,scrollbars=yes,resizable=yes,menubar=no" ; 
+  trackdtl = window.open(pgm,name,parms) ; 
+  trackdtl.focus() ; 
+} 
+function peddetailinq_save(ordno,user,pedkey,mdsorderno) { 
+  var pgm = "../../cgi-bin/olecgi.exe/pedprint[SUFFIX]?orderno=" + ordno + "&CustomerId=" + user + "&pedigreeno=" + pedkey + "&mdsorderno=" + mdsorderno ; 
+  var name = "sub" ; 
+  var parms = "toolbar=no,top=90,left=200,width=640,height=525,directories=no,status=no,scrollbars=yes,resizable=no,menubar=no" ; 
+  peddtl = window.open(pgm,name,parms) ; 
+  peddtl.focus() ; 
+} 
+// New Pedigree print option - 01-07-14
+function peddetailinq(ordno,user,pedkey,mdsorderno) {
+var form_content =''
+var form_content = form_content + '<input type=hidden name=pageid value="31">';
+var form_content = form_content + '<input type=hidden name=LOGINPATH value="PEDP">';
+var form_content = form_content + '<input type=hidden name=PEDIGREENO value="' + pedkey + '">';
+var form_content = form_content + '<input type=hidden name=MDSORDERNO value="' + mdsorderno + '">';
+var form_content = form_content + '<input type=hidden name=CustomerId value="[CUSTOMERID]">';
+var form_content = form_content + '<input type=hidden name=orderno value="[WEB.ORDERNO]">';
+submitOtherFormUnique(form_content) ;
+}
+function loadvalues() { 
+ //function to set values in drop down boxes ; 
+   document.template.itemspage.value = "[ITEMSPAGE]";
+   document.template.Changesort.value = "[CHANGESORT]";
+}
+function changepath(x,sflag) { 
+ document.template.startptr.value = 1  ; 
+ document.template.searchflag.value = sflag  ; 
+ document.template.loginpath.value = x  ; 
+ document.template.submit(); 
+}
+function prod_inquiry(loginpath,sflag,aprodno) { 
+ document.template.aprodno.value = aprodno  ; 
+ changepath(loginpath,sflag) ; 
+}
+function changeorder(x,ord) { 
+ document.template.startptr.value = 1  ; 
+ document.template.orderno.value = ord  ; 
+ document.template.loginpath.value = x  ; 
+ document.template.submit(); 
+}
+function Move_page(startptr,direction,loginpath) {
+// code to get startpointer
+       if (startptr < 1 ) {
+          startptr = 1
+       }
+ //if startptr is greater than total lines then set it to 1  
+       if (startptr > [TOTALLINES]) { 
+          startptr = 1
+       }
+ //if itemspage or changesort changed value then set startptr to 1 
+       var sort = document.template.Changesort.value
+       var prev_sort = document.template.prev_changesort.value
+       var items = document.template.itemspage.value
+       var prev_items = document.template.prev_itemspage.value
+       if (sort != prev_sort||items != prev_items) { 
+          startptr = 1
+       }
+   document.template.startptr.value = startptr  ;
+   document.template.searchflag.value = 'N' ;
+   document.template.loginpath.value = loginpath ;
+   document.template.submit()  ; 
+}
+function changeImages() {
+ if (document.images && (preloadFlag == true)) {
+     for (var i=0; i<changeImages.arguments.length; i+=2) {
+         document[changeImages.arguments[i]].src = changeImages.arguments[i+1];
+     }
+ }
+}
+
+function changesort(path,sflag,sort) { 
+  document.template.startptr.value = 1 ; 
+  document.template.searchflag.value = sflag ; 
+  document.template.loginpath.value = path ; 
+  document.template.Changesort.value = sort ; 
+  document.template.submit(); 
+}
+
+function browsedetail(browseno,itemkey) { 
+   var pgm = "../../cgi-bin/olecgi.exe/BrowseDtl[SUFFIX]?browseno=" + browseno + "&submitvar=" + itemkey ; 
+   var name = "sub" ; 
+   var parms = "toolbar=no,top=200,left=200,width=640,height=300,directories=no,status=yes,scrollbars=yes,resizable=no,menubar=no" ; 
+   browsedtl = window.open(pgm,name,parms) ; 
+   browsedtl.focus() ; 
+} 
+
+function release_detail(path,x) {
+  document.template.loginpath.value = path ;
+  document.template.pageid.value = 6 ;
+  document.template.startptr.value = 1 ;
+  document.template.mdsorderno.value = x ;
+  document.template.submit() ;
+}
+</script>
+
+
+

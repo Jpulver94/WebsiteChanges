@@ -1,0 +1,17 @@
+ 
+ 
+This is a confirmation of a data upload that was completed
+on [UPL.DATE] at [UPL.TIME].
+ 
+The type of upload was [UPL.TYPE]
+ 
+The upload was requested by [USER.NAME]
+ 
+Total records processed: [TOTAL.RECS]
+Total records with errors: [TOTAL.ERRS]
+
+[SUBJ.PHRASE]
+[ERR.FILE]
+ 
+Send mail to [SUPPORT.URL] with questions
+or comments about this data upload.

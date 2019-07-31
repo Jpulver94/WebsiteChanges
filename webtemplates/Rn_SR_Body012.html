@@ -1,0 +1,113 @@
+
+<SCRIPT>
+// moved script tag to body for hold.footprint logic
+//
+function changepath(x,sflag) {
+ if(process_order(0)) { ;
+   var sptr = document.template.startptr.value ;
+   document.template.searchptr.value = sptr  ;
+   document.template.submitvar.value = "[HOLD.FOOTPRINT]" ;
+   document.template.startptr.value = 1  ;
+   document.template.searchflag.value = sflag  ;
+   document.template.loginpath.value = x  ;
+   document.template.submit();
+ }
+}
+</SCRIPT>
+
+
+
+<form name=template action="login[SUFFIX]" method=post onSubmit="return process_order(0)">
+<input type=hidden name=Aprod_string value = "[APROD_STRING]">
+<input type=hidden name=prod_string value = "[PROD_STRING]">
+<input type=hidden name=qty_string value = "[QTY_STRING]">
+<input type=hidden name=um_string value = "[UM_STRING]">
+<input type=hidden name=price_string value = "[PRICE_STRING]">
+<input type=hidden name=comment_string value = "[COMMENT_STRING]">
+<input type=hidden name=manufact_string value = "[MANUFACT_STRING]">
+<input type=hidden name=aprodno value="[APRODNO]">
+<input type=hidden name=loginpath value="[LOGINPATH]">
+<input type=hidden name=searchflag value="[SEARCHFLAG]">
+<input type=hidden name=pageid value="2A">
+<input type=hidden name=startptr value="[STARTPTR]">
+<input type=hidden name=CustomerId value="[CUSTOMERID]">
+<input type=hidden name=orderno value="[ORDERNO]">
+<input type=hidden name=customlistback value="[CUSTOMLIST]">
+<input type=hidden name=inquiryflag value="[INQUIRYFLAG]">
+<input type=hidden name=invinqflag value="[INVINQFLAG]">
+<input type=hidden name=submitvar value="">
+<input type=hidden name=searchptr value="[SEARCHPTR]">
+<input type=hidden name=old_loginpath value="[LOGINPATH]">
+<input type=hidden name=prev_changesort value="[CHANGESORT]">
+<input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+<input type=hidden name=slsmno value="[SLSMNO]">
+<input type=hidden name=slsmn_id value="[SLSMN_ID]">
+<table border=0 cellpadding=0 cellspacing=2>
+  <tr>
+   <td id=taghdg ><b>Sort By:</b></td>
+   <td>&nbsp;     <select name="Changesort" size=1>[SORT.BY]     </select>   </td>
+   <td>
+    <input type=button class=gobutton name="GO1" value="GO" onclick='javascript:results_sort("SR","N","[HOLD.FOOTPRINT]")'
+      onmouseover="this.className='gobutton gobuttonhov' ; window.status='Change Sort Method'"
+      onmouseout="this.className='gobutton' ; window.status=''">
+   </td>
+   <td class=datsml width=10></td>
+   <td nowrap class=datsml>
+     <input type=checkbox name="save_Sort" value="Y">
+   </td>
+   <td nowrap id=taghdg><b>Save as Default</b>&nbsp; </td>
+   <td id=taghdg>&nbsp; <b>Items per page:</b></td>
+   <td>&nbsp; <select name="itemspage" size=1>[ITEMS.PG] </select>  </td>
+   <td>
+    <input type=button class=gobutton name="GO2" value="GO" onclick='javascript:results_sort("SR","N","[HOLD.FOOTPRINT]")'
+      onmouseover="this.className='gobutton gobuttonhov' ; window.status='Change Items Per Page'"
+      onmouseout="this.className='gobutton' ; window.status=''">
+   </td>
+   <td class=datsml width=10></td>
+   <td nowrap class=datsml>
+     <input type=checkbox name="save_Items" value="Y">
+   </td>
+   <td nowrap id=taghdg><b>Save as Default</b></td>
+  </tr>
+</table>
+<table border=0 cellpadding=0 cellspacing=0 width=100%>
+  <tr>
+    <td height=10>[ERROR.MSG]</td>
+  </tr>
+  <tr>
+    <td id=datnorm><b>
+[SPCL.MSG]
+    </b></td>
+  </tr>
+  <tr>
+    <td height=10></td>
+  </tr>
+      <tr>
+        <td id=footprint align=center valign=top nowrap width=100%>
+        <div id="footprintdivcontainer" >
+<!-- Added Display of Footprint String as Ajax --> 
+        <div id="footprintholder" ></div>
+<script language=javascript>
+var dummy = widgetload('login[SUFFIX]?orderno=[WEB.ORDERNO]&CUSTOMERID=[CUSTOMERID]&LOGINPATH=FTX&pageid=31&TARGETVAL=[SUBMITVAR]&SIDEBAR=N','#footprintholder');
+</script>
+<!-- End added content for Footprint -->
+ <!-- Added Display of product class String as Ajax --> 
+ <div id="pcxholder"></div>
+ <script type="text/javascript">
+ var dummy = widgetload('login[SUFFIX]?orderno=[WEB.ORDERNO]&CUSTOMERID=[CUSTOMERID]&LOGINPATH=PCX&pageid=31&TARGETVAL=[WEB.CLASS]&SIDEBAR=N','#pcxholder');
+ </script>
+ <!-- End added content for product class -->
+ </div> 
+        </td>
+      </tr>
+</table>
+<div id="searchresults">
+<table border=0 cellpadding=1 cellspacing=0 width=100%>
+[SR.LINES]
+</table>
+</div>
+[PAGE.MOVEMENT]
+
+
+
+

@@ -1,0 +1,50 @@
+<table Border=0 CellPadding=0 CellSpacing=0 width=100%>
+ <tr>
+  <td>
+   <table Border=0 CellPadding=3 CellSpacing=0 align=center>
+    <tr>
+<!-- update order qtys -->
+    <td valign=center>
+      <input type=button class="button2" name="AO" value="Update Order Qtys" onclick='javascript:changepath(name,"N")'
+       onmouseover="this.className='button2 buttonhov2' ; window.status='Updates Current Order with any quantity changes'"
+       onmouseout="this.className='button2' ; window.status=''">
+    </td>
+<!-- hold order -->
+[HOLD_ORDER]
+<!-- send order now -->
+    <td valign=center>
+      <input type=button class="button3" name="SO" value="Send Order Now" onclick='javascript:sendorder(name,"N")'
+       onmouseover="this.className='button3 buttonhov3' ; window.status='Send Order Now'"
+       onmouseout="this.className='button3' ; window.status=''">
+    </td>
+<!-- delete order -->
+    <td valign=center>
+      <input type=button class="button2" name="DON" value="Delete Order" onclick='javascript:changepath(name,"N")'
+       onmouseover="this.className='button2 buttonhov2' ; window.status='Delete the Current Order'"
+       onmouseout="this.className='button2' ; window.status=''">
+    </td>
+<!-- save as template -->
+[CREATE_TEMPL]
+    </tr>
+   </table>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <table Border=0 CellPadding=3 CellSpacing=0 align=center>
+    <tr>
+<!-- product history button insert here -->
+[PROD_HIST]
+<!-- product search -->
+    <td valign=center>
+      <input type=button class="button2" name="PS" value="Product Search" onclick='javascript:changepath(name,"Y")'
+       onmouseover="this.className='button2 buttonhov2' ; window.status='Go to Product Search'"
+       onmouseout="this.className='button2' ; window.status=''">
+    </td>
+<!-- quick order -->
+[QUICK_ORDER]
+    </tr>
+   </table>
+  </td>
+ </tr>
+</table>

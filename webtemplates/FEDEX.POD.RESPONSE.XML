@@ -1,0 +1,32 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+<soapenv:Header/>
+<soapenv:Body>
+<v1:fdxSPODResponse xmlns="http://fedex.com/ws/fdxspod" xmlns:m="http://
+com/fedex/ws/transform" xmlns:v1="http://fedex.com/ws/fdxspod/v1">
+<v1:FDXSPODReply>
+<v1:HighestSeverity>SUCCESS</v1:HighestSeverity>
+<v1:Notifications>
+<v1:Severity>SUCCESS</v1:Severity>
+<v1:Source>wsi</v1:Source>
+</v1:Notifications>
+<v1:TransactionDetail>
+<!--Optional:-->
+<v1:CustomerTransactionId>SPOD</v1:CustomerTransactionId>
+<!--Optional:-->
+<v1:Localization>
+<v1:LanguageCode>en</v1:LanguageCode>
+<!--Optional:-->
+<v1:LocaleCode>en</v1:LocaleCode>
+</v1:Localization>
+</v1:TransactionDetail>
+<v1:Version>
+<v1:ServiceId>wsi</v1:ServiceId>
+<v1:Major>1</v1:Major>
+<v1:Intermediate>1</v1:Intermediate>
+<v1:Minor>0</v1:Minor>
+</v1:Version>
+<v1:Letter>[HERE.IS.THE.DATA]</v1:Letter>
+</v1:FDXSPODReply>
+</v1:fdxSPODResponse>
+</soapenv:Body>
+</soapenv:Envelope>

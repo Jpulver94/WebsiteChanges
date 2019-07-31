@@ -1,0 +1,44 @@
+
+
+<table border=0 cellpadding=0 cellspacing=0 width=100%>
+  <tr>
+    <td id=datnorm>
+      <font size=2><i><b>
+ [A.PROD.NO]      [TOP.PROD.DESC]
+      </b></i></font>
+    </td>
+  </tr>
+  <tr>
+    <td id=spacerline height=4 width=100%></td>
+  </tr>
+</table>
+<table border=0 cellpadding=0 cellspacing=0 width=100%>
+<tr>
+<td>
+<img src='[IMAGE.PATH][IMAGENAME]' alt='[IMAGENAME]' class="PopPIimageDetail">
+ </td>
+<td> [LARGE.DESC] </td>
+    </tr>
+   </table>
+
+
+<table border=0 cellpadding=2 cellspacing=0 width=100%>
+  <tr>
+    <td id=colhdg valign=top><font size=1>Ord. Qty</font></td>
+    <td id=colhdg valign=top align=center><font size=1>UM</font></td>
+    <td id=colhdg valign=top align=center><font size=1>Price</font></td>
+  </tr>
+[PI.LINES]
+<tr>
+<td colspan=3>
+<!-- Added Suggested Items -->
+<div id="Suggwrap">
+<br><h2 style="color: #C60;font-size: medium;margin: 0px 0px 0.25em;">Customers who have purchased this have also bought...</h2>
+<div id="Suggdiv"></div>  <script type="text/javascript">suggitems([PROD.NO]) ; </script>
+</div>
+<!-- end of suggested items -->
+</td>
+</tr>
+</table>
+
+

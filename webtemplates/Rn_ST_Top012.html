@@ -1,0 +1,225 @@
+<!--
+******************************************
+  Created by The Systems House Web Team  *
+******************************************
+-->
+
+<html> <head> 
+<LINK rel="STYLESHEET" type="text/css" href="[stylesheet_path]">
+<title>Save Template</title>
+</head> 
+<script lang=javascript>
+function changepath(x) { 
+ document.template.loginpath.value = "CO" ; 
+ //regardless of what they click force them to Current Order. ;
+ document.template.submit(); 
+}
+</script>
+<body>
+<div id="tsh"></div>
+<div id="superholder">
+<!-- end top border -->
+
+</div><!--RnHeader -->
+<script LANGUAGE="JavaScript">
+function helpme(x) {
+  helper = window.open(x, 'helper', 'toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=yes,resizable=yes,width=340')}
+
+function newImage(arg) {
+ if (document.images) {
+     rslt = new Image();
+     rslt.src = arg;
+     return rslt;
+ }
+}
+
+function changeImages() {
+ var preloadFlag = true;
+ if (document.images && (preloadFlag == true)) {
+     for (var i=0; i<changeImages.arguments.length; i+=2) {
+         document[changeImages.arguments[i]].src = changeImages.arguments[i+1];
+     }
+ }
+}
+
+function changelist(path,sflag,templ) { ; 
+    document.forms[0].loginpath.value = path ; 
+    document.forms[0].searchflag.value = sflag ; 
+    document.forms[0].customlist.value = templ ; 
+    document.forms[0].submit() ; 
+} 
+
+function changecolor(thisdiv,bgcolor){
+   var thisobj
+   if (document.all) {
+      thisobj=thisdiv
+     thisobj.style.backgroundColor = bgcolor
+   }
+}
+
+</script>
+<!-- End Preload Script -->
+<!-- Start navbar with javascripts -->
+<div id="RnMenu">
+    <font size=-3 >C</font><div class="menuBar" style="width:100%;">
+<a class="menuButton" href="" onclick="return buttonClick(event, 'aboutMenu')"
+    onmouseover="buttonMouseover(event, 'aboutMenu')">
+About Online Ordering</a>
+<a class="menuButton" href="" onclick="return buttonClick(event, 'pswdMenu')"
+    onmouseover="buttonMouseover(event, 'pswdMenu')">
+Change Password</a>
+<a class="menuButton" href="" onclick="return buttonClick(event, 'placeordMenu')"
+    onmouseover="buttonMouseover(event, 'placeordMenu')">
+Place an Order</a>
+<a class="menuButton" href="" onclick="return buttonClick(event, 'inquiryMenu')"
+    onmouseover="buttonMouseover(event, 'inquiryMenu')">
+Inquiries</a>
+<a class="menuButton" href="" onclick="return buttonClick(event, 'helpMenu')"
+    onmouseover="buttonMouseover(event, 'helpMenu')">
+Help</a>
+<a class="menuButton" href="" onclick="return buttonClick(event, 'contactMenu')"
+    onmouseover="buttonMouseover(event, 'contactMenu')">
+Contact Us</a>
+<a class="menuButton" href="" onclick="return buttonClick(event, 'logoutMenu')"
+    onmouseover="buttonMouseover(event, 'logoutMenu')">
+Home</a>
+</div>
+<div id="aboutMenu" class="menu"
+     onmouseover="menuMouseover(event)">
+<a class="menuItem" href="//hosting.tshinc.com/rn_beta/AboutRN.html">About Online Ordering</a>
+<a class="menuItem" href=# onclick="javascript:changepath('ADM')">Administration</a>
+</div>
+<div id="pswdMenu" class="menu"
+     onmouseover="menuMouseover(event)">
+<a class="menuItem" href=# onclick="javascript:changepath('CP')">Change Password</a>
+</div>
+<div id="placeordMenu" class="menu"
+     onmouseover="menuMouseover(event)">
+<a class="menuItem" href=# onclick="javascript:changepath('OE')">Order Entry Header</a>
+<a class="menuItem" href=# onclick="javascript:changepath('PH')">Product History</a>
+<a class="menuItem" href=# onclick="javascript:changepath('PS')">Product Search</a>
+<a class="menuItem" href=# onclick="javascript:changepath('CO')">Current Order</a>
+<a class="menuItem" href=# onclick="javascript:changepath('OOH')">Orders On Hold</a>
+</div>
+<div id="inquiryMenu" class="menu"
+     onmouseover="menuMouseover(event)">
+<a class="menuItem" href=# onclick="javascript:changepath('IQ_S')">Inventory Inquiry</a>
+<a class="menuItem" href=# onclick="javascript:changepath('CIQ')">Cust/Item Price Inquiry</a>
+<a class="menuItem" href=# onclick="javascript:changepath('COO')">Order Inquiry</a>
+<a class="menuItem" href=# onclick="javascript:changepath('PUH')">Purchasing History</a>
+<a class="menuItem" href=# onclick="javascript:changepath('ARQ')">Accounts Receivable</a>
+<a class="menuItem" href=# onclick="javascript:changepath('BO')">Backorders</a>
+<a class="menuItem" href=# onclick="javascript:changepath('PCS')">Product Contract</a>
+<a class="menuItem" href=# onclick="javascript:changepath('CCI')">Customer Contract</a>
+</div>
+<div id="helpMenu" class="menu"
+     onmouseover="menuMouseover(event)">
+<a class="menuItem" href=# onclick="javascript:helpme('//hosting.tshinc.com/rn_beta/help.html')">Help</a>
+</div>
+<div id="contactMenu" class="menu"
+     onmouseover="menuMouseover(event)">
+<a class="menuItem" href="//hosting.tshinc.com/rn_beta/contactus.html">Contact Us</a>
+<a class="menuItem" href=# onclick="javascript:changepath('FB')">Feedback</a>
+</div>
+<div id="logoutMenu" class="menu"
+     onmouseover="menuMouseover(event)">
+<a class="menuItem" href="//hosting.tshinc.com/rn_beta/DEFAULT_LOCK.HTM">Home</a>
+</div>
+</div><!--RnMenu -->
+
+<div id="RnWrapLeft"> <!-- sets background to white and creates full length leftcol-->
+<div id="RnWrapRight"> <!-- sets background to white and creates full length rightcol-->
+<div id="RnMainBody">
+<div id="RnMainLeft"><!-- sets RnMainLeft  --></div>
+<div id="RnMainRight"><!-- sets RnMainLeft  --></div>
+<div id="RnMainText"> <!-- sets RnMainText  -->
+<table border=0 cellpadding=0 cellspacing=0 width=100%>
+<tr>
+<td height=40 width=100%>&nbsp;</td>
+</tr>
+<tr><td>
+<table border=0  cellspacing=0 cellpadding=0 width=100%>
+<tr>
+  <td colspan=2>
+    <table border=0 cellpadding=2 cellspacing=2 width=100%>
+      <tr>
+        <td id=colhdg nowrap><font size=2><b>Web Order #</b></font></td>
+        <td id=colhdg nowrap><font size=2><b>Customer PO#</b></font></td>
+        <td id=colhdg nowrap><font size=2><b>Ship to</b></font></td>
+      </tr>
+      <tr >
+        <td id=datnorm nowrap valign=top>[WEB.ORD.NO]</td>
+        <td id=datnorm nowrap valign=top>[CUST.PO.NO]</td>
+        <td id=datnorm nowrap valign=top>[SHIPTO.NAME]<br>
+[SHIPTO.CITY]&nbsp;[SHIPTO.ST]&nbsp;[SHIPTO.ZIP]</td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<form name=template action="login[SUFFIX]" method=post>
+<form name=template action="login[SUFFIX]" method=post>
+<input type=hidden name=Aprod_string value="[APROD_STRING]">
+<input type=hidden name=prod_string value="[PROD_STRING]">
+<input type=hidden name=qty_string value="[QTY_STRING]">
+<input type=hidden name=um_string value="[UM_STRING]">
+<input type=hidden name=price_string value="[PRICE_STRING]">
+<input type=hidden name=comment_string value="[COMMENT_STRING]">
+<input type=hidden name=manufact_string value="[MANUFACT_STRING]">
+<input type=hidden name=loginpath value="[LOGINPATH]">
+<input type=hidden name=searchflag value="[SEARCHFLAG]">
+<input type=hidden name=pageid value="6">
+<input type=hidden name=startptr value="[STARTPTR]">
+<input type=hidden name=CustomerId value="[CUSTOMERID]">
+<input type=hidden name=orderno value="[ORDERNO]">
+<input type=hidden name=old_loginpath value="[LOGINPATH]">
+<input type=hidden name=prev_changesort value="[CHANGESORT]">
+<input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+<input type=hidden name=mdsorderno value="[MDSORDERNO]">
+<input type=hidden name=aprodno value="[APRODNO]">
+<input type=hidden name=slsmno value="[SLSMNO]">
+<input type=hidden name=slsmn_id value="[SLSMN_ID]">
+<!-- beginning of save_customproduct_list page -->
+<table border=0  cellspacing=0 cellpadding=0 width=100%>
+  <tr>
+    <td height=50 align=left></td>
+  </tr>
+  <tr>
+    <td id=datnorm><font size=4><center>
+<b>The above order has been saved as Template</b><br><br>    </center></font></td>
+  </tr>
+  <tr>
+    <td id=taghdg><font size=4><center><b>
+[TEMPLATE.NAME]
+    </b></center></font></td>
+  </tr>
+  <tr>
+    <td height=20 align=left></td>
+  </tr>
+  <tr>
+    <td>
+     <table border=0 cellspacing=0 cellpadding=0
+      <tr>
+        <td id=datnorm align=left>Click GO to return to Current Order.</td>
+        <td valign=center>
+         <input type=button class=gobutton name="GO3" value="GO" onclick='javascript:changepath("CO")'
+          onmouseover="this.className='gobutton gobuttonhov' ; window.status='Go to Current Order'"
+          onmouseout="this.className='gobutton' ; window.status=''">
+        </td>
+      </tr>
+     </table>
+    </td>
+  </tr>
+</table>
+<!-- end of save_customproduct_list page -->
+</td>
+</tr>
+</table>
+&nbsp;
+
+ </div><!--RnMainText -->
+ </div><!--RnMainBody -->
+ </div> <!--RnWrapLeft -->
+ </div> <!--RnWrapRight -->
+ </div> <!--Superholder -->
+ </body> </html>

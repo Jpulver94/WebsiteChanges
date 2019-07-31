@@ -1,0 +1,12 @@
+    {
+      "discamnt": "0",
+      "unitcost": "[unitcost]",
+      "uom": "[uom]",
+      "lineno": "[lineno]",
+      "description": "[description]",
+      "taxamnt": "",
+      "quantity": "[quantity]",
+      "upc": "[upc]",
+      "netamnt": "",
+      "material": ""
+    },

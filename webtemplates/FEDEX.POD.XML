@@ -1,0 +1,6 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fedex.com/ws/fdxspod/v1">
+<soapenv:Header/>
+<soapenv:Body>
+<v1:fdxSPOD><v1:FDXSPODRequest><v1:WebAuthenticationDetail><v1:UserCredential><v1:Key>[FEDEX.KEY]</v1:Key><v1:Password>[FEDEX.PASSWORD]</v1:Password></v1:UserCredential></v1:WebAuthenticationDetail><v1:ClientDetail><v1:AccountNumber>[FEDEX.ACCT]</v1:AccountNumber><v1:MeterNumber>[FEDEX.METER]</v1:MeterNumber><v1:Localization><v1:LanguageCode>en</v1:LanguageCode><v1:LocaleCode>en</v1:LocaleCode></v1:Localization></v1:ClientDetail><v1:TransactionDetail><v1:CustomerTransactionId>SPOD</v1:CustomerTransactionId><v1:Localization><v1:LanguageCode>en</v1:LanguageCode><v1:LocaleCode>en</v1:LocaleCode></v1:Localization></v1:TransactionDetail><v1:Version><v1:ServiceId>wsi</v1:ServiceId><v1:Major>1</v1:Major><v1:Intermediate>1</v1:Intermediate><v1:Minor>0</v1:Minor></v1:Version><v1:Type>LETTER</v1:Type><v1:ShipmentAcountNumber>[SHIP.ACC.NUMBER]</v1:ShipmentAcountNumber><v1:TrackingNumber>[TRACK.NO]</v1:TrackingNumber><v1:LetterFormat>PDF</v1:LetterFormat></v1:FDXSPODRequest></v1:fdxSPOD>
+</soapenv:Body>
+</soapenv:Envelope>

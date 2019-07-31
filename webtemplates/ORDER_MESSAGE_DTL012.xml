@@ -1,0 +1,19 @@
+      <ItemIn quantity="[ORD.QTY]">
+        <ItemID>
+          <SupplierPartID>[A.PROD.NO]</SupplierPartID>
+          <SupplierPartAuxiliaryID>[SUPPLIER.COOKIE]</SupplierPartAuxiliaryID>
+        </ItemID>
+        <ItemDetail>
+          <UnitPrice>
+            <Money currency="[CURRENCY]">[UNIT.PRC]</Money>
+          </UnitPrice>
+          <Description xml:lang="en">
+            [PROD.DESC]
+          </Description>
+          <UnitOfMeasure>[UN.MEAS]</UnitOfMeasure>
+          <Classification domain="UNSPSC">[UNSPSC.CODE]</Classification>
+          <ManufacturerPartID>[MFR.PROD.NO]</ManufacturerPartID>
+          <ManufacturerName>[MFR.NAME]</ManufacturerName>
+          <Extrinsic name="evacontractnumber">[ARIBA.CONTRACTID]</Extrinsic>
+        </ItemDetail>
+      </ItemIn>

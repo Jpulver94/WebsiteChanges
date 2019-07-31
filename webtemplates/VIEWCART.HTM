@@ -1,0 +1,24 @@
+<style>
+#printdivcontainer { border:1px solid gray ; background-color: #E3E4FA ;overflow:auto ;position:absolute;right:1px;top:40px; }
+#printtabs { height: 300px; width: 200px; overflow:auto ; font: bold 13px Arial;position:absolute;right:1px;top:1px;}
+/* ######### CSS for Indented CSS Tabs. Remove if not using ######### */
+.indentmenu{font: bold 8px Arial;width: 30%; }
+.indentmenu ul{margin: 0;padding: 0;float: left;/* width: 80%; width of menu*/ border-top: 1px solid darkred; /*darkred border*/background: gray ;}
+.indentmenu ul li{display: inline;}
+.indentmenu ul li a{float: left;color: black; /*text color*/padding: 3px 11px;text-decoration: none;border-right: 1px solid darkred; /*darkred divider between menu items*/}
+.indentmenu ul li a:visited{color: black;}
+.indentmenu ul li a.selected{color: black !important;padding-top: 4px; /*shift text down 1px*/padding-bottom: 2px;background: gray ;}
+</style>
+<div id="printtabs" class="indentmenu"><ul>
+[TABDATA]
+</ul></div>
+<br> 
+<div id="printdivcontainer">
+[DEFAULT.TEXT]
+</div>
+<script type="text/javascript">
+var myprints=new ddajaxtabs("printtabs", "printdivcontainer");
+myprints.setpersist(true);
+myprints.setselectedClassTarget("link") ;
+myprints.init();
+</script>

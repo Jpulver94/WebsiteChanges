@@ -1,0 +1,120 @@
+<style>
+#variablecontainer {width: 790px;height: auto;}
+.OOHheadings {
+/*  border-top: none;border-left: none;border-bottom: solid #CCC 1.0pt;border-right: solid #CCC 1.0pt;padding: .75pt .75pt .75pt .75pt;margin: 0in;margin-bottom: .0001pt;text-align: left;font-size: 9.0pt;font-family: Tahoma,sans-serif;background-image: url(//hosting.tshinc.com/rn/images/bluemenu.jpg);color: white; */
+font-family: "arial";font-size: 15px;font-weight: bold
+}
+#variablecontainerwrap { width: 790px;height: auto;float: left;overflow: auto;}
+</style>
+
+<div id="variablecontainerwrap">
+<form name=template action="login[SUFFIX]" method=post onSubmit="return process_order(0)">
+	<input type=hidden name=Aprod_string value="[APROD_STRING]">
+	<input type=hidden name=prod_string value="[PROD_STRING]">
+	<input type=hidden name=qty_string value="[QTY_STRING]">
+	<input type=hidden name=um_string value="[UM_STRING]">
+	<input type=hidden name=price_string value="[PRICE_STRING]">
+	<input type=hidden name=comment_string value="[COMMENT_STRING]">
+	<input type=hidden name=manufact_string value="[MANUFACT_STRING]">
+	<input type=hidden name=loginpath value="[LOGINPATH]">
+	<input type=hidden name=searchflag value="[SEARCHFLAG]">
+	<input type=hidden name=pageid value="7">
+	<input type=hidden name=startptr value="[STARTPTR]">
+	<input type=hidden name=CustomerId value="[CUSTOMERID]">
+	<input type=hidden name=orderno value="[ORDERNO]">
+	<input type=hidden name=old_loginpath value="[LOGINPATH]">
+	<input type=hidden name=prev_changesort value="[CHANGESORT]">
+	<input type=hidden name=Changesort value="[CHANGESORT]">		
+	<input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+	<input type=hidden name=itemspage value="[ITEMSPAGE]">
+	<input type=hidden name=mdsorderno value="[MDSORDERNO]">
+	<input type=hidden name=aprodno value="[APRODNO]">
+	<input type=hidden name=slsmno value="[SLSMNO]">
+	<input type=hidden name=slsmn_id value="[SLSMN_ID]">
+	<input type=hidden name=rflag value="">
+  <input type=hidden name=oldorderno value="">
+
+<div id="sortbyitemsperwrap">
+<table border=0>
+	<tr>
+		<td class=sortbyitemsperwrap><b>Sort By:&nbsp</b><SELECT name="Changesort" size=1>[SORT.BY]</SELECT></td>
+<input type="button" class="gobutton" name="GO1" value="GO" onmouseover="this.className='gobutton gobuttonhov' ; onmouseout="this.className='gobutton' ; window.status=''" onclick='javascript:changepath("OOH","N")'>
+		</td>
+		<td class=sortbyitemsperwrap style="padding-left:25px";>
+		<b>Items per page:&nbsp</b><select name="itemspage" size=1>[ITEMS.PG]</select></td>
+		<td>
+<input type="button" class="gobutton" name="GO1" value="GO" onmouseover="this.className='gobutton gobuttonhov' ; onmouseout="this.className='gobutton' ; window.status=''" onclick='javascript:changepath("OOH","N")'>
+		</td>
+	</tr>
+</table>	 
+</div> 
+
+
+<div id="variablecontainer">
+<table border=0 width=100%>
+	<tr> 
+		<td class=OOHheadings colspan=5 align=center>You are logged in as [CUST.NAME] <br/> Your customer number is: [A.CUST.NO] <br/>
+		<h3> You have [TOT.ORD.LINES] item(s) in your Shopping Cart <br>
+	  Click Here to  
+<input type="button" class="gobutton" name="GO1" value="Place a New Order onmouseover="this.className='gobutton gobuttonhov' ; onmouseout="this.className='gobutton' ; window.status=''" onclick='javascript:changeorder("PS","[WEB.ORDERNO]")'></a> with the items in your cart <br/>
+    The Following orders are on hold.<br>
+    Click on Resume to resume an older order and put your current cart on hold <br/>
+    or <br/>
+    Click on Combine to add the items in your cart to an existing order on hold
+    </h3>
+		</td>
+	</tr>
+	</table>
+	<div id="SCLoader" style="display:none" > 
+	<div style="font-family:arial;font-size:20px;">
+ ScanConnect Message
+  <div style=float:right> <img src="[IMAGE.PATH]close_pop.png"> </div> </div> 
+    <h3><br/> You have [TOT.ORD.LINES] item(s) in your ScanConnect Order <br/>
+ <br/> <br/>
+ <div id=SCPreview style="height: 150px; width: 490px; overflow: auto"> </div>
+<br/> To add your item(s) to an existing order click here 
+<input type="button" class="gobutton" name="GO1" value="Combine Order" onmouseover="this.className='gobutton gobuttonhov' ; onmouseout="this.className='gobutton' ; window.status=''" onclick='javascript:$("#SCLoader").hide()'></a>
+<br/> To add your item(s) to a new order click here
+<input type="button" class="gobutton" name="GO1" value="Place a New Order" onmouseover="this.className='gobutton gobuttonhov' ; onmouseout="this.className='gobutton' ; window.status=''" onclick='javascript:changeorder("CO","[WEB.ORDERNO]")'></a>
+  </h3>
+  </div>
+[PAGE.MOVEMENT]	
+<table border=0 width=100%>
+<tr>
+		<td class=OOHheadings width=30% onmouseover="window.status='Sort Orders on Hold by Web Order#';"
+      	onmouseout="window.status='';" onClick='javascript:changesort_toggle("OOH","N","WEB.ORDER#")'>Web Order#</td>
+
+		<td class=OOHheadings width=20% onmouseover="window.status='Sort Orders on Hold by Customer PO';"
+		onmouseout="window.status='';" onClick='javascript:changesort_toggle("OOH","N","CUST.PO.NO")'>Customer PO</td>
+
+		<td class=OOHheadings width=10% onmouseover="window.status='Sort Orders on Hold by Ordered-By';"
+		onmouseout="window.status='';" onClick='javascript:changesort_toggle("OOH","N","ORD.DATE")'>Order Date</td>
+
+		<td class=OOHheadings width=15% align=right onmouseover="window.status='Sort Orders on Hold by Order Amt';"
+		onmouseout="window.status='';" onClick='javascript:changesort_toggle("OOH","N","TOT.AMT")'>Order Amt</td>
+
+		<td class=OOHheadings width=25% align=center onmouseover="window.status='Sort Orders on Hold by Status';"
+		onmouseout="window.status=''; " onClick='javascript:changesort_toggle("OOH","N","STATUS")'>Status</td>
+	<tr>
+</table>
+[OOH.DETAIL]
+[PAGE.MOVEMENT]
+</div>
+
+<script type="text/javascript">
+var dummy = widgetload('login[SUFFIX]?orderno=[WEB.ORDERNO]&LOGINPATH=STX&pageid=31&TARGETVAL=[WEB.ORDERNO]&ITEMSPAGE=500&CUSTOMERID=[CUSTOMERID]','#SCPreview') ;
+var t=setTimeout("showmodalsccart()",1000);
+
+</script>
+
+<div id="placeneworder" class=OOHBody style=margin-top:20px;>Click Here to 
+<input type="button" class="gobutton" name="GO1" value="Place a New Order" onmouseover="this.className='gobutton gobuttonhov' ; onmouseout="this.className='gobutton' ; window.status=''" onclick='javascript:changeorder("PS","[WEB.ORDERNO]")'></a><br/>
+</div>  
+
+
+</div> 
+
+
+
+
+

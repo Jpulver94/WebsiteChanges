@@ -1,0 +1,44 @@
+  	<li>     
+<!-- only use LINEB if you need to show multiple um's in the hot items templates -->
+<table id=HotStandard>
+<tr>
+<td colspan=2>
+<div class="HotProd">
+[PRICE] [PRICE.UM]/[PRICEUM.QTY]              <!-- Added Tab index as 101, 102 etc -->
+<!-- Added Superceded Order Function -->  <span class=scedelink style="[SCEDESTYLE]"> [SCMSG]  </span>
+<span class=gridlink style="[STDSTYLE]">
+<input class="QtyBox" data-prodno="[A.PROD.NO]" data-um="[PRICE.UM]" tabindex=10[TAB.NO] type=text size=2 maxlength=6 id="HotQty[A.PROD.NO]" >
+<input type="Button"  height="20px" align="center" value="Add" class="button1" onclick='javascript:HotAdd_To_Order("[A.PROD.NO]","HotQty[A.PROD.NO]","[PRICE.UM]")'>
+</span>
+ <!-- Added Grid Order Function -->
+ <span class=gridlink style="[GRIDSTYLE]">
+<a href=# onclick="javascript:ordergrid('[PROD.NO]')" title="Order item in a Grid">
+  <img src="[IMAGE.PATH]/grid.jpg" alt="Order item in a Grid">
+ <br>Click to Order
+ </a>
+ </span>
+ </div>
+</tr>
+<tr> <td>
+            <div class="TemplateImage" id="HOTImage[A.PROD.NO]">
+<img src="[IMAGE.PATH][IMAGENAME]" >
+</div>
+</td>
+<td>
+<div class="TemplateStock" >
+ [IN.STOCK]
+</div>
+</td>
+</tr>
+<tr>
+<td colspan=2>
+[A.PROD.NO] <br/>
+<!--- to allow enough space for stock messages -->
+<a href="javascript:hotprod_inquiry('PI','N','[A.PROD.NO]')">[PROD.DESC]</a>
+<br/>
+</td>
+</tr>
+</table>
+	</li>
+
+

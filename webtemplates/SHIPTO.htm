@@ -1,0 +1,158 @@
+<!-- Shipto template file used to build the shipto data record
+this creates a record called SHIP.TO.DATA that is added to the OE Header
+Template. 
+The Name is Static ie. SHIPTO.htm 
+-->
+<script language=javascript>
+function ManualShipto() {
+ //get selected shipto info
+    var x = 1
+//     var val = document.forms[0].Shiptobox.options[x].value ;
+ val = "manual|Enter your new address||||||||||"
+    var my_array = new Array ;
+    var my_array = string_decode(val) ;
+    var shipto = my_array[0] ;
+    var Shiptoname = my_array[1] ;
+    var Shiptodesc = my_array[2] ;
+    var Shiptodesc2 = my_array[3] ;
+    var Shiptodesc3 = my_array[4] ;
+    var Shiptocity = my_array[5] ;
+    var Shiptostate = my_array[6] ;
+    var Shiptozip = my_array[7] ;
+    var Shiptocountry = my_array[8] ;
+    var Shiptophone = my_array[9] ;
+ // put variables into text boxes
+    document.forms[0].shipto.value = shipto ;
+    document.forms[0].Shiptoname.value = Shiptoname ;
+    document.forms[0].Shiptodesc.value = Shiptodesc ;
+    document.forms[0].Shiptodesc2.value = Shiptodesc2 ;
+    document.forms[0].Shiptodesc3.value = Shiptodesc3 ;
+    document.forms[0].Shiptocity.value = Shiptocity ;
+    document.forms[0].Shiptostate.value = Shiptostate ;
+    document.forms[0].Shiptozip.value = Shiptozip ;
+    document.forms[0].Shiptocountry.value = Shiptocountry ;
+    document.forms[0].Shiptophone.value = Shiptophone ;
+    document.forms[0].Shiptoname.focus() ;
+//     document.forms[0].Shiptobox.options.selectedIndex = x ;
+//    document.forms[0].Shiptobox.options[x].value = val ;
+$("[name='Shiptobox']").val(val) ; 
+}
+function DisableShipto() {
+ //get selected shipto info and send back as disabled
+//     var x = document.forms[0].Shiptobox.options.selectedIndex ;
+//     var val = document.forms[0].Shiptobox.options[x].value ;
+var val = $("[name='Shiptobox']").val() ; 
+    var my_array = new Array ;
+    var my_array = string_decode(val) ;
+    var shipto = my_array[0] ;
+    var Shiptoname = my_array[1] ;
+    var Shiptodesc = my_array[2] ;
+    var Shiptodesc2 = my_array[3] ;
+    var Shiptodesc3 = my_array[4] ;
+    var Shiptocity = my_array[5] ;
+    var Shiptostate = my_array[6] ;
+    var Shiptozip = my_array[7] ;
+    var Shiptocountry = my_array[8] ;
+    var Shiptophone = my_array[9] ;
+   if (shipto != '') { } else { jAlert("You cannot Remove the Default Shipto") ; return false  };
+msg = "WARNING! You are about to remove '" + shipto + " " + Shiptoname + "' - Click OK to confirm " ;
+resp = jConfirm(msg,"Please Confirm",function(resp) {
+   if (resp) { } else { return false  };
+ // put variables into text boxes
+    document.forms[0].shipto.value = shipto ;
+    document.forms[0].Shiptoname.value = "DISABLED" ;
+    document.forms[0].Shiptodesc.value = Shiptodesc ;
+    document.forms[0].Shiptodesc2.value = Shiptodesc2 ;
+    document.forms[0].Shiptodesc3.value = Shiptodesc3 ;
+    document.forms[0].Shiptocity.value = Shiptocity ;
+    document.forms[0].Shiptostate.value = Shiptostate ;
+    document.forms[0].Shiptozip.value = Shiptozip ;
+    document.forms[0].Shiptocountry.value = Shiptocountry ;
+    document.forms[0].Shiptophone.value = Shiptophone ;
+    document.forms[0].Shiptoname.focus() ;
+document.forms[0].loginpath.value =  "OE" ;
+document.forms[0].submit() ;
+}) ;
+}
+function UpdateShipto(tf) {
+ //get selected shipto info and send back as disabled
+ // if they want to force all data to uppercase 
+ casecheck = 0;
+ // if (tf.shipto.value == 'manual') {
+ //  var msg = "New Shipping Address are automatically added when you submit your order" ;
+ // jAlert(msg) ;
+ // return false  ;
+ // }
+// UPDATED TO SEND IN MANUAL SHIPTO'S AS WELL 
+ if (casecheck) {
+ // put variables into text boxes
+    tf.shipto.value = tf.shipto.value.toUpperCase() ;
+    tf.Shiptoname.value = tf.Shiptoname.value.toUpperCase()  ;
+    tf.Shiptodesc.value = tf.Shiptodesc.value.toUpperCase() ;
+    tf.Shiptodesc2.value = tf.Shiptodesc2.value.toUpperCase()  ;
+    tf.Shiptodesc3.value = tf.Shiptodesc3.value.toUpperCase()  ;
+    tf.Shiptocity.value = tf.Shiptocity.value.toUpperCase()  ;
+    tf.Shiptostate.value = tf.Shiptostate.value.toUpperCase()  ;
+    tf.Shiptozip.value = tf.Shiptozip.value.toUpperCase()  ;
+//    tf.Shiptocountry.value = tf.Shiptocountry.value.toUpperCase()  ;
+    }
+    tf.loginpath.value =  "OE" ;
+    tf.submit() ;
+}
+</SCRIPT>
+
+  <table border=0 cellpadding=0 cellspacing=0 width=250>
+    <tr>
+      <td  nowrap>
+        <input type=text size=40 maxlength=40 name="Shiptoname" value="[SHIPTO.NAME]" [FOCUS.LOCK]>
+<a href="#" class="hintanchor" title='This is the Shipto Name'>[?]</a><br />
+      </td>
+    </tr>
+    <tr>
+      <td  nowrap>
+        <input type=text size=40 maxlength=40 name="Shiptodesc" value="[SHIPTO.ADDR1]"  [FOCUS.LOCK]>
+<a href="#" class="hintanchor" title='This is the Shipto Address Line 1'>[?]</a><br />
+      </td>
+    </tr>
+    <tr>
+      <td  nowrap>
+        <input type=text size=40 maxlength=40 name="Shiptodesc2" value="[SHIPTO.ADDR2]"  [FOCUS.LOCK]>
+<a href="#" class="hintanchor" title='This is the Shipto Address Line 2'>[?]</a><br />
+      </td>
+    </tr>
+    <tr>
+      <td  nowrap>
+        <input type=text size=40 maxlength=40 name="Shiptodesc3" value="[SHIPTO.ADDR3]"  [FOCUS.LOCK]>
+<a href="#" class="hintanchor" title='This is the Shipto Address Line 3 , it may be used for a suite or room number'>[?]</a><br />
+      </td>
+    </tr>
+    <tr>
+      <td  nowrap>
+        <input type=text size=15 maxlength=35 name="Shiptocity" value="[SHIPTO.CITY]"  [FOCUS.LOCK]>
+<a href="#" class="hintanchor" title='This is the Shipto City'>[?]</a><br />
+        <input type=text size=2 maxlength=2 name="Shiptostate" value="[SHIPTO.STATE]"  [FOCUS.LOCK]>
+<a href="http://www.usps.com/ncsc/lookups/abbr_state.txt" target=new class="hintanchor" title='This is the Shipto State , please use a valid two digit state code Click on the question mark to view valid codes </a> '>[?]</a><br />
+        <input type=text size=10 maxlength=10 name="Shiptozip" value="[SHIPTO.ZIP]"  [FOCUS.LOCK]>
+<a href="#" class="hintanchor" title='This is the Shipto Zip Code'>[?]</a><br />
+      </td>
+    </tr>
+    <tr>
+      <td  nowrap>
+        <input type=text size=25 maxlength=25 name="Shiptophone" value="[SHIPTO.PHONE]" [FOCUS.LOCK]>
+<a href="#" class="hintanchor" title='This is the Shipto Phone Number '>[?]</a><br />
+      </td>
+    </tr>
+    <tr>
+      <td  nowrap>
+[COUNTRY.DROPDOWN]
+<a href="#" class="hintanchor" title='This is the Shipto Country '>[?]</a><br />
+      </td>
+    </tr>
+  </table>
+</td>
+</tr>
+[DROPDOWN]
+<tr>
+<td align=right colspan=3></td>
+</tr>
+</table>

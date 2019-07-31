@@ -1,0 +1,73 @@
+<script lang=javascript>
+$(document).ready(function() {
+// HIDE THE sidebars for the salesman login
+$('#center').css({'width':'100%'}) ;
+$('.col-main').css({'float':'none'}) ;
+$('#left').hide() ;
+$('.col-left').hide() ;
+$('#left_menucontent').hide() ;
+$('#right').hide() ;
+});
+function sendcsos() {
+ //  var dummy = showmodalrnpopup('login[SUFFIX]?orderno=[WEB.ORDERNO]&MODE=SENDORDER&CUSTOMERID=[CUSTOMERID]&LOGINPATH=CSOS&pageid=6') ;
+document.template.MODE.value='SENDORDER';
+document.template.submit();
+}
+</script>
+<form name=template action="login[SUFFIX]" method=post>
+<input type=hidden name=Aprod_string value="[APROD_STRING]">
+<input type=hidden name=prod_string value="[PROD_STRING]">
+<input type=hidden name=MODE value="">
+<input type=hidden name=qty_string value="[QTY_STRING]">
+<input type=hidden name=um_string value="[UM_STRING]">
+<input type=hidden name=price_string value="[PRICE_STRING]">
+<input type=hidden name=comment_string value="[COMMENT_STRING]">
+<input type=hidden name=manufact_string value="[MANUFACT_STRING]">
+<input type=hidden name=loginpath value="[LOGINPATH]">
+<input type=hidden name=searchflag value="[SEARCHFLAG]">
+<input type=hidden name=pageid value="6">
+<input type=hidden name=startptr value="[STARTPTR]">
+<input type=hidden name=CustomerId value="[CUSTOMERID]">
+<input type=hidden name=orderno value="[ORDERNO]">
+<input type=hidden name=old_loginpath value="[LOGINPATH]">
+<input type=hidden name=prev_changesort value="[CHANGESORT]">
+<input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+<input type=hidden name=mdsorderno value="[MDSORDERNO]">
+<input type=hidden name=aprodno value="[APRODNO]">
+<input type=hidden name=slsmno value="[SLSMNO]">
+<input type=hidden name=slsmn_id value="[SLSMN_ID]">
+                                <table border="0" cellpadding="2" cellspacing="0" width="100%">
+                                    <tr>
+                                        <td colspan="3" height="10">
+<div class="CsosText" >
+Welcome to our CSOS Portal.<br>
+To Place and Digitally Sign your order please review the steps below.
+If you have any problems please let us know as as soon as possible.
+Each Step Below will indicate if you are setup and able to order.
+Once you send your order to us you will receive a confirmation email 
+and be prompted to digitally sign your order. 
+Once the Order is signed and approved we will ship your products. 
+When you receive the product simply log back in to our site to mark the order as received and completed. 
+</div>
+<BR>
+ <div class="[STEP1]" > Step 1. A Valid DEA License on File : [STEP1MSG] </div>
+ <div class="[STEP2]" > Step 2. A Valid CSOS Trading Partner and Username With your DEA Linked to it. <br/> [STEP2MSG] </div>
+ <div class="[STEP3]" > Step 3.  Be Running Internet Explorer or have your Certificate on File <br>
+ with our CSOS Remote Certificate Store
+<br>
+ [STEP3MSG]
+ </div>
+ <div class="[STEP4]" > Step 4.
+ Add your controlled items to your cart/order  and click on the
+<br>
+Sign and Send CSOS Order (This Page) <br>
+[STEP4MSG] </div>
+ <div class="[STEP5]" > Step 5.
+Your Order has been Created Please Sign your order here
+<br>
+Sign  CSOS Order  <br>
+[STEP5MSG] </div>
+
+                                        </td>
+                                    </tr>
+                                </table>

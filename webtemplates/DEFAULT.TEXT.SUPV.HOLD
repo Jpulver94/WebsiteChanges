@@ -1,0 +1,21 @@
+From:      USER.NAME
+
+Ship-To:   SHIPTO.ADDRESS.1
+           SHIPTO.ADDRESS.2
+           SHIPTO.ADDRESS.3
+           SHIPTO.CITY.STATE.ZIP
+
+WEB Order # WEB.ORDER.NO
+
+Total Order Amount:  WEB.ORD.AMT
+
+This email is being sent to inform you that WEB Order # WEB.ORDER.NO
+has been placed on "HOLD" status.
+
+If you have questions about specific items on your order,
+please contact your supplier's customer service department.
+
+Send mail to CUSTSERV.EMAIL with questions or
+comments about your WEB order.
+
+Thank you for ordering through WEBSITE.ID

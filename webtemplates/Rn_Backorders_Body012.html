@@ -1,0 +1,424 @@
+
+
+
+<script language=javascript>
+ $(document).ready(function() {
+var ShowBackord = '[SHOWBACKORDER]' ;
+if (ShowBackord =="Y") { $('.ShowBackord').show() ; } ;
+ $("#removeall").click(function() {
+  $('.remove').attr('checked', this.checked);
+ }); 
+ $(".remove").click(function() {  if($(".remove").length == $(".remove:checked").length) { 
+    $("#removeall").attr("checked", "checked");
+    } else {
+    $("#removeall").removeAttr("checked");
+    } 
+ });
+ $("#addall").click(function() {
+  $('.add').attr('checked', this.checked);
+ }); 
+ $(".add").click(function() { if($(".add").length == $(".add:checked").length) { 
+   $("#addall").attr("checked", "checked");
+   } else {
+   $("#addall").removeAttr("checked");
+ } 
+ });
+});
+$(document).ready(function(){
+      $(".removeallbutton").click(function() {
+        var cval = [];
+        $('.remove:checkbox:checked').each(function(i) {
+          var cval = $(this).val();
+          var cval = cval.split('|');
+          qty = cval[0];
+          oln = cval[1];
+          aprod =cval[2];
+          um = cval[3];
+          widgetload_append('login[SUFFIX]?orderno=[WEB.ORDERNO]&CUSTOMERID=[CUSTOMERID]&LOGINPATH=CBO&APRODNO=' + aprod + '&SUBMITVAR=' + oln + '&PAGEID=31','#BOBodyHead');
+        });
+        changepath("BO","Y") ;
+      });
+      $(".addallbutton").click(function() {
+         var cval = [];
+         var result = ""; var data = ""; 
+        $('.add:checkbox:checked').each(function(i) {
+          var cval = $(this).val();
+           var cval = cval.split('|');
+          qty = cval[0] ;
+          oln = cval[1] ;
+          aprod =cval[2] ;
+          um = cval[3] ;
+            result = result + aprod + '|' ;
+            result = result + qty + '|' ;
+            result = result + um + '^' ;
+          widgetload_append('login[SUFFIX]?orderno=[WEB.ORDERNO]&CUSTOMERID=[CUSTOMERID]&LOGINPATH=CBO&APRODNO=' + aprod + '&SUBMITVAR=' + oln + '&PAGEID=31','#BOBodyHead');
+        });
+          BOPage_To_Order(result);
+      });
+    });
+ function widgetload_append_callback(pageurl, targetname, callback){
+ var params = "" ;
+ // $(targetname).html("<div id=Loader></div>");
+ // BEGIN GET QUERY STRING CODE ;
+ queryVar = pageurl ;
+ var inq = pageurl.indexOf('?');
+ queryVar = queryVar.substring(inq + 1);
+ queryVar = unescape(queryVar);
+ var params = queryVar ;
+ //  var pageurl = '../../rnwebservice/rndriver.asmx/RNDriver012B?' + params
+ jQuery.ajax({
+      type: "POST",
+      url: pageurl,
+      async: true,
+      data: params ,
+      timeout : 20000,
+      tryCount : 0,
+      retryLimit : 3,
+      dataType: "html",
+      success: function(data) {
+ //var xhtml = $(data).find('anyType').text() ;
+ //alert($data) ;
+ //alert(xhtml) ;
+  $(targetname).append(data);
+callback.call() ;
+ //  $(targetname).html(xhtml);
+   // alert('Load was performed.');
+      if ($(targetname + ":contains('error_box')").length) {  $(targetname).append('Remotenet Error');} }, 
+      error : function(xhr, textStatus, errorThrown ) {  
+            if (textStatus == 'timeout') {
+            this.tryCount++;
+            if (this.tryCount <= this.retryLimit) {
+                //try again
+      //          $.ajax(this);
+                return;
+            }
+            $(targetname).append('There was an Error connecting to the Server. We have tried ' + this.retryLimit + ' times and it is still not working. We give in. Sorry.');
+            return;
+        }
+        if (xhr.status == 500) {
+           $(targetname).append('Oops! There seems to be a server problem, please try again later.');
+        } else {
+//            $(targetname).html('Error on Page...') ;
+            this.tryCount++;
+            if (this.tryCount <= this.retryLimit) {
+                //try again
+                $.ajax(this);
+                return;
+            }
+            $(targetname).append('There was an Error connecting to the Server. We have tried ' + this.retryLimit + ' times and it is still not working. We give in. Sorry.');
+            return;
+        }
+    }
+ }) ;
+ }
+ function widgetload_append(pageurl, targetname){
+ var params = "" ;
+ // $(targetname).html("<div id=Loader></div>");
+ // BEGIN GET QUERY STRING CODE ;
+ queryVar = pageurl ;
+ var inq = pageurl.indexOf('?');
+ queryVar = queryVar.substring(inq + 1);
+ queryVar = unescape(queryVar);
+ var params = queryVar ;
+ //  var pageurl = '../../rnwebservice/rndriver.asmx/RNDriver012B?' + params
+ jQuery.ajax({
+      type: "POST",
+      url: pageurl,
+      async: true,
+      data: params ,
+      timeout : 20000,
+      tryCount : 0,
+      retryLimit : 3,
+      dataType: "html",
+      success: function(data) {
+ //var xhtml = $(data).find('anyType').text() ;
+ //alert($data) ;
+ //alert(xhtml) ;
+  $(targetname).append(data);
+ //  $(targetname).html(xhtml);
+   // alert('Load was performed.');
+      if ($(targetname + ":contains('error_box')").length) {  $(targetname).append('Remotenet Error');} }, 
+      error : function(xhr, textStatus, errorThrown ) {  
+            if (textStatus == 'timeout') {
+            this.tryCount++;
+            if (this.tryCount <= this.retryLimit) {
+                //try again
+      //          $.ajax(this);
+                return;
+            }
+            $(targetname).append('There was an Error connecting to the Server. We have tried ' + this.retryLimit + ' times and it is still not working. We give in. Sorry.');
+            return;
+        }
+        if (xhr.status == 500) {
+           $(targetname).append('Oops! There seems to be a server problem, please try again later.');
+        } else {
+//            $(targetname).html('Error on Page...') ;
+            this.tryCount++;
+            if (this.tryCount <= this.retryLimit) {
+                //try again
+                $.ajax(this);
+                return;
+            }
+            $(targetname).append('There was an Error connecting to the Server. We have tried ' + this.retryLimit + ' times and it is still not working. We give in. Sorry.');
+            return;
+        }
+    }
+ }) ;
+ }
+function BOPage_To_Order(results) { 
+addfield("3","pageid", document.forms[0].pageid) ;
+addfield(results,"final_string", document.forms[0].final_string) ;
+addfield("Y","searchflag", document.forms[0].searchflag) ;
+// for backorders do a new search
+document.forms[0].submit() ; 
+} 
+</script>
+
+<style>
+.removeallbutton, .addallbutton {
+    /* COLOR: #0D115B; */
+    BACKGROUND-COLOR: #add8e6;
+    FONT-SIZE: 84%;
+    FONT-WEIGHT: bold;
+    FONT-STYLE: normal;
+    BORDER: 1px solid;
+    BORDER-TOP-COLOR: #add8e6;
+    BORDER-LEFT-COLOR: #add8e6;
+    BORDER-RIGHT-COLOR: #add8e6;
+    BORDER-BOTTOM-COLOR: #add8e6;
+    /* width: 50px; */
+    /* height: 40px; */
+    /* padding: 2px; */
+    width: 40px;
+    /* background: #d2d2d2; */
+    text-align: center;
+    float: left;
+    color: #000;
+    line-height: 15px;
+    text-decoration: none;
+}
+#BOMainBody {
+  width: auto;
+  height: auto;
+  float: left;
+  margin-left: 5px;
+  font-family: "arial";
+  font-size: 10px;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+#BOBodyHead {
+  width: auto;
+  height: auto;
+  float: left;
+  margin-left: 5px;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  background-color: #FFF;
+  font-family: "arial";
+  font-size: 8px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+.OutStock {font-family: "arial";font-size: 9px;text-align: center;color: red;}
+.InStock {font-family: "arial";font-size: 9px;text-align: center;color: green;}
+.BOBodyHeadings {
+    font-family: "arial";
+    font-size: 12px;
+    font-weight: bold;
+    /* border-top: 1px solid #000; */
+    border-bottom: 1px solid #000;
+}
+</style>
+<form name=template action="login[SUFFIX]" method=post>
+<input type=hidden name=Aprod_string value="[APROD_STRING]">
+<input type=hidden name=prod_string value="[PROD_STRING]">
+<input type=hidden name=qty_string value="[QTY_STRING]">
+<input type=hidden name=um_string value="[UM_STRING]">
+<input type=hidden name=price_string value="[PRICE_STRING]">
+<input type=hidden name=comment_string value="[COMMENT_STRING]">
+<input type=hidden name=manufact_string value="[MANUFACT_STRING]">
+<input type=hidden name=loginpath value="[LOGINPATH]">
+<input type=hidden name=searchflag value="[SEARCHFLAG]">
+<input type=hidden name=pageid value="6">
+<input type=hidden name=startptr value="[STARTPTR]">
+<input type=hidden name=CustomerId value="[CUSTOMERID]">
+<input type=hidden name=orderno value="[ORDERNO]">
+<input type=hidden name=old_loginpath value="[LOGINPATH]">
+<input type=hidden name=prev_changesort value="[CHANGESORT]">
+<input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+<input type=hidden name=mdsorderno value="[MDSORDERNO]">
+<input type=hidden name=aprodno value="[APRODNO]">
+<input type=hidden name=slsmno value="[SLSMNO]">
+<input type=hidden name=slsmn_id value="[SLSMN_ID]">
+<table border=0 cellpadding=0 cellspacing=0 width=100%>
+<tr>
+  <td height=15></td>
+</tr>  
+<tr>
+      <td colspan="4">
+<div class="ShowBackord">
+ <p class="avisbigtext"><strong class="avibigtext"><em>Manage and Release your own back orders!<br>
+        <br>
+      </em></strong>        <span class="avistext">That's right, we're handing over control back to the person who runs your business best...<strong>YOU</strong>!
+        <br>
+        Check the appropriate box to the right of the item to either add or remove the product from your back order list. <br>
+        If you need to adjust the quantities you can make the change once the item is in your shopping cart.<br>
+        <br>
+        Please remember, we cannot hold the merchandise. Back orders are released on a first come, first served basis. <em><strong>So act fast!</strong></em> </span></p>
+    <p>&nbsp;</p>
+</div>
+</td></tr>
+<tr>
+<td>&nbsp;</td>
+<td nowrap valign=top>
+  <table border=0 cellpadding=0 cellspacing=0>
+    <tr>
+      <td class=datsml2 valign=top width=100%><b>
+Pending Orders for Account No.&nbsp;[A.CUST.NO]
+      </b></td>
+    </tr>
+    <tr>
+      <td class=datsml2 valign=top width=100%><b>
+[CUST.NAME]
+      </b></td>
+    </tr>
+    <tr>
+      <td class=datsml2 valign=top width=100%><b>
+[CUST.ADDR1]
+      </b></td>
+    </tr>
+    <tr>
+      <td class=datsml2 valign=top width=100%><b>
+[CUST.ADDR2]
+      </b></td>
+    </tr>
+    <tr>
+      <td class=datsml2 valign=top width=100%><b>
+[CUST.ADDR3]
+      </b></td>
+    </tr>
+    <tr>
+      <td class=datsml2 valign=top width=100%><b>
+[CITY], [ST] [ZIP]
+      </b></td>
+    </tr>
+  </table>
+</td>
+<td width=50%>
+  <table border=0 cellpadding=0 cellspacing=2>
+    <tr>
+      <td id=taghdg width=120 align=right nowrap><b>Sort By:</b></td>
+      <td >&nbsp;
+       <SELECT name="Changesort" size=1>
+         [SORT.BY]
+       </SELECT>
+      </td>
+      <td valign=center>
+       <input type=button class=gobutton name="GO1" value="GO" onclick='javascript:changepath("BO","N")'
+        onmouseover="this.className='gobutton gobuttonhov' ; window.status='Change Sort Method'"
+        onmouseout="this.className='gobutton' ; window.status=''">
+      </td>
+    </tr>
+    <tr>
+      <td id=taghdg width=120 align=right nowrap><b>Items per page:</b></td>
+      <td >&nbsp;
+     <select name="itemspage" size=1>
+       [ITEMS.PG]
+     </select>
+      </td>
+      <td valign=center>
+       <input type=button class=gobutton name="GO2" value="GO" onclick='javascript:changepath("BO","N")'
+        onmouseover="this.className='gobutton gobuttonhov' ; window.status='Change Items Per Page'"
+        onmouseout="this.className='gobutton' ; window.status=''">
+      </td>
+    </tr>
+  </table>
+</td>
+</tr>
+<tr>
+  <td height=15></td>
+</tr>
+</table>
+<table class="ng-table">
+<!-- <table border=0 cellpadding=1 cellspacing=0 width=100%>  -->
+  <tr>
+    <td id=colhdg><font size=2>&nbsp;</font></td>
+    <td class=rollsort>
+      <div id='link1'
+      onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Backorders by Product Code'; "
+      onmouseout="this.className='rollsort' ; window.status=''; "
+      onClick='javascript:changesort_toggle("BO","N","A.PROD.NO")'>
+      <font size=2><b>Product<br>Code</b></font>
+      </div>
+    </td>
+    <td class=rollsort>
+      <div id='link6'
+      onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Backorders by Product Description'; "
+      onmouseout="this.className='rollsort' ; window.status=''; "
+      onClick='javascript:changesort_toggle("BO","N","DESC")'>
+      <font size=2><b>Product Description</b></font>
+      </div>
+    </td>
+    <td class=rollsort>
+      <div id='link2'
+      onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Backorders by Customer PO'; "
+      onmouseout="this.className='rollsort' ; window.status=''; "
+      onClick='javascript:changesort_toggle("BO","N","CUST.PO.NO")'>
+      <font size=2><b>Customer<br>PO</b></font>
+      </div>
+    </td>
+    <td class=rollsort  align=left>
+      <div id='link3'
+      onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Backorders by Order-Line#'; "
+      onmouseout="this.className='rollsort' ; window.status=''; "
+      onClick='javascript:changesort_toggle("BO","N","KEY")'>
+      <font size=2><b>Order#-Line#</b></font>
+      </div>
+    </td>
+    <td class=rollsort align=center >
+      <div id='link4'
+      onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Backorders by Order Date'; "
+      onmouseout="this.className='rollsort' ; window.status=''; "
+      onClick='javascript:changesort_toggle("BO","N","ORD.DATE")'>
+      <font size=2><b>Order Date</b></font>
+      </div>
+    </td>
+    <td class=rollsort align=center >
+      <div id='link5'
+      onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Backorders by Estimated Ship Date'; "
+      onmouseout="this.className='rollsort' ; window.status=''; "
+      onClick='javascript:changesort_toggle("BO","N","SHIP.DATE")'>
+      <font size=2><b>Estimated<br>Ship Date</b></font>
+      </div>
+    </td>
+    <td id=colhdg align=center><font size=2><b>Order<br>Qty</b></font></td>
+    <td id=colhdg align=center><font size=2><b>BO<br>Qty</b></font></td>
+    <td id=colhdg align=center><font size=2><b>UM</b></font></td>
+    <td id=colhdg align=right ><font size=2><b>Unit<br>Price</b></font></td>
+    <td id=colhdg align=right ><font size=2><b>Extended<br>Price</b></font></td>
+    <td id=colhdg align=right ><font size=2><b>In<br>Stock</b></font></td> 
+   <td id="colhdg" class="ShowBackord"><font size=2>
+<a class="removeallbutton" >
+Click to <br>
+Remove </a>
+<br>
+<input type=checkbox name=removeall id=removeall>
+
+</font></td>
+    <td id="colhdg" class="ShowBackord"><font size=2>
+<a class="addallbutton" >
+Click to <br>
+Add </a>
+<br>
+<input type=checkbox name=addall id=addall>
+</td>
+  </tr>
+[BACKORDER.LINES]
+</table>
+[PAGE.MOVEMENT]
+
+
+
+
+

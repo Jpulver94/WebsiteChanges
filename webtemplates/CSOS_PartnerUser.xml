@@ -1,0 +1,13 @@
+<PartnerUsers>
+ <ControlRecord>
+  <SchemaVersion>Express222 V2.1</SchemaVersion>
+  <DatePrepared>[DATE.PREP]</DatePrepared>
+  <TimePrepared>[TIME.PREP]</TimePrepared>
+  <ServiceContract>[CONTRACT.ID]</ServiceContract>
+ </ControlRecord>
+ <UserAccount>
+  <action>[PART.ACTION]</action>
+  <partnerdea>[PART.DEA]</partnerdea>
+  <username>[PART.USERNAME]</username>
+ </UserAccount>
+</PartnerUsers>

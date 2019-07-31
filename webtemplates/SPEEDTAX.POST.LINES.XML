@@ -1,0 +1,15 @@
+<lineItems>
+<lineItemNumber>[ItemId]</lineItemNumber>
+<productCode>[StockingUnit]</productCode>
+<quantity>[Quantity]</quantity>
+<salesAmount><decimalValue>[ExtendedPrice]</decimalValue></salesAmount>
+<shipToAddress>
+<address1>[SHIP.ADDRESS] </address1>
+<address2>[SHIP.CSZ] </address2>
+</shipToAddress>
+<shipFromAddress>
+<address1>[FROM.ADDRESS]</address1>
+<address2>[FROM.CSZ]</address2>
+</shipFromAddress>
+<unitPrice></unitPrice>
+</lineItems>

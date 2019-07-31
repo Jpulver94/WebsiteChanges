@@ -1,0 +1,10 @@
+ <tns:TaxTransactionLineItem id="LN.NO" xsi:type="tns:TaxTransactionLineItem">
+      <ItemId xsi:type="xsd:string">[ItemId]</ItemId>
+      <CityTaxApplied xsi:type="xsd:boolean">[CityTaxApplied]</CityTaxApplied>
+      <CountyTaxApplied xsi:type="xsd:boolean">[CountyTaxApplied]</CountyTaxApplied>
+      <LocalTaxApplied xsi:type="xsd:boolean">[LocalTaxApplied]</LocalTaxApplied>
+      <NationalTaxApplied xsi:type="xsd:boolean">[NationalTaxApplied]</NationalTaxApplied>
+      <OtherTaxApplied xsi:type="xsd:boolean">[OtherTaxApplied]</OtherTaxApplied>
+      <StateTaxApplied xsi:type="xsd:boolean">[StateTaxApplied]</StateTaxApplied>
+    </tns:TaxTransactionLineItem>
+ 

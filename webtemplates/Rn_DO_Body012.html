@@ -1,0 +1,56 @@
+<table border=0  cellspacing=0 cellpadding=0 width=100%>
+<tr>
+  <td colspan=2>
+    <table border=0 cellpadding=2 cellspacing=2 width=100%>
+      <tr>
+        <td id=colhdg nowrap><font size=2><b>Web Order #</b></font></td>
+        <td id=colhdg nowrap><font size=2><b>Customer PO#</b></font></td>
+        <td id=colhdg nowrap><font size=2><b>Ship to</b></font></td>
+      </tr>
+      <tr >
+        <td id=datnorm nowrap valign=top>[WEB.ORD.NO]</td>
+        <td id=datnorm nowrap valign=top>[CUST.PO.NO]</td>
+        <td id=datnorm nowrap valign=top>[SHIPTO.NAME]<br>
+[SHIPTO.CITY],&nbsp;[SHIPTO.ST]&nbsp;[SHIPTO.ZIP]</td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<form name=template action="login[SUFFIX]" method=post>
+<input type=hidden name=pageid value="6">
+<input type=hidden name=orderno value="[ORDERNO]">
+<input type=hidden name=CustomerId value="[CUSTOMERID]">
+<input type=hidden name=loginpath value="[LOGINPATH]">
+<input type=hidden name=old_loginpath value="[LOGINPATH]">
+<input type=hidden name=prev_changesort value="[CHANGESORT]">
+<input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+<input type=hidden name=slsmno value="[SLSMNO]">
+<input type=hidden name=slsmn_id value="[SLSMN_ID]">
+<!-- beginning of delete_order page -->
+<table border=0 cellspacing=0 cellpadding=0 width=100%>
+<tr>
+  <td height=20 align=left></td>
+</tr>
+<tr>
+  <td id=datnorm><font size=4><b>[SPECIAL.MSG]</b></font></td>
+</tr>
+<tr>
+  <td height=20 align=left></td>
+</tr>
+<tr>
+  <td>
+   <table border=0 cellspacing=0 cellpadding=0
+    <tr>
+      <td id=datnorm align=left>Click GO to return to Order Entry and place a new order.</td>
+      <td valign=center>
+       <input type=button class=gobutton name="GO3" value="GO" onclick='javascript:changepath("OE")'
+        onmouseover="this.className='gobutton gobuttonhov' ; window.status='Go to Order Entry'"
+        onmouseout="this.className='gobutton' ; window.status=''">
+      </td>
+    </tr>
+   </table>
+  </td>
+</tr>
+</table>
+<!-- end of delete_order page -->

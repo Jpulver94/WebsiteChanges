@@ -1,0 +1,261 @@
+<!--
+******************************************
+  Created by The Systems House Web Team  *
+******************************************
+-->
+
+<html> <head> 
+<LINK rel="STYLESHEET" type="text/css" href="[stylesheet_path]">
+<title>Product Contract Search</title>
+</head> 
+<script lang=javascript>
+function changepath(x,sflag) { 
+   document.template.startptr.value = 1  ; 
+   document.template.searchflag.value = sflag  ; 
+   document.template.loginpath.value = x  ; 
+   if (document.all||document.getElementById){
+//screen thru every element in the form, and hunt down 'submit' and 'reset'
+      for (i=0;i<document.template.length;i++){
+         var tempobj=document.template.elements[i]
+         if (tempobj.type.toLowerCase()=='submit'||tempobj.type.toLowerCase()=='reset'||tempobj.type.toLowerCase()=='button') {
+//disable em
+            tempobj.disabled = true
+         }
+      }
+   }
+   document.template.submit(); 
+}
+
+
+function clearform() { 
+  for (i=0;i<document.template.length;i++){
+     var e_type = document.template.elements[i].type ;
+     if (e_type == "text") {
+        document.template.elements[i].value = '' ;
+     }
+  }
+  document.template.vendorID.value = '' ;
+  document.template.Manufac.value = '' ;
+  document.template.prodid.focus() ;
+  return false ;
+}
+
+</script>
+<body>
+<div id="superholder">
+<div id="RnHeader">
+
+</div><!--RnHeader -->
+<div id="Container"><h1>Searching......</h1>
+<script language='javascript'>
+ tshbar();
+</script>
+</div>
+<div id="Veil"></div>
+
+<script LANGUAGE="JavaScript">
+function helpme(x) {
+  helper = window.open(x, 'helper', 'toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=yes,resizable=yes,width=340')}
+
+function newImage(arg) {
+ if (document.images) {
+     rslt = new Image();
+     rslt.src = arg;
+     return rslt;
+ }
+}
+
+function changeImages() {
+ var preloadFlag = true;
+ if (document.images && (preloadFlag == true)) {
+     for (var i=0; i<changeImages.arguments.length; i+=2) {
+         document[changeImages.arguments[i]].src = changeImages.arguments[i+1];
+     }
+ }
+}
+
+function changelist(path,sflag,templ) { ; 
+    document.forms[0].loginpath.value = path ; 
+    document.forms[0].searchflag.value = sflag ; 
+    document.forms[0].customlist.value = templ ; 
+    document.forms[0].submit() ; 
+} 
+
+function changecolor(thisdiv,bgcolor){
+   var thisobj
+   if (document.all) {
+      thisobj=thisdiv
+     thisobj.style.backgroundColor = bgcolor
+   }
+}
+
+</script>
+<!-- End Preload Script -->
+<!-- Start navbar with javascripts -->
+<!--RnMenu -->
+
+<div id="RnWrapLeft"> <!-- sets background to white and creates full length leftcol-->
+<div id="RnWrapRight"> <!-- sets background to white and creates full length rightcol-->
+<div id="RnMainBody">
+<div id="RnMainLeft"></div>
+<div id="RnMainText"> <!-- sets RnMainText  -->
+<table border=0 cellpadding=0 cellspacing=0 width=100%>
+<tr>
+<td height=40 width=100%></td>
+</tr>
+<tr><td>
+   <form name=template action="login[SUFFIX]" method=post>
+      <input type=hidden name=Aprod_string value="[APROD_STRING]">
+      <input type=hidden name=prod_string value="[PROD_STRING]">
+      <input type=hidden name=qty_string value="[QTY_STRING]">
+      <input type=hidden name=um_string value="[UM_STRING]">
+      <input type=hidden name=price_string value="[PRICE_STRING]">
+      <input type=hidden name=comment_string value="[COMMENT_STRING]">
+      <input type=hidden name=manufact_string value="[MANUFACT_STRING]">
+      <input type=hidden name=loginpath value="[LOGINPATH]">
+      <input type=hidden name=searchflag value="[SEARCHFLAG]">
+      <input type=hidden name=pageid value="2">
+      <input type=hidden name=startptr value="[STARTPTR]">
+      <input type=hidden name=CustomerId value="[CUSTOMERID]">
+      <input type=hidden name=orderno value="[ORDERNO]">
+      <input type=hidden name=old_loginpath value="[LOGINPATH]">
+      <input type=hidden name=prev_changesort value="[CHANGESORT]">
+      <input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+      <input type=hidden name=mdsorderno value="[MDSORDERNO]">
+      <input type=hidden name=aprodno value="[APRODNO]">
+      <input type=hidden name=slsmno value="[SLSMNO]">
+      <input type=hidden name=slsmn_id value="[SLSMN_ID]">
+<table border=0  cellspacing=0 cellpadding=0 width=100%>
+<tr>
+  <td colspan=2>
+    <table border=0 cellpadding=2 cellspacing=2 width=100%>
+      <tr>
+        <td id=colhdg nowrap><font size=2><b>Customer #</b></font></td>
+        <td id=colhdg nowrap><font size=2><b>Salesrep</b></font></td>
+        <td id=colhdg nowrap><font size=2><b>Customer Name</b></font></td>
+      </tr>
+      <tr >
+        <td id=datnorm nowrap valign=top>[CUST.NO]</td>
+        <td id=datnorm nowrap valign=top>[SLSMN]</td>
+        <td id=datnorm nowrap valign=top>[CUST.NAME]<br>
+[CUST.CITY], [CUST.ST]&nbsp;[CUST.ZIP]
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<table  border=0 cellspacing=0 cellpadding=0 width=100%>
+  <tr>
+    <td height=40></td>
+  </tr>
+  <tr>
+    <td class=datsml align=left><font size=3><b>Enter your search criteria and click on Search. Click here to view <a href=# onclick='javascript:searchtips()'>Search Tips</a></b></font></td>
+  </tr>
+  <tr>
+    <td id=spacerline height=4 width=100%></td>
+  </tr>
+  <tr>
+    <td height=10></td>
+  </tr>
+</table>
+<table  border=0 cellspacing=0 cellpadding=2 width=100%>
+  <tr>
+    <td id=taghdg width=200 align=right><font size=3><b>Product Code:&nbsp;</b></font></td>
+    <td>&nbsp;
+      <input type=text name="prodid" value="" size=20 maxlength=20>
+    </td>
+  </tr>
+  <tr>
+    <td id=taghdg width=200 align=right><font size=3><b>Product Description:&nbsp;</b></font></td>
+    <td>&nbsp;
+      <input type=text name="proddesc" value="" size=50 maxlength=100>
+    </td>
+  </tr>
+  <tr>
+    <td id=taghdg width=200 align=right><font size=3><b>Vendor:&nbsp;</b></font></td>
+    <td>&nbsp;
+      <select name="vendorID" size=1>
+      <option value="">SELECT A VENDOR</option>
+<option value='BOS'>BOS - BOSTON SCIENTIFIC CORP. 2</option><option value='HELBY'>HELBY - HELBY</option><option value='HSP'>HSP - HOSPIRA WORLDWIDE, INC.</option><option value='JOY'>JOY - JOY'S PONY SHAMPOO CO</option><option value='KENDALL'>KENDALL - Kendall Healthcare</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td id=taghdg width=200 align=right><font size=3><b>Vendor Part#:&nbsp;</b></font></td>
+    <td>&nbsp;
+      <input type=text name="vendor_product" value="" size=20 maxlength=20>
+    </td>
+  </tr>
+  <tr>
+    <td id=taghdg width=200 align=right><font size=3><b>Manufacturer:&nbsp;</b></font></td>
+    <td>&nbsp;
+      <select name="Manufac" size=1>
+      <option value="">SELECT A MANUFACTURER</option>
+<option value='BOS'>BOS - BOSTON SCIENTIFIC CORP. 2</option><option value='HELBY'>HELBY - HELBY</option><option value='HSP'>HSP - HOSPIRA WORLDWIDE, INC.</option><option value='JOY'>JOY - JOY'S PONY SHAMPOO CO</option><option value='KENDALL'>KENDALL - Kendall Healthcare</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td id=taghdg width=200 align=right><font size=3><b>Manufacturer Part#:&nbsp;</b></font></td>
+    <td>&nbsp;
+      <input type=text name="manufacprodid" value="" size=20 maxlength=20>
+    </td>
+  </tr>
+  <tr>
+    <td id=taghdg width=200 align=right><font size=3><b>Customer Item#:&nbsp;</b></font></td>
+    <td>&nbsp;
+      <input type=text name="custitem" value="" size=20 maxlength=20>
+    </td>
+  </tr>
+  <tr>
+    <td height=5 colspan=2></td>
+  </tr>
+</table>
+<table  border=0 cellspacing=0 cellpadding=2 width=100%>
+  <tr>
+    <td height=10></td>
+  </tr>
+  <tr>
+    <td align=center valign=center>
+     <input type=submit class=button1 name="PCSR" value="Search" onclick='javascript:CreateBlock1(); changepath(name,"Y")'
+       onmouseover="this.className='button1 buttonhov1'" onmouseout="this.className='button1'">
+     <input type=button class=button1 name="reset" value="Reset" onclick='javascript:clearform()'
+       onmouseover="this.className='button1 buttonhov1'" onmouseout="this.className='button1'">
+     <input type=button class=button1 value="Return to Previous Page" name="PP" onclick="javascript:history.go(-1)"
+       onmouseover="this.className='button1 buttonhov1'" onmouseout="this.className='button1'">
+    </td>
+  </tr>
+  <tr>
+    <td height=10></td>
+  </tr>
+  <tr>
+    <td id=spacerline height=4 width=100%></td>
+  </tr>
+  <tr>
+    <td height=20></td>
+  </tr>
+</table>
+
+<script lang=javascript>
+function init() {
+  clearform() ;
+  document.template.searchflag.value = 'N' ;
+  document.template.submitvar.value = '' ;
+}
+</script>
+</form>
+</td>
+</tr>
+</table>
+
+ </div><!--RnMainText -->
+ </div><!--RnMainBody -->
+<div id="RnFooter">
+<!-- debug flag = Y -->
+<!-- timing flag = Y -->
+<!-- weborder debug flag = Y -->
+<!--RnFooter -->
+ </div> <!--RnWrapLeft -->
+ </div> <!--RnWrapRight -->
+ </div> <!--Superholder -->
+ </body> </html>

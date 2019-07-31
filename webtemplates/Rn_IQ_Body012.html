@@ -1,0 +1,73 @@
+<div class="InventoryMainPage" >
+
+<!-- beginning of inventory_inquiry page -->
+<form name=template action="login[SUFFIX]" method=post>
+<input type=hidden name=Aprod_string value="[APROD_STRING]">
+<input type=hidden name=prod_string value="[PROD_STRING]">
+<input type=hidden name=qty_string value="[QTY_STRING]">
+<input type=hidden name=um_string value="[UM_STRING]">
+<input type=hidden name=price_string value="[PRICE_STRING]">
+<input type=hidden name=comment_string value="[COMMENT_STRING]">
+<input type=hidden name=manufact_string value="[MANUFACT_STRING]">
+<input type=hidden name=loginpath value="[LOGINPATH]">
+<input type=hidden name=searchflag value="[SEARCHFLAG]">
+<input type=hidden name=pageid value="6">
+<input type=hidden name=startptr value="[STARTPTR]">
+<input type=hidden name=CustomerId value="[CUSTOMERID]">
+<input type=hidden name=orderno value="[ORDERNO]">
+<input type=hidden name=old_loginpath value="[LOGINPATH]">
+<input type=hidden name=prev_changesort value="[CHANGESORT]">
+<input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+<input type=hidden name=mdsorderno value="[MDSORDERNO]">
+<input type=hidden name=aprodno value="[APRODNO]">
+<input type=hidden name=slsmno value="[SLSMNO]">
+<input type=hidden name=slsmn_id value="[SLSMN_ID]">
+<table border=0 cellspacing=0 cellpadding=0 width=100%>
+<tr>
+    <td class=datsml align=left><font size=3>&nbsp;<b>Please Enter a valid Product Code and click on &quot;Submit&quot;</b></font></td>
+</tr>
+</table>
+<table border=0 cellpadding=2 cellspacing=2 width=100%>
+  <tr>
+    <td id=colhdg nowrap><font size=2><b>Product Code</b></font></td>
+    <td id=colhdg nowrap><font size=2><b>Product Description</b></font></td>
+  </tr>
+  <tr>
+    <td valign=top >&nbsp;<input type=text name="aprodno" value="[A.PROD.NO]" size=24 maxlength=24></td>
+    <td nowrap valign=top >[PROD.DESC] &nbsp;</td>
+  </tr>
+</table>
+<table border=0 cellpadding=2 cellspacing=2 width=100%>
+  <tr>
+    <td id=colhdg align=center nowrap><font size=2><b>Sell UM</b></font></td>
+    <td id=colhdg align=center nowrap><font size=2><b>Stock UM</b></font></td>
+    <td id=colhdg align=center nowrap><font size=2><b>Purch UM</b></font></td>
+    <td id=colhdg align=center nowrap><font size=2><b>Box QTY</b></font></td>
+    <td id=colhdg align=center nowrap><font size=2><b>Case QTY</b></font></td>
+    <td id=colhdg align=center nowrap><font size=2><b>Substitute Item</b></font></td>
+  </tr>
+  <tr>
+    <td valign=top nowrap >[SELL.UM]</td>
+    <td valign=top nowrap >[STOCK.UM]</td>
+    <td valign=top nowrap >[PURCH.UM]</td>
+    <td valign=top nowrap >[BOX.QTY]</td>
+    <td valign=top nowrap >[CASE.QTY]</td>
+    <td valign=top nowrap >[SUB.ITEM]</td>
+  </tr>
+</table>
+<table border=0 cellpadding=2 cellspacing=2 width=100%>
+  <tr>
+    <td id=colhdg align=center nowrap><font size=2><b>Whse</b></font></td>
+    <td id=colhdg align=center nowrap><font size=2><b>Avail</b></font></td>
+    <td id=colhdg align=center nowrap><font size=2><b>On Order</b></font></td>
+    <td id=colhdg align=center nowrap><font size=2><b>Next PO</b></font></td>
+    <td id=colhdg align=center nowrap><font size=2><b>Avg.Usage</b></font></td>
+    <td id=colhdg align=center nowrap><font size=2><b>Usage MTD</b></font></td>
+    <td id=colhdg align=center nowrap><font size=2><b>Usage YTD</b></font></td>
+    <td id=colhdg align=center nowrap><font size=2><b>Purch $ MTD</b></font></td>
+    <td id=colhdg align=center nowrap><font size=2><b>Purch $ YTD</b></font></td>
+[DETAIL.LINES]
+  </tr>
+</table>
+
+</div>

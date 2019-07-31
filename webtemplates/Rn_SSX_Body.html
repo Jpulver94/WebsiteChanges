@@ -1,0 +1,76 @@
+
+
+
+<style type="text/css">
+#hintbox{ /*CSS for pop up hint box */
+position:absolute;
+top: 0;
+background-color: lightyellow;
+width: 150px; /*Default width of hint.*/ 
+padding: 3px;
+border:1px solid black;
+font:normal 11px Verdana;
+line-height:18px;
+z-index:100;
+border-right: 3px solid black;
+border-bottom: 3px solid black;
+visibility: hidden;
+}
+.hintanchor{ /*CSS for link that shows hint onmouseover*/
+font-weight: bold;
+color: navy;
+}
+</style>
+<input type=hidden name=shipto value="">
+<div id="SSXAddress" style="float:left;" >
+  <table border=0 cellpadding=0 cellspacing=0 >
+    <tr>
+      <td  nowrap>
+        <input type=text size=40 maxlength=40 name="Shiptoname" value="[SHIPTO.NAME]" [FOCUS.LOCK]>
+<a href="#" class="hintanchor" title='This is the Shipto Name'>[?]</a><br />
+      </td>
+    </tr>
+    <tr>
+      <td  nowrap>
+        <input type=text size=40 maxlength=40 name="Shiptodesc" value="[SHIPTO.ADDR1]"  [FOCUS.LOCK]>
+<a href="#" class="hintanchor" title='This is the Shipto Address Line 1'>[?]</a><br />
+      </td>
+    </tr>
+    <tr>
+      <td  nowrap>
+        <input type=text size=40 maxlength=40 name="Shiptodesc2" value="[SHIPTO.ADDR2]"  [FOCUS.LOCK]>
+<a href="#" class="hintanchor" title='This is the Shipto Address Line 2'>[?]</a><br />
+      </td>
+    </tr>
+    <tr>
+      <td  nowrap>
+        <input type=text size=40 maxlength=40 name="Shiptodesc3" value="[SHIPTO.ADDR3]"  [FOCUS.LOCK]>
+<a href="#" class="hintanchor" title='This is the Shipto Address Line 3 , it may be used for a suite or room number'>[?]</a><br />
+      </td>
+    </tr>
+    <tr>
+      <td  nowrap>
+        <input type=text size=15 maxlength=35 name="Shiptocity" value="[SHIPTO.CITY]"  [FOCUS.LOCK]>
+<a href="#" class="hintanchor" title='This is the Shipto City'>[?]</a><br />
+        <input type=text size=2 maxlength=2 name="Shiptostate" value="[SHIPTO.STATE]"  [FOCUS.LOCK]>
+<a href="http://www.usps.com/ncsc/lookups/abbr_state.txt" target=new class="hintanchor" title='This is the Shipto State , please use a valid two digit state code Click on the question mark to view valid codes </a> '>[?]</a><br />
+        <input type=text size=10 maxlength=10 name="Shiptozip" value="[SHIPTO.ZIP]"  [FOCUS.LOCK]>
+<a href="#" class="hintanchor" title='This is the Shipto Zip Code'>[?]</a><br />
+      </td>
+    </tr>
+      <td  nowrap>
+        <input type=text size=40 maxlength=40 name="Shiptophone" value="[SHIPTO.PHONE]"  [FOCUS.LOCK]>
+<a href="#" class="hintanchor" title='This is the Shipto Phone , it may be used for a suite or room number'>[?]</a><br />
+      </td>
+    </tr>
+    <tr>
+      <td  nowrap>
+       [COUNTRY.BOX] 
+<a href="#" class="hintanchor" title='This is the Country '>[?]</a><br />
+      </td>
+    </tr>
+[DROPDOWN]
+
+
+
+

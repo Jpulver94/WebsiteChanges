@@ -1,0 +1,109 @@
+
+
+    <form name=email action="login[SUFFIX]" method=post>
+  <table border=0>
+         <tr>
+         <td id=colhdg colspan=2 nowrap>  Forgot your password? 
+          </td>
+       </tr>
+       <tr>
+         <td class="Headings" > Email Address:
+           </td> <td class="EntryBoxes" > <input type="text" name="email" size="20" value="[EMAIL]"> </td>
+       </tr>
+        <tr>
+         <td colspan=2 class="Headings headnote" >
+              Enter your email address in the box above and we will send you your password.
+             <br>  <font size="2"> Please note: To receive web customer login information, the email address entered here MUST match the email address on file for your account </font>           
+          </td> 
+       </tr>
+               <tr>
+         <td colspan=2 align=left>
+        <input class="button1" type="submit" title="Get Password" value="Get Password" name="send" id="send2">
+         </td>
+       </tr>  
+       </table>   
+<input type="hidden" name="pageid" value="13">
+<input type="hidden" name="loginpath" value="EM">
+</form>
+<br>
+<form name=template action="login[SUFFIX]" method=post>
+<input type=hidden name=loginpath value="REG">
+<input type=hidden name=pageid value="31">
+<input type=hidden name=startptr value="1">
+<input type=hidden name=CustomerId value="">
+<input type=hidden name=orderno value="[ORDERNO]">
+<input type=hidden name=slsmno value="[SLSMNO]">
+<input type=hidden name=MODE value="U">
+<table border=0>
+       <tr>
+         <td id=colhdg colspan=2 nowrap> New User Registration</td>
+       </tr>
+       <tr>
+         <td class="Headings" > Username or Email Address: </td> <td class="EntryBoxes" > <input type="text" name="email" size="20" value="[EMAIL]"> </td>
+       </tr>
+              <tr>
+ <td class="Headings" > Account Code or Customer Number: <br>
+ <span class="headnote">
+ If you have an existing account with us, Please enter it and we will associate your login with your account.  (Leave Blank if you do not have one) 
+ </span>
+  </td> <td class="EntryBoxes" > <input type="text" name="ACUSTNO" size="20" value="[ACUSTNO]"> </td>
+       </tr>
+              <tr>
+         <td class="Headings" > Salutation: </td> <td class="EntryBoxes" > <input type="text" name="SALUT" size="20" value="[SALUT]"> </td>
+       </tr>
+              <tr>
+         <td class="Headings" > First Name: </td> <td class="EntryBoxes" > <input type="text" name="FNAME" size="20" value="[FNAME]"> </td>
+       </tr>
+              <tr>
+         <td class="Headings" > Last Name: </td> <td class="EntryBoxes" > <input type="text" name="LNAME" size="20" value="[LNAME]"> </td>
+       </tr>
+              <tr>
+         <td class="Headings" > Company Name: </td> <td class="EntryBoxes" > <input type="text" name="BILLTO.NAME" size="20" value="[CUST.NAME]"> </td>
+       </tr>
+              <tr>
+         <td class="Headings" > Address Line 1: </td> <td class="EntryBoxes" > <input type="text" name="BILLTO.ADDR1" size="20" value="[CUST.ADDR1]"> </td>
+       </tr>
+              <tr>
+         <td class="Headings" > Address Line 2: </td> <td class="EntryBoxes" > <input type="text" name="BILLTO.ADDR2" size="20" value="[CUST.ADDR2]"> </td>
+       </tr>
+              <tr>
+         <td class="Headings" > Address Line 3: </td> <td class="EntryBoxes" > <input type="text" name="BILLTO.ADDR3" size="20" value="[CUST.ADDR3]"> </td>
+       </tr>
+              <tr>
+         <td class="Headings" > City: </td> <td class="EntryBoxes" > <input type="text" name="BILLTO.CITY" size="20" value="[CITY]"> </td>
+       </tr>
+              <tr>
+         <td class="Headings" >
+ State: </td>
+ <td class="EntryBoxes" >
+<!-- 
+ <input type="text" name="BILLTO.STATE" size="20" value="[STATE]">
+-->
+[STATE]
+ </td>
+       </tr>
+              <tr>
+         <td class="Headings" > Zip Code: </td> <td class="EntryBoxes" > <input type="text" name="BILLTO.ZIP" size="20" value="[ZIP]"> </td>
+       </tr>
+              <tr>
+         <td class="Headings" > Phone: </td> <td class="EntryBoxes" > <input type="text" name="PHONE" size="20" value="[PHONE]"> </td>
+       </tr>
+              <tr>
+         <td class="Headings" > Fax : </td> <td class="EntryBoxes" > <input type="text" name="FAX" size="20" value="[FAX]"> </td>
+       </tr>
+        <tr style="[HIDEVALUE]">
+         <td class="Headings" >
+Web Login to Copy Profile from :
+ </td> <td class="EntryBoxes" > <input type="text" name="ORIGWEBID" size="20" value="[ORIGWEBID]"> </td>
+       </tr>
+       
+               <tr>
+         <td colspan=2 class="Headings headnote" >
+              Once your new login is created we will email you a new password. Don't worry, you can change it once you login. If your login is created you will see a link below.
+              Please review the messages below after you click register. 
+              <br>
+           </td> 
+       </tr>
+       
+
+

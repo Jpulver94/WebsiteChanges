@@ -1,0 +1,20 @@
+      <ConfirmationItem quantity="[ORD.QTY]" lineNumber="[LINE.NO]">
+        <UnitOfMeasure>[UNIT.MEAS]</UnitOfMeasure>
+        <ConfirmationStatus quantity="[SHIP.QTY]" deliveryDate="[SHIP.DT]" type="accept">
+          <UnitOfMeasure>[UNIT.MEAS]</UnitOfMeasure>
+          <ItemIn quantity="[ORD.QTY]" lineNumber="[LINE.NO]">
+            <ItemID>
+              <SupplierPartID>[A.PROD.NO]</SupplierPartID>
+            </ItemID>
+            <ItemDetail>
+              <UnitPrice>
+                <Money currency="USD">[PRICE]</Money>
+              </UnitPrice>
+              <Description xml:lang="EN">[PROD.DESC]</Description>
+              <UnitOfMeasure>[UNIT.MEAS]</UnitOfMeasure>
+              <Classification domain="[COMPANYNAME]">[COMPANYNAME]</Classification>
+            </ItemDetail>
+          </ItemIn>
+          <Extrinsic name="Plant">[WHSE]</Extrinsic>
+        </ConfirmationStatus>
+      </ConfirmationItem>

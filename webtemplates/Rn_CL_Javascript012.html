@@ -1,0 +1,59 @@
+
+
+
+
+
+
+<script lang=javascript>
+function custlist_prt(ordno,templ,user,sort) { 
+var pageurl = 'login[SUFFIX]?orderno=[WEB.ORDERNO]&CUSTOMERID=[CUSTOMERID]&LOGINPATH=CLP&pageid=31&SUBMITVAR=' + templ
+var dummy = showmodalrnpopup(pageurl) ;
+}
+function changesort(path,sflag,sort) { 
+  document.template.startptr.value = 1 ; 
+  document.template.searchflag.value = sflag ; 
+  document.template.loginpath.value = path ; 
+  document.template.Changesort.value = sort ; 
+  document.template.submit(); 
+}
+function Move_page(startptr,direction,loginpath) {
+// code to get startpointer
+  if(process_order(0)) { ; 
+  // process order - 1=popup 0=no popup and if true submit
+       if (startptr < 1 ) {
+          startptr = 1
+       }
+ //if startptr is greater than total lines then set it to 1  
+       if (startptr > [TOTALLINES]) { 
+          startptr = 1
+       }
+ //if itemspage or changesort changed value then set startptr to 1 
+       var sort = document.template.Changesort.value
+       var prev_sort = document.template.prev_changesort.value
+       var items = document.template.itemspage.value
+       var prev_items = document.template.prev_itemspage.value
+       if (sort != prev_sort||items != prev_items) { 
+          startptr = 1
+       }
+   document.template.startptr.value = startptr  ;
+   document.template.searchflag.value = 'N' ;
+   document.template.loginpath.value = loginpath ;
+   document.template.submit()  ; 
+  }
+}
+function loadvalues() { 
+ //function to set values in drop down boxes ; 
+    document.template.itemspage.value = "[ITEMSPAGE]" ;
+    document.template.Changesort.value = "[CHANGESORT]" ;
+}
+function prod_inquiry(loginpath,sflag,aprodno) { 
+ document.template.aprodno.value = aprodno  ; 
+ changepath(loginpath,sflag) ; 
+}
+</script>
+
+
+
+
+
+

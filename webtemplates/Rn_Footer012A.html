@@ -1,0 +1,172 @@
+
+         
+        </form>&nbsp;                 
+      </div>           
+      <!-- END CENTER -->                
+      <div style="left: 100%;" class=togglebar onclick='javascript:$("#right").toggle("1000")' >  Order Tools + | -             
+      </div>           
+      <div id="right">                        
+        <!-- BEGIN RIGHT -->                            [COUNTDOWN.CLOCK]                   
+        <div id="right_shortcuts">                                  
+          <!-- BEGIN RIGHT_ORDER -->                                               
+          <div class="accordionButton">                                                      
+            <div id="right_ordertop">                                                      
+              <!-- BEGIN RIGHT_ORDERTOP -->                  <h2>Shortcuts  + |  -  </h2>                                                      
+            </div>                                            
+            <!-- END RIGHT_ORDERTOP -->                                                  
+          </div>                                                
+          <div class="accordionContent">                                                         
+            <div class="right_ordercontent">                                                      
+              <!-- BEGIN RIGHT_ORDERCONTENT -->                                                                         
+              <p>Click on the following shortcuts :                                                        
+              </p>                                                                     
+              <table width="200" border="0" cellpadding="0" cellspacing="0">                                                                                 
+                <tr>                  <td>&nbsp;</td>                  <td>                                                                                    
+                    <p><strong>                                                                                        
+                        <!--                   <img src="[IMAGE.PATH]1.jpg" alt="1" width="15" height="15" align="absmiddle" />  -->   Create an Order</strong>                                                                                    
+                    </p>                                                                                                         
+                    <ul>                                                                                                                     
+                      <li>                                                                                              
+                      <a href=# onclick="javascript:changepath('PS')">Product Search</a>                                                                                              
+                      </li>                                                                                                                     
+                      <li>                                                                                              
+                      <a href=# onclick="javascript:changepath('QO')">Quick Order</a>                                                                                              
+                      </li>                                                                                                                     
+                      <li>                                                                                              
+                      <a href=# onclick="javascript:changepath('CL')">Use a Template</a>                                                                                              
+                      </li>                                                                                                                     
+                      <li>                                                                                             
+                      <a href=# onclick="javascript:changepath('PH')">Your Purchasing History </a>                                              
+                      </li>                                                                                                                        
+                      <li>                                                                                              
+                      <a class="EproDisp" href=# onclick="javascript:changepath('OE')">Update Shipping Information</a>                                                                                              
+                      </li>                                                                
+                      <li>                                                                                                    
+                      <a href=# onclick="javascript:new_template('ST')">Save order as a Template</a>                                                                                                    
+                      </li>                                                                                                         
+                    </ul>              </td>                                                                                 
+                </tr>                                                                                 
+                <tr>                  <td>&nbsp;</td>                  <td>                                                                                    
+                    <p><strong>                                                   
+                        <br/>                                                                                   
+                        <!--                   <img src="[IMAGE.PATH]2.jpg" alt="2" width="15" height="15" align="absmiddle" /> -->    My Account </strong>                                                                                    
+                    </p>                                                                                                         
+                    <ul>                                                                                                                                           
+                      <li>                                                                                              
+                      <a href=# onclick="javascript:changepath('COO')">Check Order Status</a>                                                                                              
+                      </li>                                                                                                                       
+                      <li>                                                                                              
+                      <a href=# onclick="javascript:changepath('BO')">Check My Back Orders</a>                                                                                              
+                      </li>                                                                                                                      
+                      <li>                                                                                              
+                      <a href=# onclick="javascript:changepath('ARQ')">View My Invoices </a>                                                                                              
+                      </li>                                                                 
+                      <li>                                                                                              
+                      <a href=# onclick="javascript:changepath('OOH')">Review Orders on Hold </a>                                                                                              
+                      </li>                                                         
+                    </ul></td>                                                                                 
+                </tr>                                                                     
+              </table>                                                         
+            </div>                                            
+            <!-- END RIGHT_ORDERCONTENT -->                                                                       
+            <div class="right_orderbottom">                                                      
+              <!-- BEGIN RIGHT_ORDERBOTTOM -->                                                    
+            </div>                                            
+            <!-- END RIGHT_ORDERBOTTOM -->                                                    
+          </div>                                     
+          <!-- end accordion content -->                                
+        </div>                        
+        <!-- END RIGHT_ORDER -->                                          
+        <!-- Added Hot Items Vertical -->                                              
+        <div id="right_specials">                                  
+          <!-- BEGIN RIGHT_DESCR -->                                               
+          <div class="accordionButton">                                                      
+            <div onclick="javascript:loadspecials();" id="right_ordertop">                                                      
+              <!-- BEGIN RIGHT_ORDERTOP -->                  <h2>Our Specials  + |  -  </h2>                                                      
+            </div>                                            
+            <!-- END RIGHT_ORDERTOP -->                                                
+          </div>                                    
+          <!-- END ACCORDION BUTTON -->                                                   
+          <!-- BEGIN RIGHT_DESCRTOP -->                                                   
+          <div class="accordionContent">                                                              
+            <div class="right_ordercontent" id="right_descrcontent">                                                      
+              <!-- BEGIN RIGHT_DESCRCONTENT -->                                                                        
+              <div id="RSdivcontainer">                                                      
+              </div>                                  
+            </div>                                            
+            <!-- END RIGHT_DESCRCONTENT -->                                                                 
+            <div id="right_descrbottom" class="right_orderbottom">                                                      
+              <!-- BEGIN RIGHT_ORDERBOTTOM -->                                                    
+            </div>                                            
+            <!-- END RIGHT_ORDERBOTTOM -->                                                 
+          </div>                                    
+          <!-- end accordion content -->                                
+        </div>                        
+        <!-- END RIGHT_DESCR -->                               
+        <div id="right_order">                                        
+          <div class="accordionButton">                                                    
+            <div onclick="javascript:loadsideorder();" id="right_ordertop">                                                    
+              <!-- BEGIN RIGHT_ORDERTOP -->                  <h2>Current Order  + |  -  </h2>                                                    
+            </div>                                          
+            <!-- END RIGHT_ORDERTOP -->                                              
+          </div>                                                       
+          <!-- BEGIN Current Order  -->                                                   
+          <div class="accordionContent">                                                              
+            <div class="right_ordercontent" id="right_descrcontent">                                                      
+              <!-- BEGIN RIGHT_DESCRCONTENT -->                                                                        
+              <div id="printdivcontainer">                                                      
+              </div>                                  
+            </div>                                            
+            <!-- END RIGHT_DESCRCONTENT -->                                                                            
+            <div id="right_descrbottom" class="right_orderbottom">                                                      
+              <!-- BEGIN RIGHT_ORDERBOTTOM -->                                                    
+            </div>                                            
+            <!-- END RIGHT_ORDERBOTTOM -->                                                 
+          </div>                                    
+          <!-- end accordion content -->                                
+        </div>                        
+        <!-- END RIGHT_DESCR -->                                                         
+        <div id="right_livehelp">                                  
+          <!-- BEGIN RIGHT_LIVEHELP -->              <h2>Live Help </h2>                                             
+          <p>Do you have questions?                                   
+          </p>                                             
+          <p><strong>Call us </strong>: [CONTACT.PHONE]<br />          <strong>E-mail us </strong>:                                              
+            <a href="mailto:[CONTACT.EMAIL]">[CONTACT.EMAIL] </a>                                  
+          </p>                                         
+          <div class="SalesContact" style="[SLSDISPLAY]" >                            
+            <p>Your Account Representative                                       
+            </p>                                                 
+            <p><strong>Sales Contact  </strong>: [SLSNAME]<br /><strong>Call  </strong>: [SLSPHONE]<br />          <strong>E-mail  </strong>:                                                  
+              <a href="mailto:[SLSEMAIL]">[SLSEMAIL] </a>                                      
+            </p>                                         
+          </div>                   
+          <!--     <p>             
+                                   <img src=[IMAGE.PATH]livehelp.png >            
+                                </p>              -->                   
+        </div>                        
+        <!-- END RIGHT_LIVEHELP -->                                        
+      </div>           
+      <!-- END RIGHT -->             
+    </div>              
+    <!--Superholder/content -->                   
+    <div id="footer" STYLE="text-align:center;width:100%">                      
+      <hr id=styleruler height=4 width=100%>                                
+      <a class="EproDisp bottommenuItem" href=# onclick="javascript:changepath('OE')">Shipping Information</a> |                               
+      <a class="bottommenuItem" href=# onclick="javascript:changepath('CP')">Change Password</a> |                                 
+      <a class="bottommenuItem" href=# onclick="javascript:changepath('CO')">View Cart </a> |                               
+      <a class="bottommenuItem" href=# onclick="javascript:changepath('COO')">Order Status</a> |                               
+      <a class="bottommenuItem" href=# onclick="javascript:changepath('FB')">Contact Us</a>                            
+      <br>                            
+      <font size=-3 >Custom Designed for [COMPANY.NAME]                                        
+        <br>Copyright &copy; [COPY.YR] The Systems House, Inc.                                        
+        <br>                                        
+        <a href="mailto:[WEBMASTER.EMAIL]">                                                
+          <em>Problems? Click here to email the Webmaster                                                 
+          </em>                            
+      </font></a>               
+    </div>              
+    <!--RnFooter -->                 
+  </body>      
+</html>
+
+

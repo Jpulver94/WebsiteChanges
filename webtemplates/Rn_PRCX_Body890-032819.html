@@ -1,0 +1,120 @@
+
+
+
+
+
+
+
+
+
+
+<div class="PricingCell" >
+<table class="PricingCell">
+<tr>
+<td>
+<div class="PRCXClass PLClass " >
+SUGGESTED ITEMS
+[SUGHTML]  </div>
+</td>
+<td>
+<div class="PRCXClass PLClass " >
+CATALOG MESSAGE
+[CAT.MSG]  </div>
+</td>
+<td>
+<div class="PRCXClass PLClass " >
+MINIMUM QTY MESSAGE
+[MIN.MSG]  </div>
+</td>
+<td>
+<div class="PRCXClass PLClass " >
+ON MDS ORDER MESSAGE
+[MDSCARTMSG]  </div>
+</td>
+<td>
+  <div class="PRCXClass PLClass PricingPhist" >
+PURCHASE HIST MESSAGE
+ [PURCH.HIST]  </div>
+</td>
+<td>
+<div class="PRCXClass PLClass " >
+CART MESSAGE
+[CARTMSG]  </div>
+</td>
+</tr>
+<tr>
+<td colspan=3>
+<div id="StockContainer[PROD.NO]"> </div>
+STOCK MESSAGE
+</td>
+<td colspan=3>
+  <div class="PLClass PricingUmBox" >
+<select class="SumSelect" name="UMBOX-[PROD.NO]"  id="UMBOX-[PROD.NO]" >
+   [PI.LINES] 
+</select>
+  </div>
+ <div class="PLClass PricingQtyBox" >
+<input class="QtyBox" length=5 data-prodno="[PROD.NO]" data-aprodno="[A.PROD.NO]" name="QTYBOX-[PROD.NO]"  id="QTYBOX-[PROD.NO]" >
+ </div>
+<div class="PLClass PricingAddButton" >
+  <img src="https://sunset.tshinc.com/sunset/images/Add.png" onclick="javascript:cart_add('[PROD.NO]','[A.PROD.NO]')" >
+</div>
+<div class="PLClass PricingFormularyButton" >
+  <img src="https://sunset.tshinc.com/sunset/images/Formulary.png" onclick="javascript:fav_template('[A.PROD.NO]')" >
+</div>
+</td>
+</tr>
+</table>
+</div> 
+
+
+<style>
+.qwrap {
+    width: 125px !important;
+    left: -45px;
+    background: transparent !important;
+    position: relative;
+}
+.inc {
+ margin: 0px 0px 0px 0px !important;
+ border-top-right-radius: 5px !important;
+ border-bottom-right-radius: 5px !important;
+ border-top-left-radius: 0px !important;
+ border-bottom-left-radius: 0px !important;
+ position: relative;
+ left: 120px;
+}
+.dec {
+ font-size: 40px !important;
+ margin: 0px 0px 0px 0px !important;
+ border-top-left-radius: 5px !important;
+ border-bottom-left-radius: 5px !important;
+ border-top-right-radius: 0px !important;
+ border-bottom-right-radius: 0px !important;
+ position: relative;
+ left: 15px;
+}
+.PLClass.PricingPhist {
+    min-width: 180px;
+}
+.PricingCell {min-width: 400px ;}
+.PLClass {
+    float: left;
+    padding-left: 0px;
+    margin: 1px;
+}
+.SQty {
+    border: solid 1px #d3d4d6;
+    height: 28px;
+    width: 33px;
+    /* padding: 5px; */
+    /* margin-bottom: -33px; */
+    text-align: center;
+    color: black;
+    margin: 2px;
+}
+.SumSelect { color: black ; }
+
+</style>
+
+

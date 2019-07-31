@@ -1,0 +1,6 @@
+  <LineItem>
+   <LineId>[LN]</LineId>
+   <ReceivedDate>[RCPT.DATE]</ReceivedDate>
+   <Quantity>[RECV.QTY]</Quantity>
+   <NdcNumber>[RECV.NDC]</NdcNumber>
+  </LineItem>

@@ -1,0 +1,31 @@
+      <InvoiceDetailOrder>
+        <InvoiceDetailOrderInfo>
+          <OrderReference orderID="[CUST.PO.NO]" orderDate="[ORDER.DT]">
+            <DocumentReference payloadID="[PAYLOAD.ID]" />
+          </OrderReference>
+          <OrderIDInfo orderID="[ORDER.NO]" orderDate="[ORDER.DT]" />
+        </InvoiceDetailOrderInfo>
+        <InvoiceDetailItem invoiceLineNumber="[LINE.NO]" quantity="[ORD.QTY]">
+          <UnitOfMeasure>[UNIT.MEAS]</UnitOfMeasure>
+          <UnitPrice>
+            <Money currency="USD">[PRICE]</Money>
+          </UnitPrice>
+          <InvoiceDetailItemReference lineNumber="[LINE.NO]">
+            <ItemID>
+              <SupplierPartID>[A.PROD.NO]</SupplierPartID>
+            </ItemID>
+            <Description xml:lang="EN">[PROD.DESC]</Description>
+          </InvoiceDetailItemReference>
+          <InvoiceDetailLineShipping>
+            <InvoiceDetailShipping shippingDate="[SHIP.DT]">
+              <Contact role="ShipFrom">
+                <Name xml:lang="EN">[COMPANYNAME]</Name>
+              </Contact>
+            </InvoiceDetailShipping>
+            <Money currency="" />
+          </InvoiceDetailLineShipping>
+          <NetAmount>
+            <Money currency="USD">[EXT.PRICE]</Money>
+          </NetAmount>
+        </InvoiceDetailItem>
+      </InvoiceDetailOrder>

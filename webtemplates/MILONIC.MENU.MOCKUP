@@ -1,0 +1,22 @@
+      _menuCloseDelay=500 // The time delay for menus to remain visible on mouse out
+      _menuOpenDelay=150 // The time delay before menus open on mouse over
+      _subOffsetTop=5 // Sub menu top offset
+      _subOffsetLeft=-10 // Sub menu left offset
+
+
+
+// DJF 2-28-09 MOVED colors and such to style sheet 
+      with(menuStyle=new mm_style()){
+      onclass="cssmouseon" ; 
+      offclass="cssmouseoff" ; 
+      subimage="[WEBSITE.ID]/arrow.gif" ; 
+      subimagepadding="2" ; 
+      }
+
+      with(milonic=new menuname("Main Menu")){
+      style=menuStyle ; 
+//        top=200 ; 
+ //      left=8 ; 
+//      menuheight=520 ; 
+      alwaysvisible=1 ; 
+//      overflow="scroll" ; 

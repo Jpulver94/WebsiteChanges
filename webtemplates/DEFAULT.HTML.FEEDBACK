@@ -1,0 +1,245 @@
+<html>
+<head>
+  <LINK rel="STYLESHEET" type="text/css" href="[CSS.NAME]">
+  <meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+  <meta name="generator" content="Microsoft FrontPage 4.0">
+  <title>RemoteNet Feedback</title>
+</head>
+
+<body topmargin="0" leftmargin="0" bgcolor="white">
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td id=taghdg align=left valign=bottom height="64" nowrap><font size=5><i>RemoteNet<b>Feedback</b></i></font></td>
+  </tr>
+  <tr>
+    <td height="10"></td>
+  </tr>
+  <tr>
+    <td id=taghdg><b>User:</b>&nbsp;&nbsp;&nbsp;&nbsp;<font id=datnorm>[USER.NAME]</font></td>
+  </tr>
+  <tr>
+    <td id=taghdg><b>Email:</b>&nbsp;&nbsp;<font id=datnorm>[USER.EMAIL]</font></td>
+  </tr>
+  <tr>
+    <td height="10"></td>
+  </tr>
+  <tr>
+    <td id=taghdg><b>Customer:</b></td>
+  </tr>
+  <tr>
+    <td id=datnorm>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CUST.NAME]
+    </font></td>
+  </tr>
+  <tr>
+    <td id=datnorm>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CUST.ADDR1]
+    </font></td>
+  </tr>
+  <tr>
+    <td id=datnorm>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CUST.ADDR2]
+    </font></td>
+  </tr>
+  <tr>
+    <td id=datnorm>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CUST.ADDR3]
+    </font></td>
+  </tr>
+  <tr>
+    <td id=datnorm>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CUST.CITY.ST]
+    </font></td>
+  </tr>
+  <tr>
+    <td height="10"></td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td id=secthdg colspan="2"><b>EASE OF USE -- Ordering Methods:</b></td>
+  </tr>
+  <tr>
+    <td id=datnorm colspan="2">Please rate the ease of use for the following order Entry methods on RemoteNet, Inc.. (1 indicates very difficult, 5 indicates very simple)</td>
+  </tr>
+  <tr>
+    <td colspan="2" height="10"></td>
+  </tr>
+  <tr>
+    <td id=datnorm align="right" nowrap width="45%">Custom Lists: </td>
+    <td id=datnorm width="55%">[FBcustomlists]</td>
+  </tr>
+  <tr>
+    <td id=datnorm align="right" nowrap width="45%">Product Search: </td>
+    <td id=datnorm width="55%">[FBprodsearch]</td>
+  </tr>
+  <tr>
+    <td id=datnorm align="right" nowrap width="45%">Quick Order: </td>
+    <td id=datnorm width="55%">[FBquickord]</td>
+  </tr>
+  <tr>
+    <td id=datnorm align="right" nowrap width="45%">Purchase History: </td>
+    <td id=datnorm width="55%">[FBpurchhist]</td>
+  </tr>
+  <tr>
+    <td colspan="2" height="10"></td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td id=secthdg><b>OVERALL SITE FUNCTIONALITY:</b></td>
+  </tr>
+  <tr>
+    <td id=datnorm>(1 indicates unsatisfactory, 5 indicates above expectations)</td>
+  </tr>
+  <tr>
+    <td height="10"></td>
+  </tr>
+  <tr>
+    <td id=datnorm align="center">My overall satisfaction with the site is:&nbsp;[FBfunctionality]</td>
+  </tr>
+  <tr>
+    <td height="10"></td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td id=secthdg colspan="2"><b>SPEED OF SITE:</b></td>
+  </tr>
+  <tr>
+    <td id=datnorm colspan="2">(1 indicates unsatisfactory, 5 indicates above expectations)</td>
+  </tr>
+  <tr>
+    <td colspan="2" height="10"></td>
+  </tr>
+  <tr>
+    <td id=datnorm align="right" width="45%">Site Speed: </td>
+    <td id=datnorm width="55%">[FBspeed]</td>
+  </tr>
+  <tr>
+    <td id=datnorm align="right" width="45%">Internet connection: </td>
+    <td id=datnorm width="55%">[FBconnect]</td>
+  </tr>
+  <tr>
+    <td colspan="2" height="10"></td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td id=secthdg colspan="2"><b>USEFULLNESS OF REMOTENET WEBSITE:</b></td>
+  </tr>
+  <tr>
+    <td id=datnorm colspan="2">(1 indicates disagree, 5 indicates agree)</td>
+  </tr>
+  <tr>
+    <td colspan="2" height="10"></td>
+  </tr>
+  <tr>
+    <td id=datnorm align="right" width="50%">Helpful in managing my practice/business: </td>
+    <td id=datnorm width="50%">[FBhelpmanage]</td>
+  </tr>
+  <tr>
+    <td id=datnorm align="right" width="50%">Provides useful information: </td>
+    <td id=datnorm width="50%">[FBuseful]</td>
+  </tr>
+  <tr>
+    <td id=datnorm align="right" width="50%">Better than using individual vendor sites: </td>
+    <td id=datnorm width="50%">[FBbettervend]</td>
+  </tr>
+  <tr>
+    <td colspan="2" height="10"></td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td id=secthdg><b>Additional Information:</b></td>
+  </tr>
+  <tr>
+    <td height="10"></td>
+  </tr>
+  <tr>
+    <td align="left" width="100%">
+	<table border="0" cellpadding="0" cellspacing="3">
+	  <tr>
+	    <td id=datnorm colspan="2">[FBaddinfo]</td>
+	  </tr>
+	  <tr>
+	    <td colspan="2" height="10"></td>
+	  </tr>
+	  <tr>
+	    <td id=blkblush width="50%" align="right">How many vendors do you currently purchase<br>Medical/Pharmaceutical products from?</td>
+	    <td id=blkblush>[FBnumvendors]</td>
+	  </tr>
+	  <tr>
+	    <td colspan="2" height="10"></td>
+	  </tr>
+	  <tr>
+	    <td id=datnorm width="50%" align="right">Would you like to purchase from<br>additional vendors at this site?</td>
+	    <td id=datnorm>[FBaddvendpurch]</td>
+	  </tr>
+	</table>
+    </font></td>
+  </tr>
+  <tr>
+    <td height="10"></td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+	  <th nowrap><span class="vendhdg">Vendor Name</span></th>
+	  <th nowrap><span class="vendhdg">Contact Name</span></th>
+	  <th nowrap><span class="vendhdg">Phone Number</span></th>
+	</tr>
+	<tr>
+	  <td id=datnorm>1. [FBVendorName1]</td>
+	  <td id=datnorm>[FBContactName1]</td>
+	  <td id=datnorm>[FBPhone1]</td>
+	</tr>
+	<tr>
+	  <td id=datnorm>2. [FBVendorName2]</td>
+	  <td id=datnorm>[FBContactName2]</td>
+	  <td id=datnorm>[FBPhone2]</td>
+	</tr>
+	<tr>
+	  <td id=datnorm>3. [FBVendorName3]</td>
+	  <td id=datnorm>[FBContactName3]</td>
+	  <td id=datnorm>[FBPhone3]</td>
+	</tr>
+	<tr>
+	  <td id=datnorm>4. [FBVendorName4]</td>
+	  <td id=datnorm>[FBContactName4]</td>
+	  <td id=datnorm>[FBPhone4]</td>
+	</tr>
+	<tr>
+	  <td id=datnorm>5. [FBVendorName5]</td>
+	  <td id=datnorm>[FBContactName5]</td>
+	  <td id=datnorm>[FBPhone5]</td>
+	</tr>
+  <tr>
+    <td colspan="3" height="10"></td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td id=secthdg colspan="2"><b>General Comments, Questions or Suggestions:</b></td>
+  </tr>
+  <tr>
+    <td colspan="2" height="10"></td>
+  </tr>
+  <tr>
+    <td id=blkblush colspan="2" align="left" valign="center">[FBcomments]</td>
+  </tr>
+  <tr>
+    <td colspan="2" height="10"></td>
+  </tr>
+</table>
+</body>
+</html>

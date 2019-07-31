@@ -1,0 +1,44 @@
+<form id=template action="login[SUFFIX]" method=post name=template>
+<input type=hidden name=pageid value="13">
+<input type=hidden name=orderno value="[ORDERNO]">
+<input type=hidden name=CustomerId value="[CUSTOMERID]">
+<input type=hidden name=loginpath value="[LOGINPATH]">
+<input type=hidden name=loginname value="[LOGINNAME]">
+<input type=hidden name=memberid value="[MEMBERID]">
+<input type=hidden name=acustno value="[ACUSTNO]">
+<input type=hidden name=weborderno value="[WEBORDERNO]">
+<input type=hidden name=old_loginpath value="[LOGINPATH">
+<input type=hidden name=prev_changesort value="[CHANGESORT">
+<input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+<input type=hidden name=slsmno value="[SLSMNO]">
+<input type=hidden name=slsmn_id value="[SLSMN_ID]">
+<!-- beginning of delete_user page -->
+<table border=0 cellspacing=0 cellpadding=0 width=100%>
+  <tr>
+    <td colspan=2 id=warning><font size=4><span class=subhead>Login Deleted</span></font></td>
+  </tr>
+  <tr>
+    <td id=datnorm align=left valign=top><font size=3><b>Login &nbsp;[USER.ID] &nbsp;has been permanently removed from the system.</b>
+<p><b>All pending orders for this login are still available on the customer account.</b></font></td>
+  </tr>
+  <tr>
+    <td height=8></td>
+  </tr>
+  <tr>
+    <td id=spacerline height=4 width=100% align=left></td>
+  </tr>
+  <tr>
+    <td height=8></td>
+  </tr>
+</table>
+<table border=0 cellspacing=0 cellpadding=0 width=100%>
+  <tr>
+    <td align=center valign=center>
+     <input type=button class=button1 value="Create/Edit another User ID" name="ADM" onclick="javascript:changepath(name)"
+       onmouseover="this.className='button1 buttonhov1'" onmouseout="this.className='button1'">
+     <input type=button class=button1 value="Return to Order Entry" name="OE" onclick="javascript:changeorder(name,'[ORDERNO]')"
+       onmouseover="this.className='button1 buttonhov1'" onmouseout="this.className='button1'">
+    </td>
+  </tr>
+</table>
+<!-- end of delete_user page -->

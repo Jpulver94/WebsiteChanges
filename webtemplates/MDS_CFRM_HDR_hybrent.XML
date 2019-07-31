@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE cXML SYSTEM "http://xml.cXML.org/schemas/cXML/1.2.021/InvoiceDetail.dtd">
+<cXML xmlns="http://xml.cXML.org/schemas/cXML/1.2.017/cXML.dtd" timestamp="[TIMESTAMP]" payloadID="[PAYLOAD.ID]">
+  <Header>
+    <From>
+      <Credential domain="ID">
+        <Identity>[DUNS.ID]</Identity>
+      </Credential>
+    </From>
+    <To>
+      <Credential domain="ID">
+        <Identity>[TRADE.ID]</Identity>
+      </Credential>
+      <Credential domain="SoldTo">
+        <Identity>[SHIP.TO.NO]</Identity>
+      </Credential>
+    </To>
+    <Sender>
+      <Credential domain="ID">
+        <Identity>[COMPANYNAME]</Identity>
+      </Credential>
+      <UserAgent>[COMPANYNAME]</UserAgent>
+    </Sender>
+  </Header>
+  <Request>
+    <ConfirmationRequest>
+      <ConfirmationHeader confirmID="[ORDER.NO]" type="accept" noticeDate="[ORDER.DT]">
+        <Contact role="shipFrom">
+          <Name xml:lang="EN">[COMPANYNAME]</Name>
+        </Contact>
+        <Contact role="ShipTo" addressID="[SHIP.TO.NO]">
+          <Name xml:lang="EN">[SHIP.TO.NM]</Name>
+          <PostalAddress>
+            <DeliverTo>[SHIP.TO.ADDR1]</DeliverTo>
+            <Street>[SHIP.TO.ADDR2]</Street>
+            <City>[SHIP.TO.CITY]</City>
+            <State>[SHIP.TO.STATE]</State>
+            <PostalCode>[SHIP.TO.ZIP]</PostalCode>
+            <Country isoCountryCode="US">[SHIP.TO.COUNTRY]</Country>
+          </PostalAddress>
+        </Contact>
+        <Contact role="orderer">
+          <Name xml:lang="EN">[ORDERED.BY]</Name>
+        </Contact>
+        <Extrinsic name="PatientID">[PATIENT.ID]</Extrinsic>
+      </ConfirmationHeader>
+      <OrderReference orderID="[CUST.PO.NO]" orderDate="[ORDER.DT]">
+        <DocumentReference payloadID="[PAYLOAD.ID]" />
+      </OrderReference>
+[DTL.LINES]
+    </ConfirmationRequest>
+  </Request>
+</cXML>

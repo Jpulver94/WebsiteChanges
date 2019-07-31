@@ -1,0 +1,37 @@
+
+
+
+
+
+ <tr id=[LNCOLOR]  class="ssInvoiceRow" >
+   <td class=datsml width=20 valign=top align=left>
+       [LN.NO]</td>
+   <td class=datsml width=35 valign=top>
+       [TYPE]</td>
+   <td class=datsml width=90 valign=top>
+   <a style="[DISP]" title="View Invoices" href=# onclick=javascript:loadarchive('INV','[INV.NO]')>
+<img alt="Export as PDF" class="ExportOrder" src="[IMAGE.PATH]pdf.png" >  </A>
+     <a title="View detailed transaction information" href=# onclick='javascript:ardetailinq("[ORDERNO]","[INV.NO]")'>
+       [INV.NO]</a></td>
+   <td class=datsml width=80 valign=top>
+       [INV.DATE]</td>
+   <td class=datsml valign=top align=left>
+       [CUST.REF]</td>
+   <td class=datsml width=85 valign=top>
+     <a href=# onclick='javascript:release_detail("RQ","[REL.NO]")'>
+       [REL.NO]</a>
+<a style="[PEDSTYLE]" title="Download All Track and Trace Documents for Shipment [RELEASE.NO]" href="#" onclick="javascript:peddetailinq('[WEB.ORD.NO]','[USER.ID]','ALL','[RELEASE.NO]')">View</a>
+</td>
+   <td class=datsml width=85 valign=top align=right>
+       [ORIG.AMT]</td>
+   <td class=datsml width=85 valign=top align=right>
+       [OPEN.AMT]</td>
+    <td id="datsml" class="ShowARCC">
+  <input data-invamt="[RAW.OPEN.AMT]" data-invno="[INV.NO]" type="checkbox" [DISABLE]  name="add"  />
+</td>
+ </tr>
+
+
+
+
+

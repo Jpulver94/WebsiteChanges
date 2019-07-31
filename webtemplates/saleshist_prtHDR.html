@@ -1,0 +1,74 @@
+<html>
+<head>
+<LINK rel="STYLESHEET" type="text/css" href="../../[CSS.NAME]">
+<title>Purchasing History Print</title>
+</head> 
+<body>
+<div id="tsh"></div>
+<div id="superholder">
+<div id="RnHeader">
+
+<table border=0 cellspacing=0 cellpadding=0 width='100%'>
+ <tbody>
+  <tr>
+    <td><img src='[WEBSITE.IMAGES]/RNlogocrp.jpg' border=0></td>
+    <td height=60 width=454 align=right>
+      <img src='[WEBSITE.IMAGES]/spacer.gif' border=0>
+    </td>
+    <td valign=bottom height=60 nowrap>
+      <div align=right><b>       <font size=5 face="Arial,Helvetica,Arial MT Condensed Light,Geneva,Swiss,SunSans-Regular"><i>Purchasing History Print</i></font>
+      </b></div>
+    </td>
+  </tr>
+ </tbody>
+</table>
+</div><!--RnHeader -->
+<div id="RnMenu">
+ </div><!--RnMenu -->
+<div id="RnWrapLeft"> <!-- sets background to white and creates full length leftcol-->
+<div id="RnWrapRight"> <!-- sets background to white and creates full length rightcol-->
+<div id="RnMainBody">
+<div id="RnMainLeft"><!-- sets RnMainLeft  --></div>
+<div id="RnMainRight"><!-- sets RnMainLeft  --></div>
+<div id="RnMainText"> <!-- sets RnMainText  -->
+<table border=0 bgcolor=white cellspacing=0 cellpadding=0 width=100%>
+<tr>
+  <td colspan=2>
+    <table border=0 cellpadding=2 cellspacing=2 width=100%>
+      <tr>
+        <td id=colhdg nowrap><font size=2><b>Customer #</b></font></td>
+        <td id=colhdg nowrap><font size=2><b>Salesrep</b></font></td>
+        <td id=colhdg nowrap><font size=2><b>Customer Name</b></font></td>
+      </tr>
+      <tr bgcolor=white>
+        <td nowrap id=datnorm valign=top>[A.CUST.NO]</td>
+        <td nowrap id=datnorm valign=top>[SLSREP.NAME]</td>
+        <td nowrap id=datnorm valign=top>[CUST.NAME]<br>[CITY.ST.ZIP]</td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<table border=0 cellpadding=0 cellspacing=0>
+  <tr>
+   <td height=10 align=left></td>
+  </tr>
+  <tr>
+   <td id=datnorm><font size=4><b>Your recent product usage is as follows:</b></font></td>
+  </tr>
+  <tr>
+   <td height=10 align=left></td>
+  </tr>
+</table>
+<table border=0 cellpadding=1 cellspacing=0 width=100%>
+  <tr>
+    <td id=colhdg valign=top width=80>Product No.</td>
+    <td id=colhdg valign=top>Product Description</td>
+    [HTMLHDGSTRING]
+    <td id=colhdg valign=top width=30>Avg</td>
+    <td id=colhdg valign=top width=30>Total YTD</td>
+    <td id=colhdg valign=top width=20>Last UM</td>
+    <td id=colhdg valign=top width=20>Stock UM</td>
+    <td id=colhdg valign=top align=center width=50>Last Price</td>
+    <td id=colhdg valign=top align=center width=80>Total Expenditure</td>
+  </tr>

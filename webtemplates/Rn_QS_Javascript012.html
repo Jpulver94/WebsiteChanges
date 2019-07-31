@@ -1,0 +1,145 @@
+
+
+
+<script lang=javascript>
+
+nextfield = "box1"; // name of first box on page
+netscape = "";
+ver = navigator.appVersion; len = ver.length;
+for(iln = 0; iln < len; iln++) if (ver.charAt(iln) == "(") break;
+netscape = (ver.charAt(iln+1).toUpperCase() != "C");
+
+function keyDown(DnEvents) { // handles keypress
+// determines whether Netscape or Internet Explorer
+  k = (netscape) ? DnEvents.which : window.event.keyCode;
+  if (k == 13) { // enter key pressed
+    if (nextfield == 'product_id' || nextfield == 'qty') {
+       window.event.keyCode = 9;
+       return true;
+    } else {
+       return false;
+    }
+  }
+}
+document.onkeydown = keyDown; // work together to analyze keystrokes
+if (netscape) document.captureEvents(Event.KEYDOWN|Event.KEYUP);
+
+function loadvalues() { 
+ //function to set values in drop down boxes ; 
+    document.template.itemspage.value = "[ITEMSPAGE]" ;
+    document.template.Changesort.value = "[CHANGESORT]" ;
+}
+
+
+
+function Move_page(startptr,direction,loginpath) {
+// code to get startpointer
+  if(process_order(0)) { ; 
+  // process order - 1=popup 0=no popup and if true submit
+       if (startptr < 1 ) {
+          startptr = 1
+       }
+ //if startptr is greater than total lines then set it to 1  
+       if (startptr > [TOTALLINES]) {
+          startptr = 1
+       }
+ //if itemspage or changesort changed value then set startptr to 1 
+       var sort = document.template.Changesort.value
+       var prev_sort = document.template.prev_changesort.value
+       var items = document.template.itemspage.value
+       var prev_items = document.template.prev_itemspage.value
+       if (sort != prev_sort||items != prev_items) { 
+          startptr = 1
+       }
+   document.template.startptr.value = startptr  ;
+   document.template.searchflag.value = 'N' ;
+   document.template.loginpath.value = loginpath ;
+   document.template.submit()  ; 
+  }
+}
+
+function prod_inquiry(loginpath,sflag,aprodno) { 
+ document.template.aprodno.value = aprodno  ; 
+ changepath(loginpath,sflag) ; 
+}
+
+function changesort(path,sflag,sort) { 
+  document.template.startptr.value = 1 ; 
+  document.template.searchflag.value = sflag ; 
+  document.template.loginpath.value = path ; 
+  document.template.Changesort.value = sort ; 
+  document.template.submit(); 
+}
+
+//function to read in name and value and push to prodstring
+function process_order(popup) {
+   var X = 0 ; var finaldata = '' 
+   var len = document.template.elements.length
+//loop to put into arrays
+   for (var i = 0; i < len; i++) {
+       var lname = document.template.elements[i].name
+       var lvalue = document.template.elements[i].value
+       var e_type = document.template.elements[i].type
+//do a qty chk on lvalue here
+   if (lvalue != "" && e_type == "text") {
+//check to make sure name has a pipe
+//is a text type and if so process
+       if (is_pipe(lname)) {
+//add one to I to acct for array starting at 0
+       if (document.template.elements[i+1].value == '') {
+               jAlert (' You must enter a quantity for this product') 
+               document.template.elements[i+1].focus() ;
+               return false
+              }
+  if (qtychk2(document.template.elements[i+1].value,i+1)) {
+// assumes a good qty was entered so set qty_array
+//loop around to build strings
+//data format is prod|qty|um^ ; 
+        var prod = document.template.elements[i].value ;
+        var qty = document.template.elements[i+1].value ;
+        var um = "STD" ;  // STD will default to std sell um in WEB.VALIDATE.PROD012
+//         var um = "EA" ;
+   var result = "" ; var data = "" ; 
+   result = result + prod + '|'
+   result = result + qty + '|'
+   result = result + um + '^' 
+   var finaldata = finaldata + result
+           X = X + 1 ;
+           } else {
+           return false ;
+           //for qtychk failure ; 
+           }
+        } else {
+          // return false ;
+           //for pipe failure failure ; 
+        }
+       //for type=text and lvalue!= 
+      }
+       //for next loop in array (length of form) 
+    }
+       // we have our data in arrays so recode to pipe and send to variable
+       document.template.final_string.value = finaldata ; 
+//       var msg = "Do you want to add these items?"
+//           if(popup) { ;
+//               resp = jConfirm(msg) ;
+//               if (resp) {            return true ;
+//              } else {
+//               return false ;
+//               }
+//           }
+           return true ;
+}
+// Add Hook of change path to call process order since this page adds items potentially 
+function changepath(x,sflag) { 
+ if(process_order(0)) { ; 
+ // process order - 1=popup 0=no popup and if true submit
+ document.template.startptr.value = 1 ; 
+ document.template.searchflag.value = sflag ; 
+ document.template.loginpath.value = x ; 
+ document.template.submit(); 
+ }
+}
+</script>
+
+
+

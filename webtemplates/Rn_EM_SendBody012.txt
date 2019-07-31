@@ -1,0 +1,12 @@
+For:  USER.NAME
+
+Here is the RemoteNet Web Customer Logon information that
+you requested:
+
+WEB Customer ID: MEMBER.ID
+
+Password:        PSWD
+
+WEBSITE.ID
+
+Thank you for using RemoteNet.

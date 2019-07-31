@@ -1,0 +1,193 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 transitional//EN" "http://www.w3.org/TR/xhtml 1/DTD/xhtml1-transitional.dtd">
+ <head>
+<meta http-equiv="X-UA-Compatible-Saved" content="IE=9"  />
+
+<title>Create New Customer </title> </head> 
+<body> 
+<LINK rel="STYLESHEET" type="text/css" href="[stylesheet_path]">
+<LINK rel="STYLESHEET" type="text/css" href="[script_path]/chosen.css">
+<script language='JavaScript' type="text/javascript" src='[script_path]jqfunctions.js?v=[WEBSITE.REV]'></script>
+<script>
+$(document).ready(function() {
+// Add stuff here to execute on load 
+  $("select").chosen({no_results_text: "No results matched"});
+}) ;
+</script>
+
+<STYLE>
+.button1
+{/* primary normal style for navigation buttons */
+  padding: 4px 2px 4px 2px;
+  text-align: center;
+  background-color: #25558c;
+  BORDER-RIGHT: #999 1px solid; 
+  BORDER-TOP: #999 1px solid; 
+  BORDER-LEFT: #999 1px solid; 
+  BORDER-BOTTOM: #999 1px solid; 
+  FONT-SIZE: 84%;
+  FONT-WEIGHT: bold;
+  FONT-STYLE: normal;
+  COLOR: White;
+/* COLOR: White;
+BACKGROUND-COLOR: #0D115B;
+FONT-SIZE: 84%;
+FONT-WEIGHT: bold;
+FONT-STYLE: normal;
+BORDER: 1px solid;
+BORDER-TOP-COLOR: #0D115B;
+BORDER-LEFT-COLOR: #0D115B;
+BORDER-RIGHT-COLOR: #CCCCCC;
+BORDER-BOTTOM-COLOR: #CCCCCC;
+*/
+/* 
+FILTER:PROGID:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr='#ffffffff',EndColorStr='black');
+*/
+filter:alpha(opacity=80);
+opacity: 0.8;
+}
+.buttonhov1
+{/* primary hover style for navigation buttons */
+COLOR: #0D115B;
+BACKGROUND-COLOR: White;
+BORDER-TOP-COLOR: #0D115B;
+BORDER-LEFT-COLOR: #0D115B;
+BORDER-RIGHT-COLOR: #0D115B;
+BORDER-Bottom-COLOR: #0D115B;
+}
+.EntryBoxes, .Headings {
+width: 50%;
+  font-size: 14px;
+  font-family: arial;
+  background-color: aliceblue;
+}
+#colhdg
+{
+/* COLOR: White;
+        BACKGROUND-COLOR: #0D115B;
+FONT-SIZE: smaller;
+FONT-STYLE: normal;
+FONT-WEIGHT: bold ;
+BORDER: 1px solid;
+BORDER-TOP-COLOR: #CCCCCC;
+BORDER-LEFT-COLOR: #CCCCCC;
+BORDER-RIGHT-COLOR: #CCCCCC;
+BORDER-BOTTOM-COLOR: #CCCCCC;
+COLOR: black; */ 
+/* Added new Heading */
+border-top:none;
+border-left:none;
+border-bottom:solid #CCCCCC 1.0pt;
+border-right:solid #CCCCCC 1.0pt;
+/* background: #F5F5F5 ; */
+padding:.75pt .75pt .75pt .75pt ;
+margin:0in;
+margin-bottom:.0001pt;
+text-align:left ;
+font-size:9.0pt;
+font-family: Tahoma,sans-serif;
+background-image: url(//hosting.tshinc.com/rn/images/bluemenu.jpg);
+color: #FFF;
+
+}
+.info, .success, .warning, .error, .validation {
+border: 1px solid;
+margin: 10px 0px;
+padding:15px 10px 15px 50px;
+background-repeat: no-repeat;
+background-position: 10px center;
+}
+.info {
+color: #00529B;
+background-color: #BDE5F8;
+background-image: url('//hosting.tshinc.com/rn/images/info.png');
+}
+.success {
+color: #4F8A10;
+background-color: #DFF2BF;
+background-image:url('//hosting.tshinc.com/rn/images/success.png');
+}
+.warning {
+color: #9F6000;
+background-color: #FEEFB3;
+background-image: url('//hosting.tshinc.com/rn/images/warning.png');
+}
+.error {
+color: #D8000C;
+background-color: #FFBABA;
+background-image: url('//hosting.tshinc.com/rn/images/error.png');
+}
+</STYLE>
+
+<form name=template action="login[SUFFIX]" method=post>
+<input type=hidden name=loginpath value="REG">
+<input type=hidden name=pageid value="31">
+<input type=hidden name=startptr value="1">
+<input type=hidden name=CustomerId value="">
+<input type=hidden name=orderno value="[ORDERNO]">
+<input type=hidden name=slsmno value="[SLSMNO]">
+<input type=hidden name=MODE value="">
+
+<table border=0>
+
+       <tr>
+         <td id=colhdg colspan=2 nowrap> New User Registration</td>
+       </tr>
+       <tr>
+         <td class="Headings" > Username/Email Address: </td> <td class="EntryBoxes" > <input type="text" name="email" size="20" value="[EMAIL]"> </td>
+       </tr>
+              <tr>
+         <td class="Headings" > Account Code (Leave Blank If You do not have one) : </td> <td class="EntryBoxes" > <input type="text" name="ACUSTNO" size="20" value="[ACUSTNO]"> </td>
+       </tr>
+              <tr>
+         <td class="Headings" > Salutation: </td> <td class="EntryBoxes" > <input type="text" name="SALUT" size="20" value="[SALUT]"> </td>
+       </tr>
+              <tr>
+         <td class="Headings" > First Name: </td> <td class="EntryBoxes" > <input type="text" name="FNAME" size="20" value="[FNAME]"> </td>
+       </tr>
+              <tr>
+         <td class="Headings" > Last Name: </td> <td class="EntryBoxes" > <input type="text" name="LNAME" size="20" value="[LNAME]"> </td>
+       </tr>
+              <tr>
+         <td class="Headings" > Company Name: </td> <td class="EntryBoxes" > <input type="text" name="BILLTO.NAME" size="20" value="[CUST.NAME]"> </td>
+       </tr>
+              <tr>
+         <td class="Headings" > Address Line 1: </td> <td class="EntryBoxes" > <input type="text" name="BILLTO.ADDR1" size="20" value="[CUST.ADDR1]"> </td>
+       </tr>
+              <tr>
+         <td class="Headings" > Address Line 2: </td> <td class="EntryBoxes" > <input type="text" name="BILLTO.ADDR2" size="20" value="[CUST.ADDR2]"> </td>
+       </tr>
+              <tr>
+         <td class="Headings" > Address Line 3: </td> <td class="EntryBoxes" > <input type="text" name="BILLTO.ADDR3" size="20" value="[CUST.ADDR3]"> </td>
+       </tr>
+              <tr>
+         <td class="Headings" > City: </td> <td class="EntryBoxes" > <input type="text" name="BILLTO.CITY" size="20" value="[CITY]"> </td>
+       </tr>
+              <tr>
+         <td class="Headings" >
+ State: </td>
+ <td class="EntryBoxes" >
+<!-- 
+ <input type="text" name="BILLTO.STATE" size="20" value="[STATE]">
+-->
+[STATE]
+ </td>
+       </tr>
+              <tr>
+         <td class="Headings" > Zip Code: </td> <td class="EntryBoxes" > <input type="text" name="BILLTO.ZIP" size="20" value="[ZIP]"> </td>
+       </tr>
+              <tr>
+         <td class="Headings" > Phone: </td> <td class="EntryBoxes" > <input type="text" name="PHONE" size="20" value="[PHONE]"> </td>
+       </tr>
+              <tr>
+         <td class="Headings" > Fax : </td> <td class="EntryBoxes" > <input type="text" name="FAX" size="20" value="[FAX]"> </td>
+       </tr>
+        <tr style="[HIDEVALUE]">
+         <td class="Headings" >
+Web Login to Copy Profile from :
+ </td> <td class="EntryBoxes" > <input type="text" name="ORIGWEBID" size="20" value="[ORIGWEBID]"> </td>
+       </tr>
+</div>
+
+

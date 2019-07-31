@@ -1,0 +1,39 @@
+
+
+
+
+
+
+  <tr id=[LNCOLOR]>
+    <td nowrap id=datsml valign=bottom  >
+<span class="hspacerspan">&nbsp; </span>
+     <input data-prodno="[PROD.NO]" data-aprodno="[A.PROD.NO]" type="checkbox"  class="add myinput large" name="add"  />
+ </td>
+
+<td class="productcell sssmtext">  <a href=# onclick="javascript:hotprod_inquiry('PI','N','[A.PROD.NO]')">[A.PROD.NO]</a>   <br>
+<div class="truncate">  [MFR] </div> </td>
+<td class="productcell sssmtext">  <a href=# onclick="javascript:hotprod_inquiry('PI','N','[A.PROD.NO]')">[PROD.DESC]</a></td>
+<td>[IN.STOCK]</td>
+<td style="text-align: center;"> 
+<a href=# class="hintanchor ProductInfoButton" onmouseover="showhintajax_sunset('login[SUFFIX]?aprodno=[A.PROD.NO]&orderno=[WEB.ORDERNO]&LOGINPATH=PIFS&PAGEID=31&CUSTOMERID=[CUSTOMERID]', this, event, '10px')" >
+<img class="ProductInfoButton" src="https://sunset.tshinc.com/sunset/images/ProductInfo.png"  >  </a>
+</td>
+ <td>
+ <select class="SumSelect" name="UMBOX-[PROD.NO]"  id="UMBOX-[PROD.NO]" >
+   <option value="[PRICE.UM]" selected="">
+ [PRICE.UM] / [PRICEUM.QTY]  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [PRICE] / [PRICE.UM]
+</option>
+</select>
+ </td>
+<td><input class="QtyBox"  data-prodno="[PROD.NO]" data-aprodno="[A.PROD.NO]" name="QTYBOX-[PROD.NO]"  id="QTYBOX-[PROD.NO]" value="1" ></td>
+ <td>
+ <img class="PricingAddButton" src="https://sunset.tshinc.com/sunset/images/Add.png" title="Add item [A.PROD.NO] to Cart " onclick="javascript:cart_add('[PROD.NO]','[A.PROD.NO]')" >
+ <img class="PricingFormularyButton" src="https://sunset.tshinc.com/sunset/images/Formulary.png" title="Add item [A.PROD.NO] to Formulary" onclick="javascript:fav_template('[A.PROD.NO]')" >
+</td>
+         </tr>
+
+
+
+
+
+

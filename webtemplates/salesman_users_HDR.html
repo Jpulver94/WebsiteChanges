@@ -1,0 +1,280 @@
+Content-type: text/html
+
+<!--
+******************************************
+  Created by The Systems House Web Team  *
+******************************************
+-->
+
+<html>
+<head> 
+<LINK rel="STYLESHEET" type="text/css" href="[CSS.NAME]">
+<!-- Remotenet Version 5.3 -->
+<title>Select Customer User</title>
+<script language='JavaScript' src='[SCRIPT.PATH]/tsh_utils.js'></script>
+<script lang=javascript>
+function loadvalues() {
+ //function to set values in drop down boxes ;
+   document.template.itemspage.value = "[ITEMS.PAGE]" ;
+   document.template.Changesort.value = "[SORT.BY]" ;
+   document.template.acustno2.value = "[SEL.CUST.NO]" ;
+   document.template.EndUserName.value = "[SEL.USER.NAME]" ;
+   document.template.Custname.value = "[SEL.CUST.NAME]" ;
+//   document.template.searchflag.value = "[SRCH.FLAG]" ;
+//   document.template.startptr.value = "[STRT.PTR]" ;
+}
+
+function changepath(x,sflag) { 
+   document.template.loginpath.value = x ; 
+   document.template.searchflag.value = sflag ; 
+   document.template.submit(); 
+}
+
+function user_search(x,sflag) { 
+   document.template.loginpath.value = x ; 
+   document.template.startptr.value = 1 ; 
+   document.template.searchflag.value = sflag ; 
+   document.template.submit(); 
+}
+
+function user_select(x,member) { 
+   document.template.loginpath.value = x ; 
+   document.template.CustomerId.value = member ; 
+   document.template.orderno.value = "";
+   document.template.submit(); 
+}
+
+function searchtips() { 
+  var pgm = "[WEBSITE.ID]User_SearchTips.html" ; 
+  var name = "sub" ; 
+  var parms = "toolbar=no,top=100,left=190,width=600,height=400,directories=no,status=yes,scrollbars=yes,resizable=yes,menubar=no" ; 
+  srchtips = window.open(pgm,name,parms) ; 
+  srchtips.focus() ; 
+}
+
+function Move_page(startptr,direction,loginpath) {
+// code to get startpointer
+       if(startptr < 1 ) {
+           startptr = 1
+       }
+ //if startptr is greater than total lines then set it to 1  
+       if(startptr > [TOTALINES]) { 
+           startptr = 1
+       } 
+   document.template.startptr.value = startptr  ;
+   document.template.searchflag.value = 'N' ;
+   document.template.loginpath.value = loginpath ;
+   document.template.submit()  ; 
+}
+
+function helpme(x) {
+  helper = window.open(x, 'helper', 'toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=yes,resizable=yes,width=340')
+}
+
+function changesort(path,sflag,sort) {
+  document.template.startptr.value = "1" ;
+  document.template.searchflag.value = sflag ;
+  document.template.loginpath.value = path ;
+  document.template.Changesort.value = sort ;
+  document.template.submit() ;
+}
+
+</script>
+<body>
+<div id="tsh"></div>
+<div id="superholder">
+<div id="RnHeader">
+<table border=0 cellspacing=0 cellpadding=0 width='100%'>
+ <tbody>
+  <tr>
+    <td><img src='[WEBSITE.IMAGES]/RNlogocrp.jpg' border=0></td>
+    <td height=60 width=454 align=center>
+      <img src='[WEBSITE.IMAGES]/spacer.gif' border=0>
+    </td>
+    <td id=subhead valign=bottom height=60 nowrap>
+      <div align=right>Select User</div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan=3 id=lcolor4  height=20>&nbsp;</td>
+  </tr>
+ </tbody>
+</table>
+</div><!--RnHeader -->
+<div id="RnWrapLeft"> <!-- sets background to white and creates full length leftcol-->
+<div id="RnWrapRight"> <!-- sets background to white and creates full length rightcol-->
+<div id="RnMainBody">
+<div id="RnMainLeft"><!-- sets RnMainLeft  --></div>
+<div id="RnMainRight"><!-- sets RnMainLeft  --></div>
+<div id="RnMainText"> <!-- sets RnMainText  -->
+<!-- end top border -->
+
+<table border=0 cellpadding=0 cellspacing=0 width=100%>
+<tr>
+<td height=40 width=100%>&nbsp;</td>
+</tr>
+<tr><td>
+<form name=template id=template action="login[RN.SUFFIX]" method=post>
+<input type=hidden name=pageid value="31">
+<input type=hidden name=orderno value="[WEB.ORD.NO]">
+<input type=hidden name=CustomerId value="[LOGIN.ID]">
+<input type=hidden name=loginpath value="[LOGIN.PATH]">
+<input type=hidden name=loginname value="[LOGIN.NAME]">
+<input type=hidden name=searchflag value="[SRCH.FLAG]">
+<input type=hidden name=startptr value="[STRT.PTR]">
+<input type=hidden name=slsmno value="[SLSMN.NO]">
+<input type=hidden name=slsmn_id value="[SLSMN.USER]">
+<input type=hidden name=searchptr value="[STRT.PTR]">
+<input type=hidden name=old_loginpath value="[LOGIN.PATH]">
+<input type=hidden name=prev_changesort value="[SORT.BY]">
+<input type=hidden name=prev_itemspage value="[ITEMS.PAGE]">
+
+<!-- beginning of salesman_users page -->
+<table border=0 bgcolor=white cellspacing=0 cellpadding=0 width=100%>
+  <tr>
+    <td height=10 colspan=2></td>
+  </tr>
+  <tr>
+    <td width=5></td>
+    <td id=style8 align=left><font size=4><b>Select a user by clicking on a User Name or User ID.</b></font></td>
+  </tr>
+  <tr>
+    <td height=10 colspan=2></td>
+  </tr>
+  <tr>
+    <td width=5></td>
+    <td id=style9><font size=3><b>There are [TOTALINES] user(s) in the User database.</b></font></td>
+  </tr>
+  <tr>
+    <td height=10 colspan=2></td>
+  </tr>
+  <tr>
+    <td width=5></td>
+    <td id=style8 align=left><font size=4><b>To view specific Users, enter your user search criteria and click on Search. Click here to view <a href='javascript:searchtips()'>User Search Tips</a></b></font></td>
+  </tr>
+  <tr>
+    <td height=10 colspan=2></td>
+  </tr>
+  <tr>
+    <td id=spacerline height=2 width=100% colspan=2></td>
+  </tr>
+  <tr>
+    <td height=10 colspan=2></td>
+  </tr>
+</table>
+<table border=0 bgcolor=white cellspacing=0 cellpadding=0 width=100%>
+<tr>
+<td valign=top width=50%>
+<table border=0 cellpadding=0 cellspacing=4 align=right>
+  <tr>
+   <td id=style8 width=150 align=right nowrap><b>Sort By:</b></td>
+   <td>
+     <select name="Changesort" size=1>
+       <option value="1">Customer No.</option>
+       <option value="2">Customer Name</option>
+       <option value="3">User Name</option>
+       <option value="4">User ID</option>
+       <option value="5">Sales Dollars</option>
+     </select>
+   </td>
+   <td valign=center>
+    <input type=button class=gobutton name="GO1" value="GO" onclick='javascript:changepath("SUSR","N")'
+      onmouseover="this.className='gobutton gobuttonhov' ; window.status='Change Sort Method'"
+      onmouseout="this.className='gobutton' ; window.status=''">
+   </td>
+  </tr>
+  <tr>
+   <td id=style8 width=150 align=right nowrap><b>Items per page:</b></td>
+   <td>
+     <select name="itemspage" size=1>
+       <option value="10">10</option>
+       <option value="15">15</option>
+       <option value="25">25</option>
+       <option value="50">50</option>
+     </select>
+   </td>
+   <td valign=center>
+    <input type=button class=gobutton name="GO2" value="GO" onclick='javascript:changepath("SUSR","N")'
+      onmouseover="this.className='gobutton gobuttonhov' ; window.status='Change Items Per Page'"
+      onmouseout="this.className='gobutton' ; window.status=''">
+   </td>
+  </tr>
+  <tr>
+   <td colspan=3>&nbsp;</td>
+  </tr>
+  <tr>
+   <td colspan=3>&nbsp;</td>
+  </tr>
+</table>
+</td>
+<td valign=top width=50%>
+<table border=0 cellpadding=0 cellspacing=4 align=left>
+  <tr>
+    <td id=style8 align=right width=150 nowrap><b>Customer No.:</b></td>
+    <td align=left><input type=text size=24 name="acustno2" value="[SEL.CUST.NO]"></td>
+  </tr>
+  <tr>
+    <td id=style8 align=right width=150 nowrap><b>Customer Name:</b></td>
+    <td align=left><input type=text name="Custname" value="[SEL.CUST.NAME]" size=24 maxlength=50></td>
+  </tr>
+  <tr>
+    <td id=style8 align=right width=150 nowrap><b>User Name:</b></td>
+    <td align=left><input type=text name="EndUserName" value="[SEL.USER.NAME]" size=24 maxlength=50></td>
+  </tr>
+  <tr>
+    <td colspan=2 align=center valign=center>
+     <input type=button class=button1 name="SUSR" value="Search" onclick='javascript:user_search(name,"Y")'
+       onmouseover="this.className='button1 buttonhov1' ; window.status='Search User data'"
+       onmouseout="this.className='button1' ; window.status=''">
+     <input type=reset class=button1 name="reset" value="Reset"
+       onmouseover="this.className='button1 buttonhov1' ; window.status='Reset Search Values'"
+       onmouseout="this.className='button1' ; window.status=''">
+    </td>
+  </tr>
+</table>
+</td>
+</tr>
+</table>
+<table border=0 bgcolor=white cellspacing=0 cellpadding=2 width=100%>
+  <tr>
+    <td class=rollsort nowrap valign=top width=100>
+      <div id='link1'
+      onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Data by Customer No.'" ;
+      onmouseout="this.className='rollsort' ; window.status=''" ;
+      onClick="javascript:changesort_toggle('SUSR','N','1')">
+      <font size=2><b>Customer No.</b></font>
+      </div>
+    </td>
+    <td class=rollsort valign=top>
+      <div id='link2'
+      onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Data by Customer Name'" ;
+      onmouseout="this.className='rollsort' ; window.status=''" ;
+      onClick="javascript:changesort_toggle('SUSR','N','2')">
+      <font size=2><b>Customer Name</b></font>
+      </div>
+    </td>
+    <td class=rollsort valign=top>
+      <div id='link3'
+      onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Data by User Name'" ;
+      onmouseout="this.className='rollsort' ; window.status=''" ;
+      onClick="javascript:changesort_toggle('SUSR','N','3')">
+      <font size=2><b>User Name</b></font>
+      </div>
+    </td>
+    <td class=rollsort valign=top width=100>
+      <div id='link4'
+      onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Data by User ID'" ;
+      onmouseout="this.className='rollsort' ; window.status=''" ;
+      onClick="javascript:changesort_toggle('SUSR','N','4')">
+      <font size=2><b>User ID</b></font>
+      </div>
+    </td>
+    <td class=rollsort valign=top width=50>
+      <div id='link5'
+      onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Data by Sales'" ;
+      onmouseout="this.className='rollsort' ; window.status=''" ;
+      onClick="javascript:changesort_toggle('SUSR','N','5')">
+      <font size=2><b>Sales $</b></font>
+      </div>
+    </td>
+  </tr>

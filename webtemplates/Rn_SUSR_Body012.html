@@ -1,0 +1,444 @@
+
+        <form name=template id=template action="login[SUFFIX]" method=post>    
+          <input type=hidden name=pageid value="31">    
+<!-- Added for order updates --> 
+<input type=hidden name=Aprod_string value="[APROD_STRING]">
+<input type=hidden name=prod_string value="[PROD_STRING]">
+<input type=hidden name=qty_string value="[QTY_STRING]">
+<input type=hidden name=um_string value="[UM_STRING]">
+<input type=hidden name=price_string value="[PRICE_STRING]">
+<input type=hidden name=comment_string value="[COMMENT_STRING]">
+<input type=hidden name=manufact_string value="[MANUFACT_STRING]">
+          <input type=hidden name=loginpath value="[LOGINPATH]">    
+          <input type=hidden name=searchflag value="[SEARCHFLAG]">    
+          <input type=hidden name=startptr value="[STARTPTR]">    
+          <input type=hidden name=CustomerId value="[CUSTOMERID]">    
+          <input type=hidden name=orderno value="[ORDERNO]">    
+          <input type=hidden name=old_loginpath value="[LOGINPATH]">    
+          <input type=hidden name=prev_changesort value="[CHANGESORT]">    
+          <input type=hidden name=prev_itemspage value="[ITEMSPAGE]">    
+          <input type=hidden name=mdsorderno value="[MDSORDERNO]">    
+          <input type=hidden name=aprodno value="[APRODNO]">    
+          <input type=hidden name=slsmno value="[SLSMNO]">    
+          <input type=hidden name=slsmn_id value="[SLSMN_ID]">
+<script lang=javascript> 
+function showgraph(custfilter,target) {
+// target should be an iframe.. so javascript doesnt fight.. 
+var slsm = $('input[name=slsmno]').val() ;
+var rpt = 120 ; // sales history 24 month for graphs
+var acustno = custfilter ; 
+var dummy = widgetload_callback('login[SUFFIX]?orderno=' + OID + '&CUSTOMERID=' + CID + '&LOGINPATH=SOS&ACUSTNO=' + acustno + '&NUM=' + rpt + '&SLSMNO=' + slsm +'&PAGEID=31','#RptName',
+  function() { 
+      var srpt = $('#Report').text() ;
+      if (srpt == '') { $('#RptName').html('Your Report Could not be processed..') ; return ; }
+         var pageurl = "[script_path]CRMSales.html?dataurl=" + srpt ;
+ //         var pageurl = "//hosting.tshinc.com/rn/rndashboard/CRMSales.html?dataurl=" + srpt ;
+         if (custfilter) { pageurl = pageurl + "&custfilter=" + custfilter ; } 
+            $(target).attr("src", pageurl);
+      }) ;        
+}
+function slsmsg(val) {
+if (val !== 'NO') {
+$("#SlsCheck").html("Your Salesman Pricing Tools are Currently Showing (Click to Change Settings)") ; 
+} else {
+$("#SlsCheck").html("Your Salesman Pricing Tools are NOT Currently Showing (Click to Change Settings)") ; 
+}
+}
+$(document).ready(function() {
+var val = $.cookie('RnSalesCheck')
+slsmsg(val) ; 
+$("#SlsCheck").click(function() { 
+var cval = $.cookie('RnSalesCheck')
+if (cval == "NO") { val = "YES" ; } else { val = "NO"; } ; 
+$.cookie('RnSalesCheck', val);
+slsmsg(val) ;
+});
+var ShowSalesGP = '[SALESGP]' ;
+if (ShowSalesGP == "Y") { $(".GPSales").show() ; } ; 
+// HIDE THE sidebars for the salesman login 
+$('#center').css({'width':'100%'}) ;
+$('.col-main').css({'float':'none'}) ;
+$('#left').hide() ;
+$('.col-left').hide() ;
+$('#left_menucontent').hide() ;
+$('#right').hide() ;
+});
+function showbox(custid) {
+var pageurl = 'login[SUFFIX]' + '?ORDERNO=' + document.forms[0].orderno.value + '&CUSTOMERID=' + custid + '&LOGINPATH=BOX&pageid=31&CTR=50' ;
+var dummy = showmodalrnpopup(pageurl) ;
+}
+function showreport() { 
+var slsm = $('input[name=slsmno]').val() ;
+var acustno = $('input[name=acustno]').val() ;
+var rpt = $('#SlsReports').val() ;
+var statmsg = "Now Running " + $("#SlsReports option:selected").text();
+var today = new Date();
+var d1= today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+var t1 = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+var statmsg = statmsg +' '+d1+' '+t1;
+$("#RptStatus").html(statmsg) ;
+var dummy = widgetload_callback('login[SUFFIX]?orderno=' + OID + '&CUSTOMERID=' + CID + '&LOGINPATH=SOS&ACUSTNO=' + acustno + '&NUM=' + rpt + '&SLSMNO=' + slsm +'&PAGEID=31','#RptName',
+function() {   
+   var srpt = $('#Report').text() ;
+if (srpt == '') { $('#RptName').html('Your Report Could not be processed..') ; return}
+   var pageurl = 'login[SUFFIX]' + '?orderno=' + OID + '&CUSTOMERID=' + CID + '&LOGINPATH=RV&FILENAME=' + srpt +'&PAGEID=31';
+//    var dummy = showmodalrnpopup(pageurl) ;
+var iframewin=dhtmlwindow.open('iframebox', 'iframe', pageurl, 'Remotenet Sales Reporting', 'width=650px,height=400px,left=20px,top=100px,resize=1,scrolling=1');
+var statmsg = "<br>Completed Running " + $("#SlsReports option:selected").text();
+var today = new Date();
+var d1= today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+var t1 = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+var statmsg = statmsg +' '+d1+' '+t1;
+$("#RptStatus").append(statmsg) ;
+$("#RptStatus").addClass("Success") ;
+ }  );
+}
+function changesort_toggle(path,sflag,sort) {
+ var csort = document.template.Changesort.value ; 
+if (csort == sort ) { 
+ if (sort.substring(1, 5) == '-DSND') {
+    var tlen = len(sort) - 5 ;
+    sort = sort.substring(6,tlen) ;
+    } else {
+    sort = '-DSND ' + sort ;  
+ } ;
+} ;
+ document.template.startptr.value = 1 ; 
+ document.template.searchflag.value = sflag ; 
+ document.template.loginpath.value = path ; 
+ document.template.Changesort.value = sort ; 
+ document.template.submit(); 
+}
+</script>      
+          <style>
+.TopCRMLinks {
+    float: left;
+    padding: 3px;
+}
+.SalesReports {
+    padding: 5px;
+    /* float: left; */
+    /* border: 1px solid #ccc;
+    border-radius: 5px;
+ */
+    margin: 5px;
+}
+.switch{position:relative;  display:inline-block;  width:27px;  height:12px;}
+.switch input{display:none;}
+.slider{position:absolute;  cursor:pointer;  top:0;  left:0;  right:0;  bottom:0;  background-color:#ccc;  -webkit-transition:.4s;  transition:.4s;}
+.slider:before{position:absolute;  content:"";  height:12px;  width:12px;  left:2px;  bottom:2px;  background-color:white;  -webkit-transition:.4s;  transition:.4s;}
+input:checked + .slider{background-color:#2196F3;}
+input:focus + .slider{box-shadow:0 0 1px #2196F3;}
+input:checked + .slider:before{-webkit-transform:translateX(12px);  -ms-transform:translateX(12px);  transform:translateX(12px);}
+/* Rounded sliders */
+.slider.round{border-radius:10px;}
+.slider.round:before{border-radius:50%;}
+.arrow-up {
+	width: 0;
+	height: 0;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-bottom: 7px solid rgb(8, 67, 106);
+	display: inline-block;
+}
+.arrow-down {
+	width: 0;
+	height: 0;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-top: 7px solid rgb(8, 67, 106);
+	display: inline-block;
+}
+.GPSales {
+	display: none;
+}
+.GPSales table {
+	border-collapse: collapse;
+	width: 100%;
+}
+.GPSales th, .GPSales td {
+	text-align: left;
+	padding: 5px;
+}
+.GPSales tr:nth-child(even) {
+	background-color: #EBF4FB;
+	color: #313131;
+}
+.GPSales th {
+	background-color: #cccccc;
+	color: black;
+}
+#my-table tr:nth-child(even) {
+	background-color: #EBF4FB;
+	color: #313131;
+}
+#my-table th {
+	background-color: #cccccc;
+	color: black;
+}
+table.center {
+	width: 95%;
+	margin-left: 2%;
+	margin-right: 2%;
+} 
+#GraphBox {
+    border: none;
+    height: 100%;
+    width: 100%;
+    min-height: 600px;
+    display: none ; 
+}
+
+           </style>  
+          <!-- beginning of salesman_users page -->  
+          <table class="center " border=0 bgcolor=white cellspacing=0 cellpadding=0 width=100%>    
+            <tr>
+              <td colspan=2>          
+                <font size=4><b> Welcome [SLSNAME] to your Remotenet Salesman Portal.              
+                    <br>Select a user by clicking on a User Name or User ID.</b>        
+                </font></td>
+            </tr>    
+            <tr>
+              <td colspan=2>  [SLS.MSG] </td>
+            </tr>
+            <tr><td>        
+                <div class="GPSales" >
+<div class="TopCRMLinks" > 
+                      <a href=# title="To filter data click on an item on your charts, or drag across the timeline to view sales for a period, as you click the data will filter. To reset or reload hide and view your charts" saved-onclick='javascript:showgraph("","#GraphBox");$("#GraphBox").toggle();'> View/Hide Sales Charts </a>        
+<label class="switch">
+  <input onclick='javascript:showgraph("","#GraphBox");$("#GraphBox").toggle();'  type="checkbox">
+  <span class="slider round"></span>
+</label>
+</div>
+<br>
+<div class="SalesReports" >
+<h2> Salesman Reports </h2>  
+                  <div  style="" id="RptStatus">                   </div>              
+                  <select id="SlsReports" >
+                    <option value=""> Choose a Report                     </option>
+                    <option value="118">Customer Sales Order Status 
+                    </option>
+                    <option value="119">Customer Price List (PRICE.1) 
+                    </option>
+                    <option value="120">Customer Sales History 24 Month 
+                    </option>
+                    <option value="121">Customer Invoices for last 90 Days  
+                    </option>
+                    <option value="123">Inventory and Pricing Sheet  
+                    </option>
+                  </select>
+                  <div style="display: none ;" id="RptName"> 
+                  </div>              
+                  <input type=button class=gobutton name="GO1" value="GO" onclick='javascript:showreport();' >  
+<div>
+<a href="#!" title="Choose a customer by clicking on the filter icon next to the customer number in your list below. To reset click the X to the right of the box." >
+ Filtered for Customer: <input type=text disabled name="acustno" id="acustno">
+</a>
+  <a title="Reset Customer for Reports " href=# onclick="javascript:$('#acustno').val('')" >X</a>
+ </div>
+ </div>
+                  <table class="">            
+                    <tr>              
+                      <th>  Sales#:               
+                      </th><td> [SLSMNO] </td>            
+                    </tr>            
+                    <tr>              
+                      <th>Territory:               
+                      </th>              <td> [TERR] [TERR.DESC]                  </td>            
+                    </tr>            
+                    <tr>              
+                      <th>Phone:               
+                      </th><td> [SLSPHONE]                 </td>            
+                    </tr>            
+                    <tr>              
+                      <th>Email:               
+                      </th><td> [SLSEMAIL] </td>            
+                    </tr>            
+                    <tr>              
+                      <th>Quota :               
+                      </th><td> [QUOTA] </td>            
+                    </tr>            
+                    <tr>              
+                      <th>Sales Goal:               
+                      </th><td> [GOAL] </td>            
+                    </tr>          
+                  </table>        
+                </div></td>
+                <td>        
+                <div class="GPSales" >
+                  <div class="info" id="SlsCheck"> 
+                  </div>          
+                  <table class="">            
+                    <tr>              
+                      <th>              
+                      </th>              
+                      <th> Daily (DTD)               
+                      </th>              
+                      <th> Monthly (MTD)               
+                      </th>              
+                      <th> Yearly (YTD)               
+                      </th>            
+                    </tr>            
+                    <tr>              
+                      <th> Sales Dollars               
+                      </th><td> [SD] </td><td> [SMTD] </td><td> [SYTD] </td>            
+                    </tr>            
+                    <tr>              
+                      <th> Returned Dollars               
+                      </th><td> [RD] </td><td> [RMTD] </td><td> [RYTD] </td>            
+                    </tr>            
+                    <tr>              
+                      <th> Gross Profit Dollars               
+                      </th><td> [GPD] </td><td> [GPMTD] </td><td> [GPYTD] </td>            
+                    </tr>          
+                  </table>        
+                </div></td>
+            </tr>    
+            <tr>
+              <td colspan=2>
+               <iframe id="GraphBox">  </iframe>
+                </td>
+            </tr>
+         
+          </table>
+          
+          <hr>  
+          <table class="" border=0 bgcolor=white cellspacing=0 cellpadding=0 width=100%>    
+            <tr>        
+              <td valign=top width=50%>        
+                <table class="" border=0 cellpadding=0 cellspacing=4 align=right>          
+                  <tr>              
+                    <td id=style8 width=150 align=right nowrap><b>Sort By:</b></td>    <td>                
+                      <SELECT name="Changesort" size=1>        [SORT.BY]               
+                      </SELECT>   </td>              
+                    <td valign=center>              
+                      <input type=button class=gobutton name="GO1" value="GO" onclick='javascript:changepath("SUSR","N")'       onmouseover="this.className='gobutton gobuttonhov' ; window.status='Change Sort Method'"       onmouseout="this.className='gobutton' ; window.status=''">   </td>          
+                  </tr>          
+                  <tr>              
+                    <td id=style8 width=150 align=right nowrap><b>Items per page:</b></td>   <td>                
+                      <select name="itemspage" size=1>[ITEMS.PG]               
+                      </select>   </td>              
+                    <td valign=center>                
+                      <input type=button class=gobutton name="GO2" value="GO" onclick='javascript:changepath("SUSR","N")'       onmouseover="this.className='gobutton gobuttonhov' ; window.status='Change Items Per Page'"       onmouseout="this.className='gobutton' ; window.status=''">   </td>          
+                  </tr>          
+                  <tr>              
+                    <td colspan=3>&nbsp;</td>          
+                  </tr>          
+                  <tr>              
+                    <td colspan=3>&nbsp;</td>          
+                  </tr>        
+                </table></td>        
+              <td valign=top width=50%>        
+                <table class="" border=0 cellpadding=0 cellspacing=4 align=left>          
+                  <tr>              
+                    <td id=style8 align=right width=150 nowrap><b>Customer No.:</b></td>              
+                    <td align=left>              
+                      <input type=text size=24 name="selacustno" value="[SEL.CUST.NO]"></td>          
+                  </tr>          
+                  <tr>              
+                    <td id=style8 align=right width=150 nowrap><b>Customer Name:</b></td>              
+                    <td align=left>                
+                      <input type=text name="Custname" value="[SEL.CUST.NAME]" size=24 maxlength=50></td>          
+                  </tr>          
+                  <tr>              
+                    <td id=style8 align=right width=150 nowrap><b>User Name:</b></td>              
+                    <td align=left>                
+                      <input type=text name="EndUserName" value="[SEL.USER.NAME]" size=24 maxlength=50></td>          
+                  </tr>          
+                  <tr>              
+                    <td colspan=2 align=center valign=center>                
+                      <input type=button class=button1 name="SUSR" value="Search" onclick='javascript:changepath("SUSR","Y")'        onmouseover="this.className='button1 buttonhov1' ; window.status='Search User data'"        onmouseout="this.className='button1' ; window.status=''">                
+                      <input type=reset class=button1 name="reset" value="Reset"        onmouseover="this.className='button1 buttonhov1' ; window.status='Reset Search Values'"        onmouseout="this.className='button1' ; window.status=''">    </td>          
+                  </tr>        
+                </table></td>    
+            </tr>  
+          </table>
+          <!-- start of main data table -->
+          <table class="ng-table">      
+            <tr>      
+              <th class=rollsort nowrap valign=top >        
+                <div id='link1'       onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Data by Customer No.'" ;       onmouseout="this.className='rollsort' ; window.status=''" ;       onClick="javascript:changesort_toggle('SUSR','N','A.CUST.NO')">            
+                  <font size=2><b>Customer No.</b>          
+                  </font>        
+                </div>    
+              </th>        
+              <th class=rollsort valign=top>        
+                <div id='link2'       onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Data by Customer Name'" ;       onmouseout="this.className='rollsort' ; window.status=''" ;       onClick="javascript:changesort_toggle('SUSR','N','CUST.NAME')">            
+                  <font size=2><b>Customer Name</b>          
+                  </font>        
+                </div>    
+              </th>        
+              <th class=rollsort valign=top>        
+                <div id='link3'       onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Data by User Name'" ;       onmouseout="this.className='rollsort' ; window.status=''" ;       onClick="javascript:changesort_toggle('SUSR','N','USER.NAME')">            
+                  <font size=2><b>User Name</b>          
+                  </font>        
+                </div>    
+              </th>        
+              <th class=rollsort valign=top >        
+                <div id='link4'       onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Data by User ID'" ;       onmouseout="this.className='rollsort' ; window.status=''" ;       onClick="javascript:changesort_toggle('SUSR','N','USER.ID')">            
+                  <font size=2><b>User ID</b>          
+                  </font>        
+                </div>    
+              </th>        
+              <th class=rollsort valign=top >        
+                <div id='link5'       onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Data by Sales'" ;       onmouseout="this.className='rollsort' ; window.status=''" ;       onClick="javascript:changesort_toggle('SUSR','N','NET.SALES.MTD')">            
+                  <font size=2><b>Net Sales$ MTD</b>          
+                  </font>        
+                </div>    
+              </th>        
+              <th class=rollsort valign=top >        
+                <div id='link5'       onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Data by Sales'" ;       onmouseout="this.className='rollsort' ; window.status=''" ;       onClick="javascript:changesort_toggle('SUSR','N','SALES$')">            
+                  <font size=2><b>Net Sales$ YTD</b>          
+                  </font>        
+                </div>    
+              </th>        
+              <th class=rollsort valign=top >        
+                <div id='link5'       onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Data by GP'" ;       onmouseout="this.className='rollsort' ; window.status=''" ;       onClick="javascript:changesort_toggle('SUSR','N','GP.PER')">            
+                  <font size=2><b>GP %</b>          
+                  </font>        
+                </div>    
+              </th>        
+              <th class=rollsort valign=top >        
+                <div id='link5'       onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Data by Last Order Date'" ;       onmouseout="this.className='rollsort' ; window.status=''" ;       onClick="javascript:changesort_toggle('SUSR','N','LST.ORD.DT')">            
+                  <font size=2><b>Last Ord Dt</b>          
+                  </font>        
+                </div>    
+              </th>        
+              <th class=rollsort valign=top >        
+                <div id='link5'       onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Data by Last Pay Amount'" ;       onmouseout="this.className='rollsort' ; window.status=''" ;       onClick="javascript:changesort_toggle('SUSR','N','LST.PAY.$')">            
+                  <font size=2><b>Last Pay Amt</b>          
+                  </font>        
+                </div>    
+              </th>        
+              <th class=rollsort valign=top >        
+                <div id='link5'       onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Data by Last Pay Date'" ;       onmouseout="this.className='rollsort' ; window.status=''" ;       onClick="javascript:changesort_toggle('SUSR','N','LST.PAY.DT')">            
+                  <font size=2><b>Last Pay Dt</b>          
+                  </font>        
+                </div>    
+              </th>        
+              <th class=rollsort valign=top >        
+                <div id='link5'       onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Data by Total AR Balance'" ;       onmouseout="this.className='rollsort' ; window.status=''" ;       onClick="javascript:changesort_toggle('SUSR','N','AR.BAL')">            
+                  <font size=2><b>Total AR</b>          
+                  </font>        
+                </div>    
+              </th>      
+              <th class=rollsort valign=top >        
+                <div id='link5'       onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Data by Ar Over [AR.DAYS] days'" ;       onmouseout="this.className='rollsort' ; window.status=''" ;       onClick="javascript:changesort_toggle('SUSR','N','OVER60')">            
+                  <font size=2><b>Over [AR.DAYS] Days</b>          
+                  </font>        
+                </div>    
+              </th>        
+              <th class=rollsort valign=top >        
+                <div id='link5'       onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Data by BO Lines'" ;       onmouseout="this.className='rollsort' ; window.status=''" ;       onClick="javascript:changesort_toggle('SUSR','N','BO.LINES')">            
+                  <font size=2><b>B/O Lines</b>          
+                  </font>        
+                </div>    
+              </th>      
+              <!--  end of old header -->      
+              <!-- new header <td class="rollsort"> <div id='link1'> <a href=# onclick="javascript:changesort_toggle('SUSR','N','A.CUST.NO')" >Customer No.</a></div></td>
+                    <td class=rollsort valign=top nowrap><div id='link1'>Cust Name<div class="arrow-up" onclick="javascript:changesort('SUSR','N','CUST.NAME')" >  </div><div class="arrow-down" onclick="javascript:changesort('SUSR','N','-DSND CUST.NAME')" >  </div></div></td> <td class=rollsort valign=top nowrap><div id='link1'>User<div class="arrow-up" onclick="javascript:changesort('SUSR','N','USER.NAME')" >  </div><div class="arrow-down" onclick="javascript:changesort('SUSR','N','-DSND USER.NAME')" >  </div></div></td> <td class=rollsort valign=top nowrap><div id='link1'>User Id<div class="arrow-up" onclick="javascript:changesort('SUSR','N','USER.ID')" >  </div><div class="arrow-down" onclick="javascript:changesort('SUSR','N','-DSND USER.ID')" >  </div></div></td> <td class=rollsort valign=top nowrap><div id='link1'>Sales$YTD<div class="arrow-up" onclick="javascript:changesort('SUSR','N','SALES$')" >  </div><div class="arrow-down" onclick="javascript:changesort('SUSR','N','-DSND SALES$')" >  </div></div></td>
+                    <td class=rollsort valign=top nowrap><div id='link1'>GP%<div class="arrow-up" onclick="javascript:changesort('SUSR','N','GP.PER')" >  </div><div class="arrow-down" onclick="javascript:changesort('SUSR','N','-DSND GP.PER')" >  </div></div></td> <td class=rollsort valign=top nowrap><div id='link1'>LstOrdDt<div class="arrow-up" onclick="javascript:changesort('SUSR','N','LST.ORD.DT')" >  </div><div class="arrow-down" onclick="javascript:changesort('SUSR','N','-DSND LST.ORD.DT')" >  </div></div></td> <td class=rollsort valign=top nowrap><div id='link1'>LastPayAmt<div class="arrow-up" onclick="javascript:changesort('SUSR','N','LAST.PAY.$')" >  </div><div class="arrow-down" onclick="javascript:changesort('SUSR','N','-DSND LAST.PAY.$')" >  </div></div></td> <td class=rollsort valign=top nowrap><div id='link1'>LstPayDt<div class="arrow-up" onclick="javascript:changesort('SUSR','N','LST.PAY.DT')" >  </div><div class="arrow-down" onclick="javascript:changesort('SUSR','N','-DSND LAST.PAY.DT')" >  </div></div></td>
+                    <td class=rollsort valign=top nowrap><div id='link1'>TotAR<div class="arrow-up" onclick="javascript:changesort('SUSR','N','AR.BAL')" >  </div><div class="arrow-down" onclick="javascript:changesort('SUSR','N','-DSND AR.BAL')" >  </div></div></td> <td class=rollsort valign=top nowrap><div id='link1'>Over [AR.DAYS]<div class="arrow-up" onclick="javascript:changesort('SUSR','N','OVER60')" >  </div><div class="arrow-down" onclick="javascript:changesort('SUSR','N','-DSND OVER60')" >  </div></div></td> <td class=rollsort valign=top nowrap><div id='link1'>Open/Backorders<div class="arrow-up" onclick="javascript:changesort('SUSR','N','OPEN.ORD.VAL')" >  </div><div class="arrow-down" onclick="javascript:changesort('SUSR','N','-DSND OPEN.ORD.VAL')" >  </div></div></td> -->    
+            </tr>[SUSR.DETAIL]   
+          </table>[PAGE.MOVEMENT] 
+          

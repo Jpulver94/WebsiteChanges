@@ -1,0 +1,54 @@
+
+
+
+
+<form name=template action="login[SUFFIX]" method=post>
+<input type=hidden name=Aprod_string value="[APROD_STRING]">
+<input type=hidden name=prod_string value="[PROD_STRING]">
+<input type=hidden name=qty_string value="[QTY_STRING]">
+<input type=hidden name=um_string value="[UM_STRING]">
+<input type=hidden name=price_string value="[PRICE_STRING]">
+<input type=hidden name=comment_string value="[COMMENT_STRING]">
+<input type=hidden name=manufact_string value="[MANUFACT_STRING]">
+<input type=hidden name=loginpath value="[LOGINPATH]">
+<input type=hidden name=searchflag value="[SEARCHFLAG]">
+<input type=hidden name=pageid value="6">
+<input type=hidden name=startptr value="[STARTPTR]">
+<input type=hidden name=CustomerId value="[CUSTOMERID]">
+<input type=hidden name=orderno value="[ORDERNO]">
+<input type=hidden name=old_loginpath value="[LOGINPATH]">
+<input type=hidden name=prev_changesort value="[CHANGESORT]">
+<input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+<input type=hidden name=mdsorderno value="[MDSORDERNO]">
+<input type=hidden name=aprodno value="[APRODNO]">
+<input type=hidden name=slsmno value="[SLSMNO]">
+<input type=hidden name=slsmn_id value="[SLSMN_ID]">
+
+<DIV class="LicMain" >
+<div class="LicHeader" >
+    <span id=colhdg ><font size=2><b>Company License Information</b></font> </span><BR>
+<br>
+[CO.NAME]<BR>
+[CO.ADDR1]<BR>
+[CO.ADDR2]<BR>
+[CO.ADDR3]<BR>
+[CO.CITY] , [CO.STATE] [CO.ZIP]<BR>
+[CO.PHONE]<BR>
+[CO.EMAIL]<BR>
+DEA#: [DEA.LIC]<BR>
+Expires: [DEA.EXP.DT]<BR>
+</div>
+<BR>
+<!-- <table border=0 cellpadding=2 cellspacing=2 width=100%> -->
+<table class="ng-table"> 
+  <tr>
+    <td id=colhdg nowrap><font size=2><b>State</b></font></td>
+    <td id=colhdg nowrap><font size=2><b>License#</b></font></td>
+    <td id=colhdg nowrap><font size=2><b>License Description</b></font></td>
+    <td id=colhdg nowrap><font size=2><b>Expiration Date</b></font></td>
+    <td id=colhdg nowrap><font size=2><b>View Image</b></font></td>
+  </tr>
+[LIC.LINES]
+</table>
+
+</div>

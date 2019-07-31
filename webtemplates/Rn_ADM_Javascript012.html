@@ -1,0 +1,28 @@
+
+<script lang=javascript>
+function changepath(x,sflag) {
+   document.template.loginpath.value = x ;
+   document.template.searchflag.value = sflag  ;
+   document.template.submit();
+}
+function changeorder(x,ord) {
+   document.template.orderno.value = ord  ;
+   document.template.loginpath.value = x  ;
+   document.template.submit();
+}
+function templ_maint(x,sflag,ordno) {
+   document.template.orderno.value = ordno ;
+   document.template.loginpath.value = x ;
+   document.template.searchflag.value = sflag  ;
+   document.template.Aprod_string.value = "" ;
+   document.template.prod_string.value = "" ;
+   document.template.qty_string.value = "" ;
+   document.template.um_string.value = "" ;
+   document.template.price_string.value = "" ;
+   document.template.comment_string.value = "" ;
+   document.template.manufact_string.value = "" ;
+   document.template.manufact_string.value = "" ;
+   document.template.submit();
+}
+</script>
+

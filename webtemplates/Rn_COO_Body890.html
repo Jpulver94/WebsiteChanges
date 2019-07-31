@@ -1,0 +1,272 @@
+
+
+
+ <!-- Rebuilding Main Section with Bootstrap --> 
+ <STYLE>
+ /* PAGE SPECIFIC STYLES */
+ td.datsml {
+ padding: 7px;
+ padding: 15px 7px;
+}
+ </style>
+ 
+ <div class="container" style="padding: 0; width:100% !important; max-width: 100% !important"> 
+ <div class="col-md-12 ssfirstrow"> 
+<form name=template action="login[SUFFIX]" method=post>
+<input type=hidden name=Aprod_string value="[APROD_STRING]">
+<input type=hidden name=prod_string value="[PROD_STRING]">
+<input type=hidden name=qty_string value="[QTY_STRING]">
+<input type=hidden name=um_string value="[UM_STRING]">
+<input type=hidden name=price_string value="[PRICE_STRING]">
+<input type=hidden name=comment_string value="[COMMENT_STRING]">
+<input type=hidden name=manufact_string value="[MANUFACT_STRING]">
+<input type=hidden name=loginpath value="[LOGINPATH]">
+<input type=hidden name=searchflag value="[SEARCHFLAG]">
+<input type=hidden name=pageid value="6">
+<input type=hidden name=startptr value="[STARTPTR]">
+<input type=hidden name=CustomerId value="[CUSTOMERID]">
+<input type=hidden name=orderno value="[ORDERNO]">
+<input type=hidden name=old_loginpath value="[LOGINPATH]">
+<input type=hidden name=prev_changesort value="[CHANGESORT]">
+<input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+<input type=hidden name=mdsorderno value="[MDSORDERNO]">
+<input type=hidden name=aprodno value="[APRODNO]">
+<input type=hidden name=slsmno value="[SLSMNO]">
+<input type=hidden name=slsmn_id value="[SLSMN_ID]">
+<style>
+td.datsml {
+    padding: 7px;
+}
+.Salesinfo {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    float: left;
+}
+.OrdStatOpen { color: orange; } 
+.OrdStatHold { color: red; } 
+.OrdStatComplete { color: green; } 
+.OrdStatCancel { color: gray; } 
+</style>
+<!-- New Top Info Section --> 
+<!-- 
+<div class="row">
+	<div class="col-md-6">
+		<table class="ssInfoTable" border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td>
+				Customer:
+				</td>
+				<td>
+			[A.CUST.NO]
+				</td>
+			</tr>
+			<tr>
+				<td>
+				Company:
+				</td>
+				<td>
+				[CO.NO] - [COMPANY.NAME]
+				</td>
+			</tr>
+			<tr>
+				<td>
+				Name:
+				</td>
+				<td>
+				[CUST.NAME]
+				</td>
+			</tr>
+			<tr>
+				<td>
+				Address 1:
+				</td>
+				<td>
+				[CUST.ADDR1]
+				</td>
+			</tr>
+			<tr>
+				<td>
+				Address 2:
+				</td>
+				<td>
+				[CUST.ADDR2]
+				</td>
+			</tr>
+			<tr>
+				<td>
+				City, State, Zip:
+				</td>
+				<td>
+				[CITY.ST.ZIP]
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="col-md-6">
+		<table class="ssInfoTable" border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td>
+				Contact:
+				</td>
+				<td>
+				 [CONTACT]
+				</td>
+			</tr>
+			<tr>
+				<td>
+				Phone:
+				</td>
+				<td>
+			[PHONE]
+				</td>
+			</tr>
+			<tr>
+				<td>
+				Fax:
+				</td>
+				<td>
+				  [FAX]
+				</td>
+			</tr>
+			<tr>
+				<td>
+				E-Mail:
+				</td>
+				<td>
+				 [EMAIL]
+				</td>
+			</tr>
+			<tr>
+				<td>
+				Salesrep:
+				</td>
+				<td>
+			 [SLSMN]
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+--> 
+<div class="row">
+	<div class="col-md-12 ssfirstrow">
+		<h3>[NO.ORDERS] orders have been placed for this account.</h3>
+		<p>If you don't see the desired Web Order#, <a href="#" class="ssLinkFix" onclick="javascript:changepath('OOH','Y')">
+		Click here</a> to view Orders on Hold.</p>
+	</div>
+</div>	
+<div class="row">
+	<div class="col-md-12 ssfirstrow roundedbox2 fillgray">
+		<p>To see order detail, <b>Click on the Web Order# below</b>.</p>
+		<p>Please Note: This inquiry is only showing orders after [WEB.ORDER.INQ.DATE].</p>
+		<p>To find a specific order please enter a <b>Web Order # (6 digit)</b> or <b>Co#Order#</b> (8 digit) or <b>CustomerPO#</b> below and <b>click GO</b>.</p>
+		<input type="text" name="ordervar" value="[ORDERVAR]" size="20" class="tallselect" style="margin-left: 0px;">
+    <input type="button" class="gobutton" name="GO3" value="GO" onclick="javascript:changepath('COO','N')" onmouseover="this.className='gobutton gobuttonhov' ; 
+    window.status='Go to Order Inquiry'" onmouseout="this.className='gobutton' ; window.status=''">
+	</div>
+</div>
+<!-- New Sort and Items Selection Section --> 
+<div class="row" style="padding-top: 10px;">
+		<div class="col-md-5 col-sm-6 col-xs-12 col-lg-4">
+			<div class="backordersort" style="float: left;">
+			<strong>Sort By:</strong>
+				 <select class="tallselect" name="Changesort" size="1" style="width: 160px;">
+[SORT.BY]
+				 </select>
+				 <input type="button" class="gobutton" name="GO1" value="GO" onclick='javascript:changepath("COO","N")' onmouseover="this.className='gobutton gobuttonhov' ; window.status='Change Sort Method'" onmouseout="this.className='gobutton' ; window.status=''">
+			</div>
+		</div>
+		<div class="col-md-7 col-sm-6 col-xs-12 col-lg-8">
+			<div class="backordersort" style="float: right;">
+			<strong>Items per page:</strong>
+				 <select class="tallselect" name="itemspage" size="1" style="width: 111px;">
+         [ITEMS.PG]
+				 </select>
+				  <input type="button" class="gobutton" name="GO2" value="GO" onclick='javascript:changepath("COO","N")' onmouseover="this.className='gobutton gobuttonhov' ; window.status='Change Items Per Page'" onmouseout="this.className='gobutton' ; window.status=''">
+			</div>
+		</div>
+</div>
+    
+<table class="ng-table">
+                               <tr class="ssHeadRow">
+                                         <td id="colhdg" style="width:7%;">
+                                            <font size="2"><b>Line No.</b></font>
+                                        </td>
+                                        <td class="rollsort" style="width:10%;">
+                                            <div id='link1' onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Open Orders by Order#/Release#'; "
+                                                onmouseout="this.className='rollsort' ; window.status=''; " onclick='javascript:changesort_toggle("COO","N","ORDER.REL")'>
+                                                 <font size="2"><b>Order #-Rel #</b></font>
+                                            </div>
+                                        </td>
+                                        <td class="rollsort" >
+                                            <div id='link1' onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Open Orders by Order#/Release#'; "                                                onmouseout="this.className='rollsort' ; window.status='';">
+                                                <font size="2"><b>Invoice # </b></font>
+                                            </div>
+                                        </td>
+                                           <td class="rollsort" style="width:6%;">
+                                            <div id='link1' onmouseover="this.className='rollsort rollsorthov' ; "   onmouseout="this.className='rollsort' ; window.status='';">
+                                                <font size="2"><b>Invoice Date</b></font>
+                                            </div>
+                                        </td>
+                                        <td class="rollsort" style="width:8%;">
+                                            <div id='link2' onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Open Orders by Web Order#'; "
+                                                onmouseout="this.className='rollsort' ; window.status=''; " onclick='javascript:changesort_toggle("COO","N","WEB.ORDER#")'>
+                                                <font size="2"><b>Web Order #</b></font>
+                                            </div>
+                                        </td>
+                                         <td class="rollsort" style="width:8%;">
+                                            <div id='link3' onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Open Orders by Customer PO#'; "
+                                                onmouseout="this.className='rollsort' ; window.status=''; " onclick='javascript:changesort_toggle("COO","N","CUST.PO.NO")'>
+                                                <font size="2"><b>Cust. PO# </b></font>
+                                            </div>
+                                        </td>
+                                        <td id="colhdg" align="center" style="width:18%; >
+                                            <font size="2"><b>Shipto Name</b></font>
+                                        </td>
+                                         <td class="rollsort" align="center" style="width:8%;">
+                                            <div id='link4' onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Open Orders by Order Date'; "
+                                                onmouseout="this.className='rollsort' ; window.status=''; " onclick='javascript:changesort_toggle("COO","N","ORD.DATE")'>
+                                                <font size="2"><b>Order Date</b></font>
+                                            </div>
+                                        </td>
+                                         <td id="colhdg" align="center" style="width:7%;">
+                                            <font size="2"><b>Ship Date</b></font>
+                                        </td>
+                                         <td class="rollsort" align="center" nowrap style="width:7%;">
+                                            <div id='link5' onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Open Orders by Total Order Amount'; "
+                                                onmouseout="this.className='rollsort' ; window.status=''; " onclick='javascript:changesort_toggle("COO","N","TOT.AMT")'>
+                                                <font size="2"><b>Rel $ Amt.</b></font>
+                                            </div>
+                                        </td>
+                                         <td class="rollsort" align="center" style="width:6%;">
+                                            <div id='link6' onmouseover="this.className='rollsort rollsorthov';"  onmouseout="this.className='rollsort'; " '>
+                                                <font size="2"><b>BO Lines</b></font>
+                                            </div>
+                                        </td>
+                                       <td class="rollsort" align="center" style="width:7%;">
+                                            <div id='link7' onmouseover="this.className='rollsort rollsorthov';"  onmouseout="this.className='rollsort'; " '>
+                                                <font size="2"><b>Total Lines</b></font>
+                                            </div>
+                                        </td>
+                                        <td class="rollsort" align="center" >
+                                            <div id='link6' onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Open Orders by Order Status'; "
+                                                onmouseout="this.className='rollsort' ; window.status=''; " onclick='javascript:changesort_toggle("COO","N","STATUS")'>
+                                                <font size="2"><b>Status</b></font>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    [COO.LINES]
+                                </table>
+                                [PAGE.MOVEMENT]
+                                <!--end of page movement -->
+<!--run the load script--> 
+<script language="javascript">  loadvalues() ; </script>
+    </div>
+     </div>
+      </div>
+       </div>
+
+
+
+

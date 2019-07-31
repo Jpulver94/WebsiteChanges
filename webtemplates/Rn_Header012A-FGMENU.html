@@ -1,0 +1,134 @@
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 transitional//EN" "http://www.w3.org/TR/xhtml 1/DTD/xhtml1-transitional.dtd">
+<html> <head>
+  <!-- Mimic Internet Explorer 9 -->
+<meta http-equiv="X-UA-Compatible" content="IE=9" >
+<LINK rel="STYLESHEET" type="text/css" href="[stylesheet_path]"> 
+<title>[page_title] 6.2 </title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<link rel="shortcut icon" href="[IMAGE.PATH]favicon.ico" />
+<script language='JavaScript' src='[script_path]jquery-1.5.1.min.js'></script>
+<script language='JavaScript' src="[script_path]jquery.customselect.js"></script>
+<script language='JavaScript' src="[script_path]jquery.scrollTo-min.js"></script>
+<script language='JavaScript' src='[script_path]tsh_utils.js'></script>
+<!-- Added code for menu -->
+    <script type="text/javascript" src="//hosting.tshinc.com/menu/fg.menu.js"></script> 
+    <link type="text/css" href="//hosting.tshinc.com/menu/fg.menu.css" media="screen" rel="stylesheet" />
+   
+     <!-- styles for this example page only -->
+ <link type="text/css" href="//hosting.tshinc.com/menu/theme/custom.css" media="screen" rel="stylesheet" />
+	<style type="text/css">
+
+	
+	.fg-button { clear:left; margin:0 4px 40px 20px; padding: .4em 1em; text-decoration:none !important; cursor:pointer; position: relative; text-align: center; zoom: 1; }
+	.fg-button .ui-icon { position: absolute; top: 50%; margin-top: -8px; left: 50%; margin-left: -8px; }
+	a.fg-button { float:left;  }
+	button.fg-button { width:auto; overflow:visible; } /* removes extra button width in IE */
+	
+	.fg-button-icon-left { padding-left: 2.1em; }
+	.fg-button-icon-right { padding-right: 2.1em; }
+	.fg-button-icon-left .ui-icon { right: auto; left: .2em; margin-left: 0; }
+	.fg-button-icon-right .ui-icon { left: auto; right: .2em; margin-left: 0; }
+	.fg-button-icon-solo { display:block; width:8px; text-indent: -9999px; }	 /* solo icon buttons must have block properties for the text-indent to work */	
+	.fg-button.ui-state-loading .ui-icon { background: url(spinner_bar.gif) no-repeat 0 0; }
+	</style>
+	
+	<!-- style exceptions for IE 6 -->
+	<!--[if IE 6]>
+	<style type="text/css">
+		.fg-menu-ipod .fg-menu li { width: 95%; }
+		.fg-menu-ipod .ui-widget-content { border:0; }
+	</style>
+	<![endif]-->	
+    
+    <script type="text/javascript">    
+    $(function(){
+    	// BUTTONS
+    	$('.fg-button').hover(
+    		function(){ $(this).removeClass('ui-state-default').addClass('ui-state-focus'); },
+    		function(){ $(this).removeClass('ui-state-focus').addClass('ui-state-default'); }
+    	);
+	
+		// or from an external source
+    var pageurl = 'login[SUFFIX]?orderno=[WEB.ORDERNO]&LOGINPATH=DL&pageid=31&SUBMITVAR=menuContent.html' ;
+    var params = "" ;
+// BEGIN GET QUERY STRING CODE ;
+queryVar = pageurl ;
+var inq = pageurl.indexOf('?');
+queryVar = queryVar.substring(inq + 1);
+queryVar = unescape(queryVar); 
+var params = queryVar ;
+jQuery.ajax({
+     type: "POST",
+     url: pageurl,
+     data: params ,
+     dataType: "html",
+	   success: function(data) {   
+       $('#flyout').menu({ 
+        content: data, 
+        flyOut: true, 
+        backLink: false ,
+       	crumbDefaultText: 'All Categories:',
+        width: 210,
+        maxHeight: 660
+        });
+       $('#flyout').click() ;
+     }
+}) ; 
+    });
+    </script>
+    
+ <script type="text/javascript">
+ function loadweborder() {
+ var dummy = widgetload('login[SUFFIX]?orderno=[WEB.ORDERNO]&dboption=WEBORD&TARGETVAL=[WEB.ORDERNO]','#ORDXdivcontainer');
+//transition effect 
+$('#ORDXdivcontainer').fadeIn(2000); 
+//if order is clicked
+ $('#ORDXdivcontainer').click(function () {$(this).hide();});
+ }
+function loadprint() {
+  var mywindow =  window.open('','Print_Web_Order','');
+ var pageurl = 'login[SUFFIX]?orderno=[WEB.ORDERNO]&dboption=WEBORD&LOGINPATH=SOX&pageid=31&TARGETVAL=[WEB.ORDERNO]' ;
+var params = "" ;
+// BEGIN GET QUERY STRING CODE ;
+queryVar = pageurl ;
+var inq = pageurl.indexOf('?');
+queryVar = queryVar.substring(inq + 1);
+queryVar = unescape(queryVar); 
+var params = queryVar ;
+jQuery.ajax({
+     type: "POST",
+     url: pageurl,
+     data: params ,
+     dataType: "html",
+	   success: function(data) {   
+        mywindow.document.write('<html><head><title>Print Web Order [WEB.ORDERNO]</title>');
+        mywindow.document.write('<link rel="stylesheet" href="[stylesheet_path]" type="text/css" />');
+        mywindow.document.write('</head><body >');
+        mywindow.document.write(data);
+        mywindow.document.write('</body></html>');
+        mywindow.document.close();
+        mywindow.print();
+        return true;
+     }
+}) ; 
+}
+ </script>
+
+
+
+
+
+
+
+
+
+

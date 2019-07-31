@@ -1,0 +1,18 @@
+   <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//hosting.tshinc.com/rn/templates/CSVHTML/js/jquery.min.js"></script>
+    <script src="//hosting.tshinc.com/rn/templates/CSVHTML/js/bootstrap.min.js"></script>
+    <script src="//hosting.tshinc.com/rn/templates/CSVHTML/js/jquery.csv.min.js"></script>
+    <script src="//hosting.tshinc.com/rn/templates/CSVHTML/js/jquery.dataTables.min.js"></script>
+    <script src="//hosting.tshinc.com/rn/templates/CSVHTML/js/dataTables.bootstrap.js"></script>
+    <script src='//hosting.tshinc.com/rn/templates/CSVHTML/js/csv_to_html_table.js'></script>
+    <script>
+      init_table({
+        csv_path: '[FILENAME]', 
+        element: 'table-container', 
+        allow_download: true,
+        csv_options: {separator: '\t', delimiter: '"'},
+        datatables_options: {"paging": true}
+      });
+    </script>

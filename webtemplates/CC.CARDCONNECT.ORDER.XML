@@ -1,0 +1,26 @@
+{
+  "orderid": "[CC.REL.NO]",
+  "ponumber": "[CC.PO.NO]",
+  "account": "[CC.NUM]",
+  "expiry": "[CC.EXP.DT]",
+  "amount": "[CC.AMOUNT]",
+  "currency": "USD",
+  "name": "[CC.NAME]",
+  "address": "[CC.AVS.ADDR]",
+  "capture": "[SALEFLAG]",
+  "country": "US",
+  "postal": "[CC.AVS.ZIP]",
+  "ecomind": "T",
+  "cvv2": "[CC.CVV.NO]",
+  "retref": "[CC.REF.NUM]",
+  "shiptozip": "[CC.AVS.ZIP]",
+  "taxamount": "[TAX.AMT]",
+  "merchid": "[TERM.ID]",
+"userfields": [
+  {    "comments": "[COMMENTS]"  },
+  {    "tracevalue": "[CC.TRACEVALUE]"  }
+],
+  "items": [
+[LINE.DATA]
+  ]
+}

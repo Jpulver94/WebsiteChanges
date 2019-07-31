@@ -1,0 +1,255 @@
+
+
+
+<form name=template action="login[SUFFIX]" method=post>
+<input type=hidden name=Aprod_string value="[APROD_STRING]">
+<input type=hidden name=prod_string value="[PROD_STRING]">
+<input type=hidden name=qty_string value="[QTY_STRING]">
+<input type=hidden name=um_string value="[UM_STRING]">
+<input type=hidden name=price_string value="[PRICE_STRING]">
+<input type=hidden name=comment_string value="[COMMENT_STRING]">
+<input type=hidden name=manufact_string value="[MANUFACT_STRING]">
+<input type=hidden name=loginpath value="[LOGINPATH]">
+<input type=hidden name=searchflag value="[SEARCHFLAG]">
+<input type=hidden name=pageid value="6">
+<input type=hidden name=startptr value="[STARTPTR]">
+<input type=hidden name=CustomerId value="[CUSTOMERID]">
+<input type=hidden name=orderno value="[ORDERNO]">
+<input type=hidden name=old_loginpath value="[LOGINPATH]">
+<input type=hidden name=prev_changesort value="[CHANGESORT]">
+<input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+<input type=hidden name=mdsorderno value="[MDSORDERNO]">
+<input type=hidden name=aprodno value="[APRODNO]">
+<input type=hidden name=slsmno value="[SLSMNO]">
+<input type=hidden name=slsmn_id value="[SLSMN_ID]">
+<table class="ng-table">
+  <tr>
+    <td id=colhdg nowrap><font size=2><b>Customer #</b></font></td>
+    <td id=colhdg colspan=2 nowrap><font size=2><b>Sold To</b></font></td>
+    <td id=colhdg colspan=2 nowrap><font size=2><b>Ship To</b></font></td>
+  </tr>
+  <tr>
+    <td id=datnorm valign=top>
+[A.CUST.NO]
+    </td>
+    <td id=datnorm width=250 colspan=2 valign=top nowrap>
+[BILLTO.NAME]<br>
+[BILLTO.ADDR1]<br>
+[BILLTO.ADDR2]<br>
+[BILLTO.ADDR3]
+    </td>
+    <td id=datnorm width=250 colspan=2 valign=top nowrap>
+[SHIPTO.NAME]<br>
+[SHIPTO.ADDR1]<br>
+[SHIPTO.ADDR2]<br>
+[SHIPTO.ADDR3]
+    </td>
+  </tr>
+  <tr>
+    <td id=colhdg><font size=2><b>Salesrep</b></font></td>
+    <td id=datnorm width=250 colspan=2 valign=top nowrap>
+[BILLTO.CITY.ST.ZIP]
+    </td>
+    <td id=datnorm width=250 colspan=2 valign=top nowrap>
+[SHIPTO.CITY.ST.ZIP]
+    </td>
+  </tr>
+  <tr>
+    <td id=datgrey nowrap>
+[SLSMN.NAME]
+    </td>
+    <td id=datnorm width=250 colspan=2 valign=top nowrap>
+[BILLTO.COUNTRY]
+    </td>
+    <td id=datnorm width=250 colspan=2 valign=top nowrap>
+[SHIPTO.COUNTRY]
+    </td>
+  </tr>
+</table>
+<table class="ng-table">
+  <tr>
+    <td id=colhdg align=center nowrap><font size=2><b>Web Order#</b></font></td>
+    <td id=colhdg align=center nowrap><font size=2><b>Order Date</b></font></td>
+    <td id=colhdg align=center nowrap><font size=2><b>Req. Date</b></font></td>
+    <td id=colhdg align=center nowrap><font size=2><b>Req. No.</b></font></td>
+    <td id=colhdg align=center nowrap><font size=2><b>Cust PO</b></font></td>
+    <td id=colhdg align=center nowrap><font size=2><b>Ordered By</b></font></td>
+    <td id=colhdg align=center nowrap><font size=2><b>Terms</b></font></td>
+  </tr>
+  <tr>
+    <td id=datgrey valign=top align=center>
+[WEB.ORD.NO]
+    </td>
+    <td id=datgrey valign=top align=center nowrap>
+[ORD.DATE]
+    </td>
+    <td id=datgrey valign=top align=center nowrap>
+[REQ.DATE]
+    </td>
+    <td id=datgrey valign=top align=center nowrap>
+[REQUIS.NO]
+    </td>
+    <td id=datgrey valign=top align=center nowrap>
+[CUST.PO.NO]
+    </td>
+    <td id=datgrey valign=top align=center nowrap>
+[ORDERED.BY]
+    </td>
+    <td id=datgrey valign=top align=center nowrap>
+[TERMS]
+    </td>
+  </tr>
+</table>
+<table class="ng-table">
+  <tr>
+    <td id=colhdg align=center nowrap><font size=2><b>Order#</b></font></td>
+    <td id=colhdg align=center nowrap><font size=2><b>Invoice#</b></font></td>
+    <td id=colhdg align=center nowrap><font size=2><b>Invoice Date </b></font></td>
+    <td id=colhdg align=center nowrap><font size=2><b>Ship Date</b></font></td>
+    <td id=colhdg align=center nowrap><font size=2><b>Ship Method</b></font></td>
+  </tr>
+  <tr>
+    <td id=datgrey valign=top align=center>
+[ORD.REL.NO]
+    </td>
+    <td id=datgrey valign=top align=center nowrap>
+[INVOICE.NO]
+    </td>
+    <td id=datgrey valign=top align=center nowrap>
+[INV.DATE]
+    </td>
+    <td id=datgrey valign=top align=center nowrap>
+[SHIP.DATE]
+    </td>
+    <td id=datgrey valign=top align=center nowrap>
+[SHIP.METH.DESC]
+    </td>
+  </tr>
+  <tr>
+    <td height=5 colspan=7></td>
+  </tr>
+</table>
+<table class="ng-table">
+  <tr>
+    <td id=colhdg ><font size=2><b>Special Instructions:</b></font></td>
+  </tr>
+  <tr>
+    <td height=5></td>
+  </tr>
+  <tr>
+    <td align=left>&nbsp;<textarea size=10 cols=60 rows=4 name="specins" STYLE="overflow:auto" wrap=true readonly>[SPEC.INSTR]</textarea></td>
+  </tr>
+</table>
+<!-- 
+<table border=0 cellpadding=2 cellspacing=2 width=100%>
+--> 
+<table class="ng-table">
+<tr>
+  <td id=datnorm>
+  <table border=0 cellpadding=0 cellspacing=2>
+ <tr>
+   <td id=taghdg width=120 align=right nowrap><b>Sort By:</b></td>
+   <td >&nbsp;
+     <select name="Changesort" size=1>
+[SORT.BY]
+     </select>
+   </td>
+   <td valign=center>
+    <input type=button class=gobutton name="GO1" value="GO" onclick='javascript:changepath("RQ","N")'
+      onmouseover="this.className='gobutton gobuttonhov' ; window.status='Change Sort Method'"
+      onmouseout="this.className='gobutton' ; window.status=''">
+   </td>
+   <td id=taghdg width=120 align=right nowrap><b>Items per page:</b></td>
+   <td >&nbsp;
+     <select name="itemspage" size=1>
+[ITEMS.PG]
+     </select>
+   </td>
+   <td valign=center>
+     <input type=button class=gobutton name="GO2" value="GO" onclick='javascript:changepath("RQ","N")'
+      onmouseover="this.className='gobutton gobuttonhov' ; window.status='Change Items Per Page'"
+      onmouseout="this.className='gobutton' ; window.status=''">
+   </td>
+  </tr>
+</table>
+</td>
+</tr>
+<tr>
+  <td>
+<table class="ng-table">
+    <tr>
+      <td id=colhdg width=17><font size=2><b>Line No.</b></font></td>
+      <td id=colhdg><font size=2><b>Product No.</b></font></td>
+      <td id=colhdg><font size=2><b>Product Description</b></font></td>
+      <td id=colhdg width=30 align=center><font size=2><b>Ord<br>Qty</b></font></td>
+      <td id=colhdg width=15 align=center><font size=2><b>Ord<br>UM</b></font></td>
+      <td id=colhdg align=center nowrap><font size=2><b>Ship<br>Qty</b></font></td>
+      <td id=colhdg align=center><font size=2><b>BkOrd<br>Qty</b></font></td>
+      <td id=colhdg align=center><font size=2><b>InPick<br>Qty</b></font></td>
+      <td id=colhdg width=40 align=center><font size=2><b>Price</b></font></td>
+      <td id=colhdg width=15 align=center><font size=2><b>Prc<br>UM</b></font></td>
+      <td id=colhdg align=center nowrap><font size=2><b>Prc<br>Qty</b></font></td>
+      <td id=colhdg width=80 align=center><font size=2><b>Ext. Price</b></font></td>
+      <td id=colhdg width=80 align=center><font size=2><b>Est B/O<br>Ship Date</b></font></td>
+    </tr>
+[ORDER.DETAILS]
+    <tr>
+      <td id=colhdg colspan=13 align=left><font size=2><b>TOTALS</b></font></td>
+    </tr>
+    <tr>
+      <td class=datsml width=17 align=left></td>
+      <td></td>
+      <td></td>
+      <td width=30></td>
+      <td width=15 align=center></td>
+      <td></td>
+      <td align=right></td>
+      <td align=right></td>
+      <td width=15 align=center></td>
+      <td id=taghdg align=right colspan=2><font size=2><b>Freight:</b></font></td>
+      <td class=datsml width=80 align=right>
+[FREIGHT]
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class=datsml width=17 align=left></td>
+      <td></td>
+      <td></td>
+      <td width=30></td>
+      <td width=15 align=center></td>
+      <td></td>
+      <td align=right></td>
+      <td align=right></td>
+      <td width=15 align=center></td>
+      <td id=taghdg align=right colspan=2><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Tax:</b></font></td>
+      <td class=datsml width=80 align=right>
+[TAX]
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class=datsml width=17 align=left>
+      </td>
+      <td></td>
+      <td></td>
+      <td width=30></td>
+      <td width=15 align=center></td>
+      <td></td>
+      <td align=right></td>
+      <td align=right></td>
+      <td width=15 align=center></td>
+      <td id=taghdg align=right colspan=2><font size=2>&nbsp;&nbsp;&nbsp;<b>Total:</b></font></td>
+      <td class=datsml width=80 align=right>
+[ORDER.TOTAL]
+      </td>
+      <td></td>
+    </tr>
+   </table>
+  </td>
+</tr>
+</table>
+[PAGE.MOVEMENT]
+
+
+

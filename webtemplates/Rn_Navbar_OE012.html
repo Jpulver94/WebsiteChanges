@@ -1,0 +1,36 @@
+
+<table border=0 cellPadding=0 cellSpacing=0 WIDTH=100%>
+ <tr>
+  <td>
+   <table border=0 cellPadding=3 cellSpacing=0 align=center>
+    <tr>
+<!-- current order -->
+    <td align=center valign=center>
+      <input type=button class="button2" name="CO" value="Current Order" onclick='javascript:changepath(name,"N")'
+       onmouseover="this.className='button2 buttonhov2' ; window.status='Go to Current Order'"
+       onmouseout="this.className='button2' ; window.status=''">
+    </td>
+    </tr>
+   </table>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <table border=0 cellPadding=3 cellSpacing=0 align=center>
+    <tr>
+<!-- product history -->
+[PROD_HIST]
+<!-- product search -->
+    <td valign=center>
+      <input type=button class="button2" name="PS" value="Product Search" onclick='javascript:changepath(name,"Y")'
+       onmouseover="this.className='button2 buttonhov2' ; window.status='Go to Product Search'"
+       onmouseout="this.className='button2' ; window.status=''">
+    </td>
+<!-- quick order -->
+[QUICK_ORDER]
+    </tr>
+   </table>
+  </td>
+ </tr>
+</table>
+

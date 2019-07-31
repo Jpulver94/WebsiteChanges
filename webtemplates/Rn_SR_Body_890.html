@@ -1,0 +1,460 @@
+
+
+
+
+
+<script> 
+var filterstring = '[FILTERLIST]' ;
+var fnamestr = '[FILTERNAME]' ;
+ $(document).ready(function() {
+// Add interactive accordion logic
+ $('div.FaccordionButton').click(function() { $(this).next().toggle( "slow" ); })
+});
+</script>
+<style>
+/* search results styles */ 
+img.SunsetProdno {
+    width: 20px;
+}
+div.SRbodyprodno {
+    float: right;
+}
+img.SunsetStar {
+    width: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.SRbodyproddesc a:link {
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+}
+.SRBodyLine { 
+width: auto; 
+height: 180px; 
+clear: left; 
+border-bottom: 2px solid black ;
+padding-bottom:1px;
+}
+.SRBodypicturewrap {
+    float: left;
+    height: 180px;
+    padding-left: 5px;
+    padding-top: 5px;
+    min-width: 130px;
+/* 
+    position: absolute;
+*/
+}
+div.SRBodytopwrap {
+    float: left;
+/*
+    position: absolute;
+    left: 160px;
+    height: 50px; 
+    width: 85%;
+       */
+}
+saveddiv.SRBodybottomwrap {
+    float: left;
+     /* 
+      position: absolute;
+    left: 160px;
+  top: 80px;
+    width: 85%;  
+    margin-top: 105px;  */
+    background: black;
+    color: white ; 
+}
+saveddiv.SRBodybottomwrap {
+    float: left;
+    position: absolute;
+    left: 10px;
+    /* top: 80px; */
+    width: 100%;
+    margin-top: 85px;
+    background: black;
+    color: white;
+}
+div.SRbodyinstock {
+    POSITION: absolute;
+}
+/* Style updates 12-6-18 djf */
+#footprintholder, #pcxholder { display: none ;}
+#navigation { padding: 5px; height: 28px ;}
+.block-title .title > span {
+    margin-left: -15px;
+}
+.ssSearchNavRemove #selection a {
+    white-space: nowrap;
+}
+#selection {    padding: 0px; }
+#right {  top: -20px;}
+.topsort {
+    padding: 0px 0px 10px 0px;
+}
+div.SRBodytopwrap {
+   /*  width: 89%; */ 
+    border-bottom: 2px solid lightgray;
+}
+.NTIWrap {     position: absolute;  display: none ;
+}
+#docs .PricingCell {  color: #4a93b5; float: right; padding-right: 25px;}
+.SRbodyproddesc-SAVED { padding-top: 10px ; }
+div.SRbodyprodno { float: left ; padding-top: 10px; }
+div.SRBodyMFG { float: right ;}
+.SRBodyLine {    padding: 0px; height: 160px;}
+.SumSelect {    height: 34px;}
+.SRbodymfginfo {    float: right; }
+.viewer {display: none ;}
+#docs .PricingCell {
+    color: #4a93b5;
+    float: left;
+    padding-right: 0px; 
+}
+/* from dj - 5-22-19 */
+.StockMessage {
+    float: left;
+    min-width: 175px;
+}
+.SRbodyproddesc {
+    padding-bottom: 10px;
+}
+div.SRbodyprodno {
+    float: left;
+padding-top: 0px ;
+}
+.lazy {
+    max-width: 100%;
+    max-height: 175px;
+    height: auto;
+    width: auto\9;
+}
+#selection img {
+    width: 15px;
+    height: 15px;
+}
+.PricingAddButton img {
+    width: 32px;
+    height: 32px;
+}
+.PricingFormularyButton img {
+    width: 32px;
+    height: 32px;
+}
+.SRbodymfginfo {
+	float: right;
+	margin-right: 10px;
+}
+div.SRBodyMFG {
+    float: right;
+    padding-right: 10px;
+}
+#docs .PricingCell {
+	color: black;
+	float: left;
+	padding-right: 0px;
+	width: 100%;
+}
+.SRBodyLine {
+    padding: 0px;
+    height: auto;
+}
+.SRBodypicturewrap {
+    height: auto; 
+}
+#pager-header span {
+    padding-left: 0px;
+}
+#pager, #pager-header {
+    text-align: right;
+    display: block;
+    float: right;
+}
+.InStock, .OutStock, .AltStock {
+    height: 16px;
+    overflow: hidden;
+    width: 16px;
+    color: transparent;
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    display: inline-flex;
+    margin-top: 0px;
+    font-size: inherit;
+}
+div.SRBodytopwrap {
+    border-bottom: 2px solid lightgray;
+    margin-bottom: 10px;
+}
+.SRBodypicturewrap {
+    float: left;
+    margin-top: 15px;
+}
+.nopad.col-lg-2.SRBodypicturewrap {
+    margin-top: 15px;
+    float: left;
+    min-height: 100px;
+}
+</style>
+                      <div id="SRsearchresults-Sunset">
+                        <form name=template action="login[SUFFIX]" method=post onSubmit="return process_order(0)">
+                          <input type=hidden name=Aprod_string value = "[APROD_STRING]">
+                          <input type=hidden name=prod_string value = "[PROD_STRING]">
+                          <input type=hidden name=qty_string value = "[QTY_STRING]">
+                          <input type=hidden name=um_string value = "[UM_STRING]">
+                          <input type=hidden name=price_string value = "[PRICE_STRING]">
+                          <input type=hidden name=comment_string value = "[COMMENT_STRING]">
+                          <input type=hidden name=manufact_string value = "[MANUFACT_STRING]">
+                          <input type=hidden name=aprodno value="[APRODNO]">
+                          <input type=hidden name=loginpath value="[LOGINPATH]">
+                          <input type=hidden name=searchflag value="[SEARCHFLAG]">
+                          <input type=hidden name=pageid value="2A">
+                          <input type=hidden name=startptr value="[STARTPTR]">
+                          <input type=hidden name=CustomerId value="[CUSTOMERID]">
+                          <input type=hidden name=orderno value="[ORDERNO]">
+                          <input type=hidden name=customlistback value="[CUSTOMLIST]">
+                          <input type=hidden name=inquiryflag value="[INQUIRYFLAG]">
+                          <input type=hidden name=invinqflag value="[INVINQFLAG]">
+                          <input type=hidden name=submitvar value="[SUBMITVAR]">
+                          <input type=hidden name=searchptr value="[SEARCHPTR]">
+                          <input type=hidden name=old_loginpath value="[LOGINPATH]">
+                          <input type=hidden name=prev_changesort value="[CHANGESORT]">
+                          <input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+                          <input type=hidden name=slsmno value="[SLSMNO]">
+                          <input type=hidden name=slsmn_id value="[SLSMN_ID]">
+                          <div class="row ssfirstrow">   
+                            <div class="col-xs-12 col-lg-2">       
+                            <h3 class="nosh">Category                                                                                                                                                                                     
+                              <span>                                                                                                                                                                                     
+                              </span> </h3>                                                                                                                                                                       
+                            <div class="FaccordionButton ssSearchNavRemove" style="background: #DADADA !important; overflow: hidden; border-bottom: 0px !important;">                                                                                                                                                                                      
+                              <ul id="selection" >                                                                                                                                                                                   
+                              </ul>                                                                                                                                                                       
+                            </div>                                                                                                                                                                       
+                           <!-- <h3 class="nosh">Narrow Your Choices                                                                                                                                                                                     
+                              <a href="#" id="CloseFilter" > &#9650; </a>                                                                                                                                                                                   
+                              <a href="#" id="OpenFilter" > &#9660; </a>                                                                                                                                                                                   
+                              <span>                                                                                                                                                                                   
+                              </span></h3>                                                                                                                                                                       
+                           -->
+                            <div id="FilterText">                                                                                                                                                                         
+                            </div>
+                          </div>
+                          <div class="col-xs-12 col-lg-10"> 
+                          
+                          <div class="topsort" style="float: right;">
+   Show      <select name="itemspage" size=1 onchange="javascript:Manager.doRequest();" > [ITEMS.PG]  </select> per page
+   </div> 
+   <div class="topsort" style="float: left;"> 
+ Sort by &nbsp;      <select name="Changesort" size=1 onchange="javascript:Manager.doRequest();"> [SORT.BY]   </select> 
+</div>                  		
+		
+                                  <div id="footprintholder">
+                                    </div>				
+                              				
+                                    <div id="pcxholder">
+                                    </div>
+                                				
+                              
+                          
+                            <!-- ADDED NEW SEARCH --> 
+                            <!-- eND OF NEW SEARCH -->              
+                            <div id="navigation">                      
+                              <ul id="toppager">
+                              </ul>          
+                              <div id="pager-header" >
+                              </div>                    
+                            </div>      
+                            <div id="docs">
+                            </div>   
+                            <div id="navigation">                            
+                              <ul id="pager">
+                              </ul>          
+                              <div id="pager-footer">
+                              </div>               
+                            </div>       
+                      <!--      <div id="SRAOButton">  
+                              <input type=button class=gobutton name="GO1" value="Add Items to Order" onclick="javascript:Add_To_Order();"       onmouseover="this.className='gobutton gobuttonhov' ; window.status='Add Items and Go to Current Order'"       onmouseout="this.className='gobutton' ; window.status=''">
+                            </div>
+                            -->
+                          </div>
+                          
+                          <SCRIPT> 
+//standard option
+AjaxSolr.theme.prototype.result = function (doc, snippet) {   
+ var strVar="";
+ var CID = document.forms[0].CustomerId.value ;
+ var OID = document.forms[0].orderno.value  ;
+var url = document.location.href;
+url = url.substring(0, (url.indexOf("#") == -1) ? url.length : url.indexOf("#"));
+url = url.substring(0, (url.indexOf("?") == -1) ? url.length : url.indexOf("?"));
+url = url.substring(url.lastIndexOf("/") + 1, url.length);
+if (doc.image == 'undefined' || doc.image == '') { doc.image = 'noprod.gif'} ;
+strVar += "<div class=\"SRBodyLine\" id=\"SRBodyLine" + doc.id + "\">";
+// strVar += "<div id=\"SRBodyLine" + doc.id + "\" style=\"width: 720px; height: 105px; clear: left; border-bottom: 1px solid #000000 ;padding-bottom:1px;\">";
+strVar += "<div class=\"nopad col-lg-2 SRBodypicturewrap\">"  ;
+// strVar += "\<a href='javascript:browsedetail("+ OID +",\""+ doc.aprodno +"\")'" ;
+// strVar += "<a href=\"javascript:prod_inquiry('PI','N','"+ doc.aprodno +"')\" " ;
+ strVar += "<a href=\"javascript:showmodalrnpopup('"+ url +"?&aprodno="+ doc.aprodno +"&orderno="+ OID +"&LOGINPATH=PIF&PAGEID=31&CUSTOMERID="+ CID +"')\" " ;
+strVar += " class=\"hintanchor\" onnonmouseover=\"showhintajax('" + url +"?&aprodno="+ doc.aprodno +"&orderno="+ OID +"&LOGINPATH=PIF&PAGEID=31&CUSTOMERID="+ CID +"', this, event, '150px')\">";
+strVar += "<img id=\"SRBodyLineImage\" class=\"lazy\" ";
+strVar += "src="  + image_url + "spacer.gif" ;
+strVar += " data-original=" + image_url  + doc.image ;
+strVar += " rel=\"SRLineLoad('" + doc.id + "','" + doc.aprodno + "')\" " ;
+strVar += " style='border-style: none; display: inline-block;'  ><\/a><\/div>";
+strVar += "<div class=\"nopad col-lg-10 SRBodytopwrap\">" ;
+//strVar += "<div class=\"SRbodymfginfo\"> MFR#" + doc.mfgpart + " " ; 
+//strVar += "<img class=\"SunsetStar\" src=\"https://hosting.tshinc.com/rn/Templates/sunset/images/star_copy_3_4.png\" > "
+//strVar += "<\/div> ";
+strVar += "<div class=\"SRbodyproddesc\">";
+// strVar += "\<a href='javascript:browsedetail("+ OID +",\""+ doc.aprodno +"\")'>" + doc.aprodno + "<\/a>";
+strVar += "<br> <a href=\"javascript:prod_inquiry('PI','N','"+ doc.aprodno +"')\">" + snippet + "<\/a>";
+// strVar += "<br><a href=\"javascript:SRLineLoad('" + doc.id + "','" + doc.aprodno + "')\"> click here for pricing until i get lazy load working <\/a>";
+// strVar += "<div id=\"SRcloseoutholder" + doc.id + "\" class=\"special\"><\/div>";
+// strVar += "<div id=\"SRdiscountholder" + doc.id + "\" class=\"special\"><\/div>"; 
+strVar += "<span class=Altnameclass> Alt Name: " + doc.altname + " </span> " ; 
+strVar += "<\/div> ";
+strVar += "<div class=\"SRbodyprodno\">";
+strVar += "<a href=\"javascript:prod_inquiry('PI','N','"+ doc.aprodno +"')\">" ; 
+strVar += "<img class=\"SunsetProdno\" src=\"https://hosting.tshinc.com/rn/Templates/sunset/images/sunseticon_dj3d6_copy_3.png\" > "  + doc.aprodno + "<\/a>";
+strVar += "<\/div> ";
+strVar += "<div class=\"SRBodyMFG\">";
+strVar += " " + doc.mfgname + " " ;
+strVar += "<\/div> ";
+strVar += "<div class=\"SRBodyiconwrap\">";
+// strVar += "<div id=\"SRbodyinstock" + doc.id + "\"><\/div> ";
+strVar += "<\/div> ";
+strVar += "<\/div> ";
+strVar += "<div class=\"nopad col-lg-10 SRBodybottomwrap\">" 
+// if (doc.stock) {
+// strVar += "<div class=\"SRbodyinstock\">" + doc.stock + "<\/div> ";
+//  }  ;
+strVar += "<div id=\"typedivcontainer" + doc.id + "\"><\/div>";
+strVar += "<\/div> ";
+strVar += "<\/div>";
+ // output += '<p id="links_' + doc.id + '" class="links"></p>';
+ // output += '<p>' + snippet + '</p></div>';
+  return strVar;
+};
+// Added custom grid function same as line.. 
+AjaxSolr.theme.prototype.resultgrid = function (doc, snippet) {   
+ var strVar="";
+ var CID = document.forms[0].CustomerId.value ;
+ var OID = document.forms[0].orderno.value  ;
+var url = document.location.href;
+url = url.substring(0, (url.indexOf("#") == -1) ? url.length : url.indexOf("#"));
+url = url.substring(0, (url.indexOf("?") == -1) ? url.length : url.indexOf("?"));
+url = url.substring(url.lastIndexOf("/") + 1, url.length);
+if (doc.image == 'undefined' || doc.image == '') { doc.image = 'noprod.gif'} ;
+strVar += "<div class=\"SRBodyLine\" id=\"SRBodyLine" + doc.id + "\">";
+// strVar += "<div id=\"SRBodyLine" + doc.id + "\" style=\"width: 720px; height: 105px; clear: left; border-bottom: 1px solid #000000 ;padding-bottom:1px;\">";
+strVar += "<div class=\"nopad col-lg-2 SRBodypicturewrap\">"  ;
+// strVar += "\<a href='javascript:browsedetail("+ OID +",\""+ doc.aprodno +"\")'" ;
+// strVar += "<a href=\"javascript:prod_inquiry('PI','N','"+ doc.aprodno +"')\" " ;
+ strVar += "<a href=\"javascript:showmodalrnpopup('"+ url +"?&aprodno="+ doc.aprodno +"&orderno="+ OID +"&LOGINPATH=PIF&PAGEID=31&CUSTOMERID="+ CID +"')\" " ;
+strVar += " class=\"hintanchor\" onnonmouseover=\"showhintajax('" + url +"?&aprodno="+ doc.aprodno +"&orderno="+ OID +"&LOGINPATH=PIF&PAGEID=31&CUSTOMERID="+ CID +"', this, event, '150px')\">";
+strVar += "<img id=\"SRBodyLineImage\" class=\"lazy\" ";
+strVar += "src="  + image_url + "spacer.gif" ;
+strVar += " data-original=" + image_url  + doc.image ;
+strVar += " rel=\"SRLineLoad('" + doc.id + "','" + doc.aprodno + "')\" " ;
+strVar += " style='border-style: none; display: inline-block;'  ><\/a><\/div>";
+strVar += "<div class=\"nopad col-lg-10 SRBodytopwrap\">" ;
+strVar += "<div class=\"SRbodyproddesc\">";
+// strVar += "\<a href='javascript:browsedetail("+ OID +",\""+ doc.aprodno +"\")'>" + doc.aprodno + "<\/a>";
+strVar += "<br><a href=\"javascript:prod_inquiry('PI','N','"+ doc.aprodno +"')\">" + snippet + "<\/a>";
+// strVar += "<br><a href=\"javascript:SRLineLoad('" + doc.id + "','" + doc.aprodno + "')\"> click here for pricing until i get lazy load working <\/a>";
+// strVar += "<div id=\"SRcloseoutholder" + doc.id + "\" class=\"special\"><\/div>";
+// strVar += "<div id=\"SRdiscountholder" + doc.id + "\" class=\"special\"><\/div>";
+strVar += "<span name=Altnameclass><br> Alt Name: " + doc.altname + "</span>" ; 
+strVar += "<\/div> ";
+strVar += "<div class=\"SRbodyprodno\">";
+strVar += "<a href=\"javascript:prod_inquiry('PI','N','"+ doc.aprodno +"')\">" ; 
+strVar += "<img class=\"SunsetProdno\" src=\"https://hosting.tshinc.com/rn/Templates/sunset/images/sunseticon_dj3d6_copy_3.png\" > "  + doc.aprodno + "<\/a>";
+strVar += "<\/div> ";
+strVar += "<div class=\"SRbodymfginfo\">" ; 
+//strVar += "<div class=\"SRbodymfginfo\"> MFR#" + doc.mfgpart + " " ; 
+// strVar += "<img class=\"SunsetStar\" src=\"https://hosting.tshinc.com/rn/Templates/sunset/images/star_copy_3_4.png\" > "
+strVar += " " + doc.mfgname + " " ; 
+strVar += "<\/div> ";
+strVar += "<\/div> ";
+strVar += "<div class=\"nopad col-lg-10 SRBodybottomwrap\">" ;
+strVar += "<div id=\"typedivcontainer" + doc.id + "\"><\/div>";
+// strVar += "<div class=\"SRBodyiconwrap\">";
+// if (doc.stock) { strVar += "<div class=\"SRbodyinstock\">" + doc.stock + "<\/div> "; }  ;
+// strVar += "<\/div> ";
+strVar += "<\/div> ";
+strVar += "<\/div>";
+ // output += '<p id="links_' + doc.id + '" class="links"></p>';
+ // output += '<p>' + snippet + '</p></div>';
+  return strVar;
+};
+
+AjaxSolr.theme.prototype.snippet = function (doc) {
+  var output = '';
+  // console.log('DOCUMENT TEXT IS ' + doc.text.length) ;
+//  if (doc.text.length > 10) {
+if (doc.proddesc) { output +=  doc.proddesc;} ;
+if (doc.proddesc2) {   output +=  ' ' + doc.proddesc2 ;} ;
+// output += '<br/> <span style="color: #C60;font-size: small;margin: 0px 0px 0.25em;">Click here for suggested items </span> '
+  //  output += '<span style="display:none;">' + doc.text;
+  //  output += '</span> <a href="#" class="more" > Show More </a>';
+//  }
+//  else {
+//    output +=  doc.proddesc;
+//  }
+if (doc.lotno) { 
+var t = doc.lotno ;
+var lotno = 'N/A' ; lotexp = 'N/A' ; lqty = 'N/A' ; 
+ output += ' <a href="#" class="togglenext"  onclick="javascript:togglenext(this);" >  Show Lots  +/- </a>  <div class="altbox" >   ' ;
+ output += '<table> <tr> <th> Lot Number </th> <th> Expires </th> <th class="Salesinfo"> Qty </th> </tr> '  ;
+for (i = 0 ; i < t.length; i++) {
+if (doc.lotqty) { var lotqty = doc.lotqty[i] ;  }
+if (doc.lotno) { var lotno = doc.lotno[i] ;  }
+if (doc.lotexp) {
+ var lotexp = doc.lotexp[i] ;
+if (lotexp) { 
+ var inq = lotexp.indexOf('T');
+ lotexp = lotexp.substring(0, inq);
+} else {
+ lotexp = "N/A"
+ }
+ }
+// lstr = "Lot: " + lotno + " / Exp: " + lotexp + "/ Qty: " + lotqty ; 
+//   output += '<span class="Salesinfo">' + lstr;
+//   output += '</span>' ;
+ output += ' <tr> <td> ' + lotno + ' </td> <td> ' + lotexp + ' </td> <td class="Salesinfo"> ' + lotqty + '</td> </tr> ' ; 
+}
+output += '</table> </div> '; 
+}
+  return output;
+};
+AjaxSolr.theme.prototype.lotinfo = function (doc) {
+  var output = '';
+var t = doc.lotno ;
+for (i = 0 ; i < t.length; i++) {
+var lotno = doc.lotno[i] ; 
+var lqty = doc.lotqty[i] ;
+var lotexp = doc.lotexp[i] ;
+lstr = "Lot: " + lotno + " Exp: " + lotexp + "Qty: " + lqty ; 
+  output += '<span class="Salesinfo">' + lstr;
+  output += '</span>' ;
+}
+  return output;
+};
+
+//Added code for new search engine  SUNSET CUSTOM CALL BACKS
+function SRLineLoad(prodid, aprodno) {
+    var dummy = widgetload_callback('login' + SUFFIX + '?orderno=' + OID + '&CUSTOMERID=' + CID + '&LOGINPATH=PRCX&APRODNO=' + aprodno + '&PAGEID=31', '#typedivcontainer' + prodid, function() {;
+    var stksummy = widgetload_callback('login' + SUFFIX + '?orderno=' + OID + '&CUSTOMERID=' + CID + '&LOGINPATH=STKX&APRODNO=' + aprodno + '&PAGEID=31', '#StockContainer' + prodid, function() {});
+    }); // end of call back
+}
+</SCRIPT>
+ 
+</DIV> <!-- MAIN SEARCH RESULTS COL -->
+ </DIV> <!-- MAIN SEARCH RESULTS ROW -->
+                          
+
+
+
+

@@ -1,0 +1,188 @@
+
+
+<form name=template action="login[SUFFIX]" method=post>
+<input type=hidden name=pageid value="3">
+<input type=hidden name=CustomerId value="[CUSTOMERID]">
+<input type=hidden name=loginpath value="[LOGINPATH]">
+<input type=hidden name=orderno value="[ORDERNO]">
+<input type=hidden name=startptr value="[STARTPTR]">
+<input type=hidden name=searchflag value="[SEARCHFLAG]">
+<input type=hidden name=Changesort value="[CHANGESORT]">
+<input type=hidden name=Aprod_string value="[APROD_STRING]">
+<input type=hidden name=prod_string value="[PROD_STRING]">
+<input type=hidden name=qty_string value="[QTY_STRING]">
+<input type=hidden name=um_string value="[UM_STRING]">
+<input type=hidden name=manufact_string value = "[MANUFACT_STRING]">
+<input type=hidden name=price_string value="[PRICE_STRING]">
+<input type=hidden name=comment_string value="[COMMENT_STRING]">
+<input type=hidden name=final_string value="">
+<input type=hidden name=submitvar value="">
+<input type=hidden name=old_loginpath value="[LOGINPATH]">
+<input type=hidden name=prev_changesort value="[CHANGESORT]">
+<input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+<input type=hidden name=slsmno value="[SLSMNO]">
+<input type=hidden name=slsmn_id value="[SLSMN_ID]">
+<table border=0  cellspacing=0 cellpadding=0 width=100%>
+<tr>
+  <td colspan=2>
+    <table border=0 cellpadding=2 cellspacing=2 width=100%>
+      <tr>
+        <td id=colhdg nowrap><font size=2><b>Web Order #</b></font></td>
+        <td id=colhdg nowrap><font size=2><b>Customer PO#</b></font></td>
+        <td id=colhdg nowrap><font size=2><b>Ship to</b></font></td>
+      </tr>
+      <tr >
+        <td id=datnorm nowrap valign=top>[WEB.ORD.NO]</td>
+        <td id=datnorm nowrap valign=top>[CUST.PO.NO]</td>
+        <td id=datnorm nowrap valign=top>[SHIPTO.NAME]<br>
+[SHIPTO.CITY],&nbsp;[SHIPTO.ST]&nbsp;[SHIPTO.ZIP]</td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+
+            <div class="ScanDiv">                            
+              <style>    .input-field {     display: flex;     align-items: center;     width: 260px; } .input-field label {     flex: 0 0 auto;     padding-right: 0.5rem; }.input-field input {     flex: 1 1 auto;     height: 20px; }.input-field button {     flex: 0 0 auto;     height: 28px;     font-size: 20px;     width: 40px; }.icon-barcode {     background-size: contain;     background-repeat: no-repeat;     background-position: center center;     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHBhdGggZD0iTTAgNGg0djIwaC00ek02IDRoMnYyMGgtMnpNMTAgNGgydjIwaC0yek0xNiA0aDJ2MjBoLTJ6TTI0IDRoMnYyMGgtMnpNMzAgNGgydjIwaC0yek0yMCA0aDF2MjBoLTF6TTE0IDRoMXYyMGgtMXpNMjcgNGgxdjIwaC0xek0wIDI2aDJ2MmgtMnpNNiAyNmgydjJoLTJ6TTEwIDI2aDJ2MmgtMnpNMjAgMjZoMnYyaC0yek0zMCAyNmgydjJoLTJ6TTI0IDI2aDR2MmgtNHpNMTQgMjZoNHYyaC00eiI+PC9wYXRoPjwvc3ZnPg==); }.overlay {     overflow: hidden;     position: fixed;     top: 0;     bottom: 0;     left: 0;     right: 0;     width: 100%;     background-color: rgba(0, 0, 0, 0.3); }.overlay__content {     top: 50%;     position: absolute;     left: 50%;     transform: translate(-50%, -50%);     width: 90%;     max-height: 90%;     max-width: 800px; }.overlay__close {     position: absolute;     right: 0;     padding: 0.5rem;     width: 2rem;     height: 2rem;     line-height: 2rem;     text-align: center;     background-color: white;     cursor: pointer;     border: 3px solid black;     font-size: 1.5rem;     margin: -1rem;     border-radius: 2rem;     z-index: 100;     box-sizing: content-box; }.overlay__content video {     width: 100%;     height: 100%; }.overlay__content canvas {     position: absolute;     width: 100%;     height: 100%;     left: 0;     top: 0; } #interactive.viewport {     position: relative; } #interactive.viewport > canvas, #interactive.viewport > video {     max-width: 100%;     width: 100%; } canvas.drawing, canvas.drawingBuffer {     position: absolute;     left: 0;     top: 0; } /* line 16, ../sass/_viewport.scss */.controls fieldset {   border: none;   margin: 0;   padding: 0; } /* line 19, ../sass/_viewport.scss */.controls .input-group {   float: left; } /* line 21, ../sass/_viewport.scss */.controls .input-group input, .controls .input-group button {   display: block; } /* line 25, ../sass/_viewport.scss */.controls .reader-config-group {   float: right; } /* line 28, ../sass/_viewport.scss */.controls .reader-config-group label {   display: block; } /* line 30, ../sass/_viewport.scss */.controls .reader-config-group label span {   width: 9rem;   display: inline-block;   text-align: right; } /* line 37, ../sass/_viewport.scss */.controls:after {   content: '';   display: block;   clear: both; } /* line 22, ../sass/_viewport.scss */ #result_strip {   margin: 10px 0;   border-top: 1px solid #EEE;   border-bottom: 1px solid #EEE;   padding: 10px 0; } /* line 28, ../sass/_viewport.scss */ #result_strip ul.thumbnails {   padding: 0;   margin: 0;   list-style-type: none;   width: auto;   overflow-x: auto;   overflow-y: hidden;   white-space: nowrap; } /* line 37, ../sass/_viewport.scss */ #result_strip ul.thumbnails > li {   display: inline-block;   vertical-align: middle;   width: 160px; } /* line 41, ../sass/_viewport.scss */ #result_strip ul.thumbnails > li .thumbnail {   padding: 5px;   margin: 4px;   border: 1px dashed #CCC; } /* line 46, ../sass/_viewport.scss */ #result_strip ul.thumbnails > li .thumbnail img {   max-width: 140px; } /* line 49, ../sass/_viewport.scss */ #result_strip ul.thumbnails > li .thumbnail .caption {   white-space: normal; } /* line 51, ../sass/_viewport.scss */ #result_strip ul.thumbnails > li .thumbnail .caption h4 {   text-align: center;   word-wrap: break-word;   height: 40px;   margin: 0px; } /* line 61, ../sass/_viewport.scss */ #result_strip ul.thumbnails:after {   content: "";   display: table;   clear: both; } @media (max-width: 603px) {   /* line 2, ../sass/phone/_core.scss */   #container {     margin: 10px auto;     -moz-box-shadow: none;     -webkit-box-shadow: none;     box-shadow: none;   } } @media (max-width: 603px) {   /* line 5, ../sass/phone/_viewport.scss */   .reader-config-group {     width: 100%;   }   .reader-config-group label > span {       width: 50%;   }   .reader-config-group label > select, .reader-config-group label > input {       max-width: calc(50% - 2px);   }   #interactive.viewport {     width: 100%;     height: auto;     overflow: hidden;   }   /* line 20, ../sass/phone/_viewport.scss */   #result_strip {     margin-top: 5px;     padding-top: 5px;   }   #result_strip ul.thumbnails {     width: 100%;     height: auto;   }   /* line 24, ../sass/phone/_viewport.scss */   #result_strip ul.thumbnails > li {     width: 150px;   }   /* line 27, ../sass/phone/_viewport.scss */   #result_strip ul.thumbnails > li .thumbnail .imgWrapper {     width: 130px;     height: 130px;     overflow: hidden;   }   /* line 31, ../sass/phone/_viewport.scss */   #result_strip ul.thumbnails > li .thumbnail .imgWrapper img {     margin-top: -25px;     width: 130px;     height: 180px;   } }          input[type=file] {         display: none;     }                            
+              </style>                           <h3>Remotenet Quick Barcode Scan</h3>                                     
+              <p> If you have a phone, camera or capture device handy you can now use it to easily order products.
+                <br>          Click the <strong>Barcode Icon</strong> next to the field below to select an image or snap a picture of your barcode. We will then search our database for your item and add one to your order. To Order multiple just scan multiple times or update
+                the quantity once you add it to your order.  
+                <BR> If you would like to review each item and enter a quantity manually before adding to your order , please search for a product and use our our scanner on the search results page, or 
+                <a href=# onclick="javascript:changepath('SR')"> Click Here </a>
+                <br>                                
+              </p>                                                                             
+              <div class="input-field">                                                                   
+                <label for="isbn_input">Scan here:                                                   
+                </label>                                                                   
+                <input id="isbn_input" name="|product_id101" class="isbn" type="text" />
+                <input type="hidden" name="qty101" value="1" > 
+                 <!-- add hidden qty of 1 has to be next element for process_order to pickup -->                                                                   
+                <button type="button" class="icon-barcode button scan">&nbsp;                                                   
+                </button> 
+                  <input type="file" id="file" capture/>                                                                                                                                      
+              </div> 
+              <div id="ScanStatus"> </div>
+              <hr>                                              
+              <div class="controls" style="display: none;">                       
+                <div class="readers">                             
+                  <label>                                   
+                    <span>EAN-13                   
+                    </span>                                   
+                    <input type="checkbox" checked name="ean_reader" />                             
+                  </label>                             
+                  <label>                                   
+                    <span>EAN-8                   
+                    </span>                                   
+                    <input type="checkbox" checked name="ean_8_reader" />                             
+                  </label>                             
+                  <label>                                   
+                    <span>UPC-E                   
+                    </span>                                   
+                    <input type="checkbox" checked name="upc_e_reader" />                             
+                  </label>                              
+                  <label>                                   
+                    <span>UPC                   
+                    </span>                                   
+                    <input type="checkbox" checked name="upc_reader" />                             
+                  </label>                             
+                  <label>                                   
+                    <span>Code 39                   
+                    </span>                                   
+                    <input type="checkbox" checked name="code_39_reader" />                             
+                  </label>                             
+                  <label>                                   
+                    <span>Codabar                   
+                    </span>                                   
+                    <input type="checkbox" checked name="codabar_reader" />                             
+                  </label>                             
+                  <label>                                   
+                    <span>Code 128                   
+                    </span>                                   
+                    <input type="checkbox" checked name="code_128_reader" />                             
+                  </label>                             
+                  <label>                                   
+                    <span>Interleaved 2 of 5                   
+                    </span>                                   
+                    <input type="checkbox" name="i2of5_reader" />                             
+                  </label>                       
+                </div>                 
+              </div>                                  
+            </div>                    
+<script src="//hosting.tshinc.com/rn/rn-scanner/js/quagga.js" type="text/javascript"></script> 
+<script type="text/javascript" >
+var Quagga = window.Quagga;
+var App = {
+    _scanner: null,
+    init: function() {
+        this.attachListeners();
+    },
+    decode: function(file) {
+         Quagga
+            .decoder({readers: this.querySelectedReaders()})           
+            .locator({patchSize: 'medium'})
+            .fromSource(file, {size: 800})
+            .toPromise()
+            .then(function(result) {
+                document.querySelector('input.isbn').value = result.codeResult.code;
+                //  ProdSearch(result.codeResult.code);  - PRODSEARCH FOR APRODNO ONLY 
+                // PageSearch(result.codeResult.code);
+                $("#ScanStatus").removeClass("error"); 
+                $("#ScanStatus").addClass("success"); 
+                $("#ScanStatus").html("Adding " + result.codeResult.code) ; 
+                changepath("QS","N")
+            })
+            .catch(function() {
+                document.querySelector('input.isbn').value = "";
+                $("#ScanStatus").addClass("error"); 
+                $("#ScanStatus").html("We're sorry we could not find a barcode to read in this image") ;
+            })
+            .then(function() {
+                this.attachListeners();
+            }.bind(this));
+    },
+     querySelectedReaders: function() {
+        return Array.prototype.slice.call(document.querySelectorAll('.readers input[type=checkbox]'))
+            .filter(function(element) {
+                return !!element.checked;
+            })
+            .map(function(element) {
+                return element.getAttribute("name");
+            });
+    },   
+    attachListeners: function() {
+        var self = this,
+            button = document.querySelector('.input-field input + .button.scan'),
+            fileInput = document.querySelector('.input-field input[type=file]');
+        button.addEventListener("click", function onClick(e) {
+            e.preventDefault();
+            button.removeEventListener("click", onClick);
+            document.querySelector('.input-field input[type=file]').click();
+        });
+        fileInput.addEventListener("change", function onChange(e) {
+            e.preventDefault();
+            fileInput.removeEventListener("change", onChange);
+            if (e.target.files && e.target.files.length) {
+                self.decode(e.target.files[0]);
+            }
+        });
+    }
+};
+App.init(); 
+var dummy = widgetload('login' + SUFFIX + '?orderno=' + OID + '&CUSTOMERID=' + CID + '&LOGINPATH=STX&pageid=31&DBOPTION=WEBORD&ITEMSPAGE=10&TARGETVAL=' + OID , '#QSdivcontainer'); 
+</script> 
+
+
+<table border=0 cellpadding=0 cellspacing=0 >
+  <tr>
+    <td height=5 align=left>[ERROR_STRING]</td>
+  </tr>
+  <tr>
+    <td id=spacerline ></td>
+  </tr>
+</table>
+<!-- added in current order widget -->
+<div id="QSdivcontainer"> </div>
+
+
+

@@ -1,0 +1,67 @@
+<form id=template action="login[SUFFIX]" method=post name=template>
+<input type=hidden name=Aprod_string value="[APROD_STRING]">
+<input type=hidden name=prod_string value="[PROD_STRING]">
+<input type=hidden name=qty_string value="[QTY_STRING]">
+<input type=hidden name=um_string value="[UM_STRING]">
+<input type=hidden name=price_string value="[PRICE_STRING]">
+<input type=hidden name=comment_string value="[COMMENT_STRING]">
+<input type=hidden name=manufact_string value="[MANUFACT_STRING]">
+<input type=hidden name=loginpath value="[LOGINPATH]">
+<input type=hidden name=searchflag value="[SEARCHFLAG]">
+<input type=hidden name=pageid value="13">
+<input type=hidden name=startptr value="[STARTPTR]">
+<input type=hidden name=CustomerId value="[CUSTOMERID]">
+<input type=hidden name=orderno value="[ORDERNO]">
+<input type=hidden name=old_loginpath value="[LOGINPATH]">
+<input type=hidden name=prev_changesort value="[CHANGESORT]">
+<input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+<input type=hidden name=mdsorderno value="[MDSORDERNO]">
+<input type=hidden name=aprodno value="[APRODNO]">
+<input type=hidden name=slsmno value="[SLSMNO]">
+<input type=hidden name=slsmn_id value="[SLSMN_ID]">
+<!-- beginning of admin_maint page -->
+<table border=0  cellspacing=0 cellpadding=0 width=100%>
+    <tr>
+        <td height=20></td>
+    </tr>
+    <tr>
+        <td id=taghdg align=left>
+            <font size=4><b>User Setup Options</b></font></td>
+    </tr>
+    <tr>
+        <td align=left>
+            <table border=0 cellPadding=0 cellSpacing=2>
+                <tr>
+                    <td id=taghdg width=40></td>
+                    <td id=taghdg nowrap>
+                        <b>Choose a user:</b>&nbsp;
+                    </td>
+                    <td>
+                        <select name="memberid" size=1>
+                          [USER.OPTIONS]
+                        </select>
+                    </td>
+                    <td valign=center>
+                        <input type=button class=gobutton name="GO3" value="GO" onclick='javascript:changepath("NOA","N")'
+        onmouseover="this.className='gobutton gobuttonhov' ; window.status='Go to User Setup Options'"
+        onmouseout="this.className='gobutton' ; window.status=''">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td height=40></td>
+    </tr>
+</table>
+<table border=0  cellspacing=0 cellpadding=0 width=100%>
+    <tr>
+        <td align=center valign=center>
+            <input type=button class=button1 name="RT" value="Return to Previous Page" onclick="javascript:history.go(-1)"
+        onmouseover="this.className='button1 buttonhov1'" onmouseout="this.className='button1'">
+            <input type=button class=button1 name="OE" value="Return to Order Entry" onclick="javascript:changeorder(name,'[ORDERNO]')"
+        onmouseover="this.className='button1 buttonhov1'" onmouseout="this.className='button1'">
+        </td>
+    </tr>
+</table>
+<!-- end of admin_maint page -->

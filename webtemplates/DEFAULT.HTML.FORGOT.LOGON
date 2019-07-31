@@ -1,0 +1,48 @@
+<html>
+<head>
+  <LINK rel="STYLESHEET" type="text/css" href="[CSS.NAME]">
+  <meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+  <meta name="generator" content="Microsoft FrontPage">
+  <title>RemoteNet WEB Customer Logon</title>
+</head>
+
+<body bgcolor="white" leftmargin="0" topmargin="0" marginheight="0" marginwidth="0" link="#333366" alink="#333366" vlink="#333366">
+<tr>
+  <td><img src="[WEBSITE.IMAGES]/RNlogocrp.jpg" border="0"></td>
+  <td>
+    <table border="0" cellpadding="0" cellspacing="0" bgcolor="white" width="500">
+      <tr>
+        <td valign="top"><br>
+          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+              <td><font id=datnorm size="2"><b>For:</b></font>
+                <font id=datnorm size="3" color="#cc3333">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[USER.NAME]</font><br>
+                <br>
+                <font id=datnorm size="2"><b>Here is the RemoteNet Web Customer Logon information that you requested.</b></font><br>
+                <br>
+                <font id=datnorm size="2"><b>WEB Customer ID:</b></font>
+                <font id=datnorm size="3" color="#cc3333">&nbsp;[MEMBER.ID]</font><br>
+                <br>
+                <font id=datnorm size="2"><b>Password:</b></font>
+                <font id=datnorm size="3" color="#cc3333">&nbsp;[PSWD]</font><br>
+                <br>
+                <font id=datnorm size="2">
+<b>
+<A href="[WEBSITE.ID]" > Click here to Login </a>
+[WEBSITE.ID]
+</b>
+</font>
+<br>
+                <font id=datnorm size="2"><b>Thank you for using RemoteNet.</b></font>
+                <br>
+              </td>
+              <br>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</body>
+</html>

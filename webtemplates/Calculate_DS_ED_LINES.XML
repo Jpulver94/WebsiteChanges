@@ -1,0 +1,7 @@
+    <tns:OrderLineItem id="LN.NO" xsi:type="tns:OrderLineItem">
+      <ItemId xsi:type="xsd:string">[ItemId]</ItemId>
+      <StockingUnit xsi:type="xsd:string">[StockingUnit]</StockingUnit>
+      <Quantity xsi:type="xsd:int">[Quantity]</Quantity>
+      <ExtendedPrice xsi:type="xsd:decimal">[ExtendedPrice]</ExtendedPrice>
+      <ProductCode xsi:type="xsd:int">[ProductCode]</ProductCode>
+    </tns:OrderLineItem>
