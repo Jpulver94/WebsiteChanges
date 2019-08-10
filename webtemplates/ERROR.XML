@@ -1,0 +1,9 @@
+<cXML xmlns="http://xml.cXML.org/schemas/cXML/1.2.017/cXML.dtd" payloadID="[PAYLOAD.ID]" timestamp="[TIMESTAMP]">
+<ROOT>
+  <Response>
+    <Status>ERROR</Status>
+    <Order>[ORDER.NO]</Order>
+    <Message>[ERROR.MSG]</Message>
+  </Response>
+</ROOT>
+<cXML>

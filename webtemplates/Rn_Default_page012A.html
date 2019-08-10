@@ -1,0 +1,108 @@
+
+   
+  <body>    
+    <div id="tsh">    
+    </div>      
+    <div id="ORDXdivcontainer" style="z-index: 99999 ;top: 115px; left: 200px; width: 900px; height: auto; background-color: #ffffff; overflow: scroll;display: none; position: absolute; border: 1px solid" >    
+    </div>    
+    <div class="weblockmsg"> [WEB.LOCK.MSG]      
+    </div>    
+    <div id="content">	       
+      <div id="header">        
+        <!-- BEGIN HEADER -->    	         
+        <div id="header_logo">          
+          <!-- BEGIN HEADER_LOGO -->            
+          <a href="#" onclick="javascript:changepath('PS')" >            
+            <img id=rnlogo  src="[REMOTENET.LOGO]" alt="Logo" border="0" /></a>               
+        </div>        
+        <!-- END HEADER_LOGO -->                    
+        <div id="header_toplinks">          
+          <!-- BEGIN HEADER_TOPLINKS -->        Welcome [CUSTOMERID]  |  Order: [WEB.ORDERNO] [BUYER.COOKIE]   $[WEB.ORDERAMT] |             
+          <a href="#" onclick="javascript:changepath('CO')" >Checkout  </a> |             
+          <a href="#" onclick="javascript:changepath('EO')" >1-Click Checkout  </a> |                    
+          <a href="#" onclick="javascript:loadweborder()">  View Order  </a>|                     
+          <a href="[LOGOUTLINK]"><strong>Log out</strong></a> -             
+          <a href="mailto:[ADMIN.EMAIL]">Any issues ?</a>                   
+          <a href="#" onclick="javascript:loadprint()">              
+            <img Title="Print Web Order" class="ExportOrder"  src="[IMAGE.PATH]printer.gif" border="0"> </a>          
+          <A HREF="#" onclick="javascript:loadexport('PDF')" TITLE="Export Order as PDF" >	             
+            <img alt="Export Order as PDF" class="ExportOrder" src="[IMAGE.PATH]pdf.png" >  </A>          
+          <A HREF="#" onclick="javascript:loadexport('XLS')" TITLE="Export Order as XLS" >	             
+            <img alt="Export Order as XLS" class="ExportOrder" src="[IMAGE.PATH]excel.png" >  </A>          
+          <A HREF="#" onclick="javascript:loadexport('JPG')" TITLE="Export Order as JPG" >	             
+            <img alt="Export Order as JPG" class="ExportOrder" src="[IMAGE.PATH]jpeg.png" >  </A>          
+          <A HREF="#" onclick="javascript:loadexport('DOC')" TITLE="Export Order as DOC" >	             
+            <img alt="Export Order as DOC" class="ExportOrder" src="[IMAGE.PATH]word.png" >  </A>          
+          <A HREF="#" onclick="javascript:loadexport('TXT')" TITLE="Export Order as TXT" >	             
+            <img alt="Export Order as TXT" class="ExportOrder" src="[IMAGE.PATH]text.png" >  </A>        
+        </div>                 
+        <!-- END HEADER_TOPLINKS -->                    
+        <div id="header_ad">          
+          <!-- BEGIN HEADER_Advertising -->        	[VENDOR.AD]         	         
+        </div>          
+        <!-- End Header Ad -->           	  [MENUBAR]            	       
+      </div>      
+      <!-- END HEADER -->      
+      <div class=togglebar onclick='javascript:$("#left").toggle("1000")' >  Search Tools + | -        
+      </div>         
+      <div id="left">        
+        <!-- BEGIN LEFT -->                 
+        <div id="left_menutop">          
+          <!-- BEGIN LEFT_MENUTOP -->          
+          <div id="google_translate_element">          
+          </div>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>          
+          <br>          
+          <!--
+                                      <h2>Order by Category</h2> 
+                    -->                 
+        </div>        
+        <!-- END LEFT_MENUTOP -->        
+        <ul class="tabs" style="width: 100%; list-style-type: none; margin: 0; padding: 0;" >          
+          <li>            
+          <a class="SearchTabLink" href="#Tab1">Search</a>          
+          </li>          
+          <li>            
+          <a class="SearchTabLink RTab" href="#Tab2">Refine</a>          
+          </li>        
+        </ul>          
+        <div class="tab_container">            
+          <div class="tab_content" id="Tab1">                     
+            <div id="left_menucontent">              
+              <!-- BEGIN LEFT_MENUCONTENT -->[MENU.NAME]                      
+            </div>            
+            <!-- END LEFT_MENUCONTENT -->                     
+            <div id="left_allcat">              
+              <!-- BEGIN LEFT_ALLCAT -->                       
+              <a href="#" onclick="javascript:changepath('PS')">See all categories </a>                     
+            </div>            
+            <!-- END LEFT_ALLCAT -->                    
+          </div>            
+          <div class="tab_content" id="Tab2">            
+            <h3 class="nosh">Your Filters                
+              <span>                
+              </span> </h3>            
+            <div class="FaccordionButton">                 
+              <ul id="selection" >              
+              </ul>            
+            </div>            
+            <h3 class="nosh">Narrow Your Choices                
+              <a href="#" id="CloseFilter" > &#9650; </a>              
+              <a href="#" id="OpenFilter" > &#9660; </a>              
+              <span>              
+              </span></h3>            
+            <div id="FilterText">              
+            </div>          
+          </div>          
+        </div>	       
+      </div>      
+      <!-- END LEFT -->               
+      <div id="center">        
+        <!-- BEGIN CENTER -->         
+        
+

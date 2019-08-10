@@ -1,0 +1,115 @@
+
+
+
+<body>
+<div id="tsh"></div>
+<div id="superholder">
+<div id="RnHeader">
+<table border=0 cellspacing=0 cellpadding=0 width='100%'>
+ <tbody>
+  <tr>
+    <td><img src='[REMOTENET.LOGO]' border=0></td>
+    <td height=60 width=454 align=center valign=center>
+       [VENDOR.AD]
+    </td>
+    <td id=subhead valign=bottom height=60 nowrap>
+      <div align=right>
+      <table>
+       <tr>
+        <td id=colhdg><font size=2>
+
+        <style>
+        #printdivcontainer { border:1px solid gray ; background-color: #E3E4FA ;overflow:auto ;position:absolute;right:1px;top:40px; }
+        #printtabs { height: 300px; width: 200px; overflow:auto ; font: bold 13px Arial;position:absolute;right:1px;top:1px;}
+        /* ######### CSS for Indented CSS Tabs. Remove if not using ######### */
+        .indentmenu{font: bold 8px Arial;width: 30%; }
+        .indentmenu ul{margin: 0;padding: 0;float: left; /* width: 80%; width of menu*/ border-top: 1px solid darkred; /*darkred border*/background: gray ;}
+        .indentmenu ul li{display: inline;}.indentmenu ul li a{float: left;color: black; /*text color*/padding: 3px 11px;text-decoration: none;border-right: 1px solid darkred; /*darkred divider between menu items*/}
+        .indentmenu ul li a:visited{color: black;}
+        .indentmenu ul li a.selected{color: black !important;padding-top: 4px; /*shift text down 1px*/padding-bottom: 2px;background: gray ;}</style>
+        <div id="printtabs" class="indentmenu"><ul><li><a href="login[SUFFIX]?orderno=[WEB.ORDERNO]&dboption=WEBORD&LOGINPATH=STX&pageid=31&TARGETVAL=[WEB.ORDERNO]" rel="printdivcontainer"    >View Cart <img src=//hosting.tshinc.com/rn/images/ic_shopcart.gif border=0 ></a></li></ul></div>
+        <br> <div id="printdivcontainer">Current Order</div>
+        <script type="text/javascript">
+        var myprints=new ddajaxtabs("printtabs", "printdivcontainer");
+        myprints.setpersist(true);myprints.setselectedClassTarget("link") ;
+        myprints.init();
+        </script>
+
+
+        <b>Order#</b></font></td>
+        <td id=colhdg><font size=2><b>Total Amount</b></font></td>
+       </tr>
+       <tr>
+        <td>[WEB.ORDERNO]</td>
+        <td align=right>[WEB.ORDERAMT]</td>
+       </tr>
+      </table>
+[PAGE.SUBHEAD]</div>
+    </td>
+  </tr>
+ </tbody>
+</table>
+<!-- end top border -->
+
+</div><!--RnHeader -->
+<div id="Container"><h1>Now Updating......</h1>
+<script language='javascript'>
+ tshbar();
+</script>
+</div>
+<div id="Veil"></div>
+
+<script LANGUAGE="JavaScript">
+function helpme(x) {
+  helper = window.open(x, 'helper', 'toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=yes,resizable=yes,width=340')}
+
+function newImage(arg) {
+ if (document.images) {
+     rslt = new Image();
+     rslt.src = arg;
+     return rslt;
+ }
+}
+
+function changeImages() {
+ var preloadFlag = true;
+ if (document.images && (preloadFlag == true)) {
+     for (var i=0; i<changeImages.arguments.length; i+=2) {
+         document[changeImages.arguments[i]].src = changeImages.arguments[i+1];
+     }
+ }
+}
+
+function changelist(path,sflag,templ) { ; 
+    document.forms[0].loginpath.value = path ; 
+    document.forms[0].searchflag.value = sflag ; 
+    document.forms[0].customlist.value = templ ; 
+    document.forms[0].submit() ; 
+} 
+
+function changecolor(thisdiv,bgcolor){
+   var thisobj
+   if (document.all) {
+      thisobj=thisdiv
+     thisobj.style.backgroundColor = bgcolor
+   }
+}
+
+</script>
+<!-- End Preload Script -->
+<!-- Start navbar with javascripts -->
+[MENUBAR]
+<div id="RnWrapLeft"> <!-- sets background to white and creates full length leftcol-->
+<div id="RnWrapRight"> <!-- sets background to white and creates full length rightcol-->
+<div id="RnMainBody">
+<div id="RnMainLeft"><!-- sets RnMainLeft  --></div>
+<div id="RnMainRight"><!-- sets RnMainLeft  --></div>
+<div id="RnMainText"> <!-- sets RnMainText  -->
+<table border=0 cellpadding=0 cellspacing=0 width=100%>
+<tr>
+<td height=40 width=100%>&nbsp;</td>
+</tr>
+<tr><td>
+
+
+

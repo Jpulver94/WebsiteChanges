@@ -1,0 +1,78 @@
+
+
+
+
+<script lang=javascript>
+function copyorder(x,ord) { 
+   document.template.submitvar.value = ord  ; 
+   document.template.loginpath.value = x  ; 
+   document.template.submit(); 
+}
+
+function showorder(ordno,audkey) { 
+  var pgm = "../../cgi-bin/olecgi.exe/auddetail[SUFFIX]?orderno=" + ordno + "&submitvar=" + audkey ; 
+  var name = "sub" ; 
+  var parms = "toolbar=no,top=100,left=90,width=800,height=500,directories=no,status=no,scrollbars=yes,resizable=yes,menubar=no" ; 
+  auddtl = window.open(pgm,name,parms) ; 
+  auddtl.focus() ; 
+} 
+</script>
+<form name=template action="login[SUFFIX]" method=post>
+<input type=hidden name=Aprod_string value="[APROD_STRING]">
+<input type=hidden name=prod_string value="[PROD_STRING]">
+<input type=hidden name=qty_string value="[QTY_STRING]">
+<input type=hidden name=um_string value="[UM_STRING]">
+<input type=hidden name=price_string value="[PRICE_STRING]">
+<input type=hidden name=comment_string value="[COMMENT_STRING]">
+<input type=hidden name=manufact_string value="[MANUFACT_STRING]">
+<input type=hidden name=loginpath value="[LOGINPATH]">
+<input type=hidden name=searchflag value="[SEARCHFLAG]">
+<input type=hidden name=pageid value="6">
+<input type=hidden name=startptr value="[STARTPTR]">
+<input type=hidden name=CustomerId value="[CUSTOMERID]">
+<input type=hidden name=orderno value="[ORDERNO]">
+<input type=hidden name=old_loginpath value="[LOGINPATH]">
+<input type=hidden name=prev_changesort value="[CHANGESORT]">
+<input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+<input type=hidden name=mdsorderno value="[MDSORDERNO]">
+<input type=hidden name=aprodno value="[APRODNO]">
+<input type=hidden name=slsmno value="[SLSMNO]">
+<input type=hidden name=slsmn_id value="[SLSMN_ID]">
+<input type=hidden name=submitvar value="">
+
+<table border=0 cellpadding=0 cellspacing=0 width=100% align=center>
+  <tr>
+    <td id=taghdg><font size=4>
+     <i><b>Web Order Audit Listing</b></i>
+    </font></td>
+  </tr>
+  <tr>
+    <td height=5></td>
+  </tr>
+</table>
+<table border=0 cellpadding=3 cellspacing=0 width=100%>
+  <tr>
+    <td id=colhdg><font size=2><b>Audit Key</b></font></td>
+    <td id=colhdg><font size=2><b>Date</b></font></td>
+    <td id=colhdg><font size=2><b>Time</b></font></td>
+    <td id=colhdg align=right><font size=2><b># Items</b></font></td>
+    <td id=colhdg align=right><font size=2><b>Total Amt</b></font></td>
+    <td id=colhdg><font size=2><b>Rollback</b></font></td>
+  </tr>
+[AIDATA.LINES]
+</table>
+
+<table border=0 cellspacing=3 cellpadding=0 width=100%>
+  <tr>
+    <td height=10></td>
+  </tr>
+  <tr>
+    <td align=center valign=center>
+      <input type=button class=button1 name="RT" value="Return to Previous Page" onclick="javascript:history.go(-1)"
+        onmouseover="this.className='button1 buttonhov1'" onmouseout="this.className='button1'">
+    </td>
+  </tr>
+</table>
+
+
+

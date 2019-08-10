@@ -1,0 +1,40 @@
+
+
+
+<tr>
+	<td class=PUHBody align=left>
+    [PAGE.BREAK]
+		<div id="Image[A.PROD.NO]" >
+<img src="[IMAGE.PATH][IMAGENAME]" width="50" height="50" border="0" >
+		</div>
+	</td>
+	<td class=PUHBody align=left width=auto>
+		<table>
+			<tr>
+				<td class=PUHBody align=left>[A.PROD.NO]</td>
+			</tr>
+			<tr>
+				<td class=PUHBody align=left>[PROD.DESC]</td>
+			</tr>	
+		</table> 
+	</td>
+	<td class=PUHBody align=left></td>
+	<td class=PUHBody align=center >[MU1]</td>
+	<td class=PUHBody align=center >[MU2]</td>
+	<td class=PUHBody align=center >[MU3]</td>
+	<td class=PUHBody align=center >[MU4]</td>
+	<td class=PUHBody align=center >[MU5]</td>
+	<td class=PUHBody align=center >[MU6]</td>
+	<td class=PUHBody align=right >[MU.AVG]</td>
+	<td class=PUHBody align=right >[TOT.YTD]</td>
+	<td class=PUHBody align=right >[LAST.PRICE]</td>
+	<td class=PUHBody align=right >[TOTAL.EXPD]</td>
+	<td class=PUHBody align=right width=100 >
+    <div id="bcTarget[UPC.NO]"></div>   
+    <script> 
+    $("#bcTarget[UPC.NO]").barcode("[UPC.NO]", "code39",{barWidth:1, barHeight:40, showHRI: true});
+    </script>
+    </td>
+</tr>
+
+

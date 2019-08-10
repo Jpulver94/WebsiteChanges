@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE cXML SYSTEM "http://xml.cxml.org/schemas/cXML/1.2.011/cXML.dtd">
+<cXML payloadID="[PAYLOAD.ID]" xml:lang="en-US" timestamp="[TIME.STAMP]" version="1.2.011">
+  <Response>
+    <Status code="[STATUS]" text="[STATUS.TYPE]">[STATUS.DESC]</Status>
+    <PunchOutSetupResponse>
+      <StartPage>
+        <URL>[WEBSITE.ID][URL.PARAMS]</URL>
+      </StartPage>
+    </PunchOutSetupResponse>
+  </Response>
+</cXML>

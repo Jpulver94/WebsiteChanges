@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Envelope>
+<Header>
+<APIKey>491005519CEE</APIKey>
+<Action>ShippingConfirmation</Action>
+<Version>1</Version>
+<OrderHeader>
+<OrderNumber>[PAYLOAD.ID]</OrderNumber>
+<PONumber>[CUST.PO]</PONumber>
+<OrderStatus>Accept</OrderStatus>
+<ShippedDate>[INV.DATE]</ShippedDate>
+<ShippingCost>[FRT.AMT]</ShippingCost>
+<TrackingNumber>[TRACK.NO]</TrackingNumber>
+</OrderHeader>
+</Header>
+<Body>
+[DTL.LINES]
+</Body>
+</Envelope>

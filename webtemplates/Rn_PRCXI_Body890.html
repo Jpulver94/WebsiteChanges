@@ -1,0 +1,109 @@
+
+     
+	 	
+			
+  <div class="row" style="margin-top:20px;">						
+    <div class="col-xs-12 nopad">
+      <div class="PLClass PricingFormularyButton" >  
+        <img src="https://sunset.tshinc.com/sunset/images/Formulary.png" onclick="javascript:fav_template('[A.PROD.NO]')" >
+      </div>
+      <div class="PLClass PricingAddButton" >  
+        <img src="https://sunset.tshinc.com/sunset/images/Add.png" onclick="javascript:cart_add('[PROD.NO]','[A.PROD.NO]')" >
+      </div>
+      <div class="PLClass PricingUmBox" >
+        <select class="SumSelect" name="UMBOX-[PROD.NO]"  id="UMBOX-[PROD.NO]" >   [PI.LINES]  
+        </select>  
+      </div>
+      <div class="PLClass PricingQtyBox" >
+        <input class="QtyBox" length=5 data-prodno="[PROD.NO]" data-aprodno="[A.PROD.NO]" name="QTYBOX-[PROD.NO]"  id="QTYBOX-[PROD.NO]" > 
+      </div>  				
+    </div>							
+  </div>		
+
+	
+  
+
+
+
+
+
+
+
+<style>
+.ProdInfoBar {
+    position: relative;
+    left: -160%;
+    top: 36px;
+    float: left;
+    width: 250%;
+}
+.Piconbarimage {
+    float: left;
+    height: 18px;
+    overflow: hidden;
+    width: 18px;
+    color: transparent;
+    background-color: #FF7800 ; 
+    border-radius: 8px ; 
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    display: inline-flex;
+    background-image: url(//sunset.tshinc.com/sunset/images/purchhist.png);
+}
+.ProdInfoBottom { width: 25%;  float: left; color: #FF7800 ;}
+.ProdInfoBottom a {  color: #FF7800 ;}
+.ProdInfoBottom .iconbar a {  color: #FF7800 !important; }
+.iconbar { background: transparent ; }
+.ProdInfoBottom {
+    width: 25%;
+    float: left;
+    color: #FF7800;
+}
+.qwrap {
+    width: 125px !important;
+    left: -45px;
+    background: transparent !important;
+    position: relative;
+}
+.inc {
+ margin: 0px 0px 0px 0px !important;
+ border-top-right-radius: 5px !important;
+ border-bottom-right-radius: 5px !important;
+ border-top-left-radius: 0px !important;
+ border-bottom-left-radius: 0px !important;
+ position: relative;
+ left: 120px;
+}
+.dec {
+ font-size: 40px !important;
+ margin: 0px 0px 0px 0px !important;
+ border-top-left-radius: 5px !important;
+ border-bottom-left-radius: 5px !important;
+ border-top-right-radius: 0px !important;
+ border-bottom-right-radius: 0px !important;
+ position: relative;
+ left: 15px;
+}
+.PLClass.PricingPhist {
+    min-width: 180px;
+}
+.PricingCell {min-width: 400px ;}
+.PLClass {
+    float: left;
+    padding-left: 0px;
+    margin: 1px;
+}
+.SQty {
+    border: solid 1px #d3d4d6;
+    height: 28px;
+    width: 33px;
+    /* padding: 5px; */
+    /* margin-bottom: -33px; */
+    text-align: center;
+    color: black;
+    margin: 2px;
+}
+.SumSelect { color: black ; }
+</style>
+
+

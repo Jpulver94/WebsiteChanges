@@ -1,0 +1,137 @@
+
+         
+        <div id="centeredmenu">                     
+          <!-- BEGIN HEADER_MENU -->                                              
+          <ul>                                        
+            <li id=menubar1>                             
+              <a href="#" class="firstlink">Place an Order</a>                                             
+              <ul>                                                   
+                <li>                                 
+                <a class="EproDisp menuItem" href=# onclick="javascript:changepath('OE')">Shipping Information</a>                            
+            </li>                                 
+            <li> [PHMENU]                           
+            </li>                                
+            <li>  [QOMENU]                            
+            </li>                             
+            <li>                         
+            <a class="menuItem"  href=# onclick="javascript:changepath('PS')">Search for Products</a>                           
+            </li>                           
+            <li>                         
+            <a class="menuItem"  href=# onclick="javascript:changepath('QS')">Quick Barcode Scan</a>                           
+            </li>                             
+            <li>                         
+            <a class="menuItem"  href=# onclick="javascript:changepath('CO')">View Current Order</a>                           
+            </li>                            
+            <li> [OOHMENU]                            
+            </li>                              
+            <li>                         
+            <a class="menuItem"  href=# onclick="javascript:sendquote()">Email Order as Quote</a>                           
+            </li>                         
+            <li> [CSOSMENU]                            
+            </li>                                       
+          </ul>                                    
+          </li>                                   
+          <li id=menubar2>                         
+            <a href="#" class="menu_normallink">My Account</a>                                            
+            <ul>                               
+              <li>                             
+              <a class="menuItem"  href=# onclick="javascript:changepath('MYA')">My Information</a>                       
+          </li>                        
+          <li>[INVMENU]                      
+          </li>                        
+          <li>[CIMENU]                      
+          </li>                        
+          <li>[OIMENU]                      
+          </li>                        
+          <li>[PUHMENU]                      
+          </li>                        
+          <li>[ARMENU]                      
+          </li>                        
+          <li>[BOMENU]                      
+          </li>                        
+          <li>[PCSMENU]                      
+          </li>                        
+          <li>[CCIMENU]                      
+          </li>                        
+          <li>[PEDMENU]                      
+          </li>                        
+          <li>[WEBAUDMENU]                      
+          </li>                                         
+          <li> [CHGPSWD]                       
+          </li>                          
+          <li>                     
+          <a class="menuItem"  href=# onclick="javascript:changepath('LIC')">View Our Licenses</a>                       
+          </li>                                       
+          </ul>                                  
+          </li>                                      
+          <li id=menubar3>                         
+            <a href="#" class="menu_normallink">Deals</a>                                             
+            <ul>                             
+              <li>[BLOGMENU]                      
+          </li>                        
+          <li>                       
+          <a class="menuItem" href=# onclick='javascript:changelist("CL","Y","WEB*30")'>Top Sellers</a>                       
+          </li>                     
+          <li>                       
+          <a class="menuItem" href=# onclick='javascript:changelist("CL","Y","WEB*31")'>Most Popular</a>                       
+          </li>                     
+          <li>                       
+          <a class="menuItem" href=# onclick='javascript:changelist("CL","Y","WEB*32")'>Latest Items</a>                       
+          </li>                     
+          <li>                       
+          <a class="menuItem" href=# onclick='javascript:changelist("CL","Y","WEB*33")'>Trending Items</a>                       
+          </li>                     
+          <li>                       
+          <a class="menuItem" href=# onclick='javascript:changelist("CL","Y","WEB*34")'>Best Selling Items</a>                       
+          </li>                                       
+          </ul>                                       
+          </li>                     
+          <!-- moved admin into my account 
+                                              <li><a href="#" class="menu_normallink">Admin</a>
+                                               <ul>               
+                                               </ul>
+                                            </li>
+                              -->                                       
+          <li id=menubar4>                         
+            <a href="#" class="menu_normallink">Contact Us</a>                                           
+            <ul>                                                
+              <li>                               
+              <a class="menuItem"  href="[CONTACTUS]">Contact Us</a>                     
+          </li>                                        
+          <li>                     
+          <a class="menuItem"  href=# onclick="javascript:changepath('FB')">Customer Survey</a>                        
+          </li>                                        
+          <li>                     
+          <a class="menuItem"  href="[HELPNAME]" target=new >Help</a>                                        
+          </li>                                       
+          </ul>                                    
+          </li>                                                    
+          <li>                     
+          <a href="#" class="menu_normallink">Home</a>                                         
+          <ul>                                            
+            <li>                         
+            <a class="menuItem" href="[HOMEPAGE]">Home Page</a>                           
+            </li>                         
+            <li>[SUSRMENU]                          
+            </li>                                       
+          </ul>                                       
+          </li>                       
+          <li id=menubar5>                         
+            <a href="#"  class="lastlink"  style="display:none" ></a>                         
+            <!-- hack to get around ie not allowing input and button tags
+                                    inside of an A href tag , djf 5/17/14 
+                                    -->                          
+            <span class="lastlink">                             
+              <div id="search">                                          
+                <input type="text" id="query" placeholder="Enter Product " name="query" style="background-color: #add8e6;z-index: 99999 ;"/>                             
+              </div>                               
+              <input type="Button"     value="Search" class=button1  onclick="javascript:TopSearch()">                                
+              <a href=# title="Search Product History Only">                                 
+                <input type=checkbox name="shistflag" id="shistflag" value="Y" style="vertical-align: middle"></a>                         
+            </span>                                       
+          </li>                                  
+          </ul>                          
+        </div>                 
+        <!-- END HEADER_MENU -->                
+        
+

@@ -1,0 +1,86 @@
+
+  <div id="boxes">
+<script>
+$(document).ready(function() {	
+	//select all the a tag with name equal to modal
+	//if close button is clicked
+	$('.window .close').click(function (e) {
+		//Cancel the link behavior
+		// e.preventDefault();
+		$('#mask').hide();
+		$('.window').hide();
+	});
+//if dialog is clicked
+	$('#dialog').click(function (e) {
+		//Cancel the link behavior
+		// e.preventDefault();
+		$('#mask').hide();
+		$('.window').hide();
+	});		
+	//if mask is clicked
+	$('#mask').click(function () {
+		$(this).hide();
+		$('.window').hide();
+	});			
+});
+function showmodal() {
+	//Get the screen height and width
+		var maskHeight = $(document).height();
+		var maskWidth = $(window).width();
+		//Set heigth and width to mask to fill up the whole screen
+		$('#mask').css({'width':maskWidth,'height':maskHeight});
+		//transition effect		
+		$('#mask').fadeIn(1000);	
+		$('#mask').fadeTo("slow",0.8);	
+		//Get the window height and width
+		var winH = $(window).height();
+		var winW = $(window).width();
+		//Set the popup window to center
+		$('#dialog').css('top',  winH/2-$('#dialog').height()/2);
+		$('#dialog').css('left', winW/2-$('#dialog').width()/2);
+		//transition effect
+		$('#dialog').fadeIn(2000); 
+}
+</script>
+<!-- Start of Sticky Note -->
+<div id="dialog" class="window">
+  <table>
+<tr>
+<td>
+<img src="[REMOTENET.LOGO]">
+</td>
+<td>
+            <script type="text/javascript">
+               var t=setTimeout("showmodal()",1000);
+</script>
+Welcome to our ScanConnect Labeling system
+<br/>
+<br/> To get started you will need a ScanConnect Scanner and 
+<br/> Avery Labels in 5160 or Compatible Formats
+<br> For Detailed Instructions on how to print your ScanConnect Labels <br/><a href=[WEBSITE.ID]/scanconnect.pdf target=new> CLICK HERE </a>
+<br/>
+<br/> If you do not have a scanner you can contact customer service
+<br/>
+<br/> Note: (ScanConnect Software is currently compatible with Windows PC's only. ScanConnect software will not work on a Mac without a Windows)
+<br/>
+<br/>
+<br/> Click anywhere to close this message.
+</td>
+</tr>
+</table>
+</div>
+<style>
+a{color:red;text-decoration:none}
+a:hover{color:#ccc;text-decoration:none}
+#mask{position:absolute;left:0;top:0;z-index:9000;background-color:#000;display:none;}
+#boxes .window{position:absolute;left:0;top:0;width:840px;height:400px;display:none;z-index:9999;padding:20px;}
+#boxes #dialog{width:800px;height:360px;padding:10px;background-color:#ffffff;font-family:verdana;font-size:15px;}
+#boxes #dialog2{background:url(images/notice.png) no-repeat 0 0 transparent;width:326px;height:229px;padding:50px 0 20px 25px;}
+</style>
+<!-- End of Sticky Note -->
+<!-- Mask to cover the whole screen -->
+  <div id="mask"></div>
+</div>
+</body>
+</html>
+

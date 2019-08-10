@@ -1,0 +1,70 @@
+<body>
+<script type='text/javascript' src='[SIDEBAR.PATH]milonic_src.js'></script>
+<script type='text/javascript'>
+<!--
+if(ns4)_d.write("<script language=Javascript src='[SIDEBAR.PATH]mmenuns4.js'><\/script>");
+   else _d.write("<script language=Javascript src='[SIDEBAR.PATH]mmenudom.js'><\/script>");
+-->
+</script>
+<script type='text/javascript' src='[SIDEBAR.PATH]menu_data.js'></script>
+<div id="tsh"></div>
+<div id="Superholder">
+<div id="RnHeader">
+<table border=0 width=100% cellpadding=0 cellspacing=5>
+ <tr>
+  <td><img src='[REMOTENET.LOGO]' border=0></td>
+  <td height=60 width=454 align=center valign=center>
+    [VENDOR.AD]
+  </td>
+  <td id=subhead valign=bottom height=60 nowrap>
+    <div align=right>On-line Catalog</div>
+  </td>
+ </tr>
+<tr>
+<td height=10 colspan=3>&nbsp;</td>
+</tr>
+</table>
+<!-- end top border -->
+
+</div> <!--RnHeader -->
+<div id='RnMenu'> <!--RnMenu--> 
+<!-- Start navbar with javascripts -->
+[MENUBAR]
+<div id="RnWrapLeft"> <!-- sets background to white and creates full length leftcol-->
+<div id="RnWrapRight"> <!-- sets background to white and creates full length rightcol-->
+<div id="RnMainBody">
+<div id="RnMainLeft"><!-- sets RnMainLeft  --></div>
+<div id="RnMainRight"><!-- sets RnMainLeft  --></div>
+<div id="RnMainText"> <!-- sets RnMainText  -->
+<table cols=3 border=0 width=100% cellpadding=0 cellspacing=5>
+ <tr>
+  <td width=162 valign=top>
+
+<!--  Start Browse sidebar -->
+   <table border=0 cellPadding=2 cellSpacing=2 width=100%>
+     <tr>
+       <td id=colhdg align=center valign=center nowrap><font size=2><b>Browse</b></font></td>
+     </tr>
+     <tr>
+       <td id=RNsidebar >
+<!-- Sidebar categories -->
+<!-- End Sidebar categories  -->
+       </td>
+     </tr>
+   </table>
+<!--  End Browse Sidebar -->
+
+  </td>
+<!--Horizontal bar between left menu bar and main area -->
+  <td id=spacerline width=1 valign=top><img src="[IMAGE.PATH]spacer.gif" width=1 height=1></td>
+  <td valign=top width=80%>
+<script lang=javascript>
+function changepath(x,sflag) { 
+  document.template.submitvar.value = sflag  ; 
+  document.template.loginpath.value = x  ; 
+  document.template.submit(); 
+}
+
+</script>
+
+

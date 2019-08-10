@@ -1,0 +1,17 @@
+ 
+ 
+This is a confirmation of an export that was completed
+on [DWN.DATE at [DWN.TIME].
+ 
+The type of export was [DWN.TYPE]
+ 
+The export was requested by [USER.NAME]
+ 
+Total records exported: [TOTAL.RECS]
+Total records with errors: [TOTAL.ERRS]
+
+[SUBJ.PHRASE]
+[ERR.FILE]
+ 
+Send mail to support@tshinc.com with questions
+or comments about this export.

@@ -1,0 +1,161 @@
+
+<div class="OEMainPage" >
+<form id=OrderEntryHeader action="login[SUFFIX]" method=post onsubmit="return FormOrderEntry(this)" name=template>
+<input type=hidden name=Aprod_string value="[APROD_STRING]">
+<input type=hidden name=prod_string value="[PROD_STRING]">
+<input type=hidden name=qty_string value="[QTY_STRING]">
+<input type=hidden name=um_string value="[UM_STRING]">
+<input type=hidden name=price_string value="[PRICE_STRING]">
+<input type=hidden name=comment_string value="[COMMENT_STRING]">
+<input type=hidden name=manufact_string value="[MANUFACT_STRING]">
+<input type=hidden name=data_string value="[DATA_STRING]">
+<input type=hidden name=searchflag value="[SEARCHFLAG]">
+<input type=hidden name=pageid value="1">
+<input type=hidden name=orderno value="[ORDERNO]">
+<input type=hidden name=CustomerId value="[CUSTOMERID]">
+<input type=hidden name=loginpath value="[LOGINPATH]">
+<input type=hidden name=customlistback value="[CUSTOMLIST]">
+<input type=hidden name=orddt value="[ORDDT]">
+<input type=hidden name=shipto value="[SHIPTO]">
+<input type=hidden name=slsmno value="[SLSMNO]">
+<input type=hidden name=old_loginpath value="[LOGINPATH]">
+<input type=hidden name=prev_changesort value="[CHANGESORT]">
+<input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+<input type=hidden name=slsmn_id value="[SLSMN_ID]">
+<!-- beginning of order_entry_hdr page -->
+<table border=0 cellpadding=0 cellspacing=0 width=100%>
+<tr>
+<td id=taghdg colspan=3 align=center><font size=4><i><b>Welcome [CUST.NAME]</b></i></font></td>
+</tr> 
+<tr>
+<td id=taghdg colspan=3 nowrap><font size=4><i><b>To place a new order please fill in order information below :</b></i></font></td>
+</tr>
+<tr>
+<td id=spacerline height=4 width=99% colspan=3></td>
+</tr>
+<tr>
+<td id=datnorm colspan=3><i>Required information is <font id=hilite1><b>highlighted</b></font></i>.</td>
+</tr>
+<tr>
+<td colspan=3 height=10></td>
+</tr>
+<tr>
+<td id=taghdg colspan=3><font size=3><b>Web Order Number:</b></font>&nbsp;
+    [WEB.ORD.NO]</td>
+</tr>
+<tr>
+<td colspan=3 height=10></td>
+</tr>
+<tr>
+<td colspan=3 align=center>
+<table border=0 cellpadding=2 cellspacing=2 width=593>
+<tr>
+<td id=colhdg nowrap><font size=2><b>Account #</b></font></td>
+<td id=colhdg nowrap><font size=2><b>Sold to</b></font></td>
+<td id=colhdg nowrap><font size=2><b>Ship to</b></font></td>
+</tr>
+<tr>
+<td id=datnorm valign=top>
+    [A.CUST.NO]
+</td>
+<td  nowrap valign=top width=250>
+  <table border=0 cellpadding=0 cellspacing=0 width=250>
+    <tr>
+      <td id=datnorm width=100%>
+          [SOLDTO.NAME]
+      </td>
+    </tr>
+    <tr>
+      <td id=datnorm width=100%>
+          [SOLDTO.ADDR1]
+      </td>
+    </tr>
+    <tr>
+      <td id=datnorm width=100%>
+          [SOLDTO.ADDR2]</td>
+    </tr>
+    <tr>
+      <td id=datnorm width=100%>
+          [SOLDTO.ADDR3]</td>
+    </tr>
+    <tr>
+      <td id=datnorm width=100%>
+          [SOLDTO.CITY],&nbsp;[SOLDTO.ST]&nbsp;[SOLDTO.ZIP]</td>
+    </tr>
+    <tr>
+      <td id=datnorm width=100%>
+          [SOLDTO.CTRY]</td>
+    </tr>
+  </table>
+</td>
+<td  nowrap valign=top width=250>
+[SHIP.TO.DATA]
+</td>
+</tr>
+<tr>
+<td align=center colspan=3>
+<table border=0 cellpadding=2 cellspacing=2>
+<tr>
+ <td id=[REQDT.ID] align=right width=180><font size=3>
+ <b>Required Date:</b></font></td>
+ <td></td>
+ <td align=left><input type=text size=10 maxlength=10 id="reqddt" name="reqddt" value="[REQ.DATE]">
+<div style="display: none;"> 
+   <img name="reqdt_cal" src="[IMAGE.PATH]cal.gif" id="calImg" border=0 alt="Click Here to Choose a Required Date" class="trigger" >
+</div>
+ </td>
+</tr>
+<tr>
+ <td id=[DEPTNO.ID] align=right width=180><font size=3>
+ <b>Dept. No:</b></font></td>
+ <td></td>
+ <td align=left><input type=text size=24 name="deptno" value = "[DEPT.NO]"></td>
+</tr>
+<tr>
+ <td id=[CUSTNO.ID] align=right width=180><font size=3>
+ <b>Customer PO:</b></font></td>
+ <td></td>
+ <td align=left><input type=text size=24 name="custpo" value = "[CUST.PO.NO]"></td>
+</tr>
+<tr>
+ <td id=[REQNO.ID] align=right width=180><font size=3>
+ <b>Req. No:</b></font></td>
+ <td></td>
+ <td align=left><input type=text size=24 name="reqno" value = "[REQ.NO]"></td>
+</tr>
+<tr>
+ <td id=[ORDBY.ID] align=right width=180><font size=3>
+ <b>Ordered By:</b></font></td>
+ <td></td>
+ <td align=left><input type=text size=24 name="attn" value = "[ORD.BY]"></td>
+</tr>
+<tr>
+ <td id=hilite1 align=right width=180><font size=3><b>Ship Method:</b></font></td>
+ <td></td>
+ <td>
+       [SHIPMETH.BOX]
+ </td>    
+</tr>
+<tr>
+ <td id=taghdg align=right valign=top width=180><font size=3><b>Special&nbsp;&nbsp;&nbsp;<br>
+Instructions:</b></font></td>
+ <td></td>
+ <td align=left><textarea size=10 cols=40 rows=4 name="specins" STYLE="overflow:auto" wrap=true>[SPEC.INST]</textarea>
+ </td>
+</tr>
+<tr>
+ <td align=right></td>
+ <td></td>
+ <td align=left></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td id=spacerline height=4 width=99% colspan=3></td>
+</tr>
+</table>
+<!-- end of order_entry_hdr page -->
+
+
+</div>

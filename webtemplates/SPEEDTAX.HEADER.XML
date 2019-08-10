@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:ns1="http://speedtax.com/transaction" 
+xmlns:ns2="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+<SOAP-ENV:Header><ns2:Security SOAP-ENV:mustUnderstand="1">
+<ns2:UsernameToken>
+<ns2:Username>[USERNAME]</ns2:Username>
+<ns2:Password>[PASSWORD]</ns2:Password>
+</ns2:UsernameToken></ns2:Security>
+</SOAP-ENV:Header>
+<SOAP-ENV:Body>

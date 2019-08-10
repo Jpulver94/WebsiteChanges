@@ -1,0 +1,44 @@
+
+
+
+
+  <tr id=[LNCOLOR]>
+    <td class=datsml align=left>
+       [LINE.NO]
+<a title="Add this item to My Favorites" class=ReorderLine href=# onclick="javascript:fav_template('[A.PROD.NO]')" >
+ <img style="width: 20px ; height: 20px" alt="Add this item to My Favorites" class="ExportOrder" src="[IMAGE.PATH]Favorites.png">  </a>
+</td>
+    <td class=datsml>
+       <a href=# class="hintanchor" onmouseover="showhintajax('login[SUFFIX]?&aprodno=[A.PROD.NO]&orderno=[WEB.ORDERNO]&LOGINPATH=PIF&PAGEID=31&CUSTOMERID=[CUSTOMERID]', this, event, '150px')" >
+       [A.PROD.NO]</a>
+       </td>
+    <td class=datsml>
+      <a href=# onclick="javascript:prod_inquiry('PI','N','[A.PROD.NO]')">
+       [PROD.DESC]</a></td>
+    <td class=datsml>
+       [MFR]</td>
+    <td class=datsml>
+       [IN.STOCK]</td>
+    <td class=datsml>
+      <input [GRIDCHK]  data-prodno="[A.PROD.NO]" data-um="[UNIT.MEAS]" tabindex=[LINE.NO] type=text size=2 maxlength=6 name="[REAL.LINE.NO]|" value="[ORD.QTY]" onchange=qtychk(value,name)> 
+    </td>
+    <td class=datsml align=right>
+       [UM.STRNG]</td>
+    <td class=datsml align=right>
+       [PRICE]</td>
+    <td class=datsml align=right>
+       [EXT.PRICE]</td>
+    <td valign=center>
+      <input type=button class=button1 name="DelButton[REAL.LINE.NO]" value='Delete' onclick="javascript:del_item('[REAL.LINE.NO]|','Delete [A.PROD.NO] on Line# [LINE.NO]')" ; onmouseover="this.className='button1 buttonhov1' ; window.status='Delete [A.PROD.NO] on Line# [LINE.NO]'" ;
+       onmouseout="this.className='button1' ; window.status=''">
+<div id="SlsHolder[PROD.NO]" class="Salesinfo" > </div>
+<script> ShowPRCS("[PROD.NO]","[A.PROD.NO]","#SlsHolder[PROD.NO]") </script>
+    </td>
+ </tr>
+  <tr>
+    <td id=spacerline height=2 width=100% colspan=10></td>
+  </tr>
+
+
+
+

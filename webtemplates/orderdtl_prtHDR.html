@@ -1,0 +1,134 @@
+<html>
+<head> 
+<LINK rel="STYLESHEET" type="text/css" href="[CSS.NAME]">
+<title>Web Order  - [WEB.ORD.NO]</title>
+</head> 
+<body>
+<div id="superholder">
+<div id="RnHeader">
+<table border=0 cellpadding=0 cellspacing=0 width=100%>
+<tr>
+  <td><img src='[WEBSITE.IMAGES]/RNlogocrp.jpg' border=0></td>
+  <td height=60 width=454 align=right>
+    <img src='[WEBSITE.IMAGES]/spacer.gif' border=0>
+  </td>
+  <td align=right valign=bottom height=60 nowrap><b><font size=5 face="Arial,Helvetica,Arial MT Condensed Light,Geneva,Swiss,SunSans-Regular"><i>Web Order</i></font></b></td>
+</tr>
+<tr>
+  <td colspan=3 id=colhdg height=20>&nbsp;</td>
+</table>
+<!-- end top border -->
+</div><!--RnHeader -->
+
+<div id="RnWrapLeft"> <!-- sets background to white and creates full length leftcol-->
+<div id="RnWrapRight"> <!-- sets background to white and creates full length rightcol-->
+<div id="RnMainBody">
+<div id="RnMainLeft"><!-- sets RnMainLeft  --></div>
+<div id="RnMainRight"><!-- sets RnMainLeft  --></div>
+<div id="RnMainText"> <!-- sets RnMainText  -->
+
+<table border=0 cellpadding=0 cellspacing=2 width=100%>
+ <tr>
+   <td></td>
+   <td>
+    <center>
+    <font size=6 face="Arial,Verdana,Arial Black,Arial MT Condensed Light"><b>Order Confirmation for<br>
+Web Order Number : [WEB.ORD.NO]</b></font>
+   </td>
+ </tr>
+ <tr>
+   <td></td>
+   <td height=10>
+ </tr>
+ <tr>
+   <td></td>
+   <td>
+     <table border=0 cellpadding=2 cellspacing=2 width=100%>
+       <tr>
+         <td id=colhdg nowrap><font size=2><b>Web Order #</b></font></td>
+         <td id=colhdg colspan=2 nowrap><font size=2><b>Sold To</b></font></td>
+         <td id=colhdg colspan=2 nowrap><font size=2><b>Ship To</b></font></td>
+       </tr>
+       <tr>
+         <td valign=top>[WEB.ORD.NO]</td>
+         <td width=250 colspan=2 valign=top nowrap>
+[BILL.TO.NAME]
+         </td>
+         <td width=250 colspan=2 valign=top nowrap>
+[SHIP.TO.NAME]
+         </td>
+       </tr>
+       <tr>
+       <tr>
+         <td valign=top>Order Status</td>
+         <td width=250 colspan=2 valign=top nowrap>
+[BILL.TO.ADDR1]
+         </td>
+         <td width=250 colspan=2 valign=top nowrap>
+[SHIP.TO.ADDR1]
+         </td>
+       </tr>
+       <tr>
+         <td valign=top>[STATUS]</td>
+         <td width=250 colspan=2 valign=top nowrap>
+[BILL.TO.ADDR2]
+         </td>
+         <td width=250 colspan=2 valign=top nowrap>
+[SHIP.TO.ADDR2]
+         </td>
+       </tr>
+       <tr>
+         <td valign=top>Approval by: [AUTH.CODE]</td>
+         <td width=250 colspan=2 valign=top nowrap>
+[BILL.TO.ADDR3]
+         </td>
+         <td width=250 colspan=2 valign=top nowrap>
+[SHIP.TO.ADDR3]
+         </td>
+       </tr>
+         <td id=colhdg><font size=2><b>Required Date</b></font></td>
+         <td width=250 colspan=2 valign=top nowrap>[BILL.TO.CITY.ST.ZIP]</td>
+         <td width=250 colspan=2 valign=top nowrap>[SHIP.TO.CITY.ST.ZIP]</td>
+       </tr>
+       <tr>
+         <td align=center>[REQD.DT]</td>
+         <td width=250 colspan=2 valign=top nowrap>[BILL.TO.COUNTRY]</td>
+         <td width=250 colspan=2 valign=top nowrap>[SHIP.TO.COUNTRY]</td>
+       </tr>
+       <tr>
+         <td id=colhdg nowrap><font size=2><b>Customer PO#</b></font></td>
+         <td id=colhdg><font size=2><b>Dept No.</b></font></td>
+         <td id=colhdg><font size=2><b>Req. No.</b></font></td>
+         <td id=colhdg><font size=2><b>Ordered By</b></font></td>
+         <td id=colhdg><font size=2><b>Ship Method</b></font></td>
+       </tr>
+       <tr>
+         <td>[CUST.PO.NO]</td>
+         <td>[REQ.NO]</td>
+         <td>[REQ.NO]</td>
+         <td>[ORDERED.BY]</td>
+         <td>[SHIP.METHOD]</td>
+       </tr>
+       <tr>
+         <td id=colhdg colspan=5><font size=2><b>Special Instructions:</b></font></td>
+       </tr>
+       <tr>
+         <td colspan=5 align=left>[SPCL.INSTR]</td>
+       </tr>
+     </table>
+   </td>
+ </tr>
+ <tr>
+   <td></td>
+   <td>
+     <table border=0 cellpadding=1 cellspacing=0 width=100%>
+       <tr>
+         <td id=colhdg width=30><font size=2><b>Line No.</b></font></td>
+         <td id=colhdg width=90><font size=2><b>Product No. </b></font></td>
+         <td id=colhdg><font size=2><b>Product Description </b></font></td>
+         <td id=colhdg width=80><font size=2><b>Manufacturer</b></font></td>
+         <td id=colhdg width=20 align=center><font size=2><b>ORD<br>QTY </b></font></td>
+         <td id=colhdg width=20><font size=2><b>UM</b></font></td>
+         <td id=colhdg width=60 align=center><font size=2><b>Price</b></font></td>
+         <td id=colhdg width=60 align=center><font size=2><b>Ext. Price</b></font></td>
+       </tr>

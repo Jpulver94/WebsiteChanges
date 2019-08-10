@@ -1,0 +1,60 @@
+RemoteNet Feedback
+
+User:  USER.NAME
+Email: USER.EMAIL
+
+Customer:
+       CUST.NAME
+       CUST.ADDR1
+       CUST.ADDR2
+       CUST.ADDR3
+       CUST.CITY.ST
+
+EASE OF USE -- Ordering Methods:
+		Custom Lists:     FBcustomlists
+		Product Search:   FBprodsearch
+		Quick Order:      FBquickord
+		Purchase History: FBpurchhist
+
+OVERALL SITE FUNCTIONALITY:
+	My overall satisfaction with the site is:  FBfunctionality
+
+SPEED OF SITE:
+	Site Speed:  FBspeed
+	Internet connection:  FBconnect
+
+Usefullness of RemoteNet Site:
+	Helpful in managing my practice/business :  FBhelpmanage
+	Provides useful information: FBuseful
+	Better than using individual vendor sites: FBbettervend
+
+
+Additional Information:
+
+FBaddinfo
+
+How many vendors do you currently purchase Medical/Pharmaceutical products from?  FBnumvendors
+
+Would you like to purchase from additional
+vendors at this site? FBaddvendpurch
+
+Vendor Contacts:
+1.  FBVendorName1
+    FBContactName1
+    FBPhone1
+2.  FBVendorName2
+    FBContactName2
+    FBPhone2
+3.  FBVendorName3
+    FBContactName3
+    FBPhone3
+4.  FBVendorName4
+    FBContactName4
+    FBPhone4
+5.  FBVendorName5
+    FBContactName5
+    FBPhone5
+
+General Comments, Questions or Suggestions:
+
+FBcomments

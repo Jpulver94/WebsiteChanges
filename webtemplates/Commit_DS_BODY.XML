@@ -1,0 +1,41 @@
+   <tns:Commit>
+      <TaxTransaction href="#id1" />
+    </tns:Commit>
+    <tns:TaxTransaction id="id1" xsi:type="tns:TaxTransaction">
+      <CorrectedAddress href="#id2" />
+      <CertiTAXTransactionId xsi:type="xsd:string">[CertiTAXTransactionId]</CertiTAXTransactionId>
+      <CityTax xsi:type="xsd:decimal">[CityTax]</CityTax>
+      <CityTaxAuthority xsi:type="xsd:string">[CityTaxAuthority]</CityTaxAuthority>
+      <CountyTax xsi:type="xsd:decimal">[CountyTax]</CountyTax>
+      <CountyTaxAuthority xsi:type="xsd:string">[CountyTaxAuthority]</CountyTaxAuthority>
+      <LineItems href="#id3" />
+      <LocalTax xsi:type="xsd:decimal">[LocalTax]</LocalTax>
+      <LocalTaxAuthority xsi:type="xsd:string">[LocalTaxAuthority]</LocalTaxAuthority>
+      <MerchantId xsi:type="xsd:int">[MerchantId]</MerchantId>
+      <NationalTax xsi:type="xsd:decimal">[NationalTax]</NationalTax>
+      <NationalTaxAuthority xsi:type="xsd:string">[NationalTaxAuthority]</NationalTaxAuthority>
+      <OtherTax xsi:type="xsd:decimal">[OtherTax]</OtherTax>
+      <OtherTaxAuthority xsi:type="xsd:string">[OtherTaxAuthority]</OtherTaxAuthority>
+      <ReferredId xsi:type="xsd:string">[ReferredId]</ReferredId>
+      <SerialNumber xsi:type="xsd:string">[SerialNumber]</SerialNumber>
+      <Server xsi:type="xsd:string">[Server]</Server>
+      <StateTax xsi:type="xsd:decimal">[StateTax]</StateTax>
+      <StateTaxAuthority xsi:type="xsd:string">[StateTaxAuthority]</StateTaxAuthority>
+      <TotalTax xsi:type="xsd:decimal">[TotalTax]</TotalTax>
+    </tns:TaxTransaction>
+    <tns:CorrectedAddress id="id2" xsi:type="tns:CorrectedAddress">
+      <City xsi:type="xsd:string">[City]</City>
+      <GeoCode xsi:type="xsd:string">[GeoCode]</GeoCode>
+      <Name xsi:type="xsd:string">[Name]</Name>
+      <PostalCode xsi:type="xsd:string">[PostalCode]</PostalCode>
+      <State xsi:type="xsd:string">[State]</State>
+      <Street1 xsi:type="xsd:string">[Street1]</Street1>
+      <Street2 xsi:type="xsd:string">[Street2]</Street2>
+      <NationISO2Abbreviation xsi:type="xsd:string">[NationISO2Abbreviation]</NationISO2Abbreviation>
+      <NationISO3Abbreviation xsi:type="xsd:string">[NationISO3Abbreviation]</NationISO3Abbreviation>
+      <NationName xsi:type="xsd:string">[NationName]</NationName>
+    </tns:CorrectedAddress>
+    <soapenc:Array id="id3" soapenc:arrayType="tns:TaxTransactionLineItem[NUM.ITEMS]">
+     [ITEMS.XML.ARRAY]
+    </soapenc:Array>
+   

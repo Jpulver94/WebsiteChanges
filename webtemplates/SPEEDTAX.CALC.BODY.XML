@@ -1,0 +1,13 @@
+<ns1:calculateInvoice>
+<CompanyId>[COMPANYID]</CompanyId>
+<Invoice>
+<invoiceDate>[EffectiveDate]</invoiceDate>
+<invoiceNumber>[MerchantTransactionId]</invoiceNumber>
+<invoiceType>[TRANS.TYPE]</invoiceType>
+<exemptionCertificate>[TaxExemptCertificate]</exemptionCertificate>
+<exemptionReason>[TaxExemptReason]</exemptionReason>
+<customerName>[Name]</customerName>
+<customerIdentifier>[CustomerID]</customerIdentifier>
+[ITEMS.XML.ARRAY]
+</Invoice>
+</ns1:calculateInvoice>

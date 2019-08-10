@@ -1,0 +1,51 @@
+  <tr id=[LNCOLOR]>
+    <td class=datsml valign=center align=right width=100>
+<a title="Save this Price for this Order Only (ONE TIME)"
+ href=# onclick=javascript:onetimeprice("[PROD.NO]","[UM]","[A.PROD.NO]","[ITEMLINE]") 
+ style="[ONETIMESTYLE];border-left: 3px solid #E67A00;border-right: 3px solid transparent;background-color: #E67A00;"
+> 1 </a>
+[UM]
+<input class='[GPCLASS]' id=[PROD.NO][UM]salesprice' maxlength=10 size=5 value='[PRICE.BOX]'>
+ <a href=# onclick=javascript:changeprice("[PROD.NO]","[UM]","[A.PROD.NO]") > 
+<img src="[IMAGE.PATH]/save.png" style="width: 10px ; height: 10px">
+</a>
+ <a href=# onclick=javascript:cancelprice("[PROD.NO]","[UM]","[A.PROD.NO]") > 
+<img src="[IMAGE.PATH]/X.gif" style="width: 10px ; height: 10px" >
+</a>
+    </td>
+    <td class="GPSales" class=datsml valign=center align=right width=20>
+<a style="color: [COST.COLOR]; "  href=# title="
+Pricing Cost: [FPCOST] &#013;
+Rebate Cost: [RCBASE] &#013;
+Contract Cost: [FCCOST] &#013;
+Rebate Amt: [REB.DIFF] &#013;
+Contracted GP% [TRUEGP] &#013; 
+Contract# [REB.CONTRACT] &#013; 
+" >
+      [COST.BOX]
+</a>
+    </td>
+    <td class="GPSales" class=datsml valign=center align=right width=80>
+ <a href=# onclick=javascript:changegp("[PROD.NO]","[UM]","[A.PROD.NO]")
+ title= "
+Target GP: &#013;
+Low: [MINGP]% &#013;
+High: [MAXGP]% &#013;
+&#013;
+Please note your GP% will change &#013;
+color to visually identify any products &#013;
+that are above or below your target margins. &#013;
+If you are with 10% of either the High &#013;
+or Low Mark the color will display as &#013;
+Yellow - warning &#013;
+Green - good &#013;
+Red - out of range &#013;
+"
+ > 
+<input id='[PROD.NO][UM]salesgp' class='[GPCLASS]' maxlength=10 size=2 value='[GP.BOX]'>
+<img src="[IMAGE.PATH]/save.png" style="width: 10px ; height: 10px">
+</a>
+    </td>
+  </tr>
+
+

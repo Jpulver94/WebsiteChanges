@@ -1,0 +1,1 @@
+"requestType": "generateLoginToken","requestDateTime": "[UTCTIME]","requestData":  {"serviceContractToken":"[CONTRACT.ID]"   ,"partnerDeaNumber": "[PART.DEA]",    "userName": "[PART.USERNAME]"     }

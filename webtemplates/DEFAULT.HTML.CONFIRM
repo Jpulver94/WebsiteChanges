@@ -1,0 +1,29 @@
+<html>
+<head>
+  <LINK rel="STYLESHEET" type="text/css" href="[CSS.NAME]">
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+  <meta name="ProgId" content="FrontPage.Editor.Document">
+  <title>Your Remotenet Web Order Confirmation</title>
+</head>
+<body>
+<p><img src="[WEBSITE.IMAGES]/RNlogocrp.jpg" border="0" width="391" height="65"></p>
+<p>&nbsp;</p>
+<font id="datnorm" size="2">
+<b>Your Web Order [WEB.ORD.NO] has shipped.&nbsp;</b>
+<p><b>Thank you for your order.</b></font></p>
+<font id="datnorm" size="2"><b>WebOrderNumber:</b></font>
+<font id="datnorm" size="3" color="#cc3333">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[WEB.ORD.NO]</font><br><br>
+<font id="datnorm" size="2"><b>Customer Number :</b></font>
+<font id="datnorm" size="3" color="#cc3333">&nbsp;[CUST.NO]</font><br><br>
+<font id="datnorm" size="2"><b>MDS Order Number :</b></font>
+<font id="datnorm" size="3" color="#cc3333">&nbsp;[REL.NO]</font><br>
+<font id="datnorm" size="2"><b>Tracking Number: </b></font>
+<font id="datnorm" size="3" color="#cc3333">[TRACK.NO]</font>
+<p><font id="datnorm" size="2">
+<b>Click [WEB.TRACK.NO] to track your order:</b></font></p>
+<p><font id="datnorm" size="2"><b>Thank you for using RemoteNet.</b></font></p>
+<p>
+</p>
+</body>
+</html>

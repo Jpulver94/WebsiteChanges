@@ -1,0 +1,28 @@
+  <tr id=[LNCOLOR]>
+    <td nowrap class=datsml valign=bottom width=100>
+
+<div class="TemplateImage" >
+<img src="[IMAGE.PATH][IMAGENAME]" >
+</div>
+[A.PROD.NO]
+    </td>
+    <td nowrap class=datsml valign=bottom width=37>&nbsp;</td>
+    <td class=datsml valign=bottom>
+      <a href=# onclick="javascript:prod_inquiry('PI','N','[A.PROD.NO]') ">
+[PROD.DESC]
+      </a></td>
+    <td class=datsml width=20>
+       [IN.STOCK]</td>
+    <td class=datsml valign=bottom width=100>
+       [MFR]</td>
+    <td nowrap class=datsml valign=bottom width=102 align=center>
+[PURCH.HIST.DTL]
+    </td>
+    <td valign=center>
+      <input type=button class=button1 name="delline[REAL.LINE.NO]" value='Delete Item' onclick='javascript:del_item(this.name,"[CUSTOMLIST]","[A.PROD.NO]")'
+       onmouseover="this.className='button1 buttonhov1' ; window.status='Delete [A.PROD.NO] Item'"
+       onmouseout="this.className='button1' ; window.status=''">
+<div id="SlsHolder[PROD.NO]" class="Salesinfo" > </div>
+<script> ShowPRCS("[PROD.NO]","[A.PROD.NO]","#SlsHolder[PROD.NO]") </script>
+    </td>
+  </tr>

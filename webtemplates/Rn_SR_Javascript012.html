@@ -1,0 +1,52 @@
+
+
+
+
+
+<script lang=javascript>
+function loadvalues() { 
+ //function to set values in drop down boxes ; 
+   document.template.itemspage.value = "[ITEMSPAGE]" ;
+   document.template.Changesort.value = "[CHANGESORT]" ;
+}
+function Move_page(startptr,direction,loginpath) {
+ if(process_order(0)) { ; 
+// code to get startpointer
+       if (startptr < 1 ) {
+          startptr = 1
+       }
+ //if startptr is greater than total lines then set it to 1  
+       if (startptr > [TOTALLINES]) {
+          startptr = 1
+       }
+ //if itemspage or changesort changed value then set startptr to 1 
+       var sort = document.template.Changesort.value
+       var prev_sort = document.template.prev_changesort.value
+       var items = document.template.itemspage.value
+       var prev_items = document.template.prev_itemspage.value
+       if (sort != prev_sort||items != prev_items) { 
+          startptr = 1
+       }
+   document.template.startptr.value = startptr  ;
+   document.template.searchptr.value = startptr  ;
+   document.template.searchflag.value = 'N' ;
+   document.template.loginpath.value = loginpath ;
+   document.template.submit()  ; 
+ }
+}
+// Add Hook of change path to call process order since this page adds items potentially 
+function changepath(x,sflag) { 
+ if(process_order(0)) { ; 
+ // process order - 1=popup 0=no popup and if true submit
+ document.template.startptr.value = 1 ; 
+ document.template.searchflag.value = sflag ; 
+ document.template.loginpath.value = x ; 
+ document.template.submit(); 
+ }
+}
+</script>
+  
+
+
+
+

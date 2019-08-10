@@ -1,0 +1,379 @@
+
+
+
+<script lang=javascript>
+function showmodalarcc() {
+//   return ; 
+//Get the screen height and width		
+var maskHeight = $(document).height();		
+var maskWidth = $(window).width();	
+//Set heigth and width to mask to fill up the whole screen		
+$('#mask').css({'width':maskWidth,'height':maskHeight,'position':'absolute','left':'0','top':'0','z-index':'9000','background-color':'#000','display':'none'});
+//transition effect			
+ $('#mask').fadeIn(1000);			
+ $('#mask').fadeTo("slow",0.6);				
+//Get the window height and width		
+var winH = $(document).height();		
+var winW = $(window).width();              		
+//Set the popup window to center		
+$('#ARLoader').css({'width':'auto','height':'auto','padding':'20px','background': 'white'});
+// Added Rounded corders - djf 6-28-13
+$('#ARLoader').css({'-webkit-border-radius': '50px','-moz-border-radius': '50px', 'border-radius': '50px', 'border' :'2px solid #363600', 'background-color': '#FFFFFF' , '-webkit-box-shadow' : '#CCCCCC 10px 10px 10px' , '-moz-box-shadow' : '#CCCCCC 10px 10px 10px', 'box-shadow': '#CCCCCC 10px 10px 10px'}) ;
+$('#ARLoader').css({'display':'none','z-index':'9999','position':'absolute','color':'black'});
+$('#ARLoader').prepend('<div style="font-family:arial;font-size:20px;"> <div style=float:right> <img id="closepop" src="[IMAGE.PATH]close_pop.png" style="padding-right: 33px;" > </div> </div> <div id="SessContent"> </div> ') ;
+$('#ARLoader').css({'position':'fixed','top':'50%','left':'50%','margin-top':'-250px','margin-left':'-130px'});
+  var arinfo = $("#Payinfo").html() ; 
+//    $("#StatusMsg").remove()
+ $('#SessContent').html(arinfo) ;
+$('select[name=CardNumber]').SelectCustomizer();
+//       $(".addallbutton").hide();
+//transition effect		
+$('#ARLoader').fadeIn(2000); 
+//if clicked hide
+ $('#closepop').click(function () {
+  $('#ARLoader').hide(); $('#mask').fadeOut(1000)
+      $(".addallbutton").show();
+  $("#ARLoader").html('<div id="StatusMsg"></div> ') ; 
+// remove the info if they cancel
+  } 
+ );
+}
+function release_detail(path,x) {
+  document.template.loginpath.value = path ;
+  document.template.pageid.value = 6 ;
+  document.template.startptr.value = 1 ;
+  document.template.mdsorderno.value = x ;
+  document.template.submit() ;
+}
+function ardetailinq(ordno,arkey) { 
+ var pageurl = 'login[SUFFIX]?orderno=[WEB.ORDERNO]&CUSTOMERID=[CUSTOMERID]&LOGINPATH=ARD&pageid=31&ARKEY=' + arkey
+var dummy = showmodalrnpopup(pageurl) ;
+ }
+function getTotal(isInit) {
+  var total = 0;
+  var selector = isInit ? ".add2:checked" : ".add:checked";
+  $(selector).each(function() {
+    total += parseFloat($(this).data("invamt"));
+  });
+  if (total == 0) {
+    var xtotal = total.toFixed(2) ; 
+    $('#PayAmt').data("totamt","0");
+    $('#PayAmt').html(xtotal);
+  } else {
+     var xtotal = total.toFixed(2) ; 
+    $('#PayAmt').html(xtotal);
+    $('#PayAmt').data("totamt",xtotal);
+  }
+}
+ $(document).ready(function() {
+$('#invhistflag').click(function(){    if (this.checked) {changepath("ARQ","Y") ;     }})
+getTotal(true);    
+var ShowARCC = '[SHOWARCC]' ;
+if (ShowARCC =="Y") { $('.ShowARCC').show() ; } ;
+ $("#addall").change(function() {
+  $('.add').attr('checked', this.checked);
+  getTotal();
+ }); 
+ $(".add").change(function() { 
+  getTotal();          
+  if($(".add").length == $(".add:checked").length) { 
+   $("#addall").attr("checked", "checked");
+   } else {
+   $("#addall").removeAttr("checked");
+ } 
+ });
+});
+$(document).ready(function(){
+      $(".addallbutton").click(function() {
+         var cval = [];
+         var result = ""; var total = 0;
+         var invstr = '' ; var amtstr = '' ;  
+        $('.add:checkbox:checked').each(function(i) {
+         total += parseFloat($(this).data("invamt"));
+         invstr += $(this).data("invno") + "|";
+         amtstr += $(this).data("invamt") + "|";
+         // widgetload_append('login[SUFFIX]?orderno=[WEB.ORDERNO]&CUSTOMERID=[CUSTOMERID]&LOGINPATH=CBO&APRODNO=' + aprod + '&SUBMITVAR=' + oln + '&PAGEID=31','#BOBodyHead');
+        });
+var xtotal = total.toFixed(2) ;
+          result = invstr + "^" + amtstr + "^" + xtotal + "^"
+          ShowPayOffOptions(result);
+      });
+    });
+function ShowPayOffOptions(result) {
+// display the CC info for them to change or submit 
+        // CCTable
+  var url = location.href ; 
+  var content = 'orderno=[WEB.ORDERNO]&CUSTOMERID=[CUSTOMERID]&LOGINPATH=SO&PAGEID=31'      
+  var posting = $.post(url, content);
+  // Put the results in a div
+  posting.done(function(data) {
+    var cctable = $( data ).find( "#CCTable" );
+    var paybutton =  "  <input onclick='javascript:SendPayOffOptions(\"" + result + " \");' " ; 
+     paybutton +=  ' style="display: inline;" type="Button" height="40px" align="center" value="Submit Payment" class="button1" > <div id="CCResult"> </div>'
+      $("#StatusMsg").html("Getting Credit Card Information...");
+      $("#StatusMsg").html(cctable.html() + paybutton);
+showmodalarcc() ; 
+  });
+  
+}     ; 
+function SendPayOffOptions(result)  {
+        if (CheckCardInfo(document.template)) {
+            // document.template.submit();
+            // Send the charge requests and show results.. 
+          var content = $("form[name='template']").serialize();       
+          var ncontent = "&LOGINPATH=CCP&SUBMITVAR=" + result + "&PAGEID=31"
+           var scontent = content + ncontent;
+           var url = location.href
+          $("#StatusMsg").html("Authorizing Charge..."); 
+            var posting = $.post( url, scontent ); 
+             posting.done(function( data ) {
+ //var cmsg = "<a class=\"menuItem\" href=\"#\" onclick=\"javascript:changepath('ARQ')\">Reload your list of invoices</a> "
+    var refbutton =  " <input onclick='javascript:changepath(\"ARQ\");' " ; 
+     refbutton +=  ' style="display: inline;" type="Button" height="40px" align="center" value="Reload Invoices" class="button1" >'
+            $("#StatusMsg").html(data + refbutton); 
+             });
+           // added to update the Ar Records and Dcash etc..   
+        }
+} ;
+ 
+ function CheckCardInfo(form) {
+  if (form.CardNumber.value != "" && form.CardNumber2.value != "") {
+     jAlert("Please use only one Credit Card Number.") ;
+     form.CardNumber.focus() ;
+     return false;
+  }
+  if (form.CardNumber.value.length != 0) {
+     return true;
+  } else {
+    if (form.CardType.value.length == 0) {
+       jAlert("Please enter a Credit Card Type.") ;
+       form.CardType.focus() ;
+       return false;
+    }
+    if (form.CardNumber2.value.length == 0) {
+       jAlert("Please enter a Credit Card Number.") ;
+       form.CardNumber2.focus() ;
+       return false;
+    }
+    if (form.CardValCode.value.length == 0) {
+       jAlert("Please enter a Credit Card Validation Code.") ;
+       form.CardValCode.focus() ;
+       return false;
+    }
+    if (form.ccname.value.length == 0) {
+       jAlert("Please enter the Name on the Credit Card.") ;
+       form.ccname.focus() ;
+       return false;
+    }
+    if (form.ExpMonth.value.length == 0) {
+       jAlert("Please enter the Expiration Month.");
+       form.ExpMonth.focus();
+       return false;
+    }
+    if (form.ExpYear.value.length == 0) {
+       jAlert("Please enter the Expiration Year.");
+       form.ExpYear.focus();
+       return false;
+    }
+    if (form.ccaddr.value != "" && form.cczip.value == "") {
+        jAlert("Bill-To Address and Zipcode must be entered or left blank.") ;
+        form.ccaddr.focus() ;
+        return false;
+    }
+    if (form.ccaddr.value == "" && form.cczip.value != "") {
+        jAlert("Bill-To Address and Zipcode must be entered or left blank.") ;
+        form.ccaddr.focus() ;
+        return false;
+    }
+    return true;
+  }
+}
+
+
+</script>
+
+<form name=template action="login[SUFFIX]" method=post>
+<input type=hidden name=Aprod_string value="[APROD_STRING]">
+<input type=hidden name=prod_string value="[PROD_STRING]">
+<input type=hidden name=qty_string value="[QTY_STRING]">
+<input type=hidden name=um_string value="[UM_STRING]">
+<input type=hidden name=price_string value="[PRICE_STRING]">
+<input type=hidden name=comment_string value="[COMMENT_STRING]">
+<input type=hidden name=manufact_string value="[MANUFACT_STRING]">
+<input type=hidden name=loginpath value="[LOGINPATH]">
+<input type=hidden name=searchflag value="[SEARCHFLAG]">
+<input type=hidden name=pageid value="6">
+<input type=hidden name=startptr value="[STARTPTR]">
+<input type=hidden name=CustomerId value="[CUSTOMERID]">
+<input type=hidden name=orderno value="[ORDERNO]">
+<input type=hidden name=old_loginpath value="[LOGINPATH]">
+<input type=hidden name=prev_changesort value="[CHANGESORT]">
+<input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+<input type=hidden name=mdsorderno value="[MDSORDERNO]">
+<input type=hidden name=aprodno value="[APRODNO]">
+<input type=hidden name=slsmno value="[SLSMNO]">
+<input type=hidden name=slsmn_id value="[SLSMN_ID]">
+
+<div class="error" style="[SHOWCREDMSG]" >
+Your Account is on Credit Hold
+<br>
+<a href="#" onclick="javascript:changepath('ARQ')">View My Invoices</a>
+</div>
+<table border=0 cellpadding=2 cellspacing=2 width=100%>
+  <tr>
+    <td id=colhdg nowrap><font size=2><b>Customer #</b></font></td>
+    <td id=colhdg nowrap><font size=2><b>Salesrep</b></font></td>
+    <td id=colhdg nowrap><font size=2><b>Customer Name</b></font></td>
+  </tr>
+  <tr>
+    <td class=datsml valign=top >
+        [A.CUST.NO]</td>
+    <td class=datsml valign=top nowrap >
+        [SLSM]</td>
+    <td class=datsml rowspan=6 valign=top nowrap >
+        [CUST.NAME]<br>
+        [CUST.ADDR1]<br>
+        [CUST.ADDR2]<br>
+        [CUST.ADDR3]<br>
+        [CITY.ST.ZIP]<br />
+        [COUNTRY]<br>
+
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td id=colhdg valign=top><font size=2><b>Phone</b></font></td>
+    <td id=colhdg valign=top nowrap><font size=2><b>Fax</b></font></td>
+  </tr>
+  <tr>
+    <td id=datgrey valign=top nowrap>
+
+        [PHONE]</td>
+    <td id=datgrey valign=top nowrap>
+        [FAX]</td>
+  </tr>
+  <tr>
+    <td height=4 colspan=3></td>
+  </tr>
+</table>
+<table border=0 cellpadding=2 cellspacing=2 width=100%>
+  <tr>
+    <td id=colhdg align=center nowrap><font size=2><b>Highest Credit</b></font></td>
+    <td id=colhdg align=center nowrap><font size=2><b>Last Payment</b></font></td>
+    <td id=colhdg align=center nowrap><font size=2><b>AR Balance</b></font></td>
+    <td id=colhdg align=center nowrap><font size=2><b>Oldest Invoice</b></font></td>
+  </tr>
+  <tr>
+    <td id=datgrey valign=top align=center nowrap>
+        [HIGH.CRED]<br />
+    </td>
+    <td id=datgrey valign=top align=center nowrap>
+&nbsp;
+        [LAST.PMT]<br />
+    </td>
+    <td id=datgrey valign=top align=center nowrap>
+        [AR.BAL]<br />
+    </td>
+    <td id=datgrey valign=top align=center nowrap>
+        [OLD.INV]<br />
+    </td>
+  </tr>
+  <tr>
+    <td height=4 colspan=5></td>
+  </tr>
+</table>
+<table border=0 cellpadding=0 cellspacing=2>
+  <tr>
+    <td id=taghdg width=120 align=right nowrap><b>Sort By:</b></td>
+    <td >&nbsp;
+      <select name="Changesort" size=1>
+[SORT.BY]
+      </select>
+    </td>
+   <td valign=center>
+    <input type=button class=gobutton name="GO1" value="GO" onclick='javascript:changepath("ARQ","N")'
+      onmouseover="this.className='gobutton gobuttonhov' ; window.status='Change Sort Method'"
+      onmouseout="this.className='gobutton' ; window.status=''">
+   </td>
+  </tr>
+</table>
+<table border=0 cellpadding=0 cellspacing=2>
+  <tr>
+    <td id=taghdg width=120 align=right nowrap><b>Items per page:</b></td>
+    <td >&nbsp;
+     <select name="itemspage" size=1>
+[ITEMS.PG]
+     </select>
+    </td>
+   <td valign=center>
+    <input type=button class=gobutton name="GO2" value="GO" onclick='javascript:changepath("ARQ","N")'
+      onmouseover="this.className='gobutton gobuttonhov' ; window.status='Change Items Per Page'"
+      onmouseout="this.className='gobutton' ; window.status=''">
+   </td>
+  </tr>
+</table>
+<table border=0 cellpadding=0 cellspacing=0 width=100%>
+  <tr>
+    <td height=10></td>
+  </tr>
+  <tr>
+    <td id=taghdg>
+Here are your open invoices:
+<BR>
+<input type="checkbox" id="invhistflag" name="HISTFLAG" value="Y" [HIST.CHECK] >
+To show account history including closed invoices
+check this box.
+<!-- 
+<input type=button class=gobutton name="GO2" value="Show History" onclick='javascript:changepath("ARQ","Y")'  
+onmouseover="this.className='gobutton gobuttonhov' ; window.status='Change Items Per Page'"      onmouseout="this.className='gobutton' ; window.status=''">
+-->
+<br>
+<a title="View your Statements" href=# onclick=javascript:loadarchive('STM','') >
+<img alt="Export as PDF" class="ExportOrder" src="[IMAGE.PATH]pdf.png" > 
+Click here to view your Account Statements </a>
+<br>
+</td>
+<td>
+    <div class="ShowARCC">
+<span class="InvHeader">Pay Your Invoices Online <br></span>
+        Check the box to the right of each Invoice to add it to your payment list. <br>
+        Once you are done click the "Pay Now" button to pay off your invoices using a credit card. <br>
+        <br>
+<span id="Payinfo"> 
+        Total amount of invoices selected for payment : $<div style="display: inline;" id=PayAmt data-totamt=0 > 0 </div>
+</span>
+        <input style="display: inline;" type="Button" height="40px" align="center" value="Pay Now" class="button1 addallbutton" > 
+<div id=mask> </div>
+      <div id="ARLoader" >
+      <div id="StatusMsg" ></div>
+</div>
+</div>
+</td>
+  </tr>
+  <tr>
+    <td height=5></td>
+  </tr>
+</table>
+<table class="ng-table" > 
+<!--  <table border=0 cellpadding=3 cellspacing=0 width=100%>  -->
+  <tr>
+    <td id=colhdg width=20><font size=2><b>Line No.</b></font></td>
+    <td id=colhdg width=35><font size=2><b>Type</b></font></td>
+    <td id=colhdg width=80><font size=2><b>Invoice #</b></font></td>
+    <td id=colhdg width=80><font size=2><b>Inv. Date</b></font></td>
+    <td id=colhdg align=left><font size=2><b>Customer Ref.</b></font></td>
+    <td id=colhdg width=85 nowrap><font size=2><b>Order#-Rel#</b></font></td>
+    <td id=colhdg width=85 align=center><font size=2><b>Original Amt.</b></font></td>
+    <td id=colhdg width=85 align=center><font size=2><b>Open Amt.</b></font></td>
+        <td id="colhdg" class="ShowARCC"><font size=2>
+Select All <br> Invoices for Payment <br> <input type=checkbox name=addall id=addall> </td>
+  </tr>
+[ARDATA.LINES]
+</table>
+[PAGE.MOVEMENT]
+
+
+

@@ -1,0 +1,8 @@
+<Item>
+<ItemNumber>[A.PROD.NO]</ItemNumber>
+<Quantity>[QTY.ORD]</Quantity>
+<QtyOnHand>[QTY.AVAIL]</QtyOnHand>
+<Controls>
+<CartMessage>[PROD.ERR.MSG]</CartMessage>
+</Controls>
+</Item>

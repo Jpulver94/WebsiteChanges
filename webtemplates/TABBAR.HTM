@@ -1,0 +1,31 @@
+<style>
+.tabbar{padding: 0;border-top: 5px solid #D25A0B; /*Brown color theme*/ background: transparent;voice-family: "\"}\"";voice-family: inherit;}
+.tabbar ul{margin:0;margin-left: 10px; /*margin between first menu item and left browser edge*/padding: 0;list-style: none;}
+.tabbar li{display: inline;margin: 0 2px 0 0;padding: 0;}
+.tabbar a{float: left;display: block;font: bold 11px Arial;color: white;text-decoration: none;margin: 0 1px 0 0; /*Margin between each menu item*/padding: 5px 10px;background-color: black; /*Brown color theme*/ border-top: 1px solid white;}
+.tabbar a:hover{background-color: #D25A0B; /*Brown color theme*/ color: white;}
+.tabbar a.selected{ /*currently selected tab*/background-color: #D25A0B; /*Brown color theme*/ color: white;border-color: #D25A0B; /*Brown color theme*/ }
+#footprintdivcontainer { border:1px solid gray; background-color: lightyellow; padding: 5px; height: 100px; overflow:auto ; }
+/* ######### CSS for Indented CSS Tabs. Remove if not using ######### */
+.indentmenu{font: bold 13px Arial;width: 100%; }
+.indentmenu ul{margin: 0;padding: 0;float: left;/* width: 80%; width of menu*/ border-top: 1px solid darkred; /*darkred border*/background: black url(indentbg.gif) center center repeat-x;}
+.indentmenu ul li{display: inline;}
+.indentmenu ul li a{float: left;color: black; /*text color*/padding: 3px 11px;text-decoration: none;border-right: 1px solid darkred; /*darkred divider between menu items*/}
+.indentmenu ul li a:visited{color: black;}
+.indentmenu ul li a.selected{color: black !important;padding-top: 4px; /*shift text down 1px*/padding-bottom: 2px;background: black url(indentbg2.gif) center center repeat-x;}
+</style>
+<div id="footprinttabs" class="tabbar"><ul>
+<li><a href="javascript:myfootprints.cycleit('prev')"  > << </a></li>
+[TABDATA]
+<li><a href="javascript:myfootprints.cycleit('next')"  > >> </a></li>
+</ul></div>
+<br style="clear: left" /> 
+<div id="footprintdivcontainer">
+[DEFAULT.TEXT]
+</div>
+<script type="text/javascript">
+var myfootprints=new ddajaxtabs("footprinttabs", "footprintdivcontainer");
+myfootprints.setpersist(true);
+myfootprints.setselectedClassTarget("link") ;
+myfootprints.init();
+</script>

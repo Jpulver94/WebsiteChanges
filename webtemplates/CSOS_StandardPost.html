@@ -1,0 +1,18 @@
+<script>
+function GoExpress222(e222id,action) {
+var form_content = '';
+var form_content = form_content + '    <form id="222Form" name="goExpress222" action="[POSTURL]" method="post"> ';
+var form_content = form_content + '      <input type="hidden" name="ServiceContract" value="[CONTRACT.ID]" /> ';
+var form_content = form_content + '      <input type="hidden" name="loginToken" value="[USER.TOKEN]" /> ';
+var form_content = form_content + '      <input type="hidden" name="Action" value="' + action + '" /> ';
+var form_content = form_content + '      <input type="hidden" name="returnURL" value="[RETURNURL]" /> ';
+var form_content = form_content + '      <input type="hidden" name="hideNavigation" value="[NAVHIDE]" />';
+var form_content = form_content + '      <input type="hidden" name="OrderId" value="' + e222id + '" />';
+var form_content = form_content + '      <input type="hidden" name="XmlFile" value="[PAYLOAD]" />';
+submitOtherForm(form_content, "222Form") ;
+}
+</script>
+<a class="CsosButton"  onclick="javascript:GoExpress222('[TRANS.ID]','[CSOS.ACTION]');" href=# >
+ [CSOS.ACTION]
+</a>
+<!-- Update CSOS Information  -->

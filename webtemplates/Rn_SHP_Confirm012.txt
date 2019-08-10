@@ -1,0 +1,19 @@
+
+RemoteNet
+
+Your Web Order [WEB.ORD.NO] has shipped.  
+
+Thank you for your order.
+
+Web Order Number:          [WEB.ORD.NO]
+
+Customer Number :  [CUST.NO]
+
+MDS Order Number :  [REL.NO] 
+
+
+Tracking Number: [TRACK.NO] 
+
+
+Thank you for using RemoteNet. 
+

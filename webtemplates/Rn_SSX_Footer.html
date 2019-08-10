@@ -1,0 +1,80 @@
+
+
+
+
+<tr>
+<td>
+ <!-- <font size=2> Change ship to:</font> -->
+<select length=35 name=Shiptobox onchange="showShipto($('input[name=Shiptobox]').val())" >
+[OPTION.LINES]
+</select>
+</td> 
+</tr>
+</table>
+<!-- Added Other Form Elements --> 
+</div> <!-- for left side -->
+<div id="SSXAddress2" style="float:left;" >
+<table border=0 cellpadding=2 cellspacing=2>
+<tr>
+ <td id=[REQDT.ID] align=right width=180><font size=3>
+ <b>Required Date:</b></font></td>
+ <td></td>
+ <td align=left><input type=text size=10 maxlength=10 id="reqddt" name="reqddt" value="[REQ.DATE]">
+<div style="display: none;"> 
+   <img name="reqdt_cal" src="[IMAGE.PATH]cal.gif" id="calImg" border=0 alt="Click Here to Choose a Required Date" class="trigger" >
+</div>
+ </td>
+</tr>
+<tr>
+ <td id=[DEPTNO.ID] align=right width=180><font size=3>
+ <b>Dept. No:</b></font></td>
+ <td></td>
+ <td align=left><input type=text size=24 name="deptno" value = "[DEPT.NO]"></td>
+</tr>
+<tr>
+ <td id=[CUSTNO.ID] align=right width=180><font size=3>
+ <b>Customer PO:</b></font></td>
+ <td></td>
+ <td align=left><input type=text size=24 name="custpo" value = "[CUST.PO.NO]"></td>
+</tr>
+<tr>
+ <td id=[REQNO.ID] align=right width=180><font size=3>
+ <b>Req. No:</b></font></td>
+ <td></td>
+ <td align=left><input type=text size=24 name="reqno" value = "[REQ.NO]"></td>
+</tr>
+<tr>
+ <td id=[ORDBY.ID] align=right width=180><font size=3>
+ <b>Ordered By:</b></font></td>
+ <td></td>
+ <td align=left><input type=text size=24 name="attn" value = "[ORD.BY]"></td>
+</tr>
+<tr>
+ <td id=hilite1 align=right width=180><font size=3><b>Ship Method:</b></font></td>
+ <td></td>
+ <td>
+       [SHIPMETH.BOX]
+ </td>    
+</tr>
+<tr>
+ <td id=taghdg align=right valign=top width=180><font size=3><b>Special&nbsp;&nbsp;&nbsp;<br>
+Instructions:</b></font></td>
+ <td></td>
+ <td align=left><textarea size=10 cols=40 rows=4 name="specins" STYLE="overflow:auto" wrap=true>[SPEC.INST]</textarea>
+ </td>
+</tr>
+<tr>
+ <td align=right></td>
+ <td></td>
+ <td align=left></td>
+</tr>
+<tr>
+<td>
+[SHIPTO.BUTTON]
+ <input type=button class=gobutton name="GO1" value="Update Shipping Information" onclick=javascript:UpdateShipto(this.form) >
+</td>
+</tr>
+</table>
+</div> <!-- for right side -->
+
+

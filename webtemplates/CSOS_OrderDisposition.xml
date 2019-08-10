@@ -1,0 +1,15 @@
+ <OrderDisposition>
+  <ControlRecord>
+   <DatePrepared>[DATE.PREP]</DatePrepared> 
+   <TimePrepared>[TIME.PREP]</TimePrepared> 
+   <ServiceContract>[CONTRACT.ID]</ServiceContract> 
+  </ControlRecord>
+  <DispositionHeader>
+   <BuyerDeaNumber>[BUYER.DEA]</BuyerDeaNumber>
+   <TrackingNumber>[DISP.TRACKNO]</TrackingNumber>
+<Express222OrderId>[DISP.TRACKNO]</Express222OrderId>
+  </DispositionHeader>
+  <DispositionDetail>
+    [DISP.LINES]
+  </DispositionDetail>
+ </OrderDisposition>

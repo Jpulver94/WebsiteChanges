@@ -1,0 +1,47 @@
+
+
+  <tr id=[LNCOLOR]>
+    <td width=100>
+<a href=# class="hintanchor" onmouseover="showhintajax('login[SUFFIX]?&aprodno=[PROD.NO]&orderno=[WEB.ORDERNO]&LOGINPATH=PIF&PAGEID=31&CUSTOMERID=[CUSTOMERID]', this, event, '150px')" >
+      <img src='[IMAGE.PATH][IMAGENAME]' alt='[IMAGENAME]' width=100 height=100></a>
+    </td>
+<td class=datsml valign=center width=100 nowrap>
+ <div id="SRVideo[PROD.NO]"></div>
+     <script type="text/javascript">
+    var dummy = widgetload('login[SUFFIX]?orderno=[WEB.ORDERNO]&CUSTOMERID=[CUSTOMERID]&LOGINPATH=PIXA&pageid=31&TARGETVAL=VIDEO.XREF&APRODNO=[A.PROD.NO]&LABEL=[IMAGE.PATH]video.gif','#SRVideo[PROD.NO]');
+    </script>
+
+ <div id="SRProject[PROD.NO]" ></div>
+  <script type="text/javascript">
+    var dummy = widgetload('login[SUFFIX]?orderno=[WEB.ORDERNO]&CUSTOMERID=[CUSTOMERID]&LOGINPATH=PIXC&pageid=31&TARGETVAL=DATASHEET.XREF&APRODNO=[A.PROD.NO]&LABEL=[IMAGE.PATH]project.gif','#SRProject[PROD.NO]');
+    </script>
+ </div>
+  <a href=# onclick='javascript:browsedetail("[BROWSENO]","[PROD.NO]")'>
+      [A.PROD.NO]</a>[CUSTITEM.NO]
+</td>
+    <td class=datsml valign=center>
+      <a href=# onclick="javascript:prod_inquiry('PI','N','[PROD.NO]') ">
+      [PROD.DESC]
+<!-- Can Be customized using a number of different methods -->
+      </a></td>
+    <td class=datsml >
+      [IN.STOCK]
+    </td>
+    <td class=datsml valign=center >
+      [MFR.NAME] [MFR.PROD.NO]
+    </td>
+    <td nowrap class=datsml valign=center >
+   <div id="SRqty[PROD.NO]"></div>
+   <script type="text/javascript">
+    var dummy = widgetload('login[SUFFIX]?orderno=[WEB.ORDERNO]&CUSTOMERID=[CUSTOMERID]&LOGINPATH=QTYX&pageid=31&APRODNO=[A.PROD.NO]','#SRqty[PROD.NO]');
+    </script>
+    </td>
+    <td class=datsml >
+      [PRICE.UM.QTY]
+    </td>
+    <td nowrap class=datsml>
+      [QTY.BOX]
+    </td>
+  </tr>
+
+

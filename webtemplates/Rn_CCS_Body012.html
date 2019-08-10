@@ -1,0 +1,172 @@
+<form name=template action="login[SUFFIX]" method=post>
+<input type=hidden name=pageid value=1>
+<input type=hidden name=orderno value="[ORDERNO]">
+<input type=hidden name=CustomerId value="[CUSTOMERID]">
+<input type=hidden name=loginpath value="[LOGINPATH]">
+<input type=hidden name=loginname value="[LOGINNAME]">
+<input type=hidden name=old_loginpath value="LOGINPATH]">
+<input type=hidden name=prev_changesort value="[CHANGESORT]">
+<input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+<input type=hidden name=slsmno value="[SLSMNO]">
+<input type=hidden name=slsmn_id value="[SLSMN_ID]">
+    <table border=0 cellspacing=0 cellpadding=0 width=100%>
+        <tr>
+         <td height=10 align=left>
+         </td>
+        </tr>
+        <tr>
+         <td id=datnorm align=left>
+          <p>
+            <font size=3>Enter information in the fields below, then click &quot;<b>CREATE USER</b>&quot; at the bottom of this page.</font></p>
+        </td>
+       </tr>
+       <tr>
+        <td height=10 align=left>
+        </td>
+       </tr>
+       <tr>
+        <td id=datnorm align=left>
+         <i>Required information is <font id=hilite1><b>highlighted</b></font></i>.
+        </td>
+       </tr>
+       <tr>
+        <td height=10 align=left>
+        </td>
+       </tr>
+      </table>
+      <table border=0 cellspacing=0 cellpadding=0 width=100%>
+       <tr>
+        <td height=15 colspan=2>
+        </td>
+       </tr>
+       <tr>
+        <td id=datnorm width=200 align=right>
+          <font size=3><b>Salutation:&nbsp;</b></font>
+        </td>
+        <td>
+          <input type=text name="salut" value="" size=10 maxlength=10>
+        </td>
+       </tr>
+       <tr>
+        <td id=hilite1 width=200 align=right>
+          <font size=3><b>First Name:&nbsp;</b></font>
+        </td>
+        <td>
+          <input type=text name="fname" value="" size=25 maxlength=25>
+        </td>
+       </tr>
+       <tr>
+        <td id=hilite1 width=200 align=right>
+         <font size=3><b>Last Name:&nbsp;</b></font>
+        </td>
+        <td>
+         <input type=text name="lname" value="" size=25 maxlength=25>
+        </td>
+       </tr>
+       <tr>
+        <td id=hilite1 width=200 align=right>
+         <font size=3><b>Phone Number:&nbsp;</b>
+        </td>
+        <td>
+         <input type=text name="phone" value="" size=20 maxlength=20>
+        </td>
+       </tr>
+       <tr>
+        <td id=datnorm width=200 align=right>
+         <font size=3><b>Fax Number:&nbsp;</b>
+        </td>
+        <td>
+         <input type=text name="fax" value="" size=20 maxlength=20>
+        </td>
+       </tr>
+       <tr>
+        <td id=hilite1 width=200 align=right>
+         <font size=3><b>Email Address:&nbsp;</b></font>
+        </td>
+        <td>
+         <input type=text name="email" value="" size=40 maxlength=75>
+        </td>
+       </tr>
+      </table>
+      <table border=0 cellspacing=0 cellpadding=0 width=100%>
+       <tr>
+        <td height=10 colspan=2>
+        </td>
+       </tr>
+       <tr>
+        <td id=hilite1 width=200 align=right>
+         <font size=3><b>Bill-To Name:&nbsp;</b></font>
+        </td>
+        <td>
+         <input type=text size=40 maxlength=40 name="Shiptoname" value="">
+        </td>
+       </tr>
+       <tr>
+        <td id=hilite1 width=200 align=right>
+         <font size=3><b>Bill-To Address 1:&nbsp;</b></font>
+        </td>
+        <td>
+         <input type=text size=40 maxlength=40 name="Shiptodesc" value="">
+        </td>
+       </tr>
+       <tr>
+        <td id=datnorm width=200 align=right>
+         <font size=3><b>Bill-To Address 2:&nbsp;</b></font>
+        </td>
+        <td>
+         <input type=text size=40 maxlength=40 name="Shiptodesc2" value="">
+        </td>
+       </tr>
+       <tr>
+        <td id=datnorm width=200 align=right>
+         <font size=3><b>Bill-To Address 3:&nbsp;</b></font>
+        </td>
+        <td>
+         <input type=text size=40 maxlength=40 name="Shiptodesc3" value="">
+        </td>
+       </tr>
+       <tr>
+        <td id=hilite1 width=200 align=right>
+         <font size=3><b>Bill-To City, State:&nbsp;</b></font>
+        </td>
+        <td>
+         <input type=text size=15 maxlength=35 name="Shiptocity" value="">
+         <input type=text size=2 maxlength=2 name="Shiptostate" value="">
+        </td>
+       </tr>
+       <tr>
+        <td id=hilite1 width=200 align=right>
+         <font size=3><b>Bill-To Zipcode:&nbsp;</b></font>
+        </td>
+       <td>
+         <input type=text size=10 maxlength=10 name="Shiptozip" value="">
+       </td>
+      </tr>
+     <tr>
+      <td id=datnorm width=200 align=right>
+       <font size=3><b>Bill-To Country:&nbsp;</b></font>
+      </td>
+      <td>
+       <input type=text size=25 maxlength=25 name="Shiptocountry" value="">
+      </td>
+     </tr>
+     <tr>
+      <td height=10 align=left>
+      </td>
+     </tr>
+    </table>
+    <table>
+    <tr>
+     <td>
+Please see our Terms and Conditions.    
+     </td>
+    </tr>
+    <tr>
+     <td align=center valign=center>
+      <input type=button class=button1 value="Create User" name="crf" onclick="return FormCashUser(document.forms[0])"
+        onmouseover="this.className='button1 buttonhov1' ; window.status='Create User'" onmouseout="this.className='button1' ; window.status=''">
+      <input type=reset class=button1 value="Reset"
+        onmouseover="this.className='button1 buttonhov1' ; window.status='Reset'" onmouseout="this.className='button1' ; window.status=''">
+     </td>
+    </tr>
+</table>

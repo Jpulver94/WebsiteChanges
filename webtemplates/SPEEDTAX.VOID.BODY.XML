@@ -1,0 +1,4 @@
+<ns1:voidInvoice>
+ <CompanyId>[COMPANYID]</CompanyId>
+<InvoiceNumber>[MerchantTransactionId]</InvoiceNumber>
+</ns1:voidInvoice>

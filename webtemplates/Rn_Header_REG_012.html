@@ -1,0 +1,116 @@
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 transitional//EN" "http://www.w3.org/TR/xhtml 1/DTD/xhtml1-transitional.dtd">
+<html> <head>
+  <!-- Mimic Internet Explorer 9 -->
+<meta http-equiv="X-UA-Compatible" content="IE=9" >
+<LINK rel="STYLESHEET" type="text/css" href="[stylesheet_path]"> 
+<title>[page_title] 6.2 </title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<link rel="shortcut icon" href="[IMAGE.PATH]favicon.ico" />
+</head>
+<LINK rel="STYLESHEET" type="text/css" href="[stylesheet_path]">
+<LINK rel="STYLESHEET" type="text/css" href="[script_path]/chosen.css">
+<script language='JavaScript' type="text/javascript" src='[script_path]jqfunctions.js?v=[WEBSITE.REV]'></script>
+<script>
+$(document).ready(function() {
+// Add stuff here to execute on load 
+  $("select").chosen({no_results_text: "No results matched"});
+$.validator.addMethod( "phoneUS", function( phone_number, element ) {
+	phone_number = phone_number.replace( /\s+/g, "" );
+	return this.optional( element ) || phone_number.length > 9 &&
+		phone_number.match( /^(\+?1-?)?(\([2-9]([02-9]\d|1[02-9])\)|[2-9]([02-9]\d|1[02-9]))-?[2-9]([02-9]\d|1[02-9])-?\d{4}$/ );
+}, "Please specify a valid US phone number" );
+$.validator.addMethod( "nowhitespace", function( value, element ) {
+	return this.optional( element ) || /^\S+$/i.test( value );
+}, "No blank spaces please" );  
+$(function() {
+   $("form[name='email']").validate({
+    errorClass: "formerror",
+    validClass: "formsuccess",
+    rules: {
+      email: {
+        required: true,
+        email: true
+      }
+    },
+    messages: {
+      email: "Please enter a valid email address"
+    },
+     submitHandler: function(form) {
+      form.submit();
+    }
+  });
+});
+
+$(function() {
+  $("form[name='template']").validate({
+    errorClass: "formerror",
+    validClass: "formsuccess",
+    // Specify validation rules
+    rules: {
+      FNAME: "required",
+      "BILLTO.NAME": "required",
+      "BILLTO.ADDR1": "required",
+      "BILLTO.CITY": "required",
+      "STATE": "required",
+      "BILLTO.ZIP": "required",
+      "PHONE": { required: true, phoneUS: true } ,
+       email: { required: true, nowhitespace: true } ,
+    },
+    // Specify validation error messages
+    messages: {
+      email: "Please enter a valid email address OR Username",
+      FNAME: "Please enter a first name",
+      "BILLTO.NAME": "Please enter a company name",
+      "BILLTO.ADDR1": "Please enter a company address line 1",
+      "BILLTO.CITY": "Please enter a city",
+      "STATE": "Please choose a state, use FF for Foreign",
+      "BILLTO.ZIP": "Please enter a Zip code",
+      "PHONE": "Please enter a contact phone number",
+    },
+    // Make sure the form is submitted to the destination defined
+    // in the "action" attribute of the form when valid
+    submitHandler: function(form) {
+      form.submit();
+    }
+  });
+});
+
+}) ;
+</script>
+<STYLE>
+.button1{
+/* primary normal style for navigation buttons */
+padding:4px 2px 4px 2px;  text-align:center;  background-color:#25558c;  BORDER-RIGHT:#999 1px solid;   BORDER-TOP:#999 1px solid;   BORDER-LEFT:#999 1px solid;   BORDER-BOTTOM:#999 1px solid;   FONT-SIZE:84%;  FONT-WEIGHT:bold;  FONT-STYLE:normal;filter:alpha(opacity=80);opacity:0.8;}
+.buttonhov1{
+/* primary hover style for navigation buttons */
+COLOR:#0D115B;BACKGROUND-COLOR:White;BORDER-TOP-COLOR:#0D115B;BORDER-LEFT-COLOR:#0D115B;BORDER-RIGHT-COLOR:#0D115B;BORDER-Bottom-COLOR:#0D115B;}
+.EntryBoxes,.Headings{width:50%;  font-size:14px;  font-family:arial;  background-color:aliceblue;}
+#colhdg{
+/* Added new Heading */
+border-top:none;border-left:none;border-bottom:solid #CCCCCC 1.0pt;border-right:solid #CCCCCC 1.0pt;
+/* background:#F5F5F5; */
+padding:.75pt .75pt .75pt .75pt;margin:0in;margin-bottom:.0001pt;text-align:left;font-size:9.0pt;font-family:Tahoma, sans-serif;background-image:url(//hosting.tshinc.com/rn/images/bluemenu.jpg);color:#FFF;}
+.info,.success,.warning,.error,.validation{border:1px solid;margin:10px 0px;padding:15px 10px 15px 50px;background-repeat:no-repeat;background-position:10px center;}
+.info{color:#00529B;background-color:#BDE5F8;background-image:url('//hosting.tshinc.com/rn/images/info.png');}
+.success{color:#4F8A10;background-color:#DFF2BF;background-image:url('//hosting.tshinc.com/rn/images/success.png');}
+.warning{color:#9F6000;background-color:#FEEFB3;background-image:url('//hosting.tshinc.com/rn/images/warning.png');}
+.error{color:#D8000C;background-color:#FFBABA;background-image:url('//hosting.tshinc.com/rn/images/error.png');}
+.headnote{ font-weight: 600;}
+
+.formsuccess, .formerror {
+    border: 1px solid;
+    margin: 3px 0px;
+    padding: 5px 5px 5px 5px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    WIDTH: auto;
+    TEXT-ALIGN: left;
+}
+.formsuccess{color:#4F8A10;background-color:#DFF2BF;}
+.formerror{color:#D8000C;background-color:#FFBABA;}
+</STYLE>
+
+

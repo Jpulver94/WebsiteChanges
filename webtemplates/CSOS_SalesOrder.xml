@@ -1,0 +1,46 @@
+<SalesOrders>
+ <TransmissionHeader>
+   <SchemaVersion>Express222 V2.1</SchemaVersion>
+   <DatePrepared>[DATE.PREP]</DatePrepared> 
+   <TimePrepared>[TIME.PREP]</TimePrepared> 
+   <ServiceContract>[CONTRACT.ID]</ServiceContract>
+   <TransmissionCustomData/>
+ </TransmissionHeader>
+  <Orders>
+ <Supplier>
+  <SupplierName>[CO.NAME]</SupplierName>
+  <SupplierAddress1>[CO.ADDR1]</SupplierAddress1>
+  <SupplierAddress2>[CO.ADDR2]</SupplierAddress2>
+  <SupplierAddress3>[CO.ADDR3]</SupplierAddress3>
+  <SupplierCity>[CO.CITY]</SupplierCity>
+  <SupplierState>[CO.STATE]</SupplierState>
+  <SupplierZip>[CO.ZIP]</SupplierZip>
+  <SupplierDeaNumber>[CO.DEA]</SupplierDeaNumber>
+  <SupplierEmail>[CO.EMAIL]</SupplierEmail>
+  <SupplierCustomData/>
+ </Supplier>
+ <OrderHeader>
+  <Customer>[A.CUST.NO]</Customer>
+  <OrderDate>[ORD.DATE]</OrderDate>
+  <CustomerName>[CUST.NAME]</CustomerName>
+  <CustomerDeaNumber>[CUST.DEA]</CustomerDeaNumber>
+  <UserID>[CUST.USERID]</UserID>
+  <UserName>[CUST.USERNAME]</UserName>
+  <ShipAddress1>[CUST.SHIPTO1]</ShipAddress1> 
+  <ShipAddress2>[CUST.SHIPTO2]</ShipAddress2> 
+  <ShipAddress3>[CUST.SHIPTO3]</ShipAddress3> 
+  <ShipAddress4>[CUST.SHIPTO.CITY]</ShipAddress4> 
+  <ShipAddress5>[CUST.SHIPTO.STATE]</ShipAddress5> 
+  <ShipPostalCode>[CUST.SHIPTO.ZIP]</ShipPostalCode> 
+  <Email>[CUST.EMAIL]</Email>
+  <Phone>[CUST.PHONE]</Phone>
+  <CustomerOrderId>[CUST.ORDERID]</CustomerOrderId>
+  <TrackingNumber>[CUST.TRACKNO]</TrackingNumber>
+  <SpecialInstructions>[COMMENTS]</SpecialInstructions>
+  <OrderHeaderCustomData/>
+ </OrderHeader>
+   <OrderDetails>
+[ORDER.LINES]
+ </OrderDetails>
+  </Orders>
+</SalesOrders>

@@ -1,0 +1,11 @@
+<OrderDetail>
+<Item>
+<OrderDetailID>[PHARMSAVER.LINE.NO]</OrderDetailID>
+<ItemStatus>Accept</ItemStatus>
+<NDC>[NDC]</NDC>
+<ItemNumber>[A.PROD.NO]</ItemNumber>
+<LotNumber>[LOT.NOS]</LotNumber>
+<QuantityShipped>[SHIP.QTY]</QuantityShipped>
+<Price>[PRICE]</Price>
+</Item>
+</OrderDetail>

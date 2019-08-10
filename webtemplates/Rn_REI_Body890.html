@@ -1,0 +1,306 @@
+
+
+
+
+ <LINK rel="STYLESHEET" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> 
+ <LINK rel="STYLESHEET" type="text/css" href="//cdn.datatables.net/plug-ins/1.10.19/integration/font-awesome/dataTables.fontAwesome.css"> 
+<script language='JavaScript' type="text/javascript" src='//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js'></script>
+
+<script>
+$(document).ready( function () {
+    $('#REITable .SearchMe ').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input class="SearchText" type="text" placeholder="Search '+title+'" />' );
+    } );
+//   "columnDefs": [ { "orderable": false, "targets": 7 }  ],
+    var table = $('#REITable').DataTable( {
+   "columnDefs": [
+ { "orderable": false, "targets": 4 },
+ { "orderable": false, "targets": 5 },
+ { "orderable": false, "targets": 6 },
+ { "orderable": false, "targets": 7 }
+  ],
+ "pageLength": 100,
+ "autoWidth": false } );
+    table.columns().every( function () {
+        var that = this;
+        $( 'input', this.header() ).on( 'keyup change', function () {
+            if ( that.search() !== this.value ) {
+                that
+                    .search( this.value )
+                    .draw();
+            }
+        } );
+    } );
+} );
+</script>
+<style>
+table#REITable {
+    border-collapse: collapse;
+}
+table#REITable tr {
+border-bottom: 1px solid #111;
+}
+.whitebox  {
+    border: 1px solid white;
+    padding: 7px;
+}
+input.SearchText {
+    width: 100%;
+}
+div#REITable_filter {
+    display: none;
+}
+div#REITable_length {
+    display: none;
+}
+th.DataColhdg {
+    background: black;
+    color: white;
+    font: 12px/15px Roboto, Helvetica, sans-serif;
+    vertical-align: middle; 
+}
+.qwrap {
+    width: 125px !important;
+    left: -45px;
+    background: transparent !important;
+    position: relative;
+}
+.inc {
+ margin: 0px 0px 0px 0px !important;
+ border-top-right-radius: 5px !important;
+ border-bottom-right-radius: 5px !important;
+ border-top-left-radius: 0px !important;
+ border-bottom-left-radius: 0px !important;
+ position: relative;
+ left: 120px;
+}
+.dec {
+ font-size: 40px !important;
+ margin: 0px 0px 0px 0px !important;
+ border-top-left-radius: 5px !important;
+ border-bottom-left-radius: 5px !important;
+ border-top-right-radius: 0px !important;
+ border-bottom-right-radius: 0px !important;
+ position: relative;
+ left: 15px;
+}
+.no-sort::after { display: none!important; }
+.no-sort { pointer-events: none!important; cursor: default!important; }
+
+.ProductInfoButton img {
+/* only set height b/c its a rectangle */ 
+     height: 25px;
+ }
+.ProductInfoButton  {
+    border-radius: 0 10px 0 0;
+    -webkit-box-shadow: 3px 3px 2px #666;
+    -moz-box-shadow: 3px 3px 2px #666;
+    box-shadow: 3px 3px 2px #666;
+}
+.StockMessage{float:left; min-width:125px; }
+.AltStockMessage{float:left; }
+.InStock, .OutStock, .AltStock {
+ height: 16px;
+ overflow: hidden;
+ width: 16px;
+ color: transparent;
+ background-size: 16px 16px;
+ background-repeat: no-repeat;
+ display: inline-flex;
+ margin-top: 0px;
+ font-size: inherit;
+}
+.OutStock, .AltStock, .InStock {
+ box-shadow: 1px 1px 2px #666;
+ border-radius: 5px;
+}
+.OutStock { background-image: url("https://sunset.tshinc.com/sunset/images/OutStock.png");}
+.AltStock {background-image: url("https://sunset.tshinc.com/sunset/images/Available.png"); } 
+.InStock { background-image: url("https://sunset.tshinc.com/sunset/images/InStock.png");}
+table.dataTable tbody td {      padding: 20px 10px!important;  }
+/* ADDED STYLES FROM DJ */ 
+table#REITable {
+	border-collapse: collapse
+}
+table#REITable tr {
+	border-bottom: 1px solid #111
+}
+.whitebox {
+	border: 1px solid white;
+	padding: 7px;
+	float: right;
+	text-align: center;
+	width: 100%;
+}
+input.SearchText {
+	width: 100%
+}
+div#REITable_filter {
+	display: none
+}
+div#REITable_length {
+	display: none
+}
+th.DataColhdg {
+	background: #2B2B2B;
+	color: white;
+	font: 12px/15px Roboto, Helvetica, sans-serif;
+	vertical-align: middle
+}
+.qwrap {
+	width: 125px!important;
+	left: -45px;
+	background: transparent!important;
+	position: relative
+}
+.inc {
+	margin: 0px 0px 0px 0px!important;
+	border-top-right-radius: 5px!important;
+	border-bottom-right-radius: 5px!important;
+	border-top-left-radius: 0px!important;
+	border-bottom-left-radius: 0px!important;
+	position: relative;
+	left: 120px
+}
+.dec {
+	font-size: 40px!important;
+	margin: 0px 0px 0px 0px!important;
+	border-top-left-radius: 5px!important;
+	border-bottom-left-radius: 5px!important;
+	border-top-right-radius: 0px!important;
+	border-bottom-right-radius: 0px!important;
+	position: relative;
+	left: 17px
+}
+.no-sort::after {
+	display: none!important
+}
+.no-sort {
+	pointer-events: none!important;
+	cursor: default!important
+}
+.td {
+	padding-top: 25px!important;
+	padding-bottom: 25px!important;
+}
+table.dataTable tbody td {
+	padding: 20px 10px!important
+}
+.ProductInfoImg {
+	border-radius: 0 10px 0 0;
+	height: 25px;
+	-webkit-box-shadow: 3px 3px 2px #666;
+	-moz-box-shadow: 3px 3px 2px #666;
+	box-shadow: 3px 3px 2px #666;
+}
+.InStock, .OutStock, .AltStock {
+	margin-left: 15px;
+}
+.PLClass.PricingUmBox {
+	float: left;
+	margin-left: 10px;
+}
+.slsheader {
+	top: -1px;
+}
+.qwrap {
+	margin-left: 5px;
+}
+
+/*
+ * Sort styling
+ */
+table.dataTable thead th {
+	position: relative;
+	background-image: none !important; /* Remove the DataTables bootstrap integration styling */
+}
+
+table.dataTable thead th.sorting:after,
+table.dataTable thead th.sorting_asc:after,
+table.dataTable thead th.sorting_desc:after {
+	position: absolute;
+	top: 12px;
+	right: 8px;
+	display: block;
+	font-family: FontAwesome;
+}
+
+table.dataTable thead th.sorting:after {
+    content: "\f0dc";
+    /* color: #FF7900 ; */
+    font-size: 1.2em;
+    padding-top: 0.4em;
+}
+table.dataTable thead th.sorting_asc:after {
+	content: "\f0de";
+  color: #FF7900;
+}
+table.dataTable thead th.sorting_desc:after {
+	content: "\f0dd";
+  color: #FF7900;
+}
+
+div.dataTables_scrollBody table.dataTable thead th.sorting:after,
+div.dataTables_scrollBody table.dataTable thead th.sorting_asc:after,
+div.dataTables_scrollBody table.dataTable thead th.sorting_desc:after {
+	content: "";
+}
+
+/* In Bootstrap and Foundation the padding top is a little different from the DataTables stylesheet */
+table.table thead th.sorting:after,
+table.table thead th.sorting_asc:after,
+table.table thead th.sorting_desc:after {
+	top: 8px;
+}
+
+</style>
+<div style="width:100% !important;" class=TemplateMainPage>
+
+<form name=template action="login[SUFFIX]" method=post onSubmit="return process_order(0)">
+<input type=hidden name=Aprod_string value="[APROD_STRING]">
+<input type=hidden name=prod_string value="[PROD_STRING]">
+<input type=hidden name=qty_string value="[QTY_STRING]">
+<input type=hidden name=um_string value="[UM_STRING]">
+<input type=hidden name=price_string value="[PRICE_STRING]">
+<input type=hidden name=comment_string value="[COMMENT_STRING]">
+<input type=hidden name=manufact_string value="[MANUFACT_STRING]">
+<input type=hidden name=aprodno value="[APRODNO]">
+<input type=hidden name=loginpath value="[LOGINPATH]">
+<input type=hidden name=searchflag value="[SEARCHFLAG]">
+<input type=hidden name=pageid value="4">
+<input type=hidden name=startptr value="[STARTPTR]">
+<input type=hidden name=CustomerId value="[CUSTOMERID]">
+<input type=hidden name=orderno value="[ORDERNO]">
+<input type=hidden name=customlistback value="[CUSTOMLIST]">
+<input type=hidden name=customlist_save value="[WEBTEMPLATE]">
+<input type=hidden name=mdsorderno value="">
+<input type=hidden name=submitvar value="">
+<input type=hidden name=old_loginpath value="[LOGINPATH]">
+<input type=hidden name=prev_changesort value="[CHANGESORT]">
+<input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+<input type=hidden name=slsmno value="[SLSMNO]">
+<input type=hidden name=slsmn_id value="[SLSMN_ID]">
+<table id="REITable" > 
+<thead> 
+  <tr>
+    <th class="SearchMe DataColhdg" style="width: 10%;padding-left: 10px;" > Sunset#    </th>
+    <th class="SearchMe DataColhdg" style="width: 25%;padding-left:10px;" > Description    </th>
+    <th class="DataColhdg"  style="width:8%;min-width: 150px;" >  <span class="whitebox" > Sunset Stock Info</span>  </th>
+    <th class="DataColhdg"  style="width:8%;min-width: 150px;" >   <span class="whitebox" > Alt. Warehouse </span>     </th>
+    <th class="DataColhdg" style="width:8%;min-width: 85px;" valign="top" > <span class="whitebox" > Product Info </span>    </th>
+    <th class="DataColhdg" style="padding-left:10px; width:5%;min-width: 180px;" >  <span class="whitebox" >  U/M & Pricing  </span>     </th>
+    <th class="DataColhdg" valign=top style="width:5%;min-width: 100px;" ><span class="whitebox" > Qty </span>    </th>
+    <th class="DataColhdg" style="padding-right:10px; width:6%;min-width: 100px;" ><span class="whitebox" >  Add to Cart  </span>   </th>
+   </th>
+</tr>
+</thead>
+<tbody>
+[CL.LINES]
+</tbody>
+</table>
+<!--end of page movement -->
+</div>
+
+
+

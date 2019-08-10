@@ -1,0 +1,348 @@
+
+
+
+  <body class="ps-static  cms-index-index cms-home">                                              
+    <!-- Begine Wrapper -->                                                       
+    <div class="wrapper ps-static en-lang-class">                                                              
+      <noscript>                                                                                
+        <div class="global-site-notice noscript">                                                                                                  
+          <div class="notice-inner">                                                                                                                    
+            <p><strong>JavaScript seems to be disabled in your browser.</strong>                                                                                                                                      
+              <br/>You must have JavaScript enabled in your browser to utilize the functionality of this website.                                                                                                                      
+            </p>                                                                                                  
+          </div>                                                                                
+        </div>                                                              
+      </noscript>                                                                
+      <!-- Begin Page -->                                                                         
+      <div class="page">                                                                                
+        <div class="shadow">                                                                                
+        </div>                                                                                
+        <div class="swipe-left">                                                                                
+        </div>                                                                                  
+        <!-- Begin Swipe -->                                                                                           
+        <div class="swipe">                                                                                                    
+          <div class="swipe-menu">                                                                                                                                                                                                  
+            <ul class="links">                                                                                                                         
+              <li>                                                
+              <a href="#" class="home-link" onclick="javascript:changepath('PS')">Home </a>                                                
+              </li>                                                  
+              <li>                                                                                                                                                            
+              <a href=# onclick="javascript:changepath('CL')">Formulary List(s) </a>                                                                                                                                                            
+              </li>                                                  
+              <li>                                                
+              <a href="#" onclick="javascript:changepath('COO')">Past Orders</a>                                                
+              </li>                                              
+              <li>                                                
+<a href=# onclick='javascript:changepath("BO")' > Backorders </a>
+              </li>                                          
+              <li>                                                
+<a href=# onclick='javascript:changepath("ARQ")' > Invoices </a>
+              </li>
+             <li>                                                
+<a href=# onclick='javascript:changepath("CO")' > Check Out [TOT.ORD.LINES] Item(s) $[WEB.ORDERAMT] </a>
+              </li>                                             
+            </ul>                                                                                                                                                                                      
+            <div class="footer-links-menu">                                                                                                                                                                                                                                                                             
+            </div>                                                                                                  
+          </div>                                                                                  
+        </div>                                                                                
+        <!-- End Swipe -->                                                                                          
+        <!-- Begin Top Icons -->                                                                                                   
+        <div class="top-icon-menu">                                                                                 
+          <div class="swipe-control">                                                                                          
+            <i class="fa fa-align-justify"></i>                                                                            
+          </div>  
+          <div class="top-icon-logo">
+            <a onclick="javascript:changepath('PS')" href="#" title="Sunset Pharmaceuticals, Inc." class="logo">
+            <img alt="Sunset Pharmaceuticals, Inc." title="Sunset Pharmaceuticals, Inc." src="[IMAGE.PATH]/SunsetPharmaLogo3.png" width="400" height="96" style="max-width: 120px;"></a>
+            </div>                                                                         
+          <div class="block-cart-header cart-content"  style="top: 5px; font-size: 20px; border-right: 0px; border-left: 0px;" onclick="javascript:changepath('CO')" >                                              [TOT.ORD.LINES] Item(s) $[WEB.ORDERAMT]                                                                                                                                                      
+          </div>                                              
+        <!--
+          <div class="top-search">                                                                                          
+            <i class="fa fa-search"></i>                                                                            
+          </div>                                                                                 
+        -->
+          <span class="clear">                                                                            
+          </span>                                                              
+        </div>                                                                       
+        <!-- End Top Icons -->    
+        <div class="header-wrapper">                                                                                        
+        <!-- Begin Header Container -->                                                                                          
+        <div class="header-container">                                                                                                    
+          <!-- Begin Container -->                                                                                                                                                                                                                                  
+ <div class="container-fluid"> 
+     <!-- SK Adding New Header Row #1 -->
+    <div id="head-holder" class="row header header-main v" style="padding-bottom: 10px;">
+        <div class="v-item hidden-xs head1">
+         <a onclick="javascript:changepath('PS')" href="#" title="[COMPANY.NAME]" class="logo">
+         <img alt="[COMPANY.NAME]" title="[COMPANY.NAME]" src="[REMOTENET.LOGO]" width="400" height="96"></a>
+         </div>
+        <div class="head2">
+         <!-- put search stuff here --> 
+         <!-- Begin Search Form --> 
+                     <div id="search" class="form-search2"> 
+         <div id="search-holder">
+             <div class="search1">
+                <button class="SearchBlackLeft2" id="buttoncategory"> All<span class="hidden-sm hidden-xs">&nbsp;Categories</span>
+             </button> 
+            </div>
+             <div class="search2">
+                <input type="text" placeholder="Search entire store here..." id="query" name="query" autocomplete="off" class="ac_input input-text searchfield2"> 
+             </div>
+            <div class="search3">
+                <button class="SearchBlackRight2" onclick="javascript:TopSearch()" id="buttonsearch"> Search </button> 
+            </div>
+         </div> 
+         <!-- End Search Form --> 
+         </div>
+        </div>
+        <div class="head3 block_header_top_right item item-right visible-md-inline-block visible-lg-inline-block">
+         <div style="float: left;"> <h4>Shipping&nbsp;Clock </h4> 
+         <br> [COUNTDOWN.CLOCK] 
+         </div> 
+        </div>
+        <div class="head4 block_header_top_right item item-right visible-md-inline-block visible-lg-inline-block">
+         <div style="float: left;"> <h4> Free&nbsp;Shipping </h4> 
+         <br>
+<div id="FrtHolder"> </div>
+         </div>
+        </div>
+     <!-- SK Ending New Header Row #1 below-->
+     </div>
+      <!-- SK Adding New Header Row #2 -->
+    <div id="head-holder2" class="row header-main v hidden-xs">
+<div class="weblockmsg"> [WEB.LOCK.MSG] </div>
+        <div class="head1 header-row-2 header-products hidden-sm">
+             <div class="menu-text2" onclick="javascript:togglemenu()"> 
+             <p class="text">Product <span>Categories 
+             </span> 
+             </p> 
+             </div>  
+        </div>
+        <div class="head2">
+             <div class="header-row-2" id="centeredmenu2"> 
+             <!-- BEGIN HEADER_MENU --> 
+             <ul> 
+             <li> 
+             <a href="#" class="menu_normallink" onclick="javascript:changepath('PS')">Home </a> 
+             </li> 
+             <li> 
+             <a href="#" class="menu_normallink" onclick="javascript:changepath('REI')">Reorder List </a> 
+             </li> 
+             <li> 
+             <a href="#" class="menu_normallink" onclick="javascript:changepath('CL')">Formulary List(s) </a> 
+             </li> 
+             <li> 
+             <a href="#" class="menu_normallink" onclick="javascript:changepath('COO')">Past Orders</a> 
+             </li> 
+             <li class="visible-lg-block"> 
+<!-- 
+             <a class="menu_normallink" href="mailto:weborder@sunsetpharma.com">Request a New Product</a> 
+-->
+<a class="menu_normallink"  href=# onclick='javascript:changepath("BO")' > Backorders </a>
+              </li>                                          
+              <li>                                                
+<a href=# onclick='javascript:changepath("ARQ")' > Invoices </a>
+              </li>                                          
+             </ul> 
+             </div> 
+             <!-- END HEADER_MENU --> 
+        </div>
+        <div class="head3 header-row-2" style="padding-top: 0px;">
+         <!-- added login links --> 
+             <div onclick="javascript:togglemyaccount()" class="mini-login" style="float: left;"> Hello <span style="width: auto;" class="button-quicklogin">[CUSTOMERID]
+             </span>
+             <a href="#">Your account</a> 
+             <div class="block-content-saved mini-login-menu" style="display: none;"> 
+             <ul> 
+             <li> 
+             <a href="#" onclick="javascript:changepath('MYA')">My Information</a> 
+             </li> 
+             <li> 
+             <a href="#" onclick="javascript:changepath('COO')">Check Order Status</a> 
+             </li> 
+             <li> 
+             <a href="#" onclick="javascript:changepath('PED')">Find a Pedigree</a> 
+             </li> 
+             <li> 
+             <a href="#" onclick="javascript:changepath('CP')">Change My Password</a> 
+             </li> 
+             <li> 
+             <a href="#" onclick="javascript:changepath('LIC')">View Our Licenses</a> 
+             </li> 
+<li> <a href=# onclick='javascript:changepath("BO")' > Backorders </a> </li>
+<li><a href=# onclick='javascript:changepath("ARQ")' > Invoices </a>  </li>
+             </ul> 
+             <div> 
+             <p class="button-quicklogin2"> 
+             <a class="text-quicklogin" href="https://sunset.tshinc.com/sunset/"> 
+             <span>Log Out 
+             </span></a> 
+             </p> 
+             </div> 
+             </div> 
+             </div> 
+        </div>
+        <div class="head4 header-row-2" style="padding-bottom: 0px !important; padding-top: 0px !important; width: 150px !important;">
+            <div class="v-item clearer" style="float: left; padding-top: 0px;">
+             <!-- copied in mini cart --> 
+             <div id="mini-cart" class="hover SAVED-hideme" style="float: left;" onclick="javascript:togglecart()"> 
+             <div class="block-title clearer"> 
+             <div class="heading" title="View contents of your shopping cart"> 
+             <span id="RnCartLines" > </span> 
+             </div> 
+             <ul class="links" style="margin-bottom: 0px; padding-top: 10px;"> 
+             <li class="top-car"> 
+             <a class="summary top-link-cart" href="#" title="View contents of your shopping cart"> 
+             <p class="empty kcart" title="Your cart is empty">Cart 
+             </p> </a> 
+             <!-- end: summary --> 
+             </li> 
+             </ul> 
+             <div class="cart-content"> 
+             </div> 
+             </div> 
+             <div id="currentorderwidget" class="cwidget" style="position: absolute; top: 40px; right: -70px; display: none; -webkit-border-radius: 0 0 6px 6px; -moz-border-radius: 0 0 6px 6px; border-radius: 0 0 6px 6px; border: 1px solid #BBB; border-top-saved: 5px solid #000 !important; padding: 9px 8px; background: none #FFF; z-index: 99; position: absolute; min-width: 250px; -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); ">              </div> 
+             <!-- end: block-title --> 
+             <div id="ajaxcart" class="ajaxcart" style="position: absolute; display: block;"> 
+             <div id="ajopacity"> 
+             </div> 
+             <div class="block block-cart ajaxcartbl"> 
+             <div class="block-title"> <strong> 
+             <span>My Cart 
+             </span></strong> 
+             </div> 
+             </div> 
+             </div> 
+             </div> 
+             </div>
+        </div>
+     <!-- SK Ending New Header Row #2 below-->
+     </div>
+      <div class="clear"> 
+     </div> 
+     </div> 
+          <!-- End fLUID-Container -->                                                                                              
+        </div> 
+         <!-- end header wrapper -->                                                                                          
+        </div>                                                                                        
+        <!-- End Header Container -->                                                                                      
+        <div id="tsh">                                                                           
+        </div>                                                                             
+        <div id="ORDXdivcontainer" style="z-index: 99999 ;top: 115px; left: 200px; width: 900px; height: auto; background-color: #ffffff; overflow: scroll;display: none; position: absolute; border: 1px solid" >                                                                           
+        </div>                                                                   
+        <div class="nav-container-saved">	                                              
+          <div class="nav container clearer">                                                                                                                                                         
+            <div class="sidebar " style="display: none;"  >                       	                                                                                                                                                                  
+              <div class="content-tabs-saved">                        	                                                                                                                                                                                  
+                <!-- Nav tabs -->                                                                                                                                                                                                               
+                <ul class="tabs-saved">                                                                                                                                                                                                                   
+                  <!--  
+                                                                          <li>                                                                                                                                        
+                                                                          <a class="SearchTabLink" href="#Tab1">   </a>                                                                                                                                        
+                                                                          </li>                                                                                                                                                            
+                                                                         <li>                                                                                                                                        
+                                                                          <a class="SearchTabLink RTab" href="#Tab2">Filter Results</a>                                                                                                                                      
+                                                                          </li>
+                                                                          -->                                                                                                                                                                                                         
+                </ul>                                                                                                                                                                                               
+                <!-- Tab panes -->                                                                                                                                                                                                              
+                <div class="tab_container-saved">                                                                                                                                                                                                                        
+                  <div class="tab_content" id="Tab1">                                                                                                                                                                                                                                                                                                                                                                              
+                    <!--  Begin Division 'nav-container block' -->         										                                                                                                                                                                                                                                         
+                    <div class="nav-container-saved block-saved">											 											                                                                                                                                                                                                                                                           
+                      <!-- Begin Division 'menu-icon-style' -->          											                                                                                                                                                                                                                                                         
+                      <!--  <div class="menu-icon-style">Categories                         
+                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                -->        											                                                                                                                                                                                                                                                           
+                      <!-- End Division 'menu-icon-style' -->         											 											                                                                                                                                                                                                                                                           
+                      <!-- Begin Unordered List 'sf-menu-phone item' -->          											                                                                                                                                                                                                                                   
+                      <!-- BEGIN LEFT_MENUCONTENT -->                                                                                                                                                                                                                                           
+                      <div id='left_menucontent' >[MENU.NAME]                                                                                              
+                      </div>                                                                                                                                                                                                                                 
+                      <!-- END LEFT_MENUCONTENT -->              				 											                                                                                                                                                                                                                                                           
+                      <!-- End Unordered List 'sf-menu-phone item' -->         											 										                                                                                                                                                                                                                                         
+                    </div>										                                                                                                                                                                                                                                         
+                    <!-- End Division 'nav-container block' -->         	                                                                                                                                                                                                                        
+                  </div>                                                                                                                                                                                                                      
+                  <div class="tab_content" id="Tab2" style="display: none;" >                                                                                                                                                                                                                                                                                                                                                                                                             
+                  </div>                                                                                                                                                                                                            
+                </div>                                                                                                                                                                                   
+              </div>                                                                                                                                                                                        
+              <div class="block block-tags">											                                                                                                                                                                                                           
+                <div class="block-title">												<strong>                                                                                                                                                                                                                                              
+                    <span>Help                                                                                                                                                                                                                                               
+                    </span></strong>											                                                                                                                                                                                                           
+                </div>											 											                                                                                                                                                                                                           
+                <div class="block-content">												 												                                                                                                                                                                                                                             
+                  <div class="custom2" >													                                                                                                                                                                                                                                               
+                    <p>	                                                                                                                                                                                                                                                             
+                      <div style="[SLSDISPLAY]">                            <strong>Your Sales Consultant</strong>		                             <br />	[SLSNAME]                             <br />  Call:                                                                                                                                                                                                                                                    
+                        <a href="#">[SLSPHONE]</A>	<br />                            E-mail:                                                                                                                                                                                                                                                      
+                        <a href="mailto:[SLSEMAIL]">[SLSEMAIL] </a> 	<br />                            <br />                                                                                                                                                                                                                                                            
+                      </DIV>                  										              Main Office Phone: [CONTACT.PHONE]                              <br /> Main Office E-mail:                                                                                                                                                                                                                                                                  
+                      <a href="mailto:[CONTACT.EMAIL">[CONTACT.EMAIL]</a>			                              	<br />	                                                                                                                                                                                                                                                   
+                    </p>	 												                                                                                                                                                                                                                             
+                  </div>	                                                                                                                                                                                                           
+                </div>											 										                                                                                                                                                                                         
+              </div>									 									                                                                                                                                                                       
+            </div>	 	                                              
+          </div>                                               
+          <!-- end: nav -->                                         
+        </div>                                                                                  
+        <!-- Begin Nav Container for mobile -->                                                                                              
+        <div class="nav-container-mobile">                                                                                                        
+          <!-- Begin Container -->                                                                                                                 
+          <div class="container">                                                                                                                          
+            <!-- Begin Row -->                                                                                                                                   
+            <div class="row">                                                                                                                                            
+              <!-- Begin col-xs-12 -->                                                                                                                                                     
+              <div class="col-xs-12">                                                                                                                                                              
+                <!-- Begin sf-menu-block -->                                                                                                                                                                       
+                <div class="sf-menu-block">                                                                                                                                                                                
+                  <!-- Begin menu-icon-style -->                                                                                                                                                                                     
+                  <!-- <div id="menu-icon" class="menu-icon-style">Categories
+                                                                                                                                                                                        </div> -->                                                                                                                                                                                          
+                  <!-- collapse menu for phone/sidemenu -->                                                                                                                                                                                              
+                  <!-- End menu-icon-style 							  								
+                                                                                                                                                                                        <ul class="sf-menu-phone">		-->         							                                                                                                                                                                                  
+                  <!-- Added Mobile Menu -->                                                                                                                                                                      
+                  <div id=nmenu>                                                                                                                                                                               
+                    <label id="menu-icon"  for="show-menu" class="menu-icon-style"> &nbsp; Product Categories &nbsp;                                                                                                                                                                               
+                    </label>                                                                                                                                                                              
+                    <input type="checkbox" id="show-menu" role="button">                                                                                                                                                              
+                  </div>								 									                                                                                                                                                                             
+                  <!--  </ul> -->         								 							                                                                                                                                                             
+                </div>				                                                                                                                                                             
+                <!-- End sf-menu-block -->                                                                                                                                                     
+              </div>                                                                                                                                          
+              <!-- End Col Xs-12 -->                                                                                                                                  
+            </div>                                                                                                                        
+            <!-- End Row -->                                                                                                                                  
+            <div class="clear">                                                                                                                        
+            </div>                                                                                                        
+          </div>                                                                                                      
+          <!-- End Container -->                                                                                              
+        </div>                                                                                    
+        <!-- End Nav Container -->                                                                                                  
+          <!-- added code -->                                     
+          <div class="topbanner2" >  
+            <div class=container style="margin-left: 7% !important;">                                               
+            <div class="block-title col-md-12">	                                                   
+              <h2 class="title">                                                        
+                <span class="topname2">
+ [PAGE.SUBHEAD]                                                         
+                </span></h2>                                            
+            </div>	
+            <div class="quick-access block-title hidden-xs" id=right style="margin-top: 130px; height: auto !important;"> 
+         <!-- place holder for sales info --> 
+              </div> 
+         </div>                                 
+          </div>          
+          <!-- Rebuilding Main Section with Bootstrap -->  
+     <div class=container style="width: 85% !important;max-width:85% !important;padding-top: 20px;">                                                                              
+                    <div class="xcol-md-12">                                                                                                                                                                                                                                                                                                       
+
+
+

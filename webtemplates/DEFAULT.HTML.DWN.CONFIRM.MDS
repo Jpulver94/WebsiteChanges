@@ -1,0 +1,59 @@
+<html>
+<head>
+  <LINK rel="STYLESHEET" type="text/css" href="[CSS.NAME]">
+  <meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+  <meta name="generator" content="Adobe GoLive 4">
+  <title>On-line Data Export</title>
+</head>
+
+<body bgcolor="white" leftmargin="0" topmargin="0" marginheight="0" marginwidth="0" link="#333366" alink="#333366" vlink="#333366">
+      <tr>
+<!--
+        <td><img src="[WEBSITE.IMAGES]/RNlogocrp.jpg" border="0"></td>
+-->
+        <td>
+          <table border="0" cellpadding="0" cellspacing="0" bgcolor="white" width="500">
+            <tr>
+              <td valign="top"><br>
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td><font id=datnorm size="2">To:</font>
+                    <font id=datnorm size="3" color="#cc3333">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[USER.EMAIL]</font><br>
+                      <br>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><font id=datnorm size="2">From:</font>
+                    <font id=datnorm size="3" color="#cc3333">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;support@tshinc.com</font><br>
+                      <br>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><font id=datnorm size="2">Subject:</font>
+                    <font id=datnorm size="3" color="#cc3333">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[SUBJECT]</font><br>
+                      <br>
+                      <br>
+                    </td>
+                  </tr>
+                  <tr>
+                      <td><font id=datnorm size="2"><b>This is a confirmation of an export that was completed on [DWN.DATE] at [DWN.TIME].</b></font><br>
+                      <br>
+                      <font id=datnorm size="2"><b>The type of export was [DWN.TYPE]</b></font><br>
+                      <br>
+                      <font id=datnorm size="2"><b>Total records exported: [TOTAL.RECS]</b></font><br>
+                      <font id=datnorm size="2"><b>Total records with errors: [TOTAL.ERRS]</b></font><br>
+                      <br>
+                      <font id=datnorm size="2"><b>[SUBJ.PHRASE]</b></font><br><a href="[ERR.FILE]"><font id=datnorm color="#cc3333" size="2">[ERR.FILE]</font></a><br>
+                      <br>
+                      <font id=datnorm size="2"><b>Send mail to </font><a href="mailto:support@tshinc.com"><font id=datnorm color="#cc3333" size="2">support@tshinc.com</font></a>
+                      <font id=datnorm size="2"> with questions or comments about this export.</b></font><br>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+</body>
+</html>

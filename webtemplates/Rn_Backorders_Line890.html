@@ -1,0 +1,62 @@
+
+
+
+  <tr id="[LNCOLOR]" style="padding:10px;">
+    <td class=datsml>&nbsp;</td>
+    <td class=datsml>
+<!-- OLD ONE
+  <a href=# class="hintanchor" onmouseover="showhintajax('login[SUFFIX]?&aprodno=[A.PROD.NO]&orderno=[WEB.ORDERNO]&LOGINPATH=PIF&PAGEID=31&CUSTOMERID=[CUSTOMERID]', this, event, '150px')" >
+-->
+<a class="ShowAdd" href=# onclick="javascript:ShowAdd('[A.PROD.NO]')">
+[A.PROD.NO]
+    </a></td>
+    <td class=datsml>
+      <a href=# onclick="javascript:prod_inquiry('PI','N','[A.PROD.NO]') ">
+[PROD.DESC]
+    </a></td>
+    <td class=datsml>
+      <a href=# onclick='javascript:release_detail("RQ","[MDSORDERNO]")'>
+[CUSTOMER.PO]
+    </a></td>
+    <td class=datsml>
+      <a href=# onclick='javascript:release_detail("RQ","[MDSORDERNO]")'>
+[ORDER-LN]
+    </a></td>
+    <td class="datsml center" >
+[ORD.DATE]
+    </td>
+    <td class="datsml center" >
+[EST.SHIP.DATE]
+    </td>
+    <td class="datsml center">
+[ORD.QTY]
+   </td>
+    <td class="datsml center">
+[BO.QTY]
+    </td>
+    <td class=datsml >
+[UM]
+    </td>
+    <td class=datsml align=right >
+[PRICE]
+    </td>
+    <td class=datsml align=right >
+[EXT.PRICE]
+    </td>
+    <td class=datsml>
+[IN.STOCK]
+</td>
+    <td id="datsml" class="ShowBackord">
+    <a href=# onclick='RemoveBO("[A.PROD.NO]","[ORDER-LN]")'>
+<img class="RemoveClass"  src="https://sunset.tshinc.com/sunset/images/remove.png" > 
+ </a>
+<!-- <input value="[BO.QTY]|[ORDER-LN]|[A.PROD.NO]|[UM]" type="checkbox" class=remove name="remove"  />
+-->
+</td>
+</tr>
+
+
+
+
+
+

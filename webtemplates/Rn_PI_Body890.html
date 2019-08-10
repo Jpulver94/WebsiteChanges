@@ -1,0 +1,264 @@
+
+
+ <div class="container"> 
+ <div class="ssfirstrow"> 
+<form name=template action="login[SUFFIX]" method=post>
+<input type=hidden name="Aprod_string" value = "[APROD_STRING]">
+<input type=hidden name="prod_string" value = "[PROD_STRING]">
+<input type=hidden name="qty_string" value = "[QTY_STRING]">
+<input type=hidden name="um_string" value = "[UM_STRING]">
+<input type=hidden name="price_string" value = "[PRICE_STRING]">
+<input type=hidden name="comment_string" value = "[COMMENT_STRING]">
+<input type=hidden name="manufact_string" value = "[MANUFACT_STRING]">
+<input type=hidden name=aprodno value="[APRODNO]">
+<input type=hidden name=pageid value=13>
+<input type=hidden name=CustomerId value="[CUSTOMERID]">
+<input type=hidden name=orderno value="[ORDERNO]">
+<input type=hidden name=loginpath value="[LOGINPATH]">
+<input type=hidden name=startptr value="[STARTPTR]">
+<input type=hidden name=searchflag value="[SEARCHFLAG]">
+<input type=hidden name=inquiryflag value="[INQUIRYFLAG]">
+<input type=hidden name=invinqflag value="[INVINQFLAG]">
+<input type=hidden name=datasheet_key value="[DATASHEET.KEY]">
+<input type=hidden name=mdsorderno value="">
+<input type=hidden name=submitvar value="">
+<input type=hidden name=old_loginpath value="[LOGINPATH]">
+<input type=hidden name=prev_changesort value="[CHANGESORT]">
+<input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+<input type=hidden name=slsmno value="[SLSMNO]">
+<input type=hidden name=slsmn_id value="[SLSMN_ID]">
+<style>.PIDrugTable{border-collapse:collapse;    width:90%;}
+.PIDrugTable td,.PIDrugTable th{border:1px solid #333;    padding:10px;}
+.PIDrugTable td#colhdg{width:20%;}
+.PIDrugTable td.labelhide{float:left;    width:80%;}
+.PIWrap{width:100%;    background:#333;    color:white;    padding:10px;    float:left;}
+.PIImageWrap{float:left;    padding:10px;}
+.PIProdInfoWrap{float:left;    padding:10px;    min-height:120px;}
+.PIPriceWrap{padding:10px;    float:right;    min-height:120px;    border-left:1px solid gray;}
+img.SunsetProdno{width:20px;}
+.PIimageDetail{width:150px;    height:150px;    padding:5px;}
+.SumSelect{color:#333;    min-width:150px;    height:34px;}
+.PIStockWrap{float:left; padding-bottom:25px; }
+.SunsetStockWrap{width:50%; float:left;     border-top:1px solid gray; border-left:1px solid gray;  text-align:center; }
+.AltStockWrap{width:50%;float:left;  border-top:1px solid gray; border-left:1px solid gray;text-align:center;  border-right:1px solid gray;}
+.AltStockMessage{min-height:25px;  width:50%;float:left;  border-bottom:1px solid gray; border-left:1px solid gray;text-align:center; border-right:1px solid gray; }
+.StockMessage{min-height:25px;  width:50%;float:left; border-bottom:1px solid gray; border-left:1px solid gray;  text-align:center;}
+.PIPurchHistIcon{width:18px;    height:18px;   background:#FF7800;    border-radius:8px;    padding:2px; }
+</style>
+<style>.PIDrugTable{border-collapse:collapse;width:90%}
+.PIDrugTable td, .PIDrugTable th{border:1px solid #333;padding:10px}
+.PIDrugTable td#colhdg{width:20%}
+.PIDrugTable td.labelhide{float:left;width:80%}
+.PIWrap{width:100%;background:#333;color:white;padding:10px;float:left}
+.PIImageWrap{float:left;padding:10px}
+.PIProdInfoWrap{float:left;padding:10px;min-height:120px;font-size:12px;}
+.PIPriceWrap{padding:10px;float:right;min-height:120px;}
+img.SunsetProdno{width:20px}
+.PIimageDetail{width:150px;height:150px;padding:5px}
+.SumSelect{color:#333;min-width:150px;height:34px}
+.PIStockWrap{float:left;padding-bottom:25px}
+.SunsetStockWrap{width:50%;float:left;border-top:1px solid gray;border-left:1px solid gray;text-align:center}
+.AltStockWrap{width:50%;float:left;border-top:1px solid gray;border-left:1px solid gray;text-align:center;border-right:1px solid gray}
+.AltStockMessage{min-height:25px;width:50%;float:left;border-bottom:1px solid gray;border-left:1px solid gray;text-align:center;border-right:1px solid gray}
+.StockMessage{min-height:25px;width:50%;float:left;border-bottom:1px solid gray;border-left:1px solid gray;text-align:center}
+.PIPurchHistIcon{width:18px;height:18px;background:#FF7800;border-radius:8px;padding:2px}
+.row-eq-height{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}
+.nopad{padding:0px;}
+.OutStock, .InStock, .AltStock{margin:0;}
+.StockMessage, .AltStockMessage  {
+    min-height: 25px;
+    padding-top: 10px;
+    width: 50%;
+    float: left;
+    border: none;
+    border-right: 1px solid black;
+    text-align: center;
+    height: 40px;
+}
+.AltStockMessage { border: none ; }
+.ssProdTable tr td:first-child {
+    background-color: #ddd;
+    border-bottom: 1px solid #fff !important;
+    width: 50%;
+}
+.HotProd {
+    float: right;
+    height: 50px;
+    min-width: 120px;
+    position: relative;
+}
+</style> 
+<div class="container">
+<div class="row row-eq-height PIWrap"> 
+<div class="PIImageWrap col-md-2">
+ <img src='[IMAGE.PATH][IMAGENAME]' alt='[IMAGENAME]' class="PIimageDetail">
+</div>
+<div class="PIProdInfoWrap col-md-5" style="padding:10px 15px 0 0;width:85%;">
+<img class="SunsetProdno" src="https://hosting.tshinc.com/rn/Templates/sunset/images/sunseticon_dj3d6_copy_3.png"> [A.PROD.NO]
+<div class="PIMFGWrap" style="float: right" > [MFR.NAME] </div>
+<BR> <BR>
+      [TOP.PROD.DESC]
+ <BR> <BR>
+
+ Alt Name: [$CNV$PROD.MAST_USER$ALT.NAME$]
+ <p style="float:right;">Stock Notification: <u>
+  <a href=# onclick=javascript:remindme('[PROD.NO]')> Remind Me </a>
+ </u></p>
+  <BR>
+   </div>
+<div class="PIPriceWrap col-md-5" style="background-color:white;padding:10px 0 0 0;"> 
+  <div class="row row-eq-height" style="text-align:center;">		 		
+    <div class="col-xs-1 nopad">
+    </div>		 		
+    <div class="col-xs-10 nopad" >		 			
+      <div style="width: 50%;float: left;padding:5px;background-color: #333;border-width: 1px;border-color: #333;border-style: solid;border-bottom-style: none;">  		 				Sunset Stock  		 			
+      </div>  		 			 		 		
+      <div style="width: 50%;float: left;padding:5px;background-color: #333;border-width: 1px;border-color: #333;border-style: solid;border-bottom-style: none;">  		 				Alt.Warehouse  		 			
+      </div>		 			
+       <div style="border-bottom: 1px solid black; height: 70px; padding:5px;padding-top: 12px;padding-bottom: 12px;background-color: white;color: black;border-width: 1px;border-color: black;border-style: solid;border-top-style: none;">		 				[IN.STOCK] 		 			
+      </div>  			 		
+    </div>		 		
+    <div class="col-xs-1 nopad">
+    </div>			
+  </div>
+ <DIV id="SProd-[A.PROD.NO]" > </DIV>  	
+</div>
+
+ </div>	
+   <div class="row" > 
+<div class="PIImageWrap col-md-2"> </div>
+<div class="PIProdInfoWrap col-md-5" >	   
+<div id="SProd2-[PROD.NO]" class="ProdInfoBar"> </div>
+
+</div>
+<div class="col-md-5"> </div>
+</div>    <!-- TOP PIWRAP -->
+</div>   <!-- TOP CONTAINER -->
+</div>    <!-- SSFIRST ROW ON TOP -->
+ <!-- Bottom line with prod info and right side loaded in prcxi -->
+<script lang=javascript>
+pload("[A.PROD.NO]","PRCXI") ; 
+ploadi("[A.PROD.NO]","PRCXI2","#SProd2-[PROD.NO]") ; 
+</script>
+  <STYLE>
+  .labelhide { float: left ; } } 
+  </STYLE>
+  
+<style>.TemplateStock .StockMessage, .TemplateStock .AltStockMessage {     min-height: 25px;    padding-top: 5px;    width: auto;    float: left;    border: none;    text-align: center;    height: 30px;} .TemplateStock { float: left;} .TemplateImage{height:100px; width:100px;} .TemplateImage img { Height: 100px;width: 100px;} .HotSelect{float: left;min-width: 300px; width:40%; min-width:100px; }</style>			
+		
+
+<!-- Added Examples of how to load additional product lines and information -->
+<div class="row">
+<div id="PIFBodyprodinfo" class="col-lg-12 col-md-12"><h3> Product Details </h3> 
+  <br>
+  <TABLE class="ssProdTable" border="0" cellpadding="0" cellspacing="0">
+    <tr style="[HIDEVALUE]"> 
+      <td  > Drug Form: </td>
+      <td class="labelhide">[$CNV$PROD.MAST$MSPAN.DOSAGE$]</td>
+    </tr>  
+    <tr style="[HIDEVALUE]"><td> Imprint: </td>
+      <td class="labelhide">[$CNV$PROD.MAST$MSPAN.IMPRINT$] </td>
+    </tr>  
+    <tr style="[HIDEVALUE]"> 
+      <td class="labelhide"> [$CNV$PROD.MAST$MSPAN.CATDESC$] </td>
+      <td class="labelhide">[$CNV$PROD.MAST$MSPAN.DESCRDESC$] </td>
+    </tr>   
+    <tr style="[HIDEVALUE]"> 
+      <td  > Additional Information: </td>
+      <td class="labelhide">[$CNV$PROD.MAST$MSPAN.BASICDESC$]  [$CNV$PROD.MAST$MSPAN.LTEXT$]  </td>
+    </tr>  
+    <tr style="[HIDEVALUE]"> 
+      <td  > Manufacturer:</td>
+      <td class="labelhide">[$CNV$PROD.MAST$MNF.NAME$]</td>
+    </tr>  
+    <tr style="[HIDEVALUE]"> 
+      <td  > Drug Name: </td>
+      <td class="labelhide">[$CNV$PROD.MAST$FDANAME$]  [$CNV$PROD.MAST$FDASUFF$]  </td>
+    </tr>   
+    <tr style="[HIDEVALUE]"> 
+      <td  >Generic Name: </td>
+      <td class="labelhide">[$CNV$PROD.MAST$FDAGENNAME$]  </td>
+    </tr>   
+    <tr style="[HIDEVALUE]"> 
+      <td  > FDA Drug Form: </td>
+      <td class="labelhide">[$CNV$PROD.MAST$FDADOSAGE$]  </td>
+    </tr>   
+    <tr style="[HIDEVALUE]"> 
+      <td  > FDA Route: </td>
+      <td class="labelhide">[$CNV$PROD.MAST$FDAROUTE$]  </td>
+    </tr>   
+    <tr style="[HIDEVALUE]"> 
+      <td  > Labeler: </td>
+      <td class="labelhide">[$CNV$PROD.MAST$FDALABELER$]  </td>
+    </tr>   
+    <tr style="[HIDEVALUE]"> 
+      <td  >Substance: </td>
+      <td class="labelhide">[$CNV$PROD.MAST$FDASUBSTANCE$]  </td>
+    </tr>   
+    <tr style="[HIDEVALUE]"> 
+      <td  > FDA Strength: </td>
+      <td class="labelhide">[$CNV$PROD.MAST$FDASTRENGTH$] [$CNV$PROD.MAST$FDASTRUNIT$] </td>
+    </tr>   
+    <tr style="[HIDEVALUE]"> 
+      <td  > Pharma Classes: </td>
+      <td class="labelhide">[$CNV$PROD.MAST$FDAPHARM$]  </td>
+    </tr>   
+    <tr style="[HIDEVALUE]"> 
+      <td  > DEA Schedule: </td>
+      <td class="labelhide">[$CNV$PROD.MAST$FDASCHED$]  </td>
+    </tr>   
+    <tr style="[HIDEVALUE]"> 
+      <td  > Packaging: </td>
+      <td class="labelhide">[$CNV$PROD.MAST$FDAPACK$]  </td>
+    </tr>    
+  </table>
+</div>
+</div>
+<!-- Added Suggested Items -->
+<div id="Suggwrap" class="row roundedbox2">
+<br><h4>Customers who have purchased this have also bought...</h4>
+<div id="Suggdiv"></div>  <script type="text/javascript"> suggitems([PROD.NO]) ; </script>
+</div>
+<!-- end of suggested items -->
+<div class="row">
+	<div class="col-md-12 roundedbox2 fillgray">
+		<div class="col-md-12">
+			<h3>Your Purchase statistics for this product:</h3>
+			<p>Note: All usage is displayed in the Stocking Unit of Measure.</p>
+		</div>
+		<div class="col-md-2">
+			<table border="0" cellpadding="0" cellspacing="0" class="ssProdTable2">
+				<tr>    <td>Previous 6 Transactions </td> 				</tr>
+[PREV.PURCH.HIST]
+			</table>
+		</div>
+  <div class="col-md-10">
+			<table border="0" cellpadding="0" cellspacing="0" class="ssProdTable2">
+				<tr>
+					<td colspan="14" style="text-align: center;">---------- Annual Usage ----------
+					</td>
+				</tr>
+  	<tr style="background-color: #FF7900; color: #ffffff;">
+      <td  width=80>Year</td>
+      <td>[MONTH1]</td>
+      <td>[MONTH2]</td>
+      <td>[MONTH3]</td>
+      <td>[MONTH4]</td>
+      <td>[MONTH5]</td>
+      <td>[MONTH6]</td>
+      <td>[MONTH7]</td>
+      <td>[MONTH8]</td>
+      <td>[MONTH9]</td>
+      <td>[MONTH10]</td>
+      <td>[MONTH11]</td>
+      <td>[MONTH12]</td>
+      <td width=80>Total</td>
+    </tr>
+[ANNUAL.USAGE]
+   </table>
+  		</div>
+	</div>
+</div>
+  	</div>   <!-- PAGE CONTAINER -->
+
+

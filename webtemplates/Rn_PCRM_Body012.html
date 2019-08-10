@@ -1,0 +1,215 @@
+
+<style>
+.CRMPage h2 { padding: 3px 0px 3px 0px  ; } 
+.CRMCustNoteEntry, #datepairExample { float: left ; } 
+.CRMHeading {
+    width: 40%;
+    font-weight: 700;
+    font-size: 10px;
+    float: left;
+    padding: 2px;
+}
+.CRMData {
+    width: 50%;
+    font-weight: 200;
+    font-size: 10px;
+    float: left;
+    padding: 2px;
+}
+.CRMCust1, .CRMCust2 , .CRMCust3 , .CRMCust4 {
+    width: 25%;
+    float: left ; 
+}
+.CRMGraphs, .CRMContacts, .CRMCustNotesAdd, .CRMCustNotes, .CRMCustomerDetails, .CRMInfo {
+    float: left;
+    padding: 5px;
+    border: 1px solid black;
+    width: 100%;
+    border-radius: 3px;
+}
+.CRMReorder, .CRMReorderProduct, .CRMCompanyTopSeller {
+    width: 32%;
+    float: left ; 
+}
+#CustomerGraphBox {
+    border: none;
+    width: 100%;
+  /*  min-height: 300px;
+    display: none ; */ 
+}
+table.CRMNotesTable {
+    width: 100%;
+}
+table.CRMNotesTable tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+table.CRMNotesTable th{
+    background-color: #ddd;
+}
+textarea#notedata {
+    width: 100%;
+} 
+
+textarea#notedata:focus {
+    height: 14em;
+}
+</style>
+<div class="CRMPage">
+ [DOCMESSAGE]<br>
+ [PAGESTAMP]
+
+<div class="CRMGraphs" >  <h2> Sales Information </h2>
+         <a href=# title="To filter data click on an item on your charts, or drag across the timeline to view sales for a period, as you click the data will filter. To reset or reload hide and view your charts" onclick='javascript:showgraph("[ACUSTNO]","#CustomerGraphBox");$("#CustomerGraphBox").toggle();'> View/Hide Sales Charts </a>        
+       <iframe id="CustomerGraphBox">  </iframe>       
+</div>
+<div class="CRMCustomerDetails" > 
+<h2>Customer/Prospect Details  </h2>
+<div class="CRMCust1"> 
+     <div class="CRMHeading" >Customer Number: </div> <div class="CRMData">[$CNV$CUST.MAST$A.CUST.NO$]</div>
+     <div class="CRMHeading" >Customer Name: </div> <div class="CRMData">[$CNV$CUST.MAST$CUST.NAME$]</div>
+     <div class="CRMHeading" >Create Date: </div> <div class="CRMData">[$CNV$CUST.MAST$CREATE.DT$]</div>
+     <div class="CRMHeading" >City State Zip: </div> <div class="CRMData">[$CNV$CUST.MAST$CITY.ALL$]</div>
+     <div class="CRMHeading" >GPO: </div> <div class="CRMData">[$CNV$CUST.MAST$GPO$] [$CNV$CUST.MAST$GPO.DESC$]</div>
+     
+ </div>
+ <div class="CRMCust2"> 
+     <div class="CRMHeading" >Salesman: </div> <div class="CRMData">[$CNV$CUST.MAST$SLSM#$] [$CNV$CUST.MAST$SLSNAME$] / [$CNV$CUST.MAST$SLSM2$] [$CNV$CUST.MAST$SLS2NAME$] </div> 
+     <div class="CRMHeading" >Class: </div> <div class="CRMData">[$CNV$CUST.MAST$CUST.CLS$] [$CNV$CUST.MAST$CUST.CLS.DESC$]</div> 
+     <div class="CRMHeading" >Type: </div> <div class="CRMData">[$CNV$CUST.MAST$CUST.TYP$] [$CNV$CUST.MAST$CUST.TYP.DESC$]</div> 
+     <div class="CRMHeading" >Pricing Contract: </div> <div class="CRMData">[$CNV$CUST.MAST$CONTRACT.NO$]</div> 
+     <div class="CRMHeading" >Default Ship Method: </div> <div class="CRMData">[$CNV$CUST.MAST$SHIP.METH$] [$CNV$CUST.MAST$SHIP.METH.DESC$]</div> 
+ </div>
+  <div class="CRMCust3"> 
+     <div class="CRMHeading" >Terms Code: </div> <div class="CRMData">[$CNV$CUST.MAST$TERMS.CODE$] [$CNV$CUST.MAST$TERMS.DESC$]</div> 
+     <div class="CRMHeading" >Credit Limit: </div> <div class="CRMData">[$CNV$CUST.MAST$CRED.LIMIT$] </div> 
+     <div class="CRMHeading" >Open AR: </div> <div class="CRMData">[$CNV$CUST.MAST$AR.BAL$] </div> 
+     <div class="CRMHeading" >Last Order Date: </div> <div class="CRMData">[$CNV$CUST.MAST$LAST.ORD.DT$] </div> 
+     <div class="CRMHeading" >Last Order Amount: </div> <div class="CRMData">[$CNV$CUST.MAST$LAST.ORD.AMT$] </div> 
+    <div class="CRMHeading" >Last Payment Date : </div> <div class="CRMData">[$CNV$CUST.MAST$LAST.PMT.DT$] </div> 
+  </div>
+   <div class="CRMCust4"> 
+     <div class="CRMHeading" >YTD Sales: </div> <div class="CRMData">[$CNV$CUST.MAST$YTD.SALES$] </div> 
+        <div class="CRMHeading" >MTD Sales: </div> <div class="CRMData">[$CNV$CUST.MAST$MTD.SALES$] </div> 
+        <div class="CRMHeading" >YTD GP Dollars: </div> <div class="CRMData">[$CNV$CUST.MAST$YTD.GP$] </div> 
+         <div class="CRMHeading" >MTD GP Dollars: </div> <div class="CRMData">[$CNV$CUST.MAST$MTD.GP$] </div>    
+          <div class="CRMHeading" >DEA License: </div>  <div class="CRMData">   [DEA.LIC] Expires: [DEA.EXP.DT] </div>
+  </div>
+  </div>
+ <div class="CRMContacts">
+ <h2> Contacts </h2>
+<div class="CRMCust1"> 
+       <div class="CRMHeading" >Primary Contact: </div> <div class="CRMData">
+       [$CNV$PROSPECT.MAST$PROS.CONTACT1$] <BR>
+       Title: [$CNV$PROSPECT.MAST$TITLE.CONTACT1$]   [$CNV$PROSPECT.MAST$TITLE.CONTACT1.DESC$]<BR>
+       Phone: [$CNV$PROSPECT.MAST$PROS.PHONE.NO$] Fax: [$CNV$PROSPECT.MAST$PROS.FAX.NO$] <br>
+       Email:   [$CNV$PROSPECT.MAST$E-MAIL1$] <br>
+       
+       </div>  
+ </div>
+ <div class="CRMCust2"> 
+             <div class="CRMHeading" >Additonal Contacts: </div> <div class="CRMData">
+       [$CNV$PROSPECT.MAST$PROS.CONTACT2$] <BR>
+      Title: [$CNV$PROSPECT.MAST$TITLE.CONTACT2$] [$CNV$PROSPECT.MAST$TITLE.CONTACT2.DESC$]<BR>
+      Phone/Ext: [$CNV$PROSPECT.MAST$ADD.CONT.PHONE$] [$CNV$PROSPECT.MAST$ADD.CONT.PHONE.EXT$] <br>
+      Fax: [$CNV$PROSPECT.MAST$ADD.CONT.FAX$] <br>
+      Cell: [$CNV$PROSPECT.MAST$ADD.CONT.CELLA$] <br>
+      Email: [$CNV$PROSPECT.MAST$ADD.CONT.EMAIL$] <br>
+       
+       </div> 
+  </div>
+  <div class="CRMCust3"> 
+  
+   </div>
+   <div class="CRMCust4"> 
+  
+    </div>
+ </div>
+  <div class="CRMCustNotesAdd">
+  <h2> Add a Note - Currently: [TOTAL.NOTES]  </h2>
+  <div class="CRMCust1"> 
+  <div class="CRMHeading" >   Status: </div> <div class="CRMData">[$CNV$PROSPECT.MAST$STATUS.CODE$] [$CNV$PROSPECT.MAST$STATUS.DESC$] </div>  
+  <div class="CRMHeading" > Follow Up Date/Time: </div> <div class="CRMData">[$CNV$PROSPECT.MAST$STATUS.DATE$] [$CNV$PROSPECT.MAST$STATUS.TIME$] </div>  
+  <div class="CRMHeading" > Days Until Call: </div> <div class="CRMData">[$CNV$PROSPECT.MAST$RECALL.DAYS$] </div>  
+   <div class="CRMHeading" > Next Step: </div> <div class="CRMData">[$CNV$PROSPECT.MAST$NEXT.STEP$] </div> 
+
+
+</div>
+  <div class="CRMCust2"> 
+  <div class="CRMCustNoteEntry"> 
+<!-- Added timepickers -->
+<p id="datepairExample">
+    <input type="text" placeholder="Date" id="notedate" class="date start" />
+    <input type="text" placeholder="Time" id="notetime" class="time start" /> 
+<a href="#!" onclick="$('#notetime').timepicker('setTime', new Date());" title="Default time to Current time" > T </A>
+  <select id='QuickNotes' onchange='javascript:$("#notedata").append($(this).find("option:selected").attr("value"));'> 
+  <option value=''>Add a Quick Note </option>
+      [QUICKNOTE.SELECT]
+  </select>  
+     <input type=button class=button1 name="ANOTE" value="AddNote" onclick='javascript:pcrm("PCRM","[ACUSTNO]","U")' >                
+<div id="NoteStatus" > </div>
+                  
+</p>
+      <textarea id="notedata"  name="notedata">  </textarea>
+      
+  
+ 
+    </div>
+    </div>
+ </div> 
+ <div class="CRMCustNotes">
+ <table class="CRMNotesTable">
+ <tr>
+<th> <div class="CRMHeading"> Date Time </div>   </th>
+<th> <div class="CRMHeading"> Line </div>   </th>
+<!--
+<th><div class="CRMHeading"> Inbound/Outbound </div>  </th>
+-->
+<th><div class="CRMHeading"> Created by </div>  </th>
+<th><div class="CRMHeading"> Contact Person </div>  </th>
+<!--
+<th><div class="CRMHeading"> Contact Media </div>   </th>
+-->
+<th><div class="CRMHeading"> Notes </div>     </th>
+</tr>
+ [NOTE.LINES]
+ </table>
+ </div> 
+<div class="CRMInfo"  style="[HIDEDISPLAY]" >
+<script type="text/javascript">
+// var t = setTimeout($("#QuickNotes").chosen({ no_results_text: "No results matched" }), 500);
+// load graphs
+   showgraph("[ACUSTNO]","#CustomerGraphBox")
+ // add path for each tab in order 1,2,3 etc 
+var CustomerFlag = [CUSTOMERFLAG] ;
+if (CustomerFlag) {
+  var pathstring  = [] ;  
+  pathstring[0] = 'login[SUFFIX]?orderno=[WEB.ORDERNO]&CUSTOMERID=[ACUSTNO]&LOGINPATH=HOT&pageid=31&CUSTOMLIST=WEB*35' ;
+  pathstring[1] = 'login[SUFFIX]?orderno=[WEB.ORDERNO]&CUSTOMERID=[ACUSTNO]&LOGINPATH=REOO&pageid=31&ITEMSPAGE=25&changesort=-DSND ORD.DATE' ;
+  pathstring[2] = 'login[SUFFIX]?orderno=[WEB.ORDERNO]&CUSTOMERID=[ACUSTNO]&LOGINPATH=REOI&pageid=31&ITEMSPAGE=25&changesort=-DSND RN.LAST.SALE.DT&CUSTOMLIST=1'  ;
+// NEW HOME TAB FUNCTIONS 
+// $(document).ready(function() {
+
+  var activeTab =   "#CG0"  ;
+ $(activeTab).html("Loading Content..."); 
+ var dummy =  widgetload(pathstring[0], activeTab) ; 
+ $(activeTab).fadeIn(); 
+   var activeTab =   "#CG1"  ;
+ $(activeTab).html("Loading Content..."); 
+ var dummy =  widgetload(pathstring[1], activeTab) ; 
+ $(activeTab).fadeIn();
+     var activeTab =   "#CG2"  ;
+ $(activeTab).html("Loading Content..."); 
+ var dummy =  widgetload(pathstring[2], activeTab) ; 
+ $(activeTab).fadeIn();
+} else {
+ $(".CRMInfo").html("Sorry, No Customer Information to display. Please verify you have  a customer for this prospect. Alternately you can setup a Remotenet Web Customer Record using the Customer Account Code as the username."); 
+}
+// }); 
+</script>   
+<h2> Ordering Information </h2>
+<div id="CG1" class="CRMReorder"> Customer Reorders  </div>
+<div id="CG2" class="CRMReorderProduct"> Customer Reorder by Item </div>
+<div id="CG0" class="CRMCompanyTopSeller"> Company Best Sellers </div>
+</div>
+
+</div>

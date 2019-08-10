@@ -1,0 +1,42 @@
+<!-- frt details -->
+<div class="rntooltip"> [FRT.DIFF] 
+<div class="rntooltiptext"> [FRT.MSG] </div>
+</div>
+<div id="RnTotLines">[NUM.ITEMS]</div>
+<style>
+#RnTotLines { display: none } 
+.rntooltip {
+    position: relative;
+    display: inline-block;
+   padding: 5px ; 
+   font-size: 20px ; 
+}
+.rntooltip .rntooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 150%;
+    left: 50%;
+    margin-left: -90px;
+   font-size: 14px ; 
+}
+.rntooltip .rntooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+}
+.rntooltip:hover .rntooltiptext {
+    visibility: visible;
+}
+</style>

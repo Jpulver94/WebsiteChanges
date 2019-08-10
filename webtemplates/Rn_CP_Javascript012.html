@@ -1,0 +1,42 @@
+
+<script lang=javascript>
+function changepath(x) { 
+ document.template.loginpath.value = x ; 
+ document.template.submit(); 
+ }
+function confirm_password() { 
+ var password = document.template.Password.value ;
+ password = password.toUpperCase();
+ if (password == '') {
+    jAlert('You must enter your Current Password');
+    document.template.Password.focus() ;
+    return false;  
+ }
+ var currpassword = "[CURRENT.PASSWORD]"
+ if (password != currpassword) { 
+    jAlert('Current Password is invalid.\nYou must re-enter your Current Password.');
+    document.template.Password.focus() ;
+    return false;  
+ }
+ var newpassword = document.template.newpassword.value
+ if (newpassword == '') { 
+    jAlert('You must enter your New Password');
+    document.template.newpassword.focus() ;
+    return false;  
+ }
+ var newpassconfirm = document.template.newpassconfirm.value
+ if (newpassconfirm == '') { 
+    jAlert('You must Confirm your New Password');
+    document.template.newpassconfirm.focus() ;
+    return false;  
+ }
+ if (newpassconfirm != newpassword) { 
+    jAlert('New Password and Confirmation Password do not match');
+    document.template.newpassconfirm.focus() ;
+    return false;  
+ }
+ document.template.loginpath.value = 'CPW' ; 
+ document.template.submit(); 
+ }
+</script>
+

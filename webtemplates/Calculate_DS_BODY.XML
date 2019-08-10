@@ -1,0 +1,36 @@
+    <tns:Calculate>
+      <Order href="#id1" />
+ <EffectiveDate xsi:type="xsd:dateTime">[EffectiveDate]</EffectiveDate>
+    </tns:Calculate>
+    <tns:Order id="id1" xsi:type="tns:Order">
+      <Address href="#id2" />
+      <CalculateTax xsi:type="xsd:boolean">[CalculateTax]</CalculateTax>
+      <CertiTAXTransactionId xsi:type="xsd:string">[CertiTAXTransactionId]</CertiTAXTransactionId>
+      <ConfirmAddress xsi:type="xsd:boolean">[ConfirmAddress]</ConfirmAddress>
+      <DefaultProductCode xsi:type="xsd:int">[DefaultProductCode]</DefaultProductCode>
+      <HandlingCharge xsi:type="xsd:decimal">[HandlingCharge]</HandlingCharge>
+      <LineItems href="#id3" />
+      <Location xsi:type="xsd:string">[Location]</Location>
+      <MerchantTransactionId xsi:type="xsd:string">[MerchantTransactionId]</MerchantTransactionId>
+      <Nexus xsi:type="xsd:string">[Nexus]</Nexus>
+      <ReferredId xsi:type="xsd:string">[ReferredId]</ReferredId>
+      <SerialNumber xsi:type="xsd:string">[SerialNumber]</SerialNumber>
+      <ShippingCharge xsi:type="xsd:decimal">[ShippingCharge]</ShippingCharge>
+      <TaxExemptCertificate xsi:type="xsd:string">[TaxExemptCertificate]</TaxExemptCertificate>
+      <TaxExemptIssuer xsi:type="xsd:string">[TaxExemptIssuer]</TaxExemptIssuer>
+      <TaxExemptReason xsi:type="xsd:string">[TaxExemptReason]</TaxExemptReason>
+      <Total xsi:type="xsd:decimal">[Total]</Total>
+    </tns:Order>
+    <tns:Address id="id2" xsi:type="tns:Address">
+      <City xsi:type="xsd:string">[City]</City>
+      <County xsi:type="xsd:string">[County]</County>
+      <Name xsi:type="xsd:string">[Name]</Name>
+      <Nation xsi:type="xsd:string">[Nation]</Nation>
+      <PostalCode xsi:type="xsd:string">[PostalCode]</PostalCode>
+      <State xsi:type="xsd:string">[State]</State>
+      <Street1 xsi:type="xsd:string">[Street1]</Street1>
+      <Street2 xsi:type="xsd:string">[Street2]</Street2>
+    </tns:Address>
+    <soapenc:Array id="id3" soapenc:arrayType="tns:OrderLineItem[NUM.ITEMS]">
+[ITEMS.XML.ARRAY]
+    </soapenc:Array>

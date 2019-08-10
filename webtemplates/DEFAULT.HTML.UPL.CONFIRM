@@ -1,0 +1,57 @@
+<html>
+<head>
+  <LINK rel="STYLESHEET" type="text/css" href="[CSS.NAME]">
+  <meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+  <meta name="generator" content="Adobe GoLive 4">
+  <title>On-line Data Upload</title>
+</head>
+
+<body bgcolor="white" leftmargin="0" topmargin="0" marginheight="0" marginwidth="0" link="#333366" alink="#333366" vlink="#333366">
+<tr>
+  <td><img src="[WEBSITE.IMAGES]/RNlogocrp.jpg" border="0"></td>
+  <td>
+    <table border="0" cellpadding="0" cellspacing="0" bgcolor="white" width="500">
+      <tr>
+        <td valign="top"><br>
+          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+              <td><font id=datnorm size="2">To:</font>
+                <font id=datnorm size="3" color="#cc3333">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[USER.EMAIL]</font><br>
+                <br>
+              </td>
+            </tr>
+            <tr>
+              <td><font id=datnorm size="2">From:</font>
+                <font id=datnorm size="3" color="#cc3333">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[SUPPORT.URL]</font><br>
+                <br>
+              </td>
+            </tr>
+            <tr>
+              <td><font id=datnorm size="2">Subject:</font>
+                <font id=datnorm size="3" color="#cc3333">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[SUBJECT]</font><br>
+                <br>
+                <br>
+              </td>
+            </tr>
+            <tr>
+              <td><font id=datnorm size="2"><b>This is a confirmation of a data upload that was completed on [UPL.DATE] at [UPL.TIME].</b></font><br>
+                <br>
+                <font id=datnorm size="2"><b>The type of upload was [UPL.TYPE]</b></font><br>
+                <br>
+                <font id=datnorm size="2"><b>Total records processed: [TOTAL.RECS]</b></font><br>
+                <font id=datnorm size="2"><b>Total records with errors: [TOTAL.ERRS]</b></font><br>
+                <br>
+                <font id=datnorm size="2"><b>[SUBJ.PHRASE]</b></font><br><a href="[ERR.FILE]"><font id=datnorm color="#cc3333" size="2">[ERR.FILE]</font></a><br>
+                <br>
+                <font id=datnorm size="2"><b>Send mail to </font><a href="mailto:[SUPPORT.URL]"><font id=datnorm color="#cc3333" size="2">[SUPPORT.URL]</font></a>
+                <font id=datnorm size="2"> with questions or comments about this data upload.</b></font><br>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</body>
+</html>

@@ -1,0 +1,111 @@
+
+
+<nav class="navbar navbar-default" role="navigation">
+                              <div class="container-fluid">
+                                <!-- Brand and toggle get grouped for better mobile display -->
+                     <div class="navbar-header">
+                          <button type="button" class="navbar-toggle icon-list-ul" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                          </button>
+                          <button type="button" class="navbar-toggle icon-rocket" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                            <span class="sr-only">Toggle navigation</span>
+                          </button>
+                          <button type="button" class="navbar-toggle icon-cart" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3">
+                            <span class="sr-only">Toggle navigation</span>
+                          </button>
+                          <a href="#"><div class="logo"></div></a>
+                        </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <div class="hidden-xs hidden-sm" id="header_ad"><!-- BEGIN HEADER_Advertising -->
+        	[VENDOR.AD]
+        	</div> <!-- End Header Ad --> 
+						<ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown" >
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-home"></i>Place an Order <b class="icon-angle-down"></b> </a>
+								                 <ul class="dropdown-menu">
+                                     <li><a class="EproDisp menuItem" href=# onclick="javascript:changepath('OE')">Shipping Information</a>  </li> 
+     <li> [PHMENU] </li> 
+    <li>  [QOMENU]  </li> 
+ <li><a class="menuItem"  href=# onclick="javascript:changepath('PS')">Search for Products</a> </li> 
+ <li><a class="menuItem"  href=# onclick="javascript:changepath('CO')">View Current Order</a> </li> 
+<li> [OOHMENU]  </li> 
+  <li><a class="menuItem"  href=# onclick="javascript:sendquote()">Email Order as Quote</a> </li>
+<li> [CSOSMENU]  </li> 
+                                </ul>
+							</li>
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-cog"></i>My Account <b class="icon-angle-down"></b></a>
+                                <ul class="dropdown-menu">
+<li><a class="menuItem"  href=# onclick="javascript:changepath('MYA')">My Information</a> </li> 
+<li>[INVMENU]</li> 
+<li>[CIMENU]</li> 
+<li>[OIMENU]</li> 
+<li>[PUHMENU]</li> 
+<li>[ARMENU]</li> 
+<li>[BOMENU]</li> 
+<li>[PCSMENU]</li> 
+<li>[CCIMENU]</li> 
+<li>[PEDMENU]</li> 
+<li>[WEBAUDMENU]</li> 
+                 <li> [CHGPSWD] </li>  
+ <li><a class="menuItem"  href=# onclick="javascript:changepath('LIC')">View Our Licenses</a> </li> 
+		                                </ul>
+		              </li>
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-file"></i>Deals<b class="icon-angle-down"></b></a>
+                                <ul class="dropdown-menu">
+                                <li>[BLOGMENU]</li> 
+<li> <a class="menuItem" href=# onclick='javascript:changelist("CL","Y","WEB*30")'>Top Sellers</a> </li>
+<li> <a class="menuItem" href=# onclick='javascript:changelist("CL","Y","WEB*31")'>Most Popular</a> </li>
+<li> <a class="menuItem" href=# onclick='javascript:changelist("CL","Y","WEB*32")'>Latest Items</a> </li>
+<li> <a class="menuItem" href=# onclick='javascript:changelist("CL","Y","WEB*33")'>Trending Items</a> </li>
+<li> <a class="menuItem" href=# onclick='javascript:changelist("CL","Y","WEB*34")'>Best Selling Items</a> </li>	
+								</ul>
+                            </li>     
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-envelope"></i>Contact Us<b class="icon-angle-down"></b></a>
+                                <ul class="dropdown-menu">
+                                   <li> <a class="menuItem"  href="[CONTACTUS]">Contact Us</a></li>
+                  <li><a class="menuItem"  href=# onclick="javascript:changepath('FB')">Customer Survey</a>  </li>
+                  <li><a class="menuItem"  href="[HELPNAME]" target=new >Help</a>                  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-envelope"></i>Home <b class="icon-angle-down"></b></a>
+                                <ul class="dropdown-menu">
+                  <li><a class="menuItem" href="[HOMEPAGE]">Home Page</a> </li>
+<li>[SUSRMENU]</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                                <div class="hide-mid collapse navbar-collapse option-drop" id="bs-example-navbar-collapse-2">
+                                  <ul class="nav navbar-nav navbar-right other-op">
+                                    <li><i class="icon-phone2"></i>[CONTACT.PHONE]</li>
+                                    <li><i class="icon-mail"></i><a href="mailto:[CONTACT.EMAIL]" class="mail-menu">[CONTACT.EMAIL]</a></li>
+                                    <li><i class="icon-globe"></i>
+                                 <!--       <a href="#" class="mail-menu"><i class="icon-facebook"></i></a>
+                                        <a href="#" class="mail-menu"><i class="icon-google-plus"></i></a>
+                                        <a href="#" class="mail-menu"><i class="icon-linkedin"></i></a>
+                                        <a href="#" class="mail-menu"><i class="icon-social-twitter"></i></a>
+                                 -->
+                                 <a href="#" class="mail-menu">[COMPANY.NAME]</a>
+                                    </li>
+                                    <li><i class="icon-search" onclick='javascript:PageSearch($("#search-text").val());' ></i>                                
+                                      <div class="search-wrap">
+                                        <input type="text" id="search-text" class="search-txt" name="search-text">
+                        <button id="searchbt" onclick='javascript:PageSearch($("#search-text").val());' name="searchbt" class="icon-search search-bt">
+                        </button>
+                      </div>
+                                    </li>
+                                  </ul>
+                                </div><!-- /.navbar-collapse -->
+                                <div class="hide-mid collapse navbar-collapse cart-drop" id="bs-example-navbar-collapse-3">
+                                  <ul class="nav navbar-nav navbar-right">
+                                    <li>
+                                    <a title="Check Out Now" href=# onclick="javascript:changepath('CO')">
+                                    <i class="icon-cart"></i> ([TOT.ORD.LINES]) Items $[WEB.ORDERAMT] </a></li>
+                                    <li><a href=# onclick="javascript:changepath('MYA')"><i class="icon-user"></i>My Account</a></li>
+                                  </ul>
+                                </div><!-- /.navbar-collapse -->
+                              </div><!-- /.container-fluid -->
+                            </nav>
+
+

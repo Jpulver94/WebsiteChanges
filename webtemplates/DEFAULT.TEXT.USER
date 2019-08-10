@@ -1,0 +1,25 @@
+From:      USER.NAME
+
+Ship-To:   SHIPTO.ADDRESS.1
+           SHIPTO.ADDRESS.2
+           SHIPTO.ADDRESS.3
+           SHIPTO.CITY.STATE.ZIP
+
+WEB Order # WEB.ORDER.NO
+
+Total Order Amount:  WEB.ORD.AMT
+
+This is a confirmation of your WEB Order # WEB.ORDER.NO
+which has been sent to your supplier.
+
+If you did not print a copy of your confirmation from the
+website, please contact your website administrator to have
+a new confirmation created and emailed to you.
+
+If you have questions about specific items on your order,
+please contact your supplier's customer service department.
+
+Send mail to CUSTSERV.EMAIL with questions or
+comments about your WEB order.
+
+Thank you for ordering through WEBSITE.ID.

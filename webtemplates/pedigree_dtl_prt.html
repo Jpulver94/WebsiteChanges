@@ -1,0 +1,144 @@
+Content-type: text/html
+
+<!--
+******************************************
+  Created by The Systems House Web Team  *
+******************************************
+-->
+
+<html>
+<head>
+<LINK rel="STYLESHEET" type="text/css" href="[CSS.NAME]">
+<title>Track and Trace Detail - [PEDIGREE.ID]</title>
+</head>
+<script language='JavaScript' src='../../all_scripts/tsh_menubar.js'></script>
+<script lang=javascript>
+function pedprint(ordno,user,pedkey,mdsorderno) { 
+  var pgm = "../../cgi-bin/olecgi.exe/pedprint[SUFFIX]?orderno=" + ordno + "&CustomerId=" + user + "&pedigreeno=" + pedkey + "&mdsorderno=" + mdsorderno ; 
+alert('pgm=' + pgm) ;
+  var name = "sub2" ; 
+  var parms = "toolbar=no,top=190,left=160,width=720,height=300,directories=no,status=no,scrollbars=yes,resizable=no,menubar=no" ; 
+  pedprt = window.open(pgm,name,parms) ; 
+  pedprt.focus() ; 
+} 
+
+</script>
+
+<body bgcolor=white topmargin=0 leftmargin=0>
+<div id="tsh"></div>
+<!--
+<form name=peddetail action="peddetail[SUFFIX]" method=post>
+-->
+<form name=peddetail>
+<input type=hidden name=orderno value="[WEB.ORD.NO]">
+<input type=hidden name=pedigreeno value="[PEDIGREE.ID]">
+<input type=hidden name=CustomerId value="[USER.ID]">
+<input type=hidden name=mdsorderno value="[RELEASE.NO]">
+<table border=0 cellspacing=0 cellpadding=0 width=100%>
+ <tbody>
+  <tr>
+    <td><img src='[WEBSITE.IMAGES]/RNlogocrp.jpg' border=0></td>
+    <td height=60 width=454 align=center valign=center>
+      <img src='[WEBSITE.IMAGES]/spacer.gif' border=0>
+    </td>
+    <td id=subhead valign=bottom height=60 nowrap>
+      <div align=right>
+Track and Trace Detail</div>
+    </td>
+  </tr>
+ </tbody>
+</table>
+<table border=0 cellpadding=0 cellspacing=0 width=100%>
+  <tr>
+    <td height=20></td>
+  </tr>
+  <tr>
+    <td id=taghdg align=right width=150><font size=3><b>Track and Trace ID</b></font>
+      <a href=# onclick="javascript:pedprint('[WEB.ORD.NO]','[USER.ID]','[PEDIGREE.ID]','[RELEASE.NO]')">
+        <img src="[WEBSITE.IMAGES]/printer.gif"></a>&nbsp;
+    </td>
+    <td id=datnorm valign=bottom><font size=3><b>[PEDIGREE.ID]</b></font>
+  </tr>
+  <tr>
+    <td id=taghdg align=right width=150><b>PO#</b>&nbsp;</td>
+    <td id=datnorm>[PO.NO]</td>
+  </tr>
+  <tr>
+    <td id=taghdg align=right width=150><b>Product#</b>&nbsp;</td>
+    <td id=datnorm>[A.PROD.NO]&nbsp;&nbsp;[PROD.DESC]</td>
+  </tr>
+  <tr>
+    <td id=taghdg align=right width=150><b>Company</b>&nbsp;</td>
+    <td id=datnorm>[CO.NAME]</td>
+  </tr>
+  <tr>
+    <td id=taghdg align=right width=150><b>Notes</b>&nbsp;</td>
+    <td id=datnorm>[NOTES]</td>
+  </tr>
+  <tr>
+    <td id=taghdg align=right width=150><b>Shipment ID</b>&nbsp;</td>
+    <td id=datnorm>[SHIPMENT.ID]</td>
+  </tr>
+  <tr>
+    <td id=taghdg align=right width=150><b>Invoice#</b>&nbsp;</td>
+    <td id=datnorm>[INVOICE.NO]</td>
+  </tr>
+  <tr>
+    <td id=taghdg align=right width=150><b>Invoice Date</b>&nbsp;</td>
+    <td id=datnorm>[INVOICE.DATE]</td>
+  </tr>
+  <tr>
+    <td id=taghdg align=right width=150><b>Manufacturer</b>&nbsp;</td>
+    <td id=datnorm>[MFR.NAME]</td>
+  </tr>
+  <tr>
+    <td id=taghdg align=right width=150><b>NDC#</b>&nbsp;</td>
+    <td id=datnorm>[NDC.NO]</td>
+  </tr>
+  <tr>
+    <td id=taghdg align=right width=150><b>Dosage Form</b>&nbsp;</td>
+    <td id=datnorm>[DOSAGE]</td>
+  </tr>
+  <tr>
+    <td id=taghdg align=right width=150><b>Strength</b>&nbsp;</td>
+    <td id=datnorm>[STRENGTH]</td>
+  </tr>
+  <tr>
+    <td id=taghdg align=right width=150><b>Container Size</b>&nbsp;</td>
+    <td id=datnorm>[CONTAINER.SIZE]</td>
+  </tr>
+<!--
+  <tr>
+    <td id=taghdg align=right width=150><b>Document ID</b>&nbsp;</td>
+    <td id=datnorm>[DOCUMENT.ID]</td>
+  </tr>
+-->
+</table>
+
+<table border=0 cellpadding=0 cellspacing=0 width=100%>
+  <tr>
+    <td height=10></td>
+  </tr>
+  <tr>
+    <td id=datnorm align=center>
+<b>Above is your detailed information for this Track and Trace Transaction.</b>
+    </td>
+  </tr>
+  <tr>
+    <td height=10></td>
+  </tr>
+  <tr>
+    <td align=center valign=center>
+      <input type=button class=button1 name="CL" value="Close" onclick="javascript:window.close()"
+        onmouseover="this.className='button1 buttonhov1' ; window.status='Close Window'"
+        onmouseout="this.className='button1' ; window.status=''">
+    </td>
+  </tr>
+</table>
+</form>
+&nbsp;
+<hr id=styleruler height=4 width=100%><h5 id=datnorm>Copyright &copy; 2007 The Systems House, Inc. <br> <a href="mailto:webmaster@tshinc.com">
+<font size=1>
+<em>Problems? Click here to email the Webmaster</em></font></a></h5>
+</body>
+</html>

@@ -1,0 +1,21 @@
+
+                        <tr id=[LNCOLOR]  style="border-bottom: 1px solid #333;">  
+                         <td id=datsml >  [A.PROD.NO] </td> 
+                          <td id=datsml class="productcell">   
+                           <a href=# onclick="javascript:prod_inquiry('PI','N','[A.PROD.NO]')">       [PROD.DESC]</a>     </td>    
+                         <td>[IN.STOCK]</td>
+<td style="text-align: center;"> 
+<a href=# class="hintanchor ProductInfoButton" onmouseover="showhintajax_sunset('login[SUFFIX]?aprodno=[A.PROD.NO]&orderno=[WEB.ORDERNO]&LOGINPATH=PIFS&PAGEID=31&CUSTOMERID=[CUSTOMERID]', this, event, '10px')" >
+<img class="ProductInfoButton" src="https://sunset.tshinc.com/sunset/images/ProductInfo.png"  >  </a>
+</td>      
+                         <td id="datsml" align=right>   [UM.STRNG] </td>        
+                          <td id="datsml" align=right>       [EXT.PRICE]</td>        
+                          <td id="datsml" >      
+                            <input class="QtyBox" data-prodno="[A.PROD.NO]" data-um="[UNIT.MEAS]" tabindex=[LINE.NO] type=text size=2 maxlength=6 name="[REAL.LINE.NO]|" value="[ORD.QTY]" onchange=qtychk(value,name)>        
+                            <input type=text value="[UNIT.MEAS]" style="display: none">   
+                          </td> 
+                          <td id="datsml" > <a title="Update Order" class=ReorderLines href=# onclick="javascript:changepath('CO','N')" > <img src="https://sunset.tshinc.com/sunset/images/Add.png" > </a>       </td>     
+                          <td id="datsml" > <a title="Add this item to your formulary" class=ReorderLines href=# onclick="javascript:fav_template('[A.PROD.NO]')" >  <img src="https://sunset.tshinc.com/sunset/images/Formulary.png" > </a>       </td>     
+                          <td class="RemoveClass datsml cartremovexs">  <a href=# onclick="javascript:del_item('[REAL.LINE.NO]|','Delete [A.PROD.NO]')" ; title="Delete [A.PROD.NO] " >  <img src="https://sunset.tshinc.com/sunset/images/remove.png" >  </a>   </td>
+                           </tr>
+

@@ -1,0 +1,155 @@
+
+
+<body>
+<div id="tsh"></div>
+ <div id="ORDXdivcontainer" style="z-index: 99999 ;top: 115px; left: 200px; width: 900px; height: auto; background-color: #ffffff; overflow: scroll;display: none; position: absolute; border: 1px solid" ></div>
+<div class="weblockmsg"> [WEB.LOCK.MSG] </div>
+    <header>
+            <!--Topbar-->
+            <div class="topbar-info ">                    
+                        <div class="container-fluid"> 
+                                                                                                           <div class="top-info-contact pull-right col-xs-1"> 
+
+                           </div>   
+                            <div class="social-wrap-head col-xs-11 no-pad">
+                                <ul>
+                           <li>   Welcome [CUSTOMERID]  | Call Us [CONTACT.PHONE] | <a href="mailto:[CONTACT.EMAIL]"> [CONTACT.EMAIL] | </a>  </li>
+                              <!--  <li><a href="#"><i class="icon-facebook head-social-icon" id="face-head" data-original-title="" title=""></i></a></li>
+                                <li><a href="#"><i class="icon-social-twitter head-social-icon" id="tweet-head" data-original-title="" title=""></i></a></li>
+                                <li><a href="#"><i class="icon-google-plus head-social-icon" id="gplus-head" data-original-title="" title=""></i></a></li>
+                                <li><a href="#"><i class="icon-linkedin head-social-icon" id="link-head" data-original-title="" title=""></i></a></li>
+                                <li><a href="#"><i class="icon-rss head-social-icon" id="rss-head" data-original-title="" title=""></i></a></li>
+                            -->
+                                                                    <li><a title="View Web Order" href=# onclick="javascript:loadweborder()"> 
+                                                                    <i class="icon-user"></i> View Order: [WEB.ORDERNO] | </a>
+<a href="#" onclick="javascript:changepath('EO')" > 1-Click | </a> 
+</li>
+                                    <li><a title="Check Out Now" href=# onclick="javascript:changepath('CO')">
+                                    <i class="icon-cartsmall"></i> ([TOT.ORD.LINES]) Items $[WEB.ORDERAMT] |
+                                    
+                                     </a> </li>
+                                    <li><a href="[WEBSITE.ID]"><i class="icon-home"></i> Log Off |  </a> </li> 
+                                    <li><a href="mailto:[ADMIN.EMAIL]"><i class="icon-mail"></i> Issues?  | </a></li> 
+                                         <li>
+   <a title="Print Web Order" class="fa ExportOrder  fa-print" href=# onclick="javascript:loadprint()">
+<!--
+ <img Title="Print Web Order" class="ExportOrder"  src="[IMAGE.PATH]printer.gif" border="0">
+-->
+ </a>  </li> 
+<li>
+<A class="fa ExportOrder fa-file-pdf-o" HREF="javascript:loadexport('PDF')" TITLE="Export Order as PDF" >
+<!--
+	<img alt="Export Order as PDF" class="ExportOrder" src="[IMAGE.PATH]pdf.png" >
+-->
+  </A> </li> 
+<li>
+<A class="fa ExportOrder fa-file-excel-o" HREF="javascript:loadexport('XLS')" TITLE="Export Order as XLS" >
+<!--
+	<img alt="Export Order as XLS" class="ExportOrder" src="[IMAGE.PATH]excel.png" >
+-->
+  </A> </li> 
+<li>
+<A class="fa ExportOrder fa-file-image-o" HREF="javascript:loadexport('JPG')" TITLE="Export Order as JPG" >
+<!-- 
+	<img alt="Export Order as JPG" class="ExportOrder" src="[IMAGE.PATH]jpeg.png" >
+-->
+  </A> </li> 
+<li>
+<A class="fa ExportOrder fa-file-word-o" HREF="javascript:loadexport('DOC')" TITLE="Export Order as DOC" >
+<!--
+	<img alt="Export Order as DOC" class="ExportOrder" src="[IMAGE.PATH]word.png" >
+-->
+  </A> </li> 
+<li>
+<A class="fa ExportOrder fa-file-text-o" HREF="javascript:loadexport('TXT')" TITLE="Export Order as TXT" >
+<!--
+	<img alt="Export Order as TXT" class="ExportOrder" src="[IMAGE.PATH]text.png" >
+-->
+  </A>  </li> 
+                                </ul>
+                            </div>                            
+                        </div>
+                    </div><!--Topbar-info-close-->
+            <div id="headerstic">
+            <div class="top-bar container-fluid">
+              <div class="row">
+                 [MENUBAR]  
+              </div>    
+            </div><!--Topbar End-->
+          </div>
+    </header>
+     <!--Mid Content Start-->
+     <section class="complete-content content-footer-space">
+         <div class="bread-crumb-wrap ibc-wrap-4">
+    	<div class="container">
+    <!--Title / Beadcrumb-->
+         	<div class="col-xs-12 col-md-12 col-sm-12">
+                   <div class="bread-heading">
+ <h1>
+ </h1>
+ <!-- Added Mobile Menu -->
+  <div id=nmenu>
+  <label for="show-menu" class="bread-crumb show-menu">
+ <i class="icon-cart "></i>
+ &nbsp; Shop By Category &nbsp;
+ <i class="fa fa-arrow-down"></i>
+  </label>
+  <input type="checkbox" id="show-menu" role="button">
+ </div>
+ </div>
+                <div class="bread-crumb pull-right">
+                <ul>
+                <li>
+                <div id="search">  <input type="text" id="query" placeholder="Search Products.." name="query" /></div>
+                <div onclick="javascript:TopSearch()" class="fa fa-search search-head"> &nbsp; </div>
+                </li>
+                <li class="hidden-xs hidden-sm"> <a href="#"> &nbsp; [page_title] </a>         
+                </li>
+                </ul>
+                </div>
+            </div>
+         </div>
+     </div>    
+		<div class="mainpage">
+        	<div class="container-fluid">
+                   <div class="row">
+                           <div id="left" class="hidden-xs hidden-sm col-xs-12 col-sm-3 col-md-3 col-lg-3">
+            	<div class="content-tabs">           
+            	<!-- Nav tabs -->
+                    <ul class="nav nav-tabs">
+                      <li class="active"><a href="#Tab1" data-toggle="tab">Search </a></li>
+                      <li><a href="#Tab2" data-toggle="tab">Filter Results</a></li>
+                    </ul>
+             <!-- Tab panes -->
+                    <div class="tab-content">
+                      <div class="tab-pane fade in active" id="Tab1">
+                        <div class="features-list-title">
+                        <div id="google_translate_element"></div>
+                        <script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                        </div>
+                         <div id="left_menucontent"><!-- BEGIN LEFT_MENUCONTENT -->
+[MENU.NAME]
+            </div>
+            </div>
+                      <div class="tab-pane fade" id="Tab2">
+                     <h3 class="nosh">Your Filters <span> </span> </h3>
+<div class="FaccordionButton"> 
+<ul id="selection" ></ul>
+</div>
+<h3 class="nosh">Narrow Your Choices
+<a href="#" id="CloseFilter" > &#9650; </a>
+<a href="#" id="OpenFilter" > &#9660; </a>
+<span></span></h3>
+<div id="FilterText"> </div>
+                       </div>          
+               </div> 
+               </div>
+                    </div> 
+<!-- BEGIN CENTER -->
+    <div id="center" class="col-xs-12 col-sm-7 col-md-7 col-lg-7">        
+
+

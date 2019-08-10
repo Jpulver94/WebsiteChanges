@@ -1,0 +1,441 @@
+ 
+<script lang=javascript>
+function sendshipmeth () {
+//new send of shipmethod data using jquery and ajax
+   Sstr = $("#smxshipmeth").val() ;
+     var dummyU = widgetload_callback('login[SUFFIX]?orderno=[WEB.ORDERNO]&MODE=U&LOGINPATH=SMX&pageid=31&CUSTOMERID=[CUSTOMERID]&TARGETVAL=' + Sstr ,'#shipholder',
+     function() {
+          // UPDATED THE PAGE INFO
+   $("#ordholder").html('') ; 
+     var dummyx = widgetload('login[SUFFIX]?orderno=[WEB.ORDERNO]&LOGINPATH=SOX&pageid=31&CUSTOMERID=[CUSTOMERID]&TARGETVAL=[WEB.ORDERNO]','#ordholder'); 
+     });
+}
+function senddiscount() {
+//new send of discount/coupon data using jquery and ajax
+   Sstr = $("#dsxcode").val() ;
+     var dummyU = widgetload_callback('login[SUFFIX]?orderno=[WEB.ORDERNO]&MODE=U&LOGINPATH=DSX&pageid=31&CUSTOMERID=[CUSTOMERID]&TARGETVAL=' + Sstr ,'#dsxholder',
+     function() {
+          // UPDATED THE PAGE INFO
+   $("#ordholder").html('') ; 
+     var dummyx = widgetload('login[SUFFIX]?orderno=[WEB.ORDERNO]&LOGINPATH=SOX&pageid=31&CUSTOMERID=[CUSTOMERID]&TARGETVAL=[WEB.ORDERNO]','#ordholder'); 
+     });
+}
+function cancelsend(x) { 
+  document.template.loginpath.value = x ; 
+  document.template.submit() ; 
+}
+function ConditionalSubmit(name) { 
+  if (sendorder(name)) { ;
+    CreateBlock1(); 
+   };
+}
+function sendorder(x) {
+    if (document.template.paymethod.value == "") {
+        jAlert("Please select a Method of Payment.");
+        document.template.paymethod.focus();
+        return false;
+    }
+    var termslist = document.template.paymethod;
+    var termsdesc = termslist.options[termslist.selectedIndex].text;
+    document.template.termsdesc.value = termsdesc;
+    if (document.template.paymethod.value == "CC") {
+        if (CheckCardInfo(document.template)) {
+            document.template.billtype.value = "CC";
+            //regardless of what they click force them to EO. ;
+            document.template.loginpath.value = "EO";
+            CreateBlock1();
+            document.template.submit();
+            // return true ;
+        } else {
+            // return false ;
+        }
+    }
+    if (document.template.paymethod.value != "CC") {
+        if (document.template.CardNumber.value != "" || document.template.CardNumber2.value != "") {
+            var msg = "Payment Method not for Credit Card, but Credit Card info found.\nIgnore Credit Card info?"
+                // resp = jConfirm(msg) ;
+                // if (resp) {
+            resp = jConfirm(msg, "Please Confirm", function(resp) {
+                if (resp) {} else {
+                    document.template.paymethod.focus();
+                    return false;
+                };
+                // execute stuff here
+                document.template.billtype.value = "OA";
+                document.template.ccname.value = "";
+                document.template.CardType.value = "";
+                document.template.CardNumber.value = "";
+                document.template.CardNumber2.value = "";
+                document.template.CardValCode.value = "";
+                document.template.ExpMonth.value = "";
+                document.template.ExpYear.value = "";
+                document.template.ccaddr.value = "";
+                document.template.cczip.value = "";
+                //regardless of what they click force them to EO. ;
+                document.template.loginpath.value = "EO";
+                CreateBlock1();
+                document.template.submit();
+            }); // For resp
+        } else {
+            CreateBlock1();
+            document.template.loginpath.value = "EO";
+            document.template.submit();
+        }
+    }
+    if (document.template.CardNumber2.value != "") {
+        if (CheckCardInfo(document.template)) {
+            document.template.billtype.value = "CC";
+            //regardless of what they click force them to EO. ;
+            document.template.loginpath.value = "EO";
+            CreateBlock1();
+            document.template.submit();
+        }
+    }
+}
+function CheckCardInfo(form) {
+  if (form.CardNumber.value != "" && form.CardNumber2.value != "") {
+     jAlert("Please use only one Credit Card Number.") ;
+     form.CardNumber.focus() ;
+     return false;
+  }
+  if (form.CardNumber.value.length != 0) {
+     return true;
+  } else {
+    if (form.CardType.value.length == 0) {
+       jAlert("Please enter a Credit Card Type.") ;
+       form.CardType.focus() ;
+       return false;
+    }
+    if (form.CardNumber2.value.length == 0) {
+       jAlert("Please enter a Credit Card Number.") ;
+       form.CardNumber2.focus() ;
+       return false;
+    }
+    if (form.CardValCode.value.length == 0) {
+       jAlert("Please enter a Credit Card Validation Code.") ;
+       form.CardValCode.focus() ;
+       return false;
+    }
+    if (form.ccname.value.length == 0) {
+       jAlert("Please enter the Name on the Credit Card.") ;
+       form.ccname.focus() ;
+       return false;
+    }
+    if (form.ExpMonth.value.length == 0) {
+       jAlert("Please enter the Expiration Month.");
+       form.ExpMonth.focus();
+       return false;
+    }
+    if (form.ExpYear.value.length == 0) {
+       jAlert("Please enter the Expiration Year.");
+       form.ExpYear.focus();
+       return false;
+    }
+    if (form.ccaddr.value != "" && form.cczip.value == "") {
+        jAlert("Bill-To Address and Zipcode must be entered or left blank.") ;
+        form.ccaddr.focus() ;
+        return false;
+    }
+    if (form.ccaddr.value == "" && form.cczip.value != "") {
+        jAlert("Bill-To Address and Zipcode must be entered or left blank.") ;
+        form.ccaddr.focus() ;
+        return false;
+    }
+    return true;
+  }
+}
+//SETTING UP OUR POPUP
+//0 means disabled; 1 means enabled;
+var popupStatus = 0;
+//loading popup with jQuery magic!
+function loadPopup(){
+	//loads popup only if it is disabled
+	if(popupStatus==0){
+		$("#backgroundPopup").css({
+			"opacity": "0.7"
+		});
+		$("#backgroundPopup").fadeIn("slow");
+		$("#popupContact").fadeIn("slow");
+		popupStatus = 1;
+	}
+}
+//disabling popup with jQuery magic!
+function disablePopup(){
+	//disables popup only if it is enabled
+	if(popupStatus==1){
+		$("#backgroundPopup").fadeOut("slow");
+		$("#popupContact").fadeOut("slow");
+		popupStatus = 0;
+	}
+}
+//centering popup
+function centerPopup(){
+    var myWidth = 0, myHeight = 0;
+  if( typeof( window.innerWidth ) == 'number' ) {
+    //Non-IE
+    myWidth = window.innerWidth;
+    myHeight = window.innerHeight;
+  } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+    //IE 6+ in 'standards compliant mode'
+    myWidth = document.documentElement.clientWidth;
+    myHeight = document.documentElement.clientHeight;
+  } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+    //IE 4 compatible
+    myWidth = document.body.clientWidth;
+    myHeight = document.body.clientHeight;
+  }
+	//request data for centering
+	var windowWidth = myWidth;
+	var windowHeight = myHeight;
+	var popupHeight = $("#popupContact").height();
+	var popupWidth = $("#popupContact").width();
+	//centering
+	$("#popupContact").css({
+		"position": "absolute",
+		"top": windowHeight/2-popupHeight/2,
+		"left": windowWidth/2-popupWidth/2
+	});
+	//only need force for IE6
+	
+	$("#backgroundPopup").css({
+		"height": windowHeight
+	});
+	
+}
+// Added CrossBrowser Width Hidth Function
+function AlertSize() {
+  var myWidth = 0, myHeight = 0;
+  if( typeof( window.innerWidth ) == 'number' ) {
+    //Non-IE
+    myWidth = window.innerWidth;
+    myHeight = window.innerHeight;
+  } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+    //IE 6+ in 'standards compliant mode'
+    myWidth = document.documentElement.clientWidth;
+    myHeight = document.documentElement.clientHeight;
+  } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+    //IE 4 compatible
+    myWidth = document.body.clientWidth;
+    myHeight = document.body.clientHeight;
+  }
+  jAlert( 'Width = ' + myWidth );
+  jAlert( 'Height = ' + myHeight );
+}
+//CONTROLLING EVENTS IN jQuery
+$(document).ready(function(){
+// added credit card drop down 
+$('select[name=CardNumber]').SelectCustomizer();
+	
+	//LOADING POPUP
+	//Click the button event!
+	$("#button").click(function(){
+		//centering with css
+		centerPopup();
+		//load popup
+		loadPopup();
+	});
+				
+	//CLOSING POPUP
+	//Click the x event!
+	$("#popupContactClose").click(function(){
+		disablePopup();
+	});
+	//Click out event!
+	$("#backgroundPopup").click(function(){
+		disablePopup();
+	});
+	//Press Escape event!
+	$(document).keypress(function(e){
+		if(e.keyCode==27 && popupStatus==1){
+			disablePopup();
+		}
+	});
+});
+//ADDED MANUAL SHIPTO FUNCTIONS..
+function ManualShipto() {
+ //get selected shipto info
+    var x = 1
+//     var val = document.forms[0].Shiptobox.options[x].value ;
+    val = "manual|Enter your new address||||||||||"
+    var my_array = new Array ;
+    var my_array = string_decode(val) ;
+    var shipto = my_array[0] ;
+    var Shiptoname = my_array[1] ;
+    var Shiptodesc = my_array[2] ;
+    var Shiptodesc2 = my_array[3] ;
+    var Shiptodesc3 = my_array[4] ;
+    var Shiptocity = my_array[5] ;
+    var Shiptostate = my_array[6] ;
+    var Shiptozip = my_array[7] ;
+    var Shiptocountry = my_array[8] ;
+    var Shiptophone = my_array[9] ;
+ // put variables into text boxes
+    document.forms[0].shipto.value = shipto ;
+    document.forms[0].Shiptoname.value = Shiptoname ;
+    document.forms[0].Shiptodesc.value = Shiptodesc ;
+    document.forms[0].Shiptodesc2.value = Shiptodesc2 ;
+    document.forms[0].Shiptodesc3.value = Shiptodesc3 ;
+    document.forms[0].Shiptocity.value = Shiptocity ;
+    document.forms[0].Shiptostate.value = Shiptostate ;
+    document.forms[0].Shiptozip.value = Shiptozip ;
+    document.forms[0].Shiptocountry.value = Shiptocountry ;
+    document.forms[0].Shiptophone.value = Shiptophone ;
+    document.forms[0].Shiptoname.focus() ;
+//    document.forms[0].Shiptobox.options.selectedIndex = x ;
+//    document.forms[0].Shiptobox.options[x].value = val ;
+$("[name='Shiptobox']").val(val) ; 
+}
+function DisableShipto() {
+ //get selected shipto info and send back as disabled
+//     var x = document.forms[0].Shiptobox.options.selectedIndex ;
+//     var val = document.forms[0].Shiptobox.options[x].value ;
+var val = $("[name='Shiptobox']").val() ; 
+    var my_array = new Array ;
+    var my_array = string_decode(val) ;
+    var shipto = my_array[0] ;
+    var Shiptoname = my_array[1] ;
+    var Shiptodesc = my_array[2] ;
+    var Shiptodesc2 = my_array[3] ;
+    var Shiptodesc3 = my_array[4] ;
+    var Shiptocity = my_array[5] ;
+    var Shiptostate = my_array[6] ;
+    var Shiptozip = my_array[7] ;
+    var Shiptocountry = my_array[8] ;
+    var Shiptophone = my_array[9] ;
+   if (shipto != '') { } else { jAlert("You cannot Remove the Default Shipto") ; return false  };
+msg = "WARNING! You are about to remove '" + shipto + " " + Shiptoname + "' - Click OK to confirm " ;
+resp = jConfirm(msg,"Please Confirm",function(resp) {
+   if (resp) { } else { return false  };
+ // put variables into text boxes
+    document.forms[0].shipto.value = shipto ;
+    document.forms[0].Shiptoname.value = "DISABLED" ;
+    document.forms[0].Shiptodesc.value = Shiptodesc ;
+    document.forms[0].Shiptodesc2.value = Shiptodesc2 ;
+    document.forms[0].Shiptodesc3.value = Shiptodesc3 ;
+    document.forms[0].Shiptocity.value = Shiptocity ;
+    document.forms[0].Shiptostate.value = Shiptostate ;
+    document.forms[0].Shiptozip.value = Shiptozip ;
+    document.forms[0].Shiptocountry.value = Shiptocountry ;
+    document.forms[0].loginpath.value =  "OE" ;
+    document.forms[0].pageid.value =  "1" ;
+    sendshipto() ;
+  }) ;
+    }
+function UpdateShipto(tf) {
+ //get selected shipto info and send back as disabled
+ // if they want to force all data to uppercase 
+ casecheck = 0;
+ if (casecheck) {
+ // put variables into text boxes
+    tf.shipto.value = tf.shipto.value.toUpperCase() ;
+    tf.Shiptoname.value = tf.Shiptoname.value.toUpperCase()  ;
+    tf.Shiptodesc.value = tf.Shiptodesc.value.toUpperCase() ;
+    tf.Shiptodesc2.value = tf.Shiptodesc2.value.toUpperCase()  ;
+    tf.Shiptodesc3.value = tf.Shiptodesc3.value.toUpperCase()  ;
+    tf.Shiptocity.value = tf.Shiptocity.value.toUpperCase()  ;
+    tf.Shiptostate.value = tf.Shiptostate.value.toUpperCase()  ;
+    tf.Shiptozip.value = tf.Shiptozip.value.toUpperCase()  ;
+//    tf.Shiptocountry.value = tf.Shiptocountry.value.toUpperCase()  ;
+    }
+    tf.loginpath.value =  "OE" ;
+    tf.pageid.value =  "1" ;
+    sendshipto();
+}
+function sendshipto () {
+//new send of shipto data using jquery and ajax
+ $.post('login[SUFFIX]', $(document.forms[0]).serialize(), function(data) {
+ //   jAlert("Shipping information Updated");
+   // Reload the order info..
+ var dummy = widgetload('login[SUFFIX]?orderno=[WEB.ORDERNO]&LOGINPATH=SOX&pageid=31&TARGETVAL=[WEB.ORDERNO]&CUSTOMERID=[CUSTOMERID]','#ordholder');
+   disablePopup();
+   loadssx() ; 
+ });
+}
+function showShipto(val) {
+ //get selected shipto info
+    // var x = document.forms[0].Shiptobox.options.selectedIndex ;
+    // var val = document.forms[0].Shiptobox.options[x].value ;
+    var my_array = new Array ;
+    var my_array = string_decode(val) ;
+    var shipto = my_array[0] ;
+    var Shiptoname = my_array[1] ;
+    var Shiptodesc = my_array[2] ;
+    var Shiptodesc2 = my_array[3] ;
+    var Shiptodesc3 = my_array[4] ;
+    var Shiptocity = my_array[5] ;
+    var Shiptostate = my_array[6] ;
+    var Shiptozip = my_array[7] ;
+    var Shiptocountry = my_array[8] ;
+ // put variables into text boxes
+    document.forms[0].shipto.value = shipto ;
+    document.forms[0].Shiptoname.value = Shiptoname ;
+    document.forms[0].Shiptodesc.value = Shiptodesc ;
+    document.forms[0].Shiptodesc2.value = Shiptodesc2 ;
+    document.forms[0].Shiptodesc3.value = Shiptodesc3 ;
+    document.forms[0].Shiptocity.value = Shiptocity ;
+    document.forms[0].Shiptostate.value = Shiptostate ;
+    document.forms[0].Shiptozip.value = Shiptozip ;
+    document.forms[0].Shiptocountry.value = Shiptocountry ;
+    document.forms[0].Shiptoname.focus() ;
+}
+function suggreorders() {
+// Suggested Reorders here shows items that are on the 999 template
+// from Parameter WEB.ORDER.OPTIONS but defaults to 999
+  var params = 'orderno=[WEB.ORDERNO]&LOGINPATH=SRUG&pageid=31&ITEMSPAGE=25&CUSTOMLIST=[REORD.TEMPLATE]&CUSTOMERID=[CUSTOMERID]';
+var targetname = '#Suggdiv'
+// loaded
+ var loadh = '<img src="[IMAGE.PATH]ajax-loader-small.gif" > '
+$(targetname).html(loadh) ;
+ // BEGIN GET QUERY STRING CODE ;
+ var pageurl ='login[SUFFIX]?' + params ;
+ jQuery.ajax({
+      type: "POST",
+      url: pageurl,
+      async: true,
+      data: params ,
+      timeout : 20000,
+      tryCount : 0,
+      retryLimit : 3,
+      dataType: "html",
+      success: function(data) {
+   $(targetname).html(data);   // jAlert('Load was performed.');
+var str = $(targetname).html()
+var n=str.indexOf("Error");
+if (n > 0 ) {
+$(targetname).html('No Suggestions Available') ;
+ // $('#Suggwrap').hide() ;
+}
+      if ($(targetname + ":contains('error_box')").length) {  $(targetname).html('Remotenet Error');} }, 
+      error : function(xhr, textStatus, errorThrown ) {  
+            if (textStatus == 'timeout') {
+            this.tryCount++;
+            if (this.tryCount <= this.retryLimit) {
+                //try again
+                $.ajax(this);
+                return;
+            }
+            $(targetname).html('There was an Error connecting to the Server. We have tried ' + this.retryLimit + ' times ' + 'Error: ' + textStatus);
+            return;
+        }
+        if (xhr.status == 500) {
+           $(targetname).html('Oops! There seems to be a server problem, please try again later.' + 'Error: ' + textStatus);
+        } else {
+//            $(targetname).html('Error on Page...') ;
+            this.tryCount++;
+            if (this.tryCount <= this.retryLimit) {
+                //try again
+                $.ajax(this);
+                return;
+            }
+            $(targetname).html('There was an Error connecting to the Server. We have tried ' + this.retryLimit + ' times ' + 'Error: ' + textStatus);
+            return;
+        }
+    }
+ }) ;
+// end load
+}
+$(document).ready(function() {
+ suggreorders();
+ }) ; 
+</script> 
+  

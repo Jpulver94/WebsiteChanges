@@ -1,0 +1,39 @@
+RemoteNet Feedback
+
+User:  USER.NAME
+Email: USER.EMAIL
+
+Customer:
+       CUST.NAME
+       CUST.ADDR1
+       CUST.ADDR2
+       CUST.ADDR3
+       CUST.CITY.ST
+
+EASE OF USE -- Ordering Methods:
+		Custom Lists:     [FBCUSTOMLISTS]
+		Product Search:   [FBPRODSEARCH]
+		Quick Order:      [FBQUICKORD]
+		Purchase History: [FBPURCHHIST]
+
+OVERALL SITE FUNCTIONALITY:
+	My overall satisfaction with the site is:  [FBFUNCTIONALITY]
+
+SPEED OF SITE:
+	Site Speed:  [FBSPEED]
+	Internet connection:  [FBCONNECT]
+
+Usefullness of RemoteNet Site:
+	Helpful in managing my practice/business :  [FBHELPMANAGE]
+	Provides useful information: [FBUSEFUL]
+	Better than using individual vendor sites: [FBBETTERVEND]
+
+
+Additional Information:
+
+[FBADDINFO]
+
+
+General Comments, Questions or Suggestions:
+
+[FBCOMMENTS]

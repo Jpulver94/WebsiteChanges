@@ -1,0 +1,391 @@
+
+      <!-- Rebuilding Main Section with Bootstrap --> 
+ <div class="container">  
+ <div class="col-md-12"> 
+                      <form name=template action="login[SUFFIX]" method=post onSubmit="return process_order(0)">
+                        <input type=hidden name=Aprod_string value="[APROD_STRING]">
+                        <input type=hidden name=prod_string value="[PROD_STRING]">
+                        <input type=hidden name=qty_string value="[QTY_STRING]">
+                        <input type=hidden name=um_string value="[UM_STRING]">
+                        <input type=hidden name=price_string value="[PRICE_STRING]">
+                        <input type=hidden name=manufact_string value="[MANUFACT_STRING]">
+                        <input type=hidden name=loginpath value="[LOGINPATH]">
+                        <input type=hidden name=searchflag value="[SEARCHFLAG]">
+                        <input type=hidden name=pageid value="5">
+                        <input type=hidden name=aprodno value="[APRODNO]">
+                        <input type=hidden name=startptr value="[STARTPTR]">
+                        <input type=hidden name=CustomerId value="[CUSTOMERID]">
+                        <input type=hidden name=orderno value="[ORDERNO]">
+                        <input type=hidden name=customlist_save value="">
+                        <input type=hidden name=searchptr value="1">
+                        <input type=hidden name=submitvar value="">
+                        <input type=hidden name=old_loginpath value="[LOGINPATH]">
+                        <input type=hidden name=prev_changesort value="[CHANGESORT]">
+                        <input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+                        <input type=hidden name=attn value="[ATTN]">
+                        <input type=hidden name=reqddt value="[REQDDT]">
+                        <input type=hidden name=deptno value="[DEPTNO]">
+                        <input type=hidden name=SAVEDcustpo value="[CUSTPO]">
+                        <input type=hidden name=reqno value="[REQNO]">
+                        <input type=hidden name=Shiptoname value="[SHIPTONAME]">
+                        <input type=hidden name=Shiptodesc value="[SHIPTODESC]">
+                        <input type=hidden name=Shiptodesc2 value="[SHIPTODESC2]">
+                        <input type=hidden name=Shiptocity value="[SHIPTOCITY]">
+                        <input type=hidden name=Shiptostate value="[SHIPTOSTATE]">
+                        <input type=hidden name=Shiptozip value="[SHIPTOZIP]">
+                        <input type=hidden name=Shipmethod value="[SHIPMETHOD]">
+                        <input type=hidden name=slsmno value="[SLSMNO]">
+                        <input type=hidden name=slsmn_id value="[SLSMN_ID]">
+                        <input type=hidden name=Changesort value="[CHANGESORT]">
+                        <input type=hidden name=itemspage value="[ITEMSPAGE]">
+                        <table border=0 cellpadding=0 cellspacing=0 width=100%>
+                          <tr>  <td>
+                              <div id="ErrorMsg">  [ERROR_STRING] 
+                              </div></td>
+                          </tr>
+                        </table>
+                        <!-- <table border=0 cellpadding=1 cellspacing=0 width=100%>  -->
+                        <style>.checkoutbox {     border: 1px solid darkgray;     background: #f7f7f7;     border-radius: 10px;     padding: 10px; } 
+                        #COTable td { padding: 10px; }
+                        #COTable th {    padding: 7px;}
+                        .LinkText {    float: left;    font-size: 14px;    font-weight: 700;    padding: 10px; }                  
+                        .checkoutbox {   MIN-HEIGHT: 300PX;  border: none;    background: none; font-size: 14px;   font-weight: 700;
+                            border-radius: 5px;    padding: 10px;    width: 33%;    float: left;}
+                            .fillblack { background: #333 ;color: #FF7900 ;  padding: 20px;} 
+                            .fillwhite {border: 1px solid darkgray; background: #cbcbcb;;  }
+                            .fillwhite input {border: 1px solid darkgray; background: #cbcbcb;  }
+                            .checkoutwrap { padding: 10px}
+                            .checkoutbox2 {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 10px;
+    padding: 10px;
+    overflow: hidden;
+    min-height: 320px;
+}
+.borderfill { border: 1px solid darkgray; }
+#CCBox {      padding: 10px;    border-radius: 10px;    border: 1px solid darkgray; }
+.qwrap {
+ width: 125px !important;
+ left: -45px;
+ background: transparent !important;
+ position: relative;
+}
+.inc {
+ margin: 0px 0px 0px 0px !important;
+ border-top-right-radius: 5px !important;
+ border-bottom-right-radius: 5px !important;
+ border-top-left-radius: 0px !important;
+ border-bottom-left-radius: 0px !important;
+ position: relative;
+ left: 120px;
+}
+.dec {
+ font-size: 40px !important;
+ margin: 0px 0px 0px 0px !important;
+ border-top-left-radius: 5px !important;
+ border-bottom-left-radius: 5px !important;
+ border-top-right-radius: 0px !important;
+ border-bottom-right-radius: 0px !important;
+ position: relative;
+ left: 15px;
+}
+.checkoutwrap {
+    padding: 10px;
+    margin-left: -40px;
+}
+                                                #RnTotLines {
+                                                    display: none
+                                                }
+
+                                                .rntooltip {
+                                                    position: relative;
+                                                    display: inline-block;
+                                                    padding: 5px;
+                                                    font-size: 20px
+                                                }
+
+                                                .rntooltip .rntooltiptext {
+                                                    visibility: hidden;
+                                                    width: 200px;
+                                                    background-color: black;
+                                                    color: #fff;
+                                                    text-align: center;
+                                                    border-radius: 6px;
+                                                    padding: 5px 0;
+                                                    position: absolute;
+                                                    z-index: 1;
+                                                    top: 150%;
+                                                    left: 50%;
+                                                    margin-left: -90px;
+                                                    font-size: 14px
+                                                }
+
+                                                .rntooltip .rntooltiptext::after {
+                                                    content: "";
+                                                    position: absolute;
+                                                    bottom: 100%;
+                                                    left: 50%;
+                                                    margin-left: -5px;
+                                                    border-width: 5px;
+                                                    border-style: solid;
+                                                    border-color: transparent transparent black transparent
+                                                }
+
+                                                .rntooltip:hover .rntooltiptext {
+                                                    visibility: visible
+                                                }
+
+                                                .InStock, .OutStock, .AltStock {
+                                                    background-size: 16px 16px;
+                                                    border-radius: 0px;
+                                                    margin-right: 3px;
+                                                }
+
+                                                #SuccessImg {
+                                                    margin-left: 10px;
+                                                    margin-top: 7px;
+                                                    width: 30px;
+                                                    float: left;
+                                                    box-shadow: 2px 2px 3px #666;
+                                                    border-radius: 3px;
+                                                }
+
+                                                .success {
+                                                    padding-left: 0px;
+                                                }
+
+                                                img.ProductInfoButton  {
+                                                    border-radius: 0 10px 0 0;
+                                                    height: 25px;
+                                                    -webkit-box-shadow: 3px 3px 2px #666;
+                                                    -moz-box-shadow: 3px 3px 2px #666;
+                                                    box-shadow: 3px 3px 2px #666;
+                                                }
+                                                #COTable td {       padding: 10px;      TEXT-ALIGN: CENTER;    }
+                                                .InStock, .OutStock, .AltStock {
+    background-size: 16px 16px;
+    border-radius: 0px;
+    margin-right: 5px;
+    margin-top: -5px;
+}
+                                            </style>
+                    <script lang=javascript>
+ $(document).ready(function(){
+   var shiploaded = widgetload('login[SUFFIX]?orderno=[WEB.ORDERNO]&LOGINPATH=SMX&pageid=31&CUSTOMERID=[CUSTOMERID]&TARGETVAL=[WEB.ORDERNO]','#shipholder');
+   var frtdummy = widgetload('login[SUFFIX]?orderno=[WEB.ORDERNO]&dboption=WEBORD&LOGINPATH=FRTX2&pageid=31&TARGETVAL=[WEB.ORDERNO]&ITEMSPAGE=5','#FrtHolderCO');
+  GetPayMethod("") ;
+ });
+function sendshipmeth () {
+//new send of shipmethod data using jquery and ajax
+   Sstr = $("#smxshipmeth").val() ;
+     var dummyU = widgetload_callback('login[SUFFIX]?orderno=[WEB.ORDERNO]&MODE=U&LOGINPATH=SMX&pageid=31&CUSTOMERID=[CUSTOMERID]&TARGETVAL=' + Sstr ,'#shipholder',
+     function() {
+          // UPDATED THE PAGE INFO
+      $("#StatusMsg").html('Updated Shipping Method') ;
+ $("#StatusMsg").addClass('success')
+$("#StatusMsg").show() ;
+$("#StatusMsg").fadeOut(3000) ;
+     });
+}
+function GetPayMethod(result) {
+// display the CC info for them to change or submit 
+        // CCTable  //paymethod
+  var url = location.href ; 
+  var content = 'orderno=[WEB.ORDERNO]&CUSTOMERID=[CUSTOMERID]&LOGINPATH=SO&PAGEID=31'      
+  var posting = $.post(url, content);
+  // Put the results in a div - will update current order and get payment methods for customer
+  posting.done(function(data) {
+    var cctable = $( data ).find( "#CCTable" );
+    var pmethod = $( data ).find("[name='paymethod']");
+      $("#CCBox").html(cctable.html());
+      $("#CCBox").hide() ; 
+      $("#PMBox").html("<select id='paymethod' name='paymethod' onchange='javascript:showCCBox()' >" + pmethod.html() + "</select>");
+         var totloaded = widgetload('login[SUFFIX]?orderno=[WEB.ORDERNO]&LOGINPATH=ORDX&pageid=31&CUSTOMERID=[CUSTOMERID]&TARGETVAL=[WEB.ORDERNO]','#OrderTotals');
+  });  
+}
+function showCCBox() {
+       var pm = $("#paymethod").val() ; 
+       if (pm == 'CC') {  $("#CCBox").show() ; } else { $("#CCBox").hide() ; }
+}
+</script>
+ <!-- Begin New SK 3col responsive split --> 
+	 <div class="row checkoutwrap"> 
+		<div class="col-xs-12 col-sm-6 col-md-4">
+			 <div class="checkoutbox2 fillgray">
+				 <h4>Shipping Address</h4>
+				 <p style="color: #000000;">[SHIPTONAME]<br>
+				 [SHIPTODESC]<br>
+				 [SHIPTODESC2]<br>
+				 [SHIPTOCITY]<BR>
+         [SHIPTOSTATE]<br>
+				 [SHIPTOZIP]
+				 </p>
+                  Order Comments:<br>
+      <textarea cols=40 rows=4 name="comment_string" style="overflow:auto" wrap=true>[COMMENT_STRING]</textarea>
+     <input type=button class=gobutton name="GO3" value="Update Comments" onclick='javascript:changepath("CO","N")'>
+			 </div>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-4">
+			<div class="checkoutbox2 borderfill">
+				 <p>Preferred payment<br>
+				 <div id="PMBox"> </div>
+         </p>
+				<!-- <p>Shipping Method<br> --> 
+				<div  id="shipholder" >  </div><BR>
+         <div id="StatusMsg" > </div>
+        <!-- </p> -->
+				 <p>Shipping Comments:<br>
+				 <div class="shippingcomments">
+         <img class="visible-lg-block visible-xs-block" src="[IMAGE.PATH]warning-icon.png" alt="" style="height: 40px; float: left; max-width: 100%; max-height=100%; padding-right: 20px;">
+         <div id="FrtHolderCO" > </div>  
+         </div>
+			</div>
+		</div>
+		
+<div class="col-xs-12 col-sm-12 col-md-4">			
+  <div class="fillblack checkoutbox2">				
+    <p style="margin-bottom: 0px;">Order Totals
+    </p>					
+    <div class="fillwhite">  			  
+      <div id="OrderTotals" style="color: #333 !important;"> 
+      </div>        
+    </div>				 
+    <p style="margin-top: 20px;">PO NUMBER
+      <br>				 
+      <input type="text" style="height:40px; font-style: italic; " name=custpo placeholder="PO Required">
+    </p>		 
+<!--   
+    <div class=row style="margin:0px;margin-top:30px;"> 	    
+      <div class="col-4">    		
+       <div class="LinkText" style="width:33%;padding:0px !important;">           	
+           <a style="min-width: 150px; " href="#" title="Submit Order" class="sendorder"> Submit Order</a>          
+        </div>          
+      </div>           
+      <div class="col-4">        
+        <div class="LinkText" style="    width: 33%;    min-width: 150px;">  				 
+          <a style="min-width: 150px;" href="#" title="Hold Order" onclick="javascript:changepath('HO','N')">Hold Order</a>				 
+        </div>          
+      </div>           
+      <div class="col-4">						
+        <div class="LinkText" style="    width: 33%;    min-width: 150px;">							 
+          <a style="min-width: 150px;" href="#" title="Continue Shopping" onclick='javascript:searchpath("SR","N")' >Continue Shopping</a>							 
+        </div>					 
+      </div>      
+    </div>	
+  -->                                                                
+     
+<div class=row style="margin:0px;margin-top:30px;"> 	
+  <div class="col-4"> 		 
+    <div class="LinkText" style="width:33%;padding:0px !important;">     
+      <a style="display:inline-block;width:90%;" href=# title="Submit Order" class=sendorder> Submit Order</a> 
+    </div> 	
+  </div> 	
+  <div class="col-4"> 		 
+    <div class="LinkText" style="width:33%;padding:0px !important;text-align:center;">   
+      <a style="display:inline-block;width:85%;" href=# title="Hold Order" onclick="javascript:changepath('HO','N')">Hold Order</a> 
+    </div> 	
+  </div> 	
+  <div class="col-4"> 		 
+    <div class="LinkText" style="width:33%; float:right;padding:0px !important"> 
+      <a style="display:inline-block;float: right; width:95%; text-align:center;" href=# title="Continue Shopping" onclick='javascript:searchpath("SR","N")'>Continue Shopping</a> 
+    </div> 	
+  </div> 
+</div>
+    		
+  </div>		
+</div>	 
+
+   	 <div class="row">
+     <div id="CCBox" > </div> 
+    	</div>                        
+ </div>                            <!-- Above Ends New SK 3col responsive split -->  
+  <!-- Begin New SK Responsive Cart Navigation --> 
+<!-- 
+	 <div class="row">
+		<div class="cartnav">
+			<div class="col-xs-4">
+				 <div class="LinkText"> 
+				 <a href="#" title="Continue Shopping" onclick="javascript:searchpath('SR','N')">Continue Shopping</a>
+				 </div>
+			</div>
+			<div class="col-xs-4">
+				 <div class="LinkText" style="text-align: center; width: 100%;"> 
+				 <a href="#" title="Hold Order" onclick="javascript:changepath('HO','N')">Hold Order</a>
+				 </div>
+			</div>
+			<div class="col-xs-4">
+				<div class="LinkText" style="float: right;"> 
+				 <a href="#" title="Update Cart" onclick="javascript:changepath('AO','N')">Update Shopping Cart</a>
+				 </div>
+			</div>
+		</div>
+	 </div>
+-->
+<!-- Above Ends New SK Responsive Cart Navigation -->
+<BR> 
+[PAGE.MOVEMENT] 
+ <table class="ng-table" id="COTable" style="border-spacing: 10px;"> 
+ <tbody><tr style="border-bottom: 1px solid #d3d3d3;"> 
+ <th style="padding-left:0px !important;width: 10%;">
+ 	<span style="margin-left:10px !important;">&nbsp;</span> 
+ 	Sunset # 
+ </th> 
+ <th style="width: 25%;"> 
+ 	Product
+ </th> 
+ <th style="text-align:center; width: 8%;">
+  Sunset Stock Info
+ </th>
+ <th style="text-align:center; width: 10%;"> 
+ 	Alt. Warehouse
+ </th> 
+ <th style="text-align:center; width: 6%;"> 
+ 	Product Info
+ </th> 
+ <th style="text-align:center; width: 15%;"> 
+ 	U/M & Pricing
+ </th>
+ <th style="text-align:center; width: 5%;"> 
+ 	Subtotal 
+ </th> 
+ <th style="text-align:center; width: 7%;"> 
+ 	Quantity
+ </th>
+ <th style="text-align:center; width: 5%;"> 
+ 	Update
+ </th> 
+ <th style="text-align:center; width: 5%;"> 
+ 	Formulary
+ </th> 
+ <th style="text-align:center; width: 5%;"> 
+ 	Remove 
+ </th> 
+ </tr> 
+ [CO.LINES] 
+ </table>
+<!-- Begin New SK Responsive Cart Navigation --> 
+	 <div class="row">
+		<div class="cartnav">
+			<div class="col-xs-4">
+				 <div class="LinkText"> 
+				 <a href="#" title="Continue Shopping" onclick="javascript:searchpath('SR','N')">Continue Shopping</a>
+				 </div>
+			</div>
+			<div class="col-xs-4">
+				 <div class="LinkText" style="text-align: center; width: 100%;"> 
+				 <a href="#" title="Hold Order" onclick="javascript:changepath('HO','N')">Hold Order</a>
+				 </div>
+			</div>
+			<div class="col-xs-4">
+				<div class="LinkText" style="float: right;"> 
+				 <a href="#" title="Update Cart" onclick="javascript:changepath('AO','N')">Update Shopping Cart</a>
+				 </div>
+			</div>
+		</div>
+	 </div>
+<!-- Above Ends New SK Responsive Cart Navigation -->
+   </div>                       
+  </div>
+

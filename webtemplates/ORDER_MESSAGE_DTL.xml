@@ -1,0 +1,17 @@
+      &lt;ItemIn quantity=&quot;[ORD.QTY]&quot;&gt;
+        &lt;ItemID&gt;
+          &lt;SupplierPartID&gt;[A.PROD.NO]&lt;/SupplierPartID&gt;
+          &lt;SupplierPartAuxiliaryID&gt;[SUPPLIER.COOKIE]&lt;/SupplierPartAuxiliaryID&gt;
+        &lt;/ItemID&gt;
+        &lt;ItemDetail&gt;
+          &lt;UnitPrice&gt;
+            &lt;Money currency=&quot;[CURRENCY]&quot;&gt;[UNIT.PRC]&lt;/Money&gt;
+          &lt;/UnitPrice&gt;
+          &lt;Description xml:lang=&quot;en&quot;&gt;
+            [PROD.DESC]
+          &lt;/Description&gt;
+          &lt;UnitOfMeasure&gt;[UN.MEAS]&lt;/UnitOfMeasure&gt;
+          &lt;ManufacturerPartID&gt;[MFR.PROD.NO]&lt;/ManufacturerPartID&gt;
+          &lt;ManufacturerName&gt;[MFR.NAME]&lt;/ManufacturerName&gt;
+        &lt;/ItemDetail&gt;
+      &lt;/ItemIn&gt;

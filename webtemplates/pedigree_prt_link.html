@@ -1,0 +1,74 @@
+Content-type: text/html
+
+<!--
+******************************************
+  Created by The Systems House Web Team  *
+******************************************
+-->
+
+<html>
+<head> 
+<LINK rel="STYLESHEET" type="text/css" href="[CSS.NAME]">
+<title>Track and Trace Print - [PEDIGREE.ID]</title>
+</head>
+<script language='JavaScript' src='../../all_scripts/tsh_menubar.js'></script>
+
+<body bgcolor=white topmargin=0 leftmargin=0>
+<div id="tsh"></div>
+<!--
+<form name=pedprint action="pedprint[SUFFIX]" method=post>
+-->
+<form name=pedprint>
+<input type=hidden name=orderno value="[WEB.ORD.NO]">
+<input type=hidden name=pedigreeno value="[PEDIGREE.ID]">
+<input type=hidden name=CustomerId value="[WEB.USER.ID]">
+<input type=hidden name=mdsorderno value="[RELEASE.NO]">
+<table border=0 cellspacing=0 cellpadding=0 width=100%>
+ <tbody>
+  <tr>
+    <td><img src='[WEBSITE.IMAGES]/RNlogocrp.jpg' border=0></td>
+    <td height=60 width=454 align=center valign=center>
+      <img src='[WEBSITE.IMAGES]/spacer.gif' border=0>
+    </td>
+    <td id=subhead valign=bottom height=60 nowrap>
+      <div align=right>
+Pedigree Print</div>
+    </td>
+  </tr>
+ </tbody>
+</table>
+<table border=0 cellpadding=0 cellspacing=0 width=100%>
+  <tr>
+    <td height=20></td>
+  </tr>
+  <tr>
+    <td id=datnorm><font size=3><b>&nbsp;&nbsp;A <u>Pedigree Print file</u> is available at:</b>&nbsp;
+      <a href="[PRINT.LINK]">[PRINT.LINK]</font></a></td>
+  </tr>
+  <tr>
+    <td height=10></td>
+  </tr>
+  <tr>
+    <td id=datnorm><font size=3><b>
+&nbsp;&nbsp;Click on this link to view the PDF file.</b></font>
+    </td>
+  </tr>
+</table>
+<table border=0 cellpadding=0 cellspacing=0 width=100%>
+  <tr>
+    <td height=20></td>
+  </tr>
+  <tr>
+    <td align=center valign=center>
+      <input type=button class=button1 name="CL" value="Close" onclick="javascript:window.close()"
+        onmouseover="this.className='button1 buttonhov1'" onmouseout="this.className='button1'">
+    </td>
+  </tr>
+</table>
+</form>
+&nbsp;
+<hr id=styleruler height=4 width=100%><h5 id=datnorm>Copyright &copy; 2007 The Systems House, Inc. <br> <a href="mailto:webmaster@tshinc.com">
+<font size=1>
+<em>Problems? Click here to email the Webmaster</em></font></a></h5>
+</body>
+</html>

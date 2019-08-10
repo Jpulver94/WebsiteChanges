@@ -1,0 +1,39 @@
+  <tr id=[LNCOLOR]>
+    <td class=datsml valign=center align=center nowrap >
+<span class=gridlink style="[STDSTYLE]">
+
+<input id="PRCX[A.PROD.NO][UN.MEAS][LINE.NO]"  class="QtyBox" data-prodno="[A.PROD.NO]" data-um="[UN.MEAS]" tabindex=[LINE.NO] type=text size=2 maxlength=6 name="[A.PROD.NO]|[MFR.PROD.NO]|[UN.MEAS]|[PRICE]|[MFR.CODE]|" onchange=qtychk2(value,name)>
+</span>
+<!-- Added Grid Order Function -->
+<span class=gridlink style="[GRIDSTYLE]">
+<a href=# onclick="javascript:ordergrid('[PROD.NO]')" title="Order item in a Grid">
+ <img src="[IMAGE.PATH]/grid.jpg" alt="Order item in a Grid">
+<br>Click to Order
+ </a>
+</span>
+    </td>
+    <td class=datsml valign=center nowrap >
+[UM]&nbsp;/&nbsp;[QTY]
+    </td>
+    <td class=datsml valign=center align=right width=90 nowrap >
+      [PRICE.BOX]
+</td>
+    <td class=datsml valign=center align=right nowrap >
+<a href="#" Title="[PRICE.MSG]" class="SpecPrice[PRICE.SRC]">[PRICE.SRC]</a>
+  <a href=# onclick=javascript:SRLineLoad("[PROD.NO]","[A.PROD.NO]") title="Refresh Price for [A.PROD.NO]" >
+<img src="[IMAGE.PATH]/refresh-icon.png" alt="Refresh Price for [A.PROD.NO]" style="width: 10px ; height: 10px" >
+ </a>
+<a style="float: left" title="Add this item to My Favorites" class=ReorderLine href=# onclick="javascript:fav_template('[A.PROD.NO]')" >
+ <img style="width: 10px ; height: 10px" alt="Add this item to My Favorites" class="ExportOrder" src="[IMAGE.PATH]Favorites.png">  </a>
+ <a title="Add Item to Cart"  href="#" onclick="javascript:Add_To_Order();" > 
+  <div class="icon-cart" style="float: left">
+    <div class="cart-line-1" ></div>
+    <div class="cart-line-2" ></div>
+    <div class="cart-line-3" ></div>
+    <div class="cart-wheel" ></div>
+  </div>
+  </a>
+    </td>
+  </tr>
+
+

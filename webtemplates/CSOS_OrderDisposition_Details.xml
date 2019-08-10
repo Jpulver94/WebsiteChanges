@@ -1,0 +1,11 @@
+    <LineItem>
+     <LineId>[LN]</LineId>
+     <DispositionDate>[DISP.DATE]</DispositionDate>
+     <DispositionType>[DISP.TYPE]</DispositionType>
+     <Quantity>[DISP.QTY]</Quantity>
+     <StockCode>[DISP.STOCKCODE]</StockCode>
+     <StockDescription>[DISP.STOCKDESC]</StockDescription>
+     <NdcNumber>[DISP.NDC]</NdcNumber>
+     <ArcosUnit>[DISP.ARCOS.UNIT]</ArcosUnit>
+     <ArcosStrength>[DISP.ARCOS.STRENGTH]</ArcosStrength>
+    </LineItem>

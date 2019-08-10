@@ -1,0 +1,17 @@
+ 
+ 
+This is a confirmation of a data download that was completed
+on [DWN.DATE at [DWN.TIME].
+ 
+The type of download was [DWN.TYPE]
+ 
+The download was requested by [USER.NAME]
+ 
+Total records downloaded: [TOTAL.RECS]
+Total records with errors: [TOTAL.ERRS]
+
+[SUBJ.PHRASE]
+[ERR.FILE]
+ 
+Send mail to support@tshinc.com with questions
+or comments about this data download.

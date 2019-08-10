@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title> Customer Sales Map </title>
+     <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAA38qMP2zDeh1Okcmqcc3Y7xRH9F6SEP7ExXXy7QmM0UEXuUYZCRRsYjG_I4P4RJjSOEwPXCRUJhdHvA"
+      type="text/javascript"></script>
+  <style type="text/css">
+      body { font-family: Verdana, Arial, sans serif; font-size: 11px;  margin: 2px; }
+      table.th {    background-color:#EEEEEE;      }
+      img {       color: #000000;      }
+    </style>
+ 
+
+   <script type="text/javascript">
+//<![CDATA[
+        
+    var map = null;
+    var geocoder = null;
+    geocoder = new GClientGeocoder();
+    var bounds = new GLatLngBounds();
+      var side_bar_html = "";
+      var status_bar_html = "";
+      var gmarkers = [];
+      var htmls = [];
+         // === Create an associative array of GIcons() ===
+      var gicons = [];
+      gicons["red"] = new GIcon(G_DEFAULT_ICON, "http://www.google.com/intl/en_us/mapfiles/ms/micons/red-dot.png");
+      gicons["green"] = new GIcon(G_DEFAULT_ICON, "http://www.google.com/intl/en_us/mapfiles/ms/micons/green-dot.png");
+      
+      var i = 0;
+      var j = 0;
+      var point = '' ;
+      // A function to create the marker and set up the event window
+      function createMarker(point,name,html,icontype) {
+        var marker = new GMarker(point,gicons[icontype]);
+        GEvent.addListener(marker, "click", function() {
+          marker.openInfoWindowHtml(html);
+        });
+        gmarkers[j] = marker;
+        htmls[j] = html;
+        side_bar_html += '<a href="javascript:myclick(' + j + ')">' + name + '</a><br>';
+        //document.getElementById("side_bar").innerHTML = side_bar_html
+        //alert(j) ;
+        j++;
+        return marker;
+      }
+
+      function myclick(j) {
+        gmarkers[j].openInfoWindowHtml(htmls[j]);
+      }
+    function zoomfit() {
+    newzoom = map.getBoundsZoomLevel(bounds);
+    newcenter = bounds.getCenter();
+    map.setCenter (newcenter,newzoom);
+   }
+   function clearload() {
+   newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
+       window.location.href = newURL + '?EGP=' +document.getElementById("EntGP").value
+   }
+    function load() {
+         if (GBrowserIsCompatible()) {
+     //   map = new GMap2(document.getElementById("map_canvas"));
+     //   map.setCenter(new GLatLng(37.4419, -122.1419), 3);
+     //   map.addControl(new GSmallMapControl());
+     //   map.addControl(new GMapTypeControl());
+     map = new GMap2(document.getElementById("map_canvas"),{draggableCursor: 'crosshair', draggingCursor: 'pointer'}) ;
+     //var mgrOptions = { borderPadding: 50, maxZoom: 15, trackMarkers: true };
+     //var mgr = new MarkerManager(map);
+     map.setCenter(new GLatLng(37.4419, -122.1419), 4);
+     map.addControl(new GLargeMapControl());
+     map.addControl(new GMapTypeControl());
+     map.addControl(new GScaleControl()) ;
+     map.addControl(new GOverviewMapControl()) ;
+        // Download the data in data.xml and load it on the map. The format we
+        // expect is:
+        // <markers>
+        //   <marker lat="37.441" lng="-122.141"/>
+        //   <marker lat="37.322" lng="-121.213"/>
+        // </markers>
+//      GDownloadUrl("customer_sales.xml", function(data) {
+         // var side_bar_html = "";
+ var xdata = document.getElementById('xmldata');
+if(xdata.documentElement == null) xdata.documentElement = xdata.firstChild;
+           var xml = GXml.parse(xdata.innerHTML);
+          var markers = xml.documentElement.getElementsByTagName("marker");
+          for (var i = 0; i < markers.length; i++) {
+        //    var latlng = new GLatLng(parseFloat(markers[i].getAttribute("lat")),
+        //                            parseFloat(markers[i].getAttribute("lng")));
+         //   map.addOverlay(new GMarker(latlng));
+         //alert("Mapping" + i + markers[i].getAttribute("Address"))
+         // added code to slow down the show address function
+ //         setTimeout('ShowStatus("Reading Data")', 1000);
+         // geocoder.getLocations(markers[i].getAttribute("Address"),addToMap);
+          // var point = showAddress(markers[i].getAttribute("Address")) ; 
+          // var marker = createMarker(point,markers[i].getAttribute("label"),markers[i].getAttribute("html"));
+          // map.addOverlay(marker);
+          
+          // Create our "tiny" marker icon
+          //  var blueIcon = new GIcon(G_DEFAULT_ICON);
+          // blueIcon.image = "http://www.google.com/intl/en_us/mapfiles/ms/micons/blue-dot.png";
+          // Set up our GMarkerOptions object
+          // markerOptions = { icon:blueIcon };
+          //map.addOverlay(new GMarker(point, markerOptions));
+          
+          // Create our "tiny" marker icon
+          //var tinyIcon = new GIcon();
+          //tinyIcon.image = "http://labs.google.com/ridefinder/images/mm_20_red.png";
+          //tinyIcon.shadow = "http://labs.google.com/ridefinder/images/mm_20_shadow.png";
+          //tinyIcon.iconSize = new GSize(12, 20);tinyIcon.shadowSize = new GSize(22, 20);
+          //tinyIcon.iconAnchor = new GPoint(6, 20);tinyIcon.infoWindowAnchor = new GPoint(5, 1);
+          // Set up our GMarkerOptions object literal
+          //markerOptions = { icon:tinyIcon };
+          
+          // mgr.addMarkers(getWeatherMarkers(1000), 8);
+          // mgr.refresh();
+          
+              // obtain the attribues of each marker
+            var lat = parseFloat(markers[i].getAttribute("lat"));
+            var lng = parseFloat(markers[i].getAttribute("lng"));
+            var point = new GLatLng(lat,lng);
+            var html = markers[i].getAttribute("html");
+            var label = markers[i].getAttribute("label");
+            var gp =  parseFloat(markers[i].getAttribute("gp"));
+            var EntGP = parseFloat(document.getElementById("EntGP").value)
+            // alert(GP + '   ' + EntGP) ;
+            if (gp > EntGP){;
+             var icontype = "green";
+            } else {
+             var icontype = "red";
+            }
+            // === read the icontype attribute ===
+            // var icontype = markers[i].getAttribute("icontype");
+            
+            // === create the marker, passing the icontype string ===
+            var marker = createMarker(point,label,html,icontype);
+            map.addOverlay(marker);
+            bounds.extend(point);
+           }
+          // put the assembled side_bar_html contents into the side_bar div
+           document.getElementById("side_bar").innerHTML = side_bar_html;
+          zoomfit();
+ShowStatus("Update Completed") ;
+ //        });
+      }
+    }
+  function getWeatherMarkers(n) {
+      var batch = [];
+      for (var i = 0; i < n; ++i) {
+        batch.push(new GMarker(point, { icon: xxx }));
+      }
+      return batch;
+    }
+   function addToMap(response)
+   {
+      // check the status 
+      if(response.Status.code == "200") {
+      // Retrieve the object
+      place = response.Placemark[0];
+
+      // Retrieve the latitude and longitude
+      point = new GLatLng(place.Point.coordinates[1],
+                          place.Point.coordinates[0]);
+
+      // Center the map on this point
+     // map.setCenter(point, 13);
+
+      // Create a marker
+      //marker = new GMarker(point);
+      var marker = createMarker(point,place.address,response.Status.request);
+ 
+      // Add the marker to map
+      map.addOverlay(marker);
+      
+      // Add address information to marker
+      // marker.openInfoWindowHtml(place.address);
+    } else {
+   ShowStatus(response.Status.code + response.Status.request)
+   }
+   }
+   
+   // BEGIN GET QUERY STRING CODE
+queryVar = this.location.href;
+var inq = queryVar.indexOf('?');
+queryVar = queryVar.substring(inq + 1);
+queryVar = unescape(queryVar); 
+//djf need to unescape value so that & does not get lost
+if (inq > 0) {
+	_query_string = queryVar; // full query is also available to body
+var text1 = "&";
+var strLength = queryVar.length, txtLength = text1.length;
+
+var i = queryVar.indexOf(text1);
+
+while (i+txtLength < strLength)
+{
+	if (i > 0)
+	{
+		qrysplit(queryVar.substring(0,i),"=");
+	}
+	else
+	{
+		qrysplit(queryVar,"=");
+	}
+	queryVar = queryVar.substring(i+txtLength,strLength);
+	var i = queryVar.indexOf(text1);
+	if (i < 1)
+	{
+		i = strLength + 1; // end while
+	}
+}
+qrysplit(queryVar,"="); // last one
+}
+function qrysplit(string,text)
+{
+	name = string.substring(0,string.indexOf(text));
+	value = string.substring(string.indexOf(text) + 1);
+	eval(name + " = value;");
+	// comment the previous line and uncomment this next line if you want to
+	// use UNESCAPE, that is, turn %20 into a space, %22 into double quotes, etc.
+	// eval("query_" + name + " = unescape(value);");
+}
+// END GET QUERY STRING CODE
+//-->
+    
+ //   function showAddress(address) {
+ //     if (geocoder) {
+ //       geocoder.getLatLng(
+ //         address,
+ //         function(point) {
+ //           if (!point) {
+             ShowStatus("Error Adding Point " + name) ;
+            //  document.write(address + " not found")
+ //           var point = new GLatLng(37.4419, -122.1419) ;
+ //           return point ;
+ //           } else {
+             // map.setCenter(point, 13);
+             // var marker = new GMarker(point);
+             ShowStatus("Sucessfully Added Point " + name) ;
+  //           return point;
+             // marker.openInfoWindowHtml(address);
+  //          }
+  //        }
+  //      )
+  //    }
+  //  }
+   
+    function ShowStatus(msg) { 
+//      var status_bar_html = status_bar_html + msg + '<br>'
+var status_bar_html = msg
+     document.getElementById("status_bar").innerHTML = status_bar_html
+     // document.getElementById("status_bar").innerHTML = status_bar_html
+  //    var now = new Date();
+  //      var exitTime = now.getTime() + msecs;
+  //      while (true) {
+  //          now = new Date();
+  //         
+  //          if (now.getTime() > exitTime)
+  //              return;
+  //      }
+    }
+    //]]>
+    </script>
+  </head>
+  <body onload="load()" onunload="GUnload()">
+   
+          <!-- you can use tables or divs for the overall layout -->
+    <table border=1>
+      <tr> <td align=center colspan=2><img width='38' height='44' border=0 src="http://crs.tshinc.com/crs/images/tshlogo.gif"> 
+       Customers Ranked by Total Sales Dollars <img src=http://www.google.com/intl/en_us/mapfiles/ms/micons/red-dot.png> Below GP
+     <img src=http://www.google.com/intl/en_us/mapfiles/ms/micons/green-dot.png> Above GP </td>
+      </tr>
+      <tr><td align=center colspan=2> Current Status: <div id="status_bar" >Processing...</div> </td>
+       <tr><td align=center colspan=2> Enter GP Percentage to View: <input id="EntGP" type=text value="10"> <input type=button name="UpdateBtn" value="Update" onclick='javascript:clearload()' >
+     <br> Note: All Customers with a GP% Greater then this number will be flagged with a green icon all others will be flagged with a red icon </td>
+      </tr>
+      <tr>
+        <td>
+      <script language="javascript">
+      <!--
+      if( window.innerHeight )
+      {
+       var width = window.innerWidth - 340 ;
+       var height = window.innerHeight - 80 ; 
+      } else
+      {
+       var width = document.documentElement.offsetWidth - 390 ;
+       var height = document.documentElement.offsetHeight - 100 ; 
+      }
+      document.write('<div id="map_canvas" style="width: ' + width  + 'px; height:' + height + 'px; border: thin solid black;">') ;
+      // -->
+      // added updated of gp variable
+      </script>
+        </td>
+        <td width = 150 valign="top" style="text-decoration: underline; color: #4444ff;">
+           <!-- =========== side_bar with scroll bar ================= -->
+           <div id="side_bar"  style="overflow:auto; height:450px; width:350px;"></div>
+           <!-- ===================================================== -->
+        </td>
+      </tr>
+      </tr>
+      </tr>
+
+    </table>
+    <script>
+      var _query_string;
+      var EGP ;
+      if(EGP){ document.getElementById("EntGP").value = EGP ; }
+ </script>
+<xml id='xmldata' style='display:none;'>
+[XML.DATA]
+</xml>
+  </body>
+</html>

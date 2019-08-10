@@ -1,0 +1,87 @@
+
+
+<BR>
+
+<h1> Account Information </h1>
+<script type="text/javascript">
+function Update_emails() {
+document.template.mode.value ="U";
+changepath('MYA') ;
+}
+
+</script>
+<form name=template action="login[SUFFIX]" method=post>
+<input type=hidden name=Aprod_string value="[APROD_STRING]">
+<input type=hidden name=prod_string value="[PROD_STRING]">
+<input type=hidden name=qty_string value="[QTY_STRING]">
+<input type=hidden name=um_string value="[UM_STRING]">
+<input type=hidden name=price_string value="[PRICE_STRING]">
+<input type=hidden name=comment_string value="[COMMENT_STRING]">
+<input type=hidden name=manufact_string value="[MANUFACT_STRING]">
+<input type=hidden name=loginpath value="[LOGINPATH]">
+<input type=hidden name=searchflag value="N">
+<input type=hidden name=pageid value="6">
+<input type=hidden name=mode value="">
+<input type=hidden name=startptr value="[STARTPTR]">
+<input type=hidden name=CustomerId value="[CUSTOMERID]">
+<input type=hidden name=orderno value="[ORDERNO]">
+<input type=hidden name=old_loginpath value="[LOGINPATH]">
+<input type=hidden name=prev_changesort value="[CHANGESORT]">
+<input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+<input type=hidden name=mdsorderno value="[MDSORDERNO]">
+<input type=hidden name=aprodno value="[APRODNO]">
+<input type=hidden name=slsmno value="[SLSMNO]">
+<input type=hidden name=slsmn_id value="[SLSMN_ID]">
+
+   <div class="MyaMain">
+        [CUST.NAME]<br>
+        [A.CUST.NO] <br>  <br>
+  Address        <br><br>
+        [CUST.ADDR1]<br>
+        [CUST.ADDR2]<br>
+        [CUST.ADDR3]<br>
+        [CITY.ST.ZIP]<br />
+        [COUNTRY]<br>
+   Phone:  [PHONE] <br>
+   Fax:    [FAX]   <br>
+   Email: [EMAIL] <br>
+   State License: <br> [STATE.LIC] Expires [STATE.EXP.DT]   <BR>
+   DEA License: <br> [DEA.LIC] Expires [DEA.EXP.DT]<BR>
+   Account Manager: <BR>
+   <span class="icon-user"></span>  [SLSNAME] <br>
+   <span class="icon-envelop"></span> [SLSEMAIL] <br>
+   <span class="icon-phone"></span> [SLSPHONE] <br>   
+  </div>
+<br>
+<table>
+    <tr>
+      <td colspan=2 class="rollsort" align=center>Update your Email Information for [LOGON.ID] [LOGON.NAME] Last Updated: [LAST.UPD.DT]</td>
+      </tr>	
+    <tr>
+      <td class="rollsort" align=left>Email for Invoices:</td>
+      <td class=CPdiv><input type=text name="invoiceemail" size=40 value="[INVOICE.EMAIL]"></td>
+      </tr>	
+    <tr>
+      <td class="rollsort" align=left>Email for Statements:</td>
+      <td class=CPdiv><input type=text name="statementemail" size=40 value="[STATEMENT.EMAIL]"></td>
+      </tr>	
+      <td class="rollsort" align=left>Email for General Communication:</td>
+      <td class=CPdiv><input type=text name="aremail" size=40
+value="[AR.EMAIL]"></td>
+      </tr>	
+    <tr>
+      <td class="rollsort" align=left>Email for Web Orders:</td>
+      <td class=CPdiv><input type=text name="webemail" size=40  value="[WEB.EMAIL]"></td>
+      </tr>	
+    <tr>
+      <td align=center valign=center  >
+        <input type="button" class="gobutton gobuttonhov" name="GO5" value="Accept/Update Email Addresses" onClick="javascript:Update_emails()" onMouseOver="this.className='gobutton gobuttonhov'; window.status='Update My Email'" onMouseOut="this.className='gobutton' ; window.status=''">
+        </td>
+<td>
+[DOCMESSAGE]
+</td>
+      </tr>
+  </table>
+
+
+

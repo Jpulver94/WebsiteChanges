@@ -1,0 +1,132 @@
+
+
+
+
+
+
+
+
+
+
+
+   
+<script lang=javascript>
+function loadvalues() { 
+ //function to set values in drop down boxes ; 
+   document.template.itemspage.value = "[ITEMSPAGE]";
+   document.template.Changesort.value = "[CHANGESORT]";
+}
+function changepath(x,sflag) { 
+ document.template.startptr.value = 1  ; 
+ document.template.searchflag.value = sflag  ; 
+ document.template.loginpath.value = x  ; 
+ document.template.submit(); 
+}
+function prod_inquiry(loginpath,sflag,aprodno) { 
+ document.template.aprodno.value = aprodno  ; 
+ changepath(loginpath,sflag) ; 
+}
+function changeorder(x,ord) { 
+ document.template.startptr.value = 1  ; 
+ document.template.orderno.value = ord  ; 
+ document.template.loginpath.value = x  ; 
+ document.template.submit(); 
+}
+function Move_page(startptr,direction,loginpath) {
+// code to get startpointer
+       if (startptr < 1 ) {
+          startptr = 1
+       }
+ //if startptr is greater than total lines then set it to 1  
+       if (startptr > [TOTALLINES]) { 
+          startptr = 1
+       }
+ //if itemspage or changesort changed value then set startptr to 1 
+       var sort = document.template.Changesort.value
+       var prev_sort = document.template.prev_changesort.value
+       var items = document.template.itemspage.value
+       var prev_items = document.template.prev_itemspage.value
+       if (sort != prev_sort||items != prev_items) { 
+          startptr = 1
+       }
+   document.template.startptr.value = startptr  ;
+   document.template.searchflag.value = 'N' ;
+   document.template.loginpath.value = loginpath ;
+   document.template.submit()  ; 
+}
+function changeImages() {
+ if (document.images && (preloadFlag == true)) {
+     for (var i=0; i<changeImages.arguments.length; i+=2) {
+         document[changeImages.arguments[i]].src = changeImages.arguments[i+1];
+     }
+ }
+}
+function changesort(path,sflag,sort) { 
+  document.template.startptr.value = 1 ; 
+  document.template.searchflag.value = sflag ; 
+  document.template.loginpath.value = path ; 
+  document.template.Changesort.value = sort ; 
+  document.template.submit(); 
+}
+function browsedetail(browseno,itemkey) { 
+   var pgm = "../../cgi-bin/olecgi.exe/BrowseDtl[SUFFIX]?browseno=" + browseno + "&submitvar=" + itemkey ; 
+   var name = "sub" ; 
+   var parms = "toolbar=no,top=200,left=200,width=640,height=300,directories=no,status=yes,scrollbars=yes,resizable=no,menubar=no" ; 
+   browsedtl = window.open(pgm,name,parms) ; 
+   browsedtl.focus() ; 
+} 
+function release_detail(path,x) {
+  document.template.loginpath.value = path ;
+  document.template.pageid.value = 6 ;
+  document.template.startptr.value = 1 ;
+  document.template.mdsorderno.value = x ;
+  document.template.submit() ;
+}
+function proddisp() { 
+  document.template.aprodno.value ="" ;
+  document.template.aprodno.focus() ;
+}
+function saleshist_prt(ordno,user,path,sort) { 
+var pageurl = 'login[SUFFIX]?orderno=[WEB.ORDERNO]&CUSTOMERID=[CUSTOMERID]&LOGINPATH=' + path + '&pageid=31'+ '&NUM=' +  $( "#NUM" ).val();
+var dummy = showmodalrnpopup(pageurl) ;
+}
+function saleshist_prt_save(ordno,user,path,sort) { 
+  var pgm = "../../cgi-bin/olecgi.exe/saleshist_print[SUFFIX]?orderno=" + ordno + "&CustomerId=" + user + "&loginpath=" + path + "&Changesort=" + sort ; 
+  var name = "sub" ; 
+  var parms = "toolbar=yes,top=25,left=100,width=800,height=600,directories=no,status=no,scrollbars=yes,resizable=yes,menubar=yes" ; 
+  slsprt = window.open(pgm,name,parms) ; 
+  slsprt.focus() ; 
+} 
+function user_select(x,member) {
+    document.template.loginpath.value = x ;
+    document.template.CustomerId.value = member ;
+    document.template.orderno.value = "";
+    document.template.submit();
+ }
+function user_select(x,member) {
+    document.template.loginpath.value = x ;
+    document.template.CustomerId.value = member ;
+    document.template.orderno.value = "";
+    document.template.submit();
+ }
+ function res_add_order(x,ord,oldord,rflag) {
+  document.template.startptr.value = 1  ;
+  document.template.rflag.value = rflag  ;
+  document.template.orderno.value = ord  ;
+  document.template.oldorderno.value = oldord  ;
+  document.template.loginpath.value = x  ;
+  document.template.submit();
+ }  
+</script>          
+  
+
+
+
+
+
+
+
+
+
+
+

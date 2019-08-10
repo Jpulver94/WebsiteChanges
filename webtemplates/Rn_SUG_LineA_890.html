@@ -1,0 +1,37 @@
+
+
+<td style="vertical-align: top; padding: 10px ;border-right: 2px solid #DDDDDD;" >         
+  <table id=HotStandard>               
+    <tr> <td>                                                     
+        <div class="TemplateImage" id="HOTImage[A.PROD.NO]">                                                           
+          <img src="[IMAGE.PATH][IMAGENAME]" >                                        
+        </div></td>          <td>                        
+        <!-- second box with data -->                             
+        <table>                              
+          <tr>                   
+            <td colspan=2>                                       
+              <img class="SunsetProdno" src="https://hosting.tshinc.com/rn/Templates/sunset/images/sunseticon_dj3d6_copy_3.png"> [A.PROD.NO]                                                       
+              <br/>                                                    
+              <!--- to allow enough space for stock messages -->                                                        
+              <a href="javascript:hotprod_inquiry('PI','N','[A.PROD.NO]')">[PROD.DESC]</a>                                                    
+              <br/>         </td>                                
+            <tr class="TemplateStock"> <td>                                             
+                 [IN.STOCK]                                                          
+                <td>                                
+            </tr>                                
+            <tr>                
+              <td colspan=2>                                                        
+                <input class="QtyBox"  data-prodno="[PROD.NO]" data-aprodno="[A.PROD.NO]" name="QTYBOX-[PROD.NO]"  id="QTYBOX-[PROD.NO]" value="" >                                                   
+                <div class="HotSelect">                
+                  <select class="SumSelect" name="UMBOX-[PROD.NO]"  id="UMBOX-[PROD.NO]" >                                                                 
+                    <option value="[PRICE.UM]" selected=""> [PRICE.UM] / [PRICEUM.QTY]  &nbsp;&nbsp;&nbsp;&nbsp; [PRICE]                                                             
+                    </option>                                                     
+                  </select>                                           
+                 </div> 
+                            <img style="float: right;" class="PricingAddButton" src="https://sunset.tshinc.com/sunset/images/Add.png" title="Add item [A.PROD.NO] to Cart " onclick="javascript:cart_add('[PROD.NO]','[A.PROD.NO]')" >                                                
+                                                      </td>                                                                                                   
+            </tr>                        
+        </table>            </td>                    
+    </tr>                        
+  </table>     </td>
+

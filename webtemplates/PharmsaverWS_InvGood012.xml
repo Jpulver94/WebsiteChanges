@@ -1,0 +1,10 @@
+<Item>
+<ItemNumber>[A.PROD.NO]</ItemNumber>
+<ItemName>[PROD.NAME]</ItemName>
+<Quantity>[QTY.ALLOC]</Quantity>
+<QtyAllocationAvailable>0</QtyAllocationAvailable>
+<MinLimit>[QTY.MIN]</MinLimit>
+<MaxLimit>[QTY.LIMIT]</MaxLimit>
+<QtyOnHand>[QTY.AVAIL]</QtyOnHand> 
+<Price>[PRICE]</Price>
+</Item>

@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<!DOCTYPE cXML SYSTEM "http://xml.cXML.org/schemas/cXML/1.2.021/InvoiceDetail.dtd">
+<cXML payloadID="[PAYLOAD.ID]" timestamp="[TIMESTAMP]" version="1.2.023" xml:lang="en-US">
+  <Header>
+    <From>
+      <Credential domain="ID">
+        <Identity>[COMPANYNAME]</Identity>
+      </Credential>
+    </From>
+    <To>
+      <Credential domain="ID">
+        <Identity>[TRADE.ID]</Identity>
+      </Credential>
+      <Credential domain="BillTo">
+        <Identity>[BILL.TO.NO]</Identity>
+      </Credential>
+    </To>
+    <Sender>
+      <Credential domain="ID">
+        <Identity>[COMPANYNAME]</Identity>
+      </Credential>
+      <UserAgent>[COMPANYNAME]</UserAgent>
+    </Sender>
+  </Header>
+  <Request>
+    <InvoiceDetailRequest>
+      <InvoiceDetailRequestHeader invoiceID="[INV.NO]" invoiceDate="[INV.DATE]">
+        <InvoiceDetailHeaderIndicator />
+        <InvoiceDetailLineIndicator />
+        <InvoicePartner>
+          <Contact role="SalesRep" addressID="[SLSMN.NO]">
+            <Name xml:lang="EN">[SLSMN.NM]</Name>
+          </Contact>
+        </InvoicePartner>
+        <InvoicePartner>
+          <Contact role="SoldTo" addressID="[SHIP.TO.NO]">
+            <Name xml:lang="EN">[SHIP.TO.NM]</Name>
+            <PostalAddress>
+              <Street>[SHIP.TO.ADDR1]</Street>
+              <City>[SHIP.TO.CITY]</City>
+              <State>[SHIP.TO.STATE]</State>
+              <PostalCode>[SHIP.TO.ZIP]</PostalCode>
+              <Country isoCountryCode="US">[SHIP.TO.COUNTRY]</Country>
+            </PostalAddress>
+          </Contact>
+        </InvoicePartner>
+        <InvoicePartner>
+          <Contact role="Payer" addressID="[BILL.TO.NO]">
+            <Name xml:lang="EN">[BILL.TO.NM]</Name>
+            <PostalAddress>
+              <Street>[BILL.TO.ADDR1]</Street>
+              <City>[BILL.TO.CITY]</City>
+              <State>[BILL.TO.STATE]</State>
+              <PostalCode>[BILL.TO.ZIP]</PostalCode>
+              <Country isoCountryCode="US">[BILL.TO.COUNTRY]</Country>
+            </PostalAddress>
+          </Contact>
+        </InvoicePartner>
+        <InvoicePartner>
+          <Contact role="BillTo" addressID="[BILL.TO.NO]">
+            <Name xml:lang="EN">[BILL.TO.NM]</Name>
+            <PostalAddress>
+              <DeliverTo>[BILL.TO.ADDR1]</DeliverTo>
+              <Street>[BILL.TO.ADDR2]</Street>
+              <City>[BILL.TO.CITY]</City>
+              <State>[BILL.TO.STATE]</State>
+              <PostalCode>[BILL.TO.ZIP]</PostalCode>
+              <Country isoCountryCode="US">[BILL.TO.COUNTRY]</Country>
+            </PostalAddress>
+          </Contact>
+        </InvoicePartner>
+        <PaymentTerm payInNumberOfDays="[TERM.DAYS]" />
+        <Extrinsic name="FreightTermCode">[TERMS.CODE]</Extrinsic>
+        <Extrinsic name="FreightTermText">[TERMS.DESC]</Extrinsic>
+      </InvoiceDetailRequestHeader>
+[DTL.LINES]
+      <InvoiceDetailSummary>
+        <SubtotalAmount>
+          <Money currency="USD">[MDSE.AMT]</Money>
+        </SubtotalAmount>
+        <Tax>
+          <Money currency="USD">[TAX.AMT]</Money>
+          <Description xml:lang="EN">Tax</Description>
+        </Tax>
+        <NetAmount>
+          <Money currency="USD">[TOT.AMT]</Money>
+        </NetAmount>
+      </InvoiceDetailSummary>
+    </InvoiceDetailRequest>
+  </Request>
+</cXML>

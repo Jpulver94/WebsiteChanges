@@ -1,0 +1,76 @@
+
+
+
+<script lang=javascript>
+function changepath(x,sflag) { 
+   document.template.startptr.value = 1  ; 
+   document.template.searchflag.value = sflag  ; 
+   document.template.loginpath.value = x  ; 
+   if (document.all||document.getElementById){
+//screen thru every element in the form, and hunt down 'submit' and 'reset'
+      for (i=0;i<document.template.length;i++){
+         var tempobj=document.template.elements[i]
+         if (tempobj.type.toLowerCase()=='submit'||tempobj.type.toLowerCase()=='reset'||tempobj.type.toLowerCase()=='button') {
+//disable em
+            tempobj.disabled = true
+         }
+      }
+   }
+   document.template.submit(); 
+}
+
+function searchtips() { 
+  var pgm = "[SEARCHTIPS]" ;
+  var name = "sub" ; 
+  var parms = "toolbar=no,top=100,left=190,width=600,height=400,directories=no,status=yes,scrollbars=yes,resizable=yes,menubar=no" ; 
+  srchtips = window.open(pgm,name,parms) ; 
+  srchtips.focus() ; 
+} 
+
+function browsehelp() { 
+   var pgm = "[BROWSEHELP]" ;
+   var name = "helper" ; 
+   var parms = "toolbar=no,top=200,left=200,width=600,height=400,directories=no,status=no,scrollbars=yes,resizable=yes,menubar=no" ; 
+   browsehlp = window.open(pgm,name,parms) ; 
+   browsehlp.focus() ; 
+}
+
+function browsepath_save(x,svar) { 
+   document.template.startptr.value = 1  ; 
+   document.template.searchflag.value = 'Y'  ; 
+   document.template.submitvar.value = svar  ; 
+   document.template.loginpath.value = x  ; 
+   if (document.all||document.getElementById){
+//screen thru every element in the form, and hunt down 'submit' and 'reset'
+      for (i=0;i<document.template.length;i++){
+         var tempobj=document.template.elements[i]
+         if (tempobj.type.toLowerCase()=='submit'||tempobj.type.toLowerCase()=='reset'||tempobj.type.toLowerCase()=='button') {
+//disable em
+            tempobj.disabled = true
+         }
+      }
+   }
+   document.template.submit(); 
+}
+
+function clearform() { 
+  for (i=0;i<document.template.length;i++){
+     var e_type = document.template.elements[i].type ;
+     if (e_type == "text") {
+        document.template.elements[i].value = '' ;
+     }
+  }
+  document.template.vendorID.value = '' ;
+  document.template.Manufac.value = '' ;
+  document.template.prodtype.value = '' ;
+  document.template.prodclass.value = '' ;
+  document.template.prodcatg.value = '' ;
+  document.template.prodsubcatg.value = '' ;
+  document.template.prodid.focus() ;
+  return false ;
+}
+
+</script>
+
+
+

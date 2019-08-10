@@ -1,0 +1,141 @@
+
+
+
+
+
+<style>
+#variablecontainer {height: auto;}
+#variablecontainerwrap {  height: auto;float: left;overflow: auto;}
+.OOHheadings {
+ /* border-top: none;border-left: none;border-bottom: solid #CCC 1.0pt;border-right: solid #CCC 1.0pt;padding: .75pt .75pt .75pt .75pt;margin: 0in;margin-bottom: .0001pt;text-align: left;font-size: 9.0pt;font-family: Tahoma,sans-serif;background-image: url(http://hosting.tshinc.com/rn/images/bluemenu.jpg);color: white; */
+font-family: "arial";font-size: 15px;font-weight: bold;
+}
+</style
+
+
+<div id="variablecontainerwrap">
+<form name=template action="login[SUFFIX]" method=post onSubmit="return process_order(0)">
+	<input type=hidden name=Aprod_string value="[APROD_STRING]">
+	<input type=hidden name=prod_string value="[PROD_STRING]">
+	<input type=hidden name=qty_string value="[QTY_STRING]">
+	<input type=hidden name=um_string value="[UM_STRING]">
+	<input type=hidden name=price_string value="[PRICE_STRING]">
+	<input type=hidden name=comment_string value="[COMMENT_STRING]">
+	<input type=hidden name=manufact_string value="[MANUFACT_STRING]">
+	<input type=hidden name=loginpath value="[LOGINPATH]">
+	<input type=hidden name=searchflag value="[SEARCHFLAG]">
+	<input type=hidden name=pageid value="7">
+	<input type=hidden name=startptr value="[STARTPTR]">
+	<input type=hidden name=CustomerId value="[CUSTOMERID]">
+	<input type=hidden name=orderno value="[ORDERNO]">
+	<input type=hidden name=old_loginpath value="[LOGINPATH]">
+	<input type=hidden name=prev_changesort value="[CHANGESORT]">
+	<input type=hidden name=prev_itemspage value="[ITEMSPAGE]">
+	<input type=hidden name=mdsorderno value="[MDSORDERNO]">
+	<input type=hidden name=aprodno value="[APRODNO]">
+	<input type=hidden name=slsmno value="[SLSMNO]">
+	<input type=hidden name=slsmn_id value="[SLSMN_ID]">
+	<input type=hidden name=rflag value="">
+  <input type=hidden name=oldorderno value="">
+
+
+
+<div id="sortbyitemsperwrap">
+<table border=0>
+	<tr>
+		<td class=sortbyitemsperwrap><b>Sort By:&nbsp</b><SELECT name="Changesort" size=1>[SORT.BY]</SELECT></td>
+		<td>
+<input type="button" class="gobutton" name="GO1" value="GO" onmouseover="this.className='gobutton gobuttonhov' " onmouseout="this.className='gobutton' ; window.status=''" onclick='javascript:changepath("OOH","N")'>
+		</td>
+		<td class=sortbyitemsperwrap style="padding-left:25px";>
+		<b>Items per page:&nbsp</b><select name="itemspage" size=1>[ITEMS.PG]</select></td>
+<td>
+<input type="button" class="gobutton" name="GO1" value="GO" onmouseover="this.className='gobutton gobuttonhov' " onmouseout="this.className='gobutton' ; window.status=''" onclick='javascript:changepath("OOH","N")'>
+		</td>
+	</tr>
+</table>	 
+</div> 
+<div id="variablecontainer">
+ <!-- Table Updated by GT on 09/06/16 -->
+<table>
+ <tr> 
+ <td class="OOHheadings" colspan="5" style="text-align:center;border:1px;border-style:solid;border-color:#999999;">
+ Customer and Order Information
+ </td>
+ </tr>
+<tr>
+<td colspan="5" style="text-align:justify;font-size:small">
+You are logged in as <b>[CUSTOMERID] </b>
+ <br /> You are viewing all Orders on Hold for Customer: <span style="font-weight:bold;">[A.CUST.NO] / [CUST.NAME]</span>.
+<br>  You have <B>[TOT.ORD.LINES] </B> item(s) in your Shopping Cart for Order:
+<a href="javascript:changepath('CO')">[WEB.ORDERNO]</a>
+ <br />
+ <a href="javascript:changeorder('PS','[WEB.ORDERNO]')">
+ Click Here to Search for Products</a> to add to your current cart.
+<br>
+<div class="error" style="[SHOWCREDMSG]" >
+Your Account is on Credit Hold
+<br>
+<a href="#" onclick="javascript:changepath('ARQ')">View My Invoices</a>
+</div>
+</td>
+</tr>
+ <tr>
+ <th class="OOHheadings" colspan="5" style="text-align:center;border:1px;border-style:solid;border-color:#999999;">
+ Options for Orders on Hold
+ </th>
+<tr>
+<td colspan="5" style="text-align:justify;font-size:small">
+The following orders are on hold:
+<ol style="list-style:square;">
+ <li>Click on "Resume" to pick up and continue an older order. Resuming an order will put your current cart on hold.</li> 
+ <li>Click on "Combine" to add the items in your cart to an existing order on hold. Note that when an existing order is combined with items in your shopping cart, all of the existing order's settings will become primary and the ship-to address, customer po, etc. will be updated with the information from the already existing order. To update the Shipping Information, Customer PO, etc., please visit the "Shipping Information" option under "Place an Order" after the orders are combined.</li>
+ <li>To Delete orders from this list, click to "Resume" the order and then click the "Delete Order" button at the bottom of the cart page. Follow the instructions on the page to confirm the order's deletion. Note: Once an order is deleted, it cannot be recovered or resumed.</li>
+ </ol>
+ </td>
+ </tr>
+ </table>
+<table class="ng-table" id="hor-minimalist-b" > 
+<tr>
+		<td class=OOHheadings width=25% onMouseOver="window.status='Sort Orders on Hold by Web Order#';"
+      	onmouseout="window.status='';" onClick='javascript:changesort_toggle("OOH","N","WEB.ORDER#")'>Web Order#</td>
+
+		<td class=OOHheadings width=20% onMouseOver="window.status='Sort Orders on Hold by Customer PO';"
+		onmouseout="window.status='';" onClick='javascript:changesort_toggle("OOH","N","CUST.PO.NO")'>Customer PO</td>
+
+		<td class=OOHheadings width=20% onMouseOver="window.status='Sort Orders on Hold by Ordered-By';"
+		onmouseout="window.status='';" onClick='javascript:changesort_toggle("OOH","N","ORDERED.BY")'>Ordered By</td>
+		<td class=OOHheadings width=10% onMouseOver="window.status='Sort Orders on Hold by Order Date';"
+		onmouseout="window.status='';" onClick='javascript:changesort_toggle("OOH","N","ORD.DATE")'>Order Date</td>
+
+		<td class=OOHheadings width=10% align=right onMouseOver="window.status='Sort Orders on Hold by Order Amt';"
+		onmouseout="window.status='';" onClick='javascript:changesort_toggle("OOH","N","TOT.AMT")'>Order Amt</td>
+
+		<td class=OOHheadings width=15% align=center onMouseOver="window.status='Sort Orders on Hold by Status';"
+		onmouseout="window.status=''; " onClick='javascript:changesort_toggle("OOH","N","STATUS")'>Status
+<span style="vertical-align:super;font-size:x-small;" alt="In Cart: The Order Was Not Completed and Left in the Cart. 
+On Hold: The order has been specifically held by a user. 
+Administrative Hold: The Order was submitted and is awaiting approval by an authorized user." title="In Cart: The Order Was Not Completed and Left in the Cart. 
+On Hold: The order has been specifically held by a user. 
+Administrative Hold: The Order was submitted and is awaiting approval by an authorized user.">[?]</span>
+</td>
+</tr>
+[OOH.DETAIL]
+</table>
+[PAGE.MOVEMENT]
+</div>
+
+
+<div id="placeneworder" class=OOHBody style=margin-top:20px;>Click Here to 
+<input type="button" class="gobutton" name="GO1" value="Place a New Order" onmouseover="this.className='gobutton gobuttonhov' " onmouseout="this.className='gobutton' ; window.status=''" onclick='javascript:changeorder("PS","[WEB.ORDERNO]")'>
+</a><br/>
+</div>  
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+  <StockLine>
+    <LineId>[LN]</LineId>
+   <StockCode>[DISP.STOCKCODE]</StockCode>
+   <StockDescription>[DISP.STOCKDESC]</StockDescription>
+   <StockCategory>[DISP.CATG]</StockCategory>
+   <DeaSchedule>[DISP.DEA.SCHED]</DeaSchedule>
+   <DeaScheduleName>[DISP.DEA.SCHED.NAME]</DeaScheduleName>
+   <NdcNumber>[DISP.NDC]</NdcNumber>
+   <PackageSize>[DISP.PACKAGE]</PackageSize>
+   <ArcosQtyFactor>[DISP.ARCOS.QTY.FACTOR]</ArcosQtyFactor>
+   <ArcosUnit>[DISP.ARCOS.UNIT]</ArcosUnit>
+   <ArcosStrength>[DISP.ARCOS.STRENGTH]</ArcosStrength>
+   <OrderQty>[DISP.QTY]</OrderQty>
+   <StockLineCustomData/>
+  </StockLine>
+
+

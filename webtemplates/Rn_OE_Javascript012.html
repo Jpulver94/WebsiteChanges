@@ -1,0 +1,152 @@
+
+
+
+
+<script lang=javascript>
+// Load Default Shipping Info on page load 
+$(document).ready(function() { showShipto() ;   });
+function text_lock() {
+  jAlert("\nTo change or add manual ship-tos, \nyou must have this ability set up by your system administrator.") ;
+  document.forms[0].reqddt.focus() ;
+}
+
+function changepath(x,sflag) {
+ document.forms[0].loginpath.value = x ; 
+ document.forms[0].searchflag.value = sflag  ; 
+ resp = FormOrderEntry(document.forms[0]) ; 
+ if (resp) {
+   if (document.all||document.getElementById){
+//screen thru every element in the form, and hunt down 'submit' and 'reset'
+      for (i=0;i<document.forms[0].length;i++){
+         var tempobj=document.forms[0].elements[i]
+         if (tempobj.type.toLowerCase()=='submit'||tempobj.type.toLowerCase()=='reset'||tempobj.type.toLowerCase()=='button') {
+//disable em
+            tempobj.disabled = true
+         }
+      }
+   }
+   document.forms[0].submit() ;
+ }
+}
+
+function showShipto() {
+ //get selected shipto info
+    var x = document.forms[0].Shiptobox.options.selectedIndex ;
+    var val = document.forms[0].Shiptobox.options[x].value ;
+    var my_array = new Array ;
+    var my_array = string_decode(val) ;
+    var shipto = my_array[0] ;
+    var Shiptoname = my_array[1] ;
+    var Shiptodesc = my_array[2] ;
+    var Shiptodesc2 = my_array[3] ;
+    var Shiptodesc3 = my_array[4] ;
+    var Shiptocity = my_array[5] ;
+    var Shiptostate = my_array[6] ;
+    var Shiptozip = my_array[7] ;
+    var Shiptocountry = my_array[8] ;
+ // put variables into text boxes
+    document.forms[0].shipto.value = shipto ;
+    document.forms[0].Shiptoname.value = Shiptoname ;
+    document.forms[0].Shiptodesc.value = Shiptodesc ;
+    document.forms[0].Shiptodesc2.value = Shiptodesc2 ;
+    document.forms[0].Shiptodesc3.value = Shiptodesc3 ;
+    document.forms[0].Shiptocity.value = Shiptocity ;
+    document.forms[0].Shiptostate.value = Shiptostate ;
+    document.forms[0].Shiptozip.value = Shiptozip ;
+    document.forms[0].Shiptocountry.value = Shiptocountry ;
+    document.forms[0].reqddt.focus() ;
+}
+
+function string_decode(x) {
+       var string = x 
+       var start = 0 ;
+       var y = 0 ;
+       var ctr = 0 ;
+       var string_array = new Array ;
+ //first loop to get amount of products/qty 
+    for (var i = 0; i < string.length; i++) {
+            var ln = string.substring(i, i + 1);
+                if (ln =="|") {
+                    ctr = ctr + 1;
+                }
+    }
+ //amt of pipes indicate amt of prods (ctr) 
+    for (var i = 0; i < ctr; i++) {
+       var pos = string.indexOf("|",start)
+       var data = string.substring(start, pos)
+       string_array[y] = data 
+       y = y + 1 
+       start = pos + 1; 
+   } 
+    var data = string.substring(start,string.length)
+    string_array [y] = data 
+       return string_array; 
+} 
+
+function loaddate() {
+ // code to get variables for current date
+  var curdate = new Date() ;
+  var curday = curdate.getDate() ;
+  var curmonth = curdate.getMonth() ;
+  var curyear = curdate.getFullYear() ;
+ //add one to month to acct for months in 0-12 format 
+  curmonth = curmonth + 1 ;
+  var dt = curmonth + "/" + curday + "/" + curyear ;
+  document.forms[0].orddt.value = dt ;
+  document.forms[0].reqddt.focus() ;
+}
+
+function FormOrderEntry(theForm) {
+[REQDDT.TEST]
+[DEPTNO.TEST]
+[CUSTPO.TEST]
+[REQNO.TEST]
+[ORDBY.TEST]
+if (theForm.Shiptoname.value == "")
+{
+   jAlert("Please enter a value for the \"Ship-To Name\" field.");
+   theForm.Shiptoname.focus();
+   return (false);
+}
+
+if ((theForm.Shiptodesc.value == "") && (theForm.Shiptodesc2.value == ""))
+{
+   jAlert("Please enter a value for the \"Ship-To Address\" field.");
+   theForm.Shiptodesc.focus();
+   return (false);
+}
+
+if (theForm.Shiptocity.value == "")
+{
+   jAlert("Please enter a value for the \"Ship-To City\" field.");
+   theForm.Shiptocity.focus();
+   return (false);
+}
+
+if (theForm.Shiptostate.value == "")
+{
+   jAlert("Please enter a value for the \"Ship-To State\" field.");
+   theForm.Shiptostate.focus();
+   return (false);
+}
+
+if (theForm.Shiptozip.value == "")
+{
+   jAlert("Please enter a value for the \"Ship-To Zipcode\" field.");
+   theForm.Shiptozip.focus();
+   return (false);
+}
+
+if (theForm.Shipmethod.value == "")
+{
+   jAlert("Please Select Ship Method");
+   theForm.Shipmethod.focus();
+   return (false);
+}
+
+return (true);
+}
+
+</script>
+
+

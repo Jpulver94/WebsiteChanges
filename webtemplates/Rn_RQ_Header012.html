@@ -1,0 +1,30 @@
+Content-type: text/html
+
+
+<!--
+******************************************
+  Created by The Systems House Web Team  *
+******************************************
+-->
+
+<html> <head> 
+<LINK rel="STYLESHEET" type="text/css" href="[stylesheet_path]">
+<title>[page_title]</title>
+</head> 
+<script language='JavaScript' src='[script_path]tsh_utils.js'></script>
+<script lang=javascript>
+function track_detail(website_link) { 
+  var pgm = website_link ; 
+  var name = "sub" ; 
+  var parms = "toolbar=no,top=50,left=50,width=900,height=600,directories=no,status=yes,scrollbars=yes,resizable=yes,menubar=no" ; 
+  trackdtl = window.open(pgm,name,parms) ; 
+  trackdtl.focus() ; 
+} 
+function peddetailinq(ordno,user,pedkey,mdsorderno) { 
+  var pgm = "../../cgi-bin/olecgi.exe/pedprint[SUFFIX]?orderno=" + ordno + "&CustomerId=" + user + "&pedigreeno=" + pedkey + "&mdsorderno=" + mdsorderno ; 
+  var name = "sub" ; 
+  var parms = "toolbar=no,top=90,left=200,width=640,height=525,directories=no,status=no,scrollbars=yes,resizable=no,menubar=no" ; 
+  peddtl = window.open(pgm,name,parms) ; 
+  peddtl.focus() ; 
+} 
+</script>
