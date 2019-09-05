@@ -1,0 +1,138 @@
+
+.search-autocomplete {
+    z-index: 999999;
+}
+
+.search-autocomplete a {
+    text-decoration: none;
+}
+
+.form-search .loading {
+    background: url("../../../images/cmsmart/ajaxsearch/loading.gif") no-repeat;
+    display: block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top:2px;
+    right: 310px;
+    display: none;
+}
+
+.form-search .clear-bt {
+    background: url("../../../images/cmsmart/ajaxsearch/clear.png") no-repeat;
+    display: block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top:2px;
+    right: 310px;
+    cursor: pointer;
+    display: none;
+}
+
+.form-search {
+    position: relative;
+    
+}
+.search-autocomplete li.title, .search-autocomplete .no-results, .search-autocomplete li.preview {
+    cursor: default !important;
+}
+
+.search-autocomplete .category a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.search-autocomplete .page_rs a {
+    text-decoration: none;    
+}
+
+.search-autocomplete .category .description, .page_rs .description {
+    color: #000;
+    font-weight: normal !important;
+}
+
+.search-autocomplete span.title {
+    cursor: pointer;    
+}
+
+.search-autocomplete .preview img {
+    float: left;
+    margin-right: 5px;
+    
+}
+
+.search-autocomplete .preview .description {
+    clear: both;
+}
+
+.search-autocomplete .suggested a {
+    float: left;
+}
+
+.search-autocomplete .category a, .search-autocomplete .page_rs a {
+    display: block;
+}
+
+.search-autocomplete .title {
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.search-autocomplete ul.suggested, .search-autocomplete ul.ajaxsearch, .search-autocomplete ul.page_rs, .search-autocomplete ul.category {
+    border: none !important;    
+    
+}
+
+.search-autocomplete .regular-price {
+    text-decoration: line-through;
+}
+
+.search-autocomplete .pice, .search-autocomplete .special-pice {
+    font-weight: bold;
+}
+
+.search-autocomplete .view_all {
+    text-align: right !important;       
+}
+
+.search-autocomplete {
+    position: absolute; 
+    left: 0px; 
+    top: 22px; 
+    
+}
+
+.search-autocomplete .meta_data {
+    float: left;
+}
+
+.search-autocomplete .product_att {
+    clear: both;
+}
+
+.search-autocomplete .product_att .att_label {
+    font-weight: bold;   
+}
+
+.search-autocomplete .product_att p {
+    margin: 0;
+}
+
+.search-autocomplete .ajaxsearch .rating-box {
+    float: left;
+}
+
+.search-autocomplete .ajaxsearch .reviews_count {
+    margin-left: 58px;
+    height: 12px;
+    line-height: 12px;
+}
+
+.search-autocomplete .ajaxsearch .product-price
+{
+    clear:both;
+}
+.form-search button.button {
+    float: none;
+}

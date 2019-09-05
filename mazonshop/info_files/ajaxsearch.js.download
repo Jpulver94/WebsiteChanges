@@ -1,0 +1,91 @@
+jQuery(function(b) {
+    var c = true;
+    var a;
+    b("#search_mini_form").bind("keyup paste", function() {
+        clearTimeout(a);
+        a = setTimeout(function() {
+            if (b("#search").val().length >= minchar) {
+                b(".loading").css("display", "block");
+                b(".clear-bt").css("display", "none");
+                var f = baseUrl + "ajaxsearch/suggest/result/";
+                var e = b("#search").val();
+                var d = b("#search_categories").val();
+                b.ajax({
+                    url: f,
+                    type: "GET",
+                    data: {
+                        q: e,
+                        search_categories: d
+                    },
+                    dataType: "html",
+                    cache: "false",
+                    success: function(g) {
+                        b(".loading").css("display", "none");
+                        b(".clear-bt").css("display", "block");
+                        if (b("#search").val() != "") {
+                            b("#search_autocomplete").empty();
+                            b("#search_autocomplete").css({
+                                display: "block"
+                            }).fadeIn("fast");
+                            b("#search_autocomplete").append(g);
+							var n = g.search("No results found"); 
+							if(n>0){
+								b("#search_autocomplete").addClass("search_no_result");
+							} else {
+								b("#search_autocomplete").removeClass("search_no_result");
+							}
+                        }
+                    }
+                })
+            } else {
+                b("#search_autocomplete").empty();
+                b("#search_autocomplete").hide();
+                b(".loading").css("display", "none");
+                b(".clear-bt").css("display", "none")
+            }
+        }, t_request)
+    });
+    b(".clear-bt").click(function() {
+        b("#search").val("");
+        b("#search_autocomplete").empty();
+        b("#search_autocomplete").hide();
+        this.hide()
+    });
+    b("#search").click(function() {
+        if (b("#search").val() != "" && b("#search").val() != "Search entire store here...") {
+            c = true;
+            b("#search_autocomplete").css({
+                display: "block"
+            }).fadeIn("fast")
+        } else {
+            b("#search").val("")
+        }
+    });
+    b("#search_autocomplete").mouseout(function() {
+        c = false;
+        a = setTimeout(function() {
+            if (c != true) {
+                b("#search_autocomplete").fadeOut("slow")
+            } else {
+                clearTimeout(a);
+                c = true
+            }
+        }, 1500)
+    }).mouseover(function() {
+        clearTimeout(a);
+        c = true
+    });
+    b("#search").mouseout(function() {
+        c = false;
+        a = setTimeout(function() {
+            if (c != true) {
+                b("#search_autocomplete").fadeOut("slow")
+            } else {
+                c = true
+            }
+        }, 1500)
+    }).mouseover(function() {
+        clearTimeout(a);
+        c = true
+    })
+});

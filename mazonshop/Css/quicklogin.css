@@ -1,0 +1,228 @@
+/*
+* Name: Cmsmart Quicklogin
+* Author: The Cmsmart Development Team 
+* Date Created: 28/11/2013
+* Websites: http://cmsmart.net
+* Technical Support: Forum - http://cmsmart.net/support
+* GNU General Public License v3 (http://opensource.org/licenses/GPL-3.0)
+* Copyright © 2011-2013 Cmsmart.net. All Rights Reserved.
+*/
+#cmsmart-popup-bg {
+	position:fixed;
+	width: 100%;
+	height: 100%;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	z-index:99;
+	background:#000000;
+	display:none;
+}
+.cmsmart-popup {
+	width:320px;
+	z-index:999;
+	display:none;
+	border-radius: 5px;
+}
+.cmsmart-popup a{
+	text-decoration:none;
+}
+.cmsmart-popup ul{
+	width: 100%;
+}
+.cmsmart-popup ul li{
+	width: 100%;
+	float: left;
+	padding: 5px 0;
+	line-height: 18px;
+
+}
+.cmsmart-popup ul li:last-child{
+	border: none;
+}
+.popupmyaccount {
+	width: 250px;
+}
+#cmsmart-popup-header {
+	position:relative;
+	width:100%;
+	line-height:30px;
+	font-size:14px;
+	border-radius: 5px 5px 0 0;
+}
+#cmsmart-popup-header strong{
+	margin-left: 15px;
+	font-weight: normal;
+}
+#cmsmart-popup-close {
+	cursor:pointer;
+	font-size:16px;
+	font-weight: bold;
+	position:absolute;
+	top: 0;
+	right:10px;
+	z-index:999;
+}
+#cmsmart-popup-content {
+	padding: 10px 16px;
+	white-space: break;
+	float: left;
+	 border-radius: 0 0 4px 4px;
+	/*text-align: center;*/
+}
+#cmsmart-error{
+	font-weight: bold;
+	text-align: right;
+	margin-right: 2px;
+}
+.button-cmsmart{
+	cursor: pointer;
+	font-size: 13px;
+	padding: 0 10px;
+	text-align: center;
+	height: 32px;
+	 white-space: nowrap;
+	 font-weight: bold;
+	 border-radius:4px;
+	 float: right;
+}
+.button-cmsmart img{
+	margin: 2px 3px 0 0;
+	width: 16px;
+	height: 12px;
+}
+.alProgressBar {
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99999;
+}
+
+.alProgressBar .Shadow {
+    background-color: #000000;
+    height: 100%;
+    opacity: 0.1;
+    position: absolute;
+    width: 100%;
+}
+
+.alProgressBar .loading-mask {
+    background: url("images/blank.gif") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #D85909;
+    font-size: 19px;
+    font-weight: bold;
+    opacity: 0.8;
+    position: absolute;
+    text-align: center;
+}
+.main-container .cmsmart-popup #cmsmart-popup-content #cmsmart-error{
+	font-size: 12px !important;
+	margin-top:5px;
+	float:left;
+}
+.alProgressBar .loading-mask .loader {
+    background: none repeat scroll 0 0 #FFF4E9;
+    border: 2px solid #F1AF73;
+    color: #D85909;
+    font-weight: bold;
+    left: 50%;
+    margin-left: -105px;
+    padding: 15px 30px;
+    position: fixed;
+    text-align: center;
+    top: 45%;
+    width: 150px;
+}
+.cmsmart-row-input{
+	/*width: 90%;
+	float: left;*/
+	margin: 5px 0;
+	float: left;
+	width: 100%;
+	/*margin-left: 5%;*/
+}
+.cmsmart-row-input label{
+	float: left;
+	font-weight: bold;
+    position: relative;
+    z-index: 0;
+     min-width: 115px;
+    margin-right: 10px;
+    line-height: 28px;
+}
+
+.cmsmart-row-input span.required{
+	float: left;
+	margin-top: 10px;
+}
+
+.cms-shape {
+	position: absolute;
+	top: -12px;
+	right: 20px;
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 12px solid red;
+}
+.cmsmart-hr{
+	width: 100%;
+	float: left;
+	margin-top: 10px;
+	padding-top: 4px;
+}
+.cmsmart-hr a{
+	font-size: 11px;
+}
+.shape-username{
+	width: 40px;
+	height: 38px;
+	float: left;
+	text-align: center;
+	border-radius:4px 0 0 4px;
+}
+.shape-username img{
+	height: 23px;
+	width: 23px;
+	margin-top: 8px;
+}
+.cms-iplogin{
+	height: 36px;
+	float: left;
+	width: 280px;
+	margin-left: 1px;
+	border-radius: 0 4px 4px 0;
+	border: none;
+}
+.login-links >span{
+	margin-left: 0 !important;
+	float:left;
+	margin-top:10px;
+	width:100%;
+} 
+.main-container #cmsmart-popup-login .bg-popup #cmsmart-popup-content .cmsmart-row-input .login-links a{
+	float:left;
+	width:100%;
+}
+.cmsmart-input-text{
+	width: 156px;
+	height: 28px;
+	border: none;
+	border-radius:4px;
+}
+#cmsmart-newsletter{
+
+}
+.cmsmart-checkbox{
+	margin-top: 5px;
+}
+.shape_account{
+	left: 10px !important;
+}
+ .cms-setupinput{
+ 	padding-left: 5px;
+ }

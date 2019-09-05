@@ -1,0 +1,433 @@
+/*
+* Name: Cmsmart Quicklogin
+* Author: The Cmsmart Development Team 
+* Date Created: 28/11/2013
+* Websites: http://cmsmart.net
+* Technical Support: Forum - http://cmsmart.net/support
+* GNU General Public License v3 (http://opensource.org/licenses/GPL-3.0)
+* Copyright Â© 2011-2013 Cmsmart.net. All Rights Reserved.
+*/
+(function($) {
+	 var rewidth = $( window ).width();
+     
+     if(rewidth >640){
+    	 //alert(rewidth);	 
+    
+             $.fn.absoluteCenter = function() {
+                this.each(function() { 
+                    if(cmsmartTypepopup == 1){
+                    var top = ($(window).height()/4) + 'px';
+                    var left = '50%';  
+                    var mgTop = '0';
+                    var mgLeft = -($(this).outerWidth() / 2) + 'px';  
+                    var position = 'fixed';
+                    }
+                    else
+                    {
+                    var mgTop = '0';
+                     var mgLeft = '0';  
+                    var top = (($('#cmsmart-quicklogin-login').offset().top) + 30)+'px';
+                    var left = (($('#cmsmart-quicklogin-login').offset().left) - 270)+'px';
+                     var position = 'fixed';
+                    }
+                    
+                    $(this).css({'position': position,'margin-top' : mgTop, 'margin-left' : mgLeft,  'top' : top, 'left' : left});
+                    return this;
+                });
+            }
+            $.fn.cmsquicklogin = function() { 
+                var cmsmartBg = $('div#cmsmart-popup-bg');
+                var cmsmartLogin = $('div#cmsmart-popup-login');
+                var cmsmartRegister = $('div#cmsmart-popup-register');
+                var cmsmartResetpas = $('div#cmsmart-popup-resetpas');
+                 var cmsmartMyaccount = $('div#cmsmart-popup-myaccount');
+                var cmsmartBtnClose = $('#cmsmart-popup-close');
+               
+                $(window).scroll(function(){
+                    var position = $(this).scrollTop();
+                    if(position > 2)
+                        {
+                            cmsmartMyaccount.fadeOut('fast');
+                        }
+                    if(cmsmartTypepopup == 2){
+                         cmsmartBtnClose.click(); 
+                    }    
+                });          
+                 $('#cmsmart-quicklogin-myaccount').live('click', function() {
+                    var topAcc = (($('#cmsmart-quicklogin-myaccount').offset().top) + 30)+'px';
+                    var leftAcc = (($('#cmsmart-quicklogin-myaccount').offset().left))+'px';
+                    // $('ul.links > .first').addClass('active-firstlink');
+                    cmsmartMyaccount.slideDown(400).css({'position': 'fixed',  'top' : topAcc, 'left' : leftAcc});
+                    return false;
+
+                });
+                //Display popup login
+                $('#cmsmart-quicklogin-login').live('click', function() {
+                    animateBg();
+                    loadEffect(cmsmartLogin);
+                    cmsmartRegister.fadeOut('fast');
+                    cmsmartResetpas.fadeOut('fast');
+                    return false;
+                });
+
+                //Display popup register
+                $('#cmsmart-quicklogin-register').live('click', function() {
+                    animateBg();
+                     loadEffect(cmsmartRegister);
+                    cmsmartLogin.fadeOut('fast');
+                    cmsmartResetpas.fadeOut('fast');
+                    return false;
+                });
+                //Display popup reset pass
+                $('#cmsmart-quicklogin-resetpassword').live('click', function() {
+                    animateBg();
+                    loadEffect(cmsmartResetpas); 
+                    cmsmartRegister.fadeOut('fast');
+                    cmsmartLogin.fadeOut('fast');
+                    return false;
+                });
+                function loadEffect(obj){
+                     if(cmsmartEffect == 1)
+                    {
+                        obj.fadeIn(400).absoluteCenter();
+                    }
+                    else
+                    {
+                        obj.slideDown(400).absoluteCenter();
+                    }
+                }
+                function animateBg(){
+                    if(cmsmartTypepopup == 1){
+                    cmsmartBg.animate({opacity: 0.5}, 0).fadeIn(400); 
+                    }
+                    else 
+                    {
+                        $('#cmsmart-quicklogin-login').addClass('active-lastlink');
+                    }    
+
+                }
+                //Reset
+                function resetError(){
+                     $("div#cmsmart-error").html("");
+                }
+                cmsmartBtnClose.live('click', function() {
+                    cmsmartBg.fadeOut(400);
+                    cmsmartLogin.fadeOut(400);
+                    cmsmartRegister.fadeOut(400);
+                    cmsmartResetpas.fadeOut(400);
+                    cmsmartMyaccount.fadeOut(400); 
+                    resetError();
+                });
+                //Ä�Ã³ng popup khi nháº¥n background
+                cmsmartBg.live('click', function() {
+                    cmsmartBtnClose.click();
+                }); 
+                $(document).keydown(function(e) {
+                    if (e.keyCode == 27) {
+                        cmsmartBtnClose.click();
+                    }
+                });
+                //Error message
+                
+                $(".cmsmart-quicklogin-resetpassword").live('click', function() {
+                    cmsmartValidateResetpassword();
+                    if (validation_holder == 1) {
+                       return false;
+                    }
+                    else if (validation_holder == 0)
+                    {
+                       cmsmartResetpassAction();
+                    }
+                    return false;
+
+                });
+                $(".cmsmart-quicklogin-login").live('click', function() {
+                    cmsmartValidateLogin();
+                    if (validation_holder == 1) {
+                       return false;
+                    }
+                    else if (validation_holder == 0)
+                    {
+                        cmsmartLoginaction();
+                    }
+                    return false;
+
+                });
+                $('.cms-iplogin').keypress(function(event){
+                    var keycode = (event.keyCode ? event.keyCode : event.which);
+                    if(keycode == '13'){
+                        $(".cmsmart-quicklogin-login").click(); 
+                    }
+                });
+                $(".cmsmart-quicklogin-create").live('click', function() {
+                        cmsmartValidateregister();
+                        if (validation_holder == 1) {
+                        return false;
+                        }
+                        else if (validation_holder == 0)
+                        {
+                        cmsmartRegisteraction();
+                        }
+                    return false;
+
+                });
+                   
+                //Validate form login
+
+                function cmsmartValidateLogin() {
+                    getValuelogin();
+                    var email_validate = /^[\w%_\-.\d]+@[\w.\-]+.[A-Za-z]{2,6}$/;
+                   
+                    validation_holder = 0;
+                    if (cmsmart_email == "") {
+                        $("div.cmsmart-error-email-login").html(cmsmartRequired);
+                        validation_holder = 1;
+                    } else {
+                        if (!email_validate.test(cmsmart_email)) { // if invalid email
+                            $("div.cmsmart-error-email-login").html(cmsmartInvalidemail);
+                            validation_holder = 1;
+                        } else {
+                            $("div.cmsmart-error-email-login").html("");
+                        }
+                    }
+                    if (cmsmart_password == "") {
+                        $("div.cmsmart-error-password-login").html(cmsmartRequired);
+                        validation_holder = 1;
+                    } else {
+                        if (cmsmart_password.length < 6) {
+                            $("div.cmsmart-error-password-login").html(cmsmartShortpass);
+                            validation_holder = 1;
+                        } else {
+                            $("div.cmsmart-error-password-login").html("");
+                        }
+                    }
+                }
+
+                //get val login
+                
+                 function cmsmartValidateregister() {
+                    var email_validate = /^[\w%_\-.\d]+@[\w.\-]+.[A-Za-z]{2,6}$/;
+                   getValueregister();
+                    validation_holder = 0;
+                    if (cmsmart_firstname == "") {
+                        $("div.cmsmart-error-firstname").html(cmsmartRequired);
+                        validation_holder = 1;
+                    } else {
+                      
+                        $("div.cmsmart-error-firstname").html("");
+                    }
+                    if (cmsmart_lastname == "") {
+                        $("div.cmsmart-error-lastname").html(cmsmartRequired);
+                        validation_holder = 1;
+                    } else {
+                      
+                        $("div.cmsmart-error-lastname").html("");
+                    }
+                    if (cmsmart_ceemail == "") {
+                        $("div.cmsmart-error-email").html(cmsmartRequired);
+                        validation_holder = 1;
+                    } else {
+                        if (!email_validate.test(cmsmart_ceemail)) { // if invalid email
+                            $("div.cmsmart-error-email").html(cmsmartInvalidemail);
+                            validation_holder = 1;
+                        } else {
+                            $("div.cmsmart-error-email").html("");
+                        }
+                    }
+                    if (cmsmart_cepassword == "") {
+                        $("div.cmsmart-error-password").html(cmsmartRequired);
+                        validation_holder = 1;
+                    } else {
+                        if (cmsmart_cepassword.length < 6) {
+                            $("div.cmsmart-error-password").html(cmsmartShortpass);
+                            validation_holder = 1;
+                        } else {
+                            $("div.cmsmart-error-password").html("");
+                        }
+                    }
+                    if (cmsmart_confirmpassword == "") {
+                        $("div.cmsmart-error-confirmpassword").html(cmsmartRequired);
+                        validation_holder = 1;
+                    } else {
+                        if (cmsmart_confirmpassword != cmsmart_cepassword) {
+                            $("div.cmsmart-error-confirmpassword").html(cmsmartConfirmpassword);
+                            validation_holder = 1;
+                        } else {
+                            $("div.cmsmart-error-confirmpassword").html("");
+                        }
+                    }
+
+                }
+                //Validate email
+                function cmsmartValidateResetpassword() {
+                    var cmsmart_email = $("#cmsmart-email-resetpassword").val();
+                    var email_validate = /^[\w%_\-.\d]+@[\w.\-]+.[A-Za-z]{2,6}$/;  
+                    validation_holder = 0;
+                    if (cmsmart_email == "") {
+                        $("div.cmsmart-error-email-resetpassword").html(cmsmartRequired);
+                        validation_holder = 1;
+                    } else {
+                        if (!email_validate.test(cmsmart_email)) { // if invalid email
+                            $("div.cmsmart-error-email-resetpassword").html(cmsmartInvalidemail);
+                            validation_holder = 1;
+                        } else {
+                            $("div.cmsmart-error-email-resetpassword").html("");
+                        }
+                    }
+                  
+                }
+                function addToplinksLogin(){
+                    if(showMyaccount != 1){
+                         $("ul.links > .first").html('<a title="My Account"  href="'+baseUrl+'customer/account/">My Account</a>'); 
+                    
+                     }else{
+                         $("ul.links > .first").html('<a title="My Account" onclick="return:false;" id="cmsmart-quicklogin-myaccount" href="'+baseUrl+'customer/account/">My Account</a>');
+                     }
+                    $(".button-quicklogin").html('<a title="Log Out" href="'+baseUrl+'customer/account/logout/">Log Out</a>');  
+                    $(".button-quicklogin2").html('<a title="Log Out" class="text-quicklogin" href="'+baseUrl+'customer/account/logout/"><span>Log Out</span></a>');  
+                }
+                function LoginSuccess(){
+                    if(loginSuccessUrl == 1 ){
+                            addToplinksLogin();
+                    } else {
+                         //window.location = loginSuccessUrl;
+                    	location.reload();			
+                    }     
+                }
+                 function registerSuccess(){
+                    if(registerSuccessUrl == 1 ){
+                            addToplinksLogin();
+                    } else {
+                         window.location = registerSuccessUrl;
+
+                    }     
+                }
+                function forgotSuccess(){
+                    if(forgotSuccessUrl != 1 ){
+                           window.location = forgotSuccessUrl;
+                    }
+                }
+                //Ajax action
+                function cmsmartLoginaction() {
+                    getValuelogin();
+                    $(".alProgressBar").fadeIn('fast');
+                    var ajaxLogination = jQuery.ajax({
+                        url: baseUrl + 'quicklogin/index/login',
+                        type: 'POST',
+                        data: {
+                            emailL: cmsmart_email,
+                            passwordL: cmsmart_password
+                        },
+                        dataType: "html"
+                    });
+                    ajaxLogination.done(function(msg) {
+                        if (msg == 'false') {
+                            $("div.cmsmart-error-ajax-login").fadeIn().html('<p>'+cmsmartErrorlogin+'</p>');
+                           $(".alProgressBar").fadeOut('fast');
+                        }
+                        else {
+                        	//alert(loginSuccessUrl);
+                             $(".alProgressBar").fadeOut('fast');
+                                LoginSuccess();
+                             $(".welcome-msg").html(welcome+', '+msg+'!');
+                             $("div.cmsmart-error-ajax-login").fadeIn().html(loginSuccessText);
+                             setTimeout(function(){cmsmartBtnClose.click();},2500);    
+                        }
+
+                    });
+                }
+                
+                 function cmsmartRegisteraction(){
+                     $(".alProgressBar").fadeIn('fast');
+                    getValueregister();
+                     var ajaxLogination = jQuery.ajax({
+                        url: baseUrl + 'quicklogin/index/register',
+                        type: 'POST',
+                        data: {
+                            firstname : cmsmart_firstname,
+                            lastname : cmsmart_lastname,
+                            newsletter : cmsmart_newsletter,
+                            email: cmsmart_ceemail,
+                            password: cmsmart_cepassword,
+                            confirmpassword : cmsmart_confirmpassword
+
+                        },
+                        dataType: "html"
+                    });
+                    ajaxLogination.done(function(msg) {
+                        if (msg != 'true') {
+                            $("div.cmsmart-error-ajax-register").fadeIn().html('<p>'+msg+'</p>');
+                           $(".alProgressBar").fadeOut('fast');
+                        }
+                        else {
+                            $(".alProgressBar").fadeOut('fast');
+                            $(".welcome-msg").html(welcome+', '+cmsmart_firstname+' '+cmsmart_lastname+'!');
+                            registerSuccess();
+                              $("div.cmsmart-error-ajax-register").fadeIn().html(RegisterSuccessText);
+                            setTimeout(function(){cmsmartBtnClose.click();},2500);   
+                            //window.location = registerSuccessUrl;
+                        }
+
+                    });    
+                 }
+                 function cmsmartResetpassAction() {
+
+                    var cmsmart_email_resetpass = $("#cmsmart-email-resetpassword").val();
+                     $(".alProgressBar").fadeIn('fast');
+                    var ajaxResetAction = jQuery.ajax({
+                        url: baseUrl +'quicklogin/index/resetpass',
+                        type: 'POST',
+                        data: {
+                            email2: cmsmart_email_resetpass
+                        },
+                        dataType: "html"
+                    });
+                    ajaxResetAction.done(function(msg) {
+                        if (msg != 'true') {
+                           $("div.cmsmart-error-ajax-resetpassword").fadeIn().html('<p>'+cmsmartErrorEmailNotex+'</p>');
+                           $(".alProgressBar").fadeOut('fast');
+                        }
+                        else {
+                             forgotSuccess();
+                             $(".alProgressBar").fadeOut('fast');
+                             $("div.cmsmart-error-ajax-resetpassword").fadeIn().html(forgotSuccessText);
+                             setTimeout(function(){cmsmartBtnClose.click();},2500);   
+                        }
+
+                    });
+                }
+                 function getValuelogin(){
+                     cmsmart_email = $("#cmsmart-email-login").val();
+                     cmsmart_password = $("#cmsmart-password-login").val();
+
+                }
+                 function getValueregister(){
+                    cmsmart_firstname = $("#cmsmart-firstname").val();
+                     cmsmart_lastname= $("#cmsmart-lastname").val();
+                     cmsmart_ceemail = $("#cmsmart-email").val();
+                     cmsmart_cepassword = $("#cmsmart-password").val();
+                     cmsmart_confirmpassword = $("#cmsmart-confirmpassword").val();
+                     if ($('#cmsmart-newsletter:checked').length == 0){
+                                cmsmart_newsletter = '0';
+                            }
+                            else{
+                                cmsmart_newsletter = '1';
+                   }
+                }
+            }
+     	}
+            
+        })(jQuery);
+        //Begin
+        jQuery(document).ready(function() {
+        	var rewidth = jQuery( window ).width();
+            
+            if(rewidth >640){
+	            jQuery().cmsquicklogin();
+	            jQuery().absoluteCenter();
+            
+            }else{
+         		//alert('11');
+            	jQuery('.top-links a').attr('onclick','').unbind('click');
+         	}
+        });
