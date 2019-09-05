@@ -1751,7 +1751,7 @@ b {font-weight: 900;}
 .checkoutbox2 select, .checkoutbox2 textarea, .checkoutbox2 input[type=text] {width: 100%;}
 select, textarea, input[type=text], option {font-size: 13px !important; font-weight: 500 !important; color: #484848 !important;}
 /* Strangeness with Tables */
-div.rollsort {padding: 0px !important; margin: 0px !important;}
+div.rollsort {padding: 0px !important; margin: 0px !important; text-align: center;}
 div.rollsorthov {padding: 0px !important; margin: 0px !important;}
 /* "Current Order" Page-Specific Tweaks */
 .fillgray {background: #ddd;}

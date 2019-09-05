@@ -1,53 +1,39 @@
 
 
-
  <tr id=[LNCOLOR]>
-   <td class=datsml  valign=top align=left>
-       [LN.NO]
-</td>
-   <td class=datsml  valign=top>
+   <td class=datsml width=20 valign=top align=left>
+       [LN.NO]</td>
+   <td class=datsml width=100 valign=top>
    <a href=# onclick='javascript:release_detail("RQ","[RELSE.ORD]")'>
-       [ORD.NO]</a>
+       [ORD.NO]
+</a>
+<div class="Salesinfo"> 
+DS# [DS.PO.NO] 
+</div>
+INV# [INV.NO]
+    <a title="View Invoices" href=# onclick=javascript:loadarchive('INV','[INV.NO]' )>
+ <img alt="Export as PDF" class="ExportOrder" src="[IMAGE.PATH]pdf.png" >
+   </A>
 </td>
-   <td class=datsml  valign=top>
-     <a style="float: left;[DISP]"  title="View Invoice" href=# onclick="javascript:loadarchive('INV','[INV.NO]')" >
-[INV.NO]
-<br>
-[INV.DATE]
-    </A>
- <div class="Salesinfo"> DS# [DS.PO.NO] </div>
-</td>
-   <td class=datsml  valign=top>
+   <td class=datsml width=80 valign=top>
    <a href=# onclick='javascript:release_detail("RQ","[RELSE.ORD]")'>
        [WEB.ORD.NO]</a></td>
-   <td class=datsml  valign=top>
+   <td class=datsml width=80 valign=top>
    <a href=# onclick='javascript:release_detail("RQ","[RELSE.ORD]")'>
        [CUST.PO.NO]</a></td>
-   <td class=datsml  valign=top align=left>
+   <td class=datsml width=30 valign=top align=left>
        [DEPT]</td>
-   <td class=datsml  valign=top>
+   <td class=datsml width=85 valign=top>
        [ORDER.DT]</td>
-   <td class=datsml  valign=top align=right>
+   <td class=datsml width=85 valign=top align=right>
        [SHIP.DT]</td>
-   <td class=datsml  valign=top align=right>
+   <td class=datsml width=85 valign=top align=right>
        [TOT.ORD.AMT]</td>
-   <td class=datsml  valign=top align=right>
-       [STAT.DESC]
-<BR>
- [BO.LINES] [NO.LINES]
-</td>
-   <td class=datsml  valign=top align=right>
-<a title="Print Barcoded Labels" href=# onclick="javascript:loadlabel('[RELSE.ORD]','2')" > <img src='[IMAGE.PATH]Label.png' style="height: 20px; width: 20px" > </a>
-  <a target=new title="Export Order as PDF" href=# onclick='javascript:relexport("PDF","[RELSE.ORD]")'>
-   <img style="width: 20px ; height: 20px" alt="Export as PDF" class="ExportOrder" src="[IMAGE.PATH]pdf.png">  </a>
- <a target=new title="Export Order as XLS" href=# onclick='javascript:relexport("XLS","[RELSE.ORD]")'>
- <img style="width: 20px ; height: 20px" alt="Export as XLS" class="ExportOrder" src="[IMAGE.PATH]excel.png"> </a>
-<a title="Reorder these items." class="ExportOrder" href=# onclick="javascript:HotReorder('[REORDSTR]')" >
-   <img style="width: 20px ; height: 20px" alt="Reorder these items" class="ExportOrder" src="[IMAGE.PATH]reorder.png">  </a>
-<a title="Save Order as a Template" class=SaveTemplateLine href=# onclick="javascript:auto_template('ST','[RELSE.ORD]')" >
-   <img style="width: 20px ; height: 20px" alt="Save as a template" class="ExportOrder" src="[IMAGE.PATH]savetemplate.png">  </a>
+   <td class=datsml width=85 valign=top align=right>
+       [STAT.DESC]</td>
+   <td class=datsml width=110 valign=top align=right>
+<a href=# onclick="javascript:loadlabel('[RELSE.ORD]','2')" > <img src='[IMAGE.PATH]Label.png' style="height: 25px" > </a>
 </td>
  </tr>
-
 
 

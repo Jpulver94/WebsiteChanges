@@ -35,7 +35,7 @@
 <input type=hidden name=slsmn_id value="[SLSMN_ID]">
 <style>
 td.datsml {
-    padding: 7px;
+	text-align: center;
 }
 .Salesinfo {
     position: relative;
@@ -152,15 +152,15 @@ td.datsml {
 <div class="row">
 	<div class="col-md-12 ssfirstrow">
 		<h3>[NO.ORDERS] orders have been placed for this account.</h3>
-		<p>If you don't see the desired Web Order#, <a href="#" class="ssLinkFix" onclick="javascript:changepath('OOH','Y')">
-		Click here</a> to view Orders on Hold.</p>
+		<p>If you don't see the desired Web Order #, <a href="#" class="ssLinkFix" onclick="javascript:changepath('OOH','Y')">
+		Click Here</a> to view Orders on Hold.</p>
 	</div>
 </div>	
 <div class="row">
 	<div class="col-md-12 ssfirstrow roundedbox2 fillgray">
-		<p>To see order detail, <b>Click on the Web Order# below</b>.</p>
+		<p>To see order detail, <b>Click on the Web Order # below</b>.</p>
 		<p>Please Note: This inquiry is only showing orders after [WEB.ORDER.INQ.DATE].</p>
-		<p>To find a specific order please enter a <b>Web Order # (6 digit)</b> or <b>Co#Order#</b> (8 digit) or <b>CustomerPO#</b> below and <b>click GO</b>.</p>
+		<p>To find a specific order please enter a <b>Web Order # (6 digit)</b> or <b>Co # Order #</b> (8 digit) or <b>Customer PO #</b> below and <b>click GO</b>.</p>
 		<input type="text" name="ordervar" value="[ORDERVAR]" size="20" class="tallselect" style="margin-left: 0px;">
     <input type="button" class="gobutton" name="GO3" value="GO" onclick="javascript:changepath('COO','N')" onmouseover="this.className='gobutton gobuttonhov' ; 
     window.status='Go to Order Inquiry'" onmouseout="this.className='gobutton' ; window.status=''">
@@ -190,66 +190,66 @@ td.datsml {
     
 <table class="ng-table">
                                <tr class="ssHeadRow">
-                                         <td id="colhdg" style="width:7%;">
+                                         <td id="colhdg" style="width:3%; text-align: center;">
                                             <font size="2"><b>Line No.</b></font>
                                         </td>
-                                        <td class="rollsort" style="width:10%;">
+                                        <td class="rollsort" style="width:8%; text-align: center;">
                                             <div id='link1' onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Open Orders by Order#/Release#'; "
                                                 onmouseout="this.className='rollsort' ; window.status=''; " onclick='javascript:changesort_toggle("COO","N","ORDER.REL")'>
-                                                 <font size="2"><b>Order #-Rel #</b></font>
+                                                 <font size="2"><b>Order # - Rel #</b></font>
                                             </div>
                                         </td>
-                                        <td class="rollsort" >
+                                        <td class="rollsort" style="text-align: center;">
                                             <div id='link1' onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Open Orders by Order#/Release#'; "                                                onmouseout="this.className='rollsort' ; window.status='';">
                                                 <font size="2"><b>Invoice # </b></font>
                                             </div>
                                         </td>
-                                           <td class="rollsort" style="width:6%;">
+                                           <td class="rollsort" style="width:8%; text-align: center;">
                                             <div id='link1' onmouseover="this.className='rollsort rollsorthov' ; "   onmouseout="this.className='rollsort' ; window.status='';">
                                                 <font size="2"><b>Invoice Date</b></font>
                                             </div>
                                         </td>
-                                        <td class="rollsort" style="width:8%;">
+                                        <td class="rollsort" style="width:7%; text-align: center;">
                                             <div id='link2' onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Open Orders by Web Order#'; "
                                                 onmouseout="this.className='rollsort' ; window.status=''; " onclick='javascript:changesort_toggle("COO","N","WEB.ORDER#")'>
                                                 <font size="2"><b>Web Order #</b></font>
                                             </div>
                                         </td>
-                                         <td class="rollsort" style="width:8%;">
+                                         <td class="rollsort" style="width:6%; text-align: center;">
                                             <div id='link3' onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Open Orders by Customer PO#'; "
                                                 onmouseout="this.className='rollsort' ; window.status=''; " onclick='javascript:changesort_toggle("COO","N","CUST.PO.NO")'>
-                                                <font size="2"><b>Cust. PO# </b></font>
+                                                <font size="2"><b>Cust. PO #</b></font>
                                             </div>
                                         </td>
-                                        <td id="colhdg" align="center" style="width:18%; >
-                                            <font size="2"><b>Shipto Name</b></font>
+                                        <td id="colhdg" align="center" style="width:18%; text-align: center;">
+                                            <font size="2"><b>Ship to Name</b></font>
                                         </td>
-                                         <td class="rollsort" align="center" style="width:8%;">
+                                         <td class="rollsort" align="center" style="width:7%; text-align: center;">
                                             <div id='link4' onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Open Orders by Order Date'; "
                                                 onmouseout="this.className='rollsort' ; window.status=''; " onclick='javascript:changesort_toggle("COO","N","ORD.DATE")'>
                                                 <font size="2"><b>Order Date</b></font>
                                             </div>
                                         </td>
-                                         <td id="colhdg" align="center" style="width:7%;">
+                                         <td id="colhdg" align="center" style="width:7%; text-align: center;">
                                             <font size="2"><b>Ship Date</b></font>
                                         </td>
-                                         <td class="rollsort" align="center" nowrap style="width:7%;">
+                                         <td class="rollsort" align="center" nowrap style="width:7%; text-align: center;">
                                             <div id='link5' onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Open Orders by Total Order Amount'; "
                                                 onmouseout="this.className='rollsort' ; window.status=''; " onclick='javascript:changesort_toggle("COO","N","TOT.AMT")'>
                                                 <font size="2"><b>Rel $ Amt.</b></font>
                                             </div>
                                         </td>
-                                         <td class="rollsort" align="center" style="width:6%;">
+                                         <td class="rollsort" align="center" style="width:6%; text-align: center;">
                                             <div id='link6' onmouseover="this.className='rollsort rollsorthov';"  onmouseout="this.className='rollsort'; " '>
                                                 <font size="2"><b>BO Lines</b></font>
                                             </div>
                                         </td>
-                                       <td class="rollsort" align="center" style="width:7%;">
+                                       <td class="rollsort" align="center" style="width:7%; text-align: center;">
                                             <div id='link7' onmouseover="this.className='rollsort rollsorthov';"  onmouseout="this.className='rollsort'; " '>
                                                 <font size="2"><b>Total Lines</b></font>
                                             </div>
                                         </td>
-                                        <td class="rollsort" align="center" >
+                                        <td class="rollsort" align="center" style="text-align: center;">
                                             <div id='link6' onmouseover="this.className='rollsort rollsorthov' ; window.status='Sort Open Orders by Order Status'; "
                                                 onmouseout="this.className='rollsort' ; window.status=''; " onclick='javascript:changesort_toggle("COO","N","STATUS")'>
                                                 <font size="2"><b>Status</b></font>

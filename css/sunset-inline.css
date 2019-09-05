@@ -4928,7 +4928,7 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small
 	color: #777;
 }
 h1, .h1, h2, .h2, h3, .h3 {
-	margin-top: 20px;
+	margin-top: -35px;
 	margin-bottom: 10px;
 }
 h1 small, .h1 small, h2 small, .h2 small, h3 small, .h3 small, h1 .small, .h1 .small, h2 .small, .h2 .small, h3 .small, .h3 .small {
@@ -4960,7 +4960,7 @@ h6, .h6 {
 	font-size: 12px;
 }
 p {
-	margin: 0 0 10px;
+	margin: -15px 0 10px;
 }
 .lead {
 	margin-bottom: 20px;
@@ -10807,7 +10807,6 @@ input, select, textarea {
 	font-size: 14px;
 	font-weight: normal;
 	vertical-align: bottom;
-	padding: 3px;
 	border: none;
 }
 .header .logo img {
