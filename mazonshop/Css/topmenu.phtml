@@ -1,0 +1,81 @@
+<?php
+/**
+ * Top menu for store
+ *
+ * @see Mage_Catalog_Block_Navigation
+ */
+?>
+<?php
+/**
+ * $this->renderCategoriesMenuHtml() supports optional arguments:
+ * bool Add opener if menu is used as accordion
+ * int Level number for list item class to start from
+ * string Extra class of outermost list items
+ * string If specified wraps children list in div with this class
+ */
+?>
+<?php $_menu = $this->renderCategoriesMenuHtml(FALSE, 0,'level-top'); ?>
+
+<?php
+	$theme = $this->helper('themesetting');
+	$d = $theme->getDesignCfgSection();
+	
+	$navCss = array();
+	if ($d['nav']['stretched'])
+		$navCss[] = 'stretched';
+	
+	//If header or main have bg color
+	if ($theme->isColor($d['header']['inner_bg_color']))
+	{
+		$navCss[] = 'show-bg';
+	}
+	elseif ($theme->isColor($d['main']['inner_bg_color']))
+	{
+		$navCss[] = 'show-bg';
+	}
+?>
+<?php	
+$_productCollection=$this->getLoadedProductCollection();
+$_helper = $this->helper("catalog/output");	
+$current_page = "";	
+if(Mage::app()->getFrontController()->getRequest()->getRouteName() == "cms"):
+$current_page = Mage::getSingleton("cms/page")->getIdentifier();
+endif;
+if(empty($current_page)):	$current_page = Mage::app()->getFrontController()->getRequest()->getRouteName();
+endif;
+?>
+<div class="nav-container">
+	<div class="nav container clearer<?php if($navCss) echo " " . implode(" ", $navCss); ?>">
+    	
+    	<div id="nb-mobile-nav" style="display:none;">      
+    	<div class="nb-resmenu-title"><?php echo $this->__('MENU'); ?></div> 
+		<div class="closed"><i class="fa fa-times" aria-hidden="true"></i></div>
+        <ul class="accordion vertnav-top grid-full nb-resmenu">   
+            	<?php echo $this->renderCategoriesMenuHtml(TRUE, 0,'level-top'); ?>
+        </ul>
+    	
+		</div> 
+        <div class="menu-text">
+			<p class="text"><?php echo $this->__('Shop by'); ?><br/>
+			<span><?php echo $this->__('Department'); ?></span></p>
+		
+    		<ul style ="display: none;" id="nav"> 
+		<?php echo $_menu; //Main menu ?> 
+        <?php if ($tmpHtml = $this->getChildHtml('block_header_nav')): ?>
+        	<li class="nav-custom-link level0 level-top ">
+            	<?php 
+                    $blockTitle = Mage::getModel('cms/block')
+						->setStoreId(Mage::app()->getStore()->getId())
+						->load('block_header_nav')
+						->getTitle();
+				?>
+                <a class="level-top" href="#"><span><?php echo $blockTitle; ?></span></a>
+                <ul class="level0">
+                	<div class="header-nav-dropdown-wrapper clearer"><?php echo $tmpHtml; ?></div>
+                </ul>
+            </li>
+		<?php endif; ?>
+		</ul>
+		</div>
+	</div> <!-- end: nav -->
+</div> <!-- end: nav-container -->

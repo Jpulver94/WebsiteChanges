@@ -1,0 +1,914 @@
+/* edit list product */
+.wk_mp_fieldset .add-to .button{
+	margin-right:15px !important;
+}
+.marketplace-marketplaceaccount-new .page-title h1{
+	line-height: 25px;
+}
+.marketplace-marketplaceaccount-myproductslist .pager .pages{
+	margin-right: 10px;
+}
+.marketplace-marketplaceaccount-mydashboard .wk_contact_input_fields{
+	height: 30px;
+}
+.marketplace-marketplaceaccount-mydashboard .page-title .button.askque{
+	text-transform: uppercase;
+}
+.marketplace-marketplaceaccount-mytransaction .wk_mp_fieldset .button span span{
+	font-weight: 800;
+}
+.marketplace-marketplaceaccount-mytransaction .block .block-title span{
+	padding-bottom: 0;
+}
+.marketplace-marketplaceaccount-mytransaction .block .block-title span h4{
+	margin-bottom: 0;
+}
+.marketplace-marketplaceaccount-mytransaction .wk_mp_list_table{
+	margin-top: 25px;
+}
+.wk_ship_Label .required em{
+	color:red !important;
+}
+.wk_mp_design .pager .limiter{
+	margin-right: 0
+}
+.marketplace-seller-feedback #info .section{
+	border-bottom:none;
+}
+.wk_contact_input_fields{
+	height: 30px;
+	padding-left: 15px;
+}
+.wk_emptymsg{
+	text-transform:capitalize;
+}
+label.wk_ship_post-meta span.wk_ship_delete{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.wk_ship_row button{
+	margin-top: 10px;
+}
+.marketplace-order-history .page-title button.button{
+	margin-right: 0 !important;
+}
+
+@media (min-width: 1200px) and (max-width: 1280px) {
+	.product-view #product_addtocart_form #detail-style .box-right-info{
+		width:28%;
+	}
+	.marketplace-order-history .page-title button.button{
+		margin-left: 0 !important;
+	}
+}
+@media (max-width: 1290px){
+	#wk_mp_links_container{
+		overflow:auto;
+	}
+	#wk_mp_links_container .hor-scroll{
+		width: 1170px;
+		float: left;
+	} 
+	.marketplace-order-history .page-title button.button{
+		float: left !important;
+		margin-top: 10px !important;
+		margin-right: 10px !important;
+	}
+}
+@media (min-width: 1201px) {
+	.marketplace-order-history .page-title button.button{
+		margin-top: -4px !important;
+		margin-right: 0 !important;
+		float: right !important;
+		margin-left: 10px !important;
+	}
+}
+@media (max-width: 1200px){ 
+	.marketplace-order-history .page-title h1{
+		width: 100%;
+	}
+	.marketplace-seller-profile .col-main .wk_profile_pro_css {
+		width: 25%!important;
+		margin: 0!important;
+		padding:0 15px;
+	}
+	.marketplace-marketplaceaccount-new #wk_mp_downloadable_li .wk_mp_link_titleblock .wk_mp_link_value select{
+		height: 35px;
+	}
+	.marketplace-marketplaceaccount-new #wk_mp_downloadable_li #wk_mp_link_table td.wk_link_url_block label{
+		padding-right: 15px;
+		margin-top: 5px !important;
+	}  
+	.marketplace-marketplaceaccount-new #wk_mp_downloadable_li .wk_link_url_block label{
+		margin-top: 5px !important;
+	}
+	.marketplace-marketplaceaccount-new .wk_category input{
+		height: auto;
+	}
+	.marketplace-marketplaceaccount-new #wk_mp_downloadable_li label{
+		margin-top: -7px !important;
+		margin-right: 20px !important;
+	}
+	#wk_mp_link_table .wk_mp_link_body td.wk_link_url_block{
+		padding-left: 15px !important;
+	}
+	.marketplace-marketplaceaccount-new #wk_mp_downloadable_li #wk_mp_link_table td.wk_link_url_block label{
+		padding-right: 5px;
+	} 
+	.marketplace-marketplaceaccount-new input.defaultimage{
+		margin-right: 10px;
+	}
+	.wk_download_url .wk_mp_label{
+		margin-bottom:10px !important;
+		padding: 3px 10px !important;
+	}
+	.marketplace-marketplaceaccount-new .input-box input {
+      height: 35px; 
+  	} 
+}
+@media (min-width: 800px) and (max-width: 1199px) {
+	.marketplace-seller-profile .col-main .wk_profile_pro_css{
+		width: 33.333% !important;
+	} 
+}
+@media (min-width: 900px) and (max-width: 1199px) {
+	.product-view #product_addtocart_form #detail-style .box-right-info{
+		width:35%;
+	}
+}
+@media (min-width: 910px) and (max-width: 1199px) {
+	.marketplace-marketplaceaccount-new .page-title .button.wk_mp_btn.configattr{
+		margin-top: 10px;
+	} 
+	 
+}
+@media (max-width: 1199px){ 
+	.marketplace-marketplaceaccount-new .page-title h1{
+		width: 100%;
+	}
+	.marketplace-marketplaceaccount-new .wk_mp_btn{
+		float: left;
+		margin-top: 10px;
+		margin-right: 10px;
+		margin-left: 0 !important;
+	}
+	.marketplace-marketplaceaccount-myproductslist .pager .limiter{
+		float: right;
+	} 
+	#countrypic{
+		width: 93.5% !important;
+	}
+	.country_img_prev{
+		margin-left: 10px;
+		float: right;
+	}
+	.marketplace-marketplaceaccount-myproductslist .grid{
+		overflow:auto;
+		float:left;
+		width: 100%;
+	}
+	.marketplace-marketplaceaccount-myproductslist .hor-scroll{
+		width: 900px;
+		float: left;
+	}
+/* start responsive detail 7/1/2017  */
+	.marketplace-marketplaceaccount-myproductslist #wk_mp_tr_heading th {
+		height: 60px;
+		border-left:none;
+	}
+	.marketplace-marketplaceaccount-newattribute  .wk_mp_design:last-child .block-account .block-title{
+		margin-top:10px !important;
+		padding-left:15px;
+	}
+	.marketplace-marketplaceaccount-newattribute  .wk_mp_design:last-child .block-account .block-title h4{
+		margin-bottom:0;
+	}
+	.customer-account-edit .my-account button.button span{
+		width:auto;
+	}
+	.product-view #product_addtocart_form #detail-style .box-right-info .add-to-cart button.button span span{
+		background:none !important;
+	}
+	.marketplace-marketplaceaccount-newattribute .block-account .block-title
+	.product-view #product_addtocart_form #detail-style .box-right-info .qty-wrapper label{
+		margin-top:0;
+	}
+	.product-view #product_addtocart_form .wk_block_font_bold_up{
+		margin:10px 0 5px 0;
+		float:left;
+		width:100%;
+	}
+	.product-view #product_addtocart_form .wk_block_title_css{
+		width:100%;
+	}
+	.product-view #product_addtocart_form .wk_block_rating{
+		margin-top:10px;
+		margin-bottom:10px;
+	}
+	.product-view .wk_seller_block{
+		padding:0;
+		margin:0;
+		border:none;
+		width:100%;
+	}
+	.product-view .wk_seller_block:before{
+		display:none;
+	}
+	.product-view .wk_seller_block:after{
+		display:none;
+	}
+	.product-view .box-additional-box-tabs .panel .std{
+		padding-bottom:40px;
+	}
+	.product-view .box-additional-box-tabs .panel{
+		margin-bottom:0;
+	}
+	#customer-reviews ul.slidesjs-pagination{
+		width:100%;
+	}
+/* end responsive detail 7/1/2017  */
+/* start responsive profile */
+	.marketplace-seller-profile .col-left .wk_mp_design .wk_mp_design_inner {
+		border: none;
+	}
+	.marketplace-seller-profile .wk_mp_design_inner {
+		border: none!important;
+	}
+	.marketplace-seller-profile .col-left #info .storename .store-name {
+		font-size: 18px;
+		color: #333333;
+	}
+	.marketplace-seller-profile .col-left #info .wk_seller {
+	    padding-top: 10px;
+	}
+	.marketplace-seller-profile .col-left #info .wk_seller .section {
+		padding: 0;
+		background-color: white!important;
+		border: none!important;
+		font-weight: 400;
+		color: #f48120;
+	}
+	.marketplace-seller-profile .col-left #info .wk_seller .section .wefrom {
+	    padding-top: 6px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid #cccccc;
+	}
+	.marketplace-seller-profile .col-left #info .wk_seller .section .wefrom .wk_storeloc_icon.wk_icon {
+	    margin-right: 10px;
+	}
+	.marketplace-seller-profile .col-left #info .wk_seller > .section > a {
+		font-size: 14px;
+		text-transform: uppercase;
+		color: #333333;
+		border: none!important;
+		font-weight: 400;
+	}
+	.marketplace-seller-profile .col-left #info .wk_seller .section:nth-child(2) {
+	    padding-top: 24px;
+	}
+	.marketplace-seller-profile .col-left #info .wk_seller .section.ask_que ul {
+	    display: none!important;
+	}
+	.marketplace-seller-profile .col-left #info {
+	    border-bottom: 1px solid #cccccc;
+	}
+	.marketplace-seller-profile .col-left .wk_mp_design_inner_last .row {
+		margin: 0!important;
+	}
+	.marketplace-seller-profile .col-left .wk_mp_design_inner_last {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.marketplace-seller-profile .col-left .wk_mp_design_inner .store-name.storename {
+		font-size: 14px;
+	    font-weight: 600;
+	    padding-top: 26px;
+	    padding-bottom: 19px;
+	}
+	.marketplace-seller-profile .col-left .wk_mp_design_inner.wk_mp_design_inner_last {
+		font-size: 14px;
+	    font-weight: 500;
+	    padding-bottom: 14px;
+	    display: block;
+	}
+	.marketplace-seller-profile .col-left .mpfeedback .wk_ordertitle_label {
+	    font-size: 14px;
+	    color: #666666;
+	    font-weight: 500;
+	    padding-top: 3px;
+	}
+	.marketplace-seller-profile .col-left .mpfeedback div:nth-child(4) {
+		padding-top: 16px!important;
+	    padding-bottom: 10px!important;
+	}
+	.marketplace-seller-profile .col-left .mpfeedback div:nth-child(4) span {
+		color: #333333!important;
+		font-size: 14px!important;
+	}
+	.marketplace-seller-profile .col-left .mpfeedback div:nth-child(4) a {
+        font-size: 14px!important;
+	    color: #f48120!important;
+	    font-weight: 400!important;
+	    padding: 0 10px 0px!important;
+	    border: none!important;
+	}
+	.marketplace-seller-profile .col-left .mpfeedback a button span {
+	    font-size: 14px;
+	    font-weight: 600;
+		padding:0 5px !important;
+	}
+	.marketplace-seller-profile .col-left .wk_mp_design_inner {
+		padding: 0;
+	}
+	.marketplace-seller-profile .col-left .wk_mp_design_inner.wk_mp_design_inner_last > .store-name {
+		font-size: 14px;
+		font-size: 14px;
+	    border-top: 1px solid #cccccc;
+	}
+	.marketplace-seller-profile .col-left .wk_mp_design.wk_mp_design_inner .wk_mp_design_inner.wk_mp_design_inner_last .store-name {
+		font-size: 14px;
+	    padding-top: 20px;
+	}
+
+	.marketplace-seller-profile .col-left .wk_mp_design_inner.wk_mp_design_inner_last .wk_mp_profile_container.storename a .store-name {
+		border-bottom: none;
+        padding-top: 22px;
+	    width: 50%;
+	    display: inline-block;
+	}
+	.marketplace-seller-profile .col-left .wk_mp_profile_container.storename > a {
+	    display: block;
+	    padding-bottom: 12px;
+	}
+	.marketplace-seller-profile .col-left .start-nb .mpfeedback div {
+	    padding-top: 2px;
+	}
+	.marketplace-seller-profile .col-left .start-nb .wk_mp_design_inner.wk_mp_design_inner_last .row span {
+        display: block;
+	    padding-bottom: 6px;
+	}
+	.marketplace-seller-profile .col-left .wk_mp_profile_container.storename > .store-name {
+		border-top: 1px solid #cccccc;
+	}
+	.marketplace-seller-profile .col-left .wk_mp_design_inner.wk_mp_design_inner_last small a {
+	    margin-top: 10px;
+	    display: block;
+	    text-transform: initial;
+	    font-size: 14px;
+	    font-weight: 400;
+	    color: #f48120;
+	}
+
+	.marketplace-seller-profile .col-main .wk_mp_design .wk_mp_design_inner {
+		padding-left: 0;
+		padding-top: 0;
+		padding-right: 0;
+	}
+	.marketplace-seller-profile .col-main .wk_mp_design .wk_mp_design_inner .storename {
+		font-size: 14px;
+		color: #666666;
+	}
+	.marketplace-seller-profile .col-main .wk_mp_design:nth-child(2) .storename .storename {
+		margin-bottom: 12px;
+	}
+	
+	.marketplace-seller-profile .col-main .wk_profile_pro_css h2 {
+	    font-size: 14px;
+	    text-align: left;
+	    padding: 7px 0px;
+	}
+	.marketplace-seller-profile .col-main .wk_profile_pro_css h2 a {
+	    color: #666666;
+	}
+	.marketplace-seller-profile .col-main .wk_profile_pro_css > a button {
+		background: white;
+		border: none;
+	}
+	.marketplace-seller-profile .col-main .wk_profile_pro_css > a {
+		float: left;
+	    position: relative;
+	    top: -7px;
+	}
+	.marketplace-seller-profile .col-main .wk_profile_pro_css > a button.button span span {
+		padding: 0!important;
+	    height: auto!important;
+	    background: white!important;
+    	color: #ff7e40;
+	} 
+/* start responsive profile */
+
+	.col-main .wk_mp_design{
+		clear:both;
+	}
+	.col-main .wk_mp_design .wk_mp_fieldset{
+		padding: 15px 0;
+	}
+	.col-main .wk_mp_design .wk_mp_fieldset .form-list .fields .profile{
+		clear:both;
+	}
+	.customer-account-create label,.marketplace-marketplaceaccount-editprofile label,.marketplace-marketplaceaccount-editprofile label,.marketplace-marketplaceaccount-newattribute label,.marketplace-marketplaceaccount-new label,.marketplace-marketplaceaccount-myproductslist label,.marketplace-marketplaceaccount-myproductslist label,.marketplace-marketplaceaccount-mydashboard label,.marketplace-marketplaceaccount-mytransaction label,.marketplace-order-history label,.marketplace-seller-collection label,.marketplace-seller-profile label,.marketplace-seller-feedback label,.catalog-product-view label,.marketplace-index-index label{ 
+		margin: 10px 0 10px;
+	}
+	.col-main .wk_mp_design .wk_mp_fieldset .form-list .fields .profile >input{
+		margin:12px !important;
+	}
+	.col-main .wk_mp_design .wk_mp_fieldset .form-list .fields .profile >label.input-box-notification{
+		margin-top:11px !important;
+		margin-left:10px !important;
+	}
+	.logoimage_set .setimage img{
+		margin-top:10px;
+	}
+	.country_img_prev{
+		margin-top:10px;
+	}
+	#associate_product button.button span span{
+		padding:0 !important;
+	}
+	
+	.customer-account-create button.button span,.marketplace-marketplaceaccount-editprofile button.button span,.marketplace-marketplaceaccount-editprofile button.button span,.marketplace-marketplaceaccount-newattribute button.button span,.marketplace-marketplaceaccount-new button.button span,.marketplace-marketplaceaccount-myproductslist button.button span,.marketplace-marketplaceaccount-myproductslist button.button span,.marketplace-marketplaceaccount-mydashboard button.button span,.marketplace-marketplaceaccount-mytransaction button.button span,.marketplace-order-history button.button span,.marketplace-seller-collection button.button span,.marketplace-seller-profile button.button span,.marketplace-seller-feedback button.button span,.catalog-product-view button.button span,.marketplace-index-index button.button span{
+		width:100%;
+	}
+	#associate_product.wk_mp_fieldset .button{
+		width:100%;
+	}
+	.wk_mp_design .form-list input.input-text{
+		width:100%;
+	}
+	.marketplace-index-index .wk_mp_landing_sellers_details{
+		width: 56%;
+		float: left;
+		padding-left: 15px;
+	}
+}
+@media (max-width: 1000px){
+	.wk_ship_row input{
+		width: 100% !important;
+	}
+	.wk_mp_fieldset .pager .amount{
+		margin-right: 15px;
+	}
+	.wk_mp_fieldset .pager{ 
+		float: left;
+		width: 100%;
+		margin-top: 13px;
+	} 
+}
+@media (max-width: 899px){
+	.product-view #product_addtocart_form #detail-style .box-right-info{
+		width:100%;
+	}
+	#countrypic{
+		width:  89.5% !important;
+	} 
+	.header-main .user-menu .link-header .dropdown-button{
+		margin-right: 5px;
+	}
+
+}
+@media (max-width: 800px){ 
+	.marketplace-seller-feedback #customer-reviews{
+		margin-top: 30px;
+	}
+	.marketplace-marketplaceaccount-new .page-title h1{
+		width: 100%;
+	}
+	.marketplace-marketplaceaccount-new #form-customer-product-new .page-title button.wk_mp_btn{
+		margin-bottom: 10px;
+	}
+	.marketplace-marketplaceaccount-new #form-customer-product-new .page-title >button{
+		float: left;
+		margin-right: 20px;
+		margin-top: 10px;
+		margin-left: 0 !important;
+	}
+	/* start responsive detail 7.1.2017 */
+	.marketplace-seller-profile .col-main .wk_profile_pro_css {
+		width: 33.33%!important;
+		margin: 0!important;
+		padding:0 15px;
+	}  
+	.content-1-th .content-text{
+		padding-right: 15px !important;
+	}
+	.content-2-th .content-text{
+		padding-left: 15px !important
+	}
+}
+@media (min-width: 769px) and (max-width: 800px) {
+	.marketplace-seller-feedback .grid-col2-sidebar{
+		width:29%;
+	}
+	.marketplace-seller-feedback .col2-left-layout .col-main{
+		width: 68.5%;
+	}
+}
+@media (min-width: 767px) and (max-width: 1000px) {
+	.page-title h1{
+		width:65%;
+	}
+}
+@media (max-width: 768px){
+	.marketplace-seller-feedback .col-left{
+		padding:0 15px;
+	}
+	.wk_logo_block > a{
+		float:left;
+		width:100%;
+	}
+	.wk_logo_block > a img{
+		float:left;
+		width:100%;
+	}
+	.marketplace-seller-profile .col-left .wk_mp_design_inner .store-name.storename { 
+	    padding-top: 0;
+	    padding-bottom: 0;
+	}
+	.marketplace-seller-feedback .col2-left-layout .col-left{
+		width: 100%;
+	}
+	.marketplace-seller-feedback .col2-left-layout .col-main{
+		width: 100%;
+	}
+	.marketplace-seller-feedback .col2-left-layout .col-left{
+		border-left: 1px solid #ccc;
+		border-top: 1px solid #ccc;
+	}
+	.marketplace-marketplaceaccount-newattribute .page-title h1{
+		margin-top: 30px;
+	}
+	.marketplace-seller-profile .main-container .main .col-left,.marketplace-seller-collection .main-container .main .col-left{
+	 	border-bottom: 1px solid #ccc !important;
+	}
+	.marketplace-seller-profile .main-container .main .col-left{
+		margin-bottom:30px;
+	}
+}
+@media (max-width: 767px){  
+	 .marketplace-index-index .wk_mp_landing_sellers_img2{
+	    position: absolute;
+	    left: 15px;
+	    top: 15px;
+	    padding-right: 15px;
+	    border: none !important;
+	  }
+	.marketplace-seller-feedback .main-container .main .col-left{
+		border-bottom:1px solid #ccc !important;
+	}
+	.block.block-wishlist .block-title{
+		padding-left: 15px;
+	}
+	.wk_mp_link_titleblock{ 
+		width: 100%;
+	}
+	.country_img_prev{ 
+		display: none;
+	}
+	.wk_mp_link_label{
+		width: 80%;
+	}
+	#cprofile{
+		right: auto !important;
+		margin-right: 15px;
+	}
+	.marketplace-marketplaceaccount-editprofile .page-title h1{
+		text-align: left;
+	}
+	.customer-account-index .box-account.box-info{
+		border:1px solid #ccc;
+	}
+	.my-account .box-account.box-info .box-content > .col-1{
+		width:100%;
+		padding:15px 3%; 
+	} 
+	.my-account .dashboard .box-info .col2-set .box-content{
+		width:100%;
+		padding:15px 3%; 
+	} 
+	.dashboard .box .box-title{
+		padding-top:5px;
+		padding-bottom:5px;
+		padding-right:20px;
+		margin-bottom:0;
+	}
+	.box-account.box-info .col-1{
+		margin-bottom:0;
+	}
+	.box-account *{
+		box-sizing:border-box;
+	}
+	.col2-set .col-2{
+		border-top:1px solid #ccc;
+		margin-bottom:0;
+		border-bottom:1px solid #ccc;
+	}
+	.my-account .dashboard .box-info .col2-set > div.box > .box-content{
+		padding:0;
+	}
+	.my-account .dashboard .box-info .col2-set > div.box > .box-content div.col-2{
+		padding:15px 3%; 
+		border-bottom:none;
+	}
+	.customer-account-index  .dashboard .box .box-title a{
+		float:right;
+		margin-top:5px;
+	}
+	.box-account.box-info .col-1 .box{
+		padding-right:0;
+	}
+	.box-account .box-head{
+		margin:0;
+		padding:5px 3%;
+	}
+	.col2-set .col-2,.box-account.box-info .col-1{
+		width:100%;
+	}
+	.box-account.box-info .col-1{
+		border-right:none; 
+	}
+	.my-account .dashboard .box-info .col2-set .box-title h3{
+		padding-left:3%;
+	}
+	.customer-account-index  .box-account .col2-set{
+		margin-bottom:0;
+		border-bottom:none;
+	}
+	.product-view .box-additional-box-tabs .block-related, .list-category, .section-title, .subtitle, .my-account, .dashboard .welcome-msg, .box-account, .account-create, .col-main, #detail-style{
+		padding-left:0;
+	}
+	.marketplace-seller-collection .col-left.sidebar .wk_mp_design_inner small{
+		border-bottom:none;
+	}
+	.marketplace-seller-collection .block .block-content{
+		padding-top:20px !important;
+	}
+	.product-view .product-img-box{
+		margin:0 !important;
+	}
+	.product-view .product-img-box .product-image a img{
+		width:100%;
+	}
+	.marketplace-seller-profile .col-left .wk_mp_design .wk_mp_design_inner{
+		padding: 15px 15px 0 15px;
+	}
+	.marketplace-seller-profile .col-main .wk_mp_design .wk_mp_design_inner >ul{
+		margin-top:10px;
+	}
+	.main-container .main .col-left{ 
+		margin-left:0;
+		border:1px solid #ccc; 
+		border-bottom:none;
+		margin-top:15px;
+		width:100%;
+	}
+	.postscript{
+		width:100%;
+	}
+	.wk_mp_design .form-list input.input-text{
+		width:100%;
+	} 
+	.profileimage_set .setimage{
+		width:100%;
+		padding:15px 0;
+	}
+	.block .block-content{
+		width:100%;
+		padding:0;
+		padding-left:15px;
+		padding-right:15px;
+	}
+	
+	.col-left .block-account .block-title{
+		padding-left:15px;
+		margin-top:10px !important;
+	}
+	.marketplace-marketplaceaccount-newattribute .block .block-title{
+		padding: 25px 15px 0;
+	}
+	.block.block-compare .block-title{
+		padding-left:15px;
+	}  
+	 .block-content ul.wk_cont_ul{
+		float:left;
+		width:100%;
+		margin-top:10px;
+	}
+	.wk_mp_design .form-list textarea{
+		width:100%;
+	}
+	.wk_mp_design .form-list input.input-text{
+		width:100% !important;
+	}
+	 #countrypic{
+		width:100% !important;
+	}
+}
+@media (max-width: 750px){
+	.page-title h1{
+		white-space:nowrap;
+		width:100%;
+		margin-bottom: 10px;
+	} 
+	.page-title .button{
+		float: left;
+		margin-right: 10px;
+		margin-left: 0 !important;
+	}
+	.marketplace-marketplaceaccount-new .page-title h1{
+		text-align: left;
+	}
+}
+@media (max-width: 600px){
+	.wk_ship_light{
+		top:50% !important;
+		margin-top:-130px;
+	}
+	.marketplace-marketplaceaccount-newattribute .page-title h1{
+		white-space: normal;
+	}
+	.page-title h1{
+		text-align: left;
+	}
+	.wk_ship_row button{
+		float: left;
+	    margin-right: 15px;
+	}
+	.marketplace-index-index .wk_mp_landing_sellers_details{
+		width: 51%;
+	}
+	.marketplace-marketplaceaccount-mydashboard .col-main div.wk_mp_design .hor-scroll{
+		width: 600px;
+		float:left;
+	}
+	.marketplace-marketplaceaccount-mydashboard .col-main .wk_mp_design .grid{
+		width: 100%;
+		overflow-x:scroll;
+	}
+	.marketplace-marketplaceaccount-mydashboard .col-main div.wk_mp_design .hor-scroll.no-review{
+		width: 100%;
+	}
+}
+@media (max-width: 590px){
+	.wk_mp_link_titleblock{
+		width: 100%;
+	}
+	.wk_mp_fieldset button.wk_mp_add_sample, .wk_mp_fieldset button.wk_mp_add_btn{
+		width: auto !important;
+	}
+	.marketplace-marketplaceaccount-new #wk_mp_downloadable_li >label{
+		margin-top: 10px !important;
+	}
+	.marketplace-marketplaceaccount-editprofile .profile .wk_profile_links .btn_primary{
+		width: 200px !important;
+	}
+	.product-view .info-product2{
+		padding:15px 15px 25px 15px;
+	}
+	.product-view #product_addtocart_form #detail-style{
+		padding-left:0;
+	}
+	.product-view .info-product2 .container{
+		width:100%;
+	}
+	.page-title h1{
+		width:100%;
+		white-space:normal;
+		text-align: left;
+		padding-left: 0 !important;	
+	}
+	.customer-account-create .form-list li,.marketplace-marketplaceaccount-editprofile .form-list li,.marketplace-marketplaceaccount-editprofile .form-list li,.marketplace-marketplaceaccount-newattribute .form-list li,.marketplace-marketplaceaccount-new .form-list li,.marketplace-marketplaceaccount-myproductslist .form-list li,.marketplace-marketplaceaccount-myproductslist .form-list li,.marketplace-marketplaceaccount-mydashboard .form-list li,.marketplace-marketplaceaccount-mytransaction .form-list li,.marketplace-order-history .form-list li,.marketplace-seller-collection .form-list li,.marketplace-seller-profile .form-list li,.marketplace-seller-feedback .form-list li,.catalog-product-view .form-list li,.marketplace-index-index .form-list li{
+		margin-bottom:0;
+	}
+	.page-title .button{
+		float:left;
+		margin-top:10px;
+		margin-left:0 !important;
+	}
+	.block .block-title{
+		padding-left:0;
+	}
+	.wk_imagevalidate{
+		margin-bottom: 10px;
+	}
+}
+@media (max-width: 500px){
+	.wk_total_sale_css{
+		width:100%;
+	}
+	.wk_ship_light{
+		margin-top: -152px;
+	}
+}
+@media (max-width: 480px){ 
+	.marketplace-marketplaceaccount-new input.wk_imagevalidate{
+		width: 100%;
+	}  
+	.marketplace-marketplaceaccount-new .page-title h1{
+		line-height: 25px;
+	}
+	.wk_monthsale{
+		margin-right:1%;
+		width:31%;
+	}
+	.wk_sale_color {
+		display: inline-block;
+		text-align: center;
+		width: 100%;
+	}
+	.wk_sale_css{
+		padding:0;
+	}
+	.marketplace-index-index .wk_mp_landing_sellers_details{
+		padding-left:15px;
+	}
+	.page-title .button{
+		float: left;
+		margin-top: 25px;
+	}
+	.marketplace-marketplaceaccount-newattribute .col2-left-layout .col-main .wk_mp_design{
+		width: 100%;
+		overflow-x: auto; 
+	}
+	.marketplace-marketplaceaccount-newattribute .col2-left-layout .col-main .wk_mp_design .wk_mp_option-box{
+		width:600px;
+	}
+	.block.block-compare{
+		border-bottom:none;
+	}
+	.postscript{
+		margin-left:0;
+	}
+	.marketplace-seller-profile .col-main .wk_profile_pro_css {
+		width: 50%!important; 
+	} 
+	.main-container #cmsmart-popup-login, .main-container #cmsmart-popup-resetpas, .main-container #cmsmart-popup-register{
+		width: 300px;
+		margin-left: -150px !important;
+	}
+}
+@media (max-width: 400px){
+	/* start responsive detail 7.1.2017 */
+	.product-view .add-to-links li.button-add-to{
+		margin-top:20px;
+	}
+	.marketplace-seller-feedback #review-form fieldset #product-review-table{
+		width:380px;
+	}
+	.marketplace-seller-feedback #review-form{
+		float: left;
+		width: 100%;
+		overflow-x: auto;
+	}
+	/* end responsive detail 7.1.2017 */
+	.col-main .wk_mp_design .wk_mp_fieldset .form-list .fields .profile >label.input-box-notification{
+		margin-left:0;
+	}
+}
+@media (max-width: 360px){
+	.marketplace-seller-profile .col-main .wk_profile_pro_css{
+		width: 100% !important;
+		margin-bottom:20px !important;
+	}
+	.marketplace-seller-profile .products-grid .item .before-hover{
+		padding: 0;
+	}
+	.marketplace-order-history .main-container button.button span span{
+		padding: 0 15px !important;
+	}
+	.marketplace-seller-profile .col-main ul li{
+		margin-top: 20px;
+	}
+	.marketplace-seller-profile .col-main .category-products ul li:frist-child{
+		margin-top: 0;
+	}
+	.colorpicker{
+		left: 0 !important;
+	}
+	.marketplace-marketplaceaccount-myproductslist .pager .limiter{
+		float: left;
+	}
+	.marketplace-marketplaceaccount-myproductslist .pager .pages{
+		float: left;
+	}
+	.marketplace-marketplaceaccount-myproductslist .pager .amount{
+		width: 100%;
+	}
+	.prdouctbackground{
+		padding: 0 !important
+	} 
+	.marketplace-marketplaceaccount-new .main-container button.button span span{
+		padding: 0 8px !important;
+	}
+}
+.wishlist-index-configure .main.container,.catalog-product-view .main.container{
+	width: 100%;
+	max-width: 100%;
+	padding: 0;
+}
+.wishlist-index-configure.catalog-product-view .col-main{
+	width: 100% !important;
+}
+.wishlist-index-configure .postscript{
+	display: none;
+}
