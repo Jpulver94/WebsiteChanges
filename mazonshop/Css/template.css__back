@@ -1386,8 +1386,7 @@ ul.disc ul {
     color: #ff7e40;
 }
 #mini-cart ul.links {
-    float: left;
-    margin-left: -5px;
+    
 }
 #mini-cart .block-title .summary {
     float: left;
