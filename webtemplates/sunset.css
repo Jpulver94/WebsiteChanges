@@ -4150,7 +4150,7 @@ top:0px;position:absolute;right:10px;}
 input,select,textarea{border:solid 1px #d3d4d6;font-size:11px;}
 #colhdg ,.rollsort{
 /* Added new Heading */
-font-size:16px;border:none;color:#888;font-weight:300;border-bottom:1px solid #e5e5e5;background:none;font-family:Roboto,Helvetica,sans-serif;font-family:'Roboto'!important;text-align:center;color:#131688;font-size:14px;font-weight:normal;vertical-align:bottom;padding:10px;}
+font-size:16px;border:none;color:#888;font-weight:300;border-bottom:1px solid #e5e5e5;background:none;font-family:Roboto,Helvetica,sans-serif;font-family:'Roboto'!important;text-align:center;color:#131688;font-size:14px;font-weight:normal;vertical-align:bottom;}
 #lcolor1{
 /* detail data line alternating color #1 */
 color:#313131;background:none;}
