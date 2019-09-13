@@ -1784,7 +1784,7 @@ width: 125px !important;
 .productcell {background: #e3e3e3; color: #717171;}
 .productcell a:hover {color: #FF7900;}
 .cartnav {margin-top: 20px;}
-.cartinfo {font-weight: bold; padding: 10px; text-align: center;}
+.cartinfo {font-weight: bold; padding: 10px; text-align: right;}
 .cartjump {padding: 10px 20px !important; font-size: 12px !important; line-height: 16px !important;}
 .cartjump {background-color: #333; border: 0px !important; margin: 1px; color: #FFFFFF; padding: 10px 20px; border-radius: 5px; font-weight: 500;}
 .cartjump:hover {background-color: #717171; border: 0px !important; margin: 1px; color: #FFFFFF; padding: 10px 20px; border-radius: 5px;}
