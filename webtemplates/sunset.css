@@ -1156,7 +1156,7 @@ div.rollsorthov{padding:0px !important; margin:0px !important;}
 .fillwhite{padding:5px; background:#e3e3e3 !important; color:#FF7900 !important;}
 .checkoutbox2{margin-top:10px;font-size:14px;font-weight:700;border-radius:10px;padding:10px;overflow:hidden;}
 .ng-table{margin-top:10px;}
-.ng-table th{background-color:#333; color:#FFFFFF; font-weight:500; font-size:12px; padding-top:15px !important;}
+.ng-table th{background-color:#333; color:#FFFFFF; font-weight:500; font-size:12px; padding-top:15px !important; padding-bottom:10px !important;}
 .ng-table >tbody > tr{border-bottom:1px solid #333;}
 .ReorderLine{padding:5px 10px !important; font-size:12px !important; line-height:16px !important;}
 .ReorderLine{background-color:#434343; border:0px !important; margin:1px; color:#FFFFFF; padding:10px 20px; border-radius:5px; font-weight:500;}
