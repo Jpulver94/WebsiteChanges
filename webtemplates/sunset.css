@@ -1196,7 +1196,7 @@ div.rollsorthov{padding:0px !important; margin:0px !important;}
 .iconbar a{color:#333 !important;}
 .iconbar a:hover{color:#FF7900 !important;}
 /* "Accounts Receivable" Page-Specific Tweaks */
-.roundedbox{margin-top:20px;border-radius:5px;padding:10px;border:1px solid #ddd;}
+.roundedbox{border-radius:5px;padding:10px;border:1px solid #ddd;}
 .roundedbox p{margin-bottom:0px; font-size:18px;}
 .roundedbox h4{margin:0px 0px 5px 0px; color:#717171; font-size:13px !important;}
 .ssOrangeH4 h4{color:#FF7900;}
