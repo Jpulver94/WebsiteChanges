@@ -4552,6 +4552,6 @@ img.PricingFormularyButton{width:32px;height:32px; -webkit-box-shadow:2px 2px 1p
 .center{text-align:center;}
 #colhdg , .rollsort{
 /* Added new Heading */
-padding-bottom:3px !important; padding-top:20px !important;}
+padding-bottom:3px !important; padding-top:3px !important; vertical-align:middle;}
 
 
