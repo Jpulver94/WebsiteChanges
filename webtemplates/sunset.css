@@ -508,7 +508,7 @@ h3.nosh span{background-position:-59px -267px;bottom:-7px;height:7px;left:10px;p
 .ShowARCC,.CreateCust,.CreateProd,.ShowBackord{display:none;}
 /* Added new Popups */
 #popup_container{font-family:Arial,sans-serif;font-size:12px;min-width:300px;max-width:600px;background:#FFF;border:solid 5px #999;color:#000;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
-#popup_title{font-size:18px;font-weight:bold;text-align:center;line-height:1.75em;color:#666;background:#CCC;border:solid 1px #FFF;border-bottom:solid 1px #999;cursor:default;padding:0em;margin:0em;}
+#popup_title{font-size:14px;font-weight:bold;text-align:center;line-height:1.75em;color:#666;background:#CCC;border:solid 1px #FFF;border-bottom:solid 1px #999;cursor:default;padding:0em;margin:0em;}
 #popup_content{background:16px 16px no-repeat url(//hosting.tshinc.com/rn/images/info.png);padding:1em 1.75em;margin:0em;}
 #popup_content.alert{background-image:url(//hosting.tshinc.com/rn/images/info.png);}
 #popup_content.confirm{background-image:url(//hosting.tshinc.com/rn/images/warning.png);}
