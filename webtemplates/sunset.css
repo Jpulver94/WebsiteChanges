@@ -1684,7 +1684,7 @@ h3.nosh{color:#FF7900;background:none;border:none;display:none;}
 .rowbutton:hover{background:#333;border:2px solid #FF7900;}
 .rowbuttonblack{background:#333;}
 .rowbuttonblack:hover{background:#FF7900;}
-.sidebar{position:absolute; top:-5px; display:none; BACKGROUND:WHITE; border-radius:none;
+.sidebar{position:absolute; top:0px; display:none; BACKGROUND:WHITE; border-radius:none;
 /* opacity:5.8; */
 border:1px solid #333; padding:7px; min-width:200px; width:20%;}
 .header .logo img{max-width:185px; max-height:auto; top:1px; position:fixed;
@@ -4472,7 +4472,7 @@ p.text{margin:0px; }
 /* OVERRIDES 4/19/18 */
 #mini-cart{margin-left:0px;padding-left:0px;background:none;}
 .mini-login .block-content ul{width:100%;}
-.mini-login-menu{-webkit-border-radius:0 0 6px 6px; -moz-border-radius:0 0 6px 6px; border-radius:0 0 6px 6px; border:1px solid #BBB; padding:5px 0; background:none #FFF; z-index:99; position:absolute; right:-14px; top:33px; min-width:240px; -webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5); -moz-box-shadow:0 1px 3px rgba(0,0,0,0.5); box-shadow:0 1px 3px rgba(0,0,0,0.5);}
+.mini-login-menu{-webkit-border-radius:0 0 6px 6px; -moz-border-radius:0 0 6px 6px; border-radius:0 0 6px 6px; border:1px solid #BBB; padding:5px 0; background:none #FFF; z-index:99; position:absolute; right:-14px; top:35px; min-width:240px; -webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5); -moz-box-shadow:0 1px 3px rgba(0,0,0,0.5); box-shadow:0 1px 3px rgba(0,0,0,0.5);}
 .mini-login .mini-login-menu ul{width:100%;}
 .mini-login .mini-login-menu ul{float:left; width:92%; padding:0 4% 14px; border-bottom:1px solid #c7c7c7;}
 .mini-login .mini-login-menu ul li{float:left; width:100%;}
