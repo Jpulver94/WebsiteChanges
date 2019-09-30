@@ -2119,9 +2119,9 @@ img.PricingFormularyButton {
 	box-shadow: 1px 1px 2px #666;
 	border-radius: 5px;
 }
-.OutStock { background-image: url("https://sunset.tshinc.com/sunset/images/OutStock.png");}
-.AltStock {background-image: url("https://sunset.tshinc.com/sunset/images/Available.png"); } 
-.InStock { background-image: url("https://sunset.tshinc.com/sunset/images/InStock.png");}
+.OutStock { background-image: url("https://www.sunsetpharma.com/sunset/images/OutOfStock.png");}
+.AltStock {background-image: url("https://www.sunsetpharma.com/sunset/images/Available.png"); } 
+.InStock { background-image: url("https://www.sunsetpharma.com/sunset/images/InStock.png");}
 a:hover, a:focus {
     color: #FF7900 !important ;
 }
