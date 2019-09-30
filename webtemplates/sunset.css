@@ -4522,7 +4522,7 @@ img.RemoveClass:hover{cursor:pointer; }
 #mouseoverhintbox{width:auto; min-width:200px; }
 .ReorderLine{background:none; }
 .whitebox{border:1px solid white; padding:7px; float:right; text-align:center; width:100%;}
-img#SRBodyLineImage{padding-left:15px; }
+img#SRBodyLineImage{padding-left:0px; }
 .PricingFormularyButton img{width:32px;height:32px; -webkit-box-shadow:2px 2px 1px #666; -moz-box-shadow:2px 2px 1px #666; box-shadow:2px 2px 1px #666; border-radius:15px;}
 img.PricingAddButton{margin-right:10px;width:32px;height:32px; -webkit-box-shadow:2px 2px 1px #666; -moz-box-shadow:2px 2px 1px #666; box-shadow:2px 2px 1px #666; border-radius:15px;}
 img.PricingFormularyButton{width:32px;height:32px; -webkit-box-shadow:2px 2px 1px #666; -moz-box-shadow:2px 2px 1px #666; box-shadow:2px 2px 1px #666; border-radius:15px;}
