@@ -105,7 +105,7 @@ border:0 none transparent}
 img{border:0;}
 .embed + img{left:-24px;position:relative;top:0;}
 table, td, tr{font-size:11px;}
-input, select, textarea{border:solid 1px #d3d4d6;font-size:11px;}
+input, select, textarea{border:solid 1px #7f7f7f;font-size:11px;}
 #style1{background-color:#CCC;font-size:xx-small;font-style:italic;}
 #style2{background:#0D115B;color:#fff;font-size:smaller;font-style:normal;}
 #stylepop{background:#FFF;color:#000;font-size:xx-small;font-style:italic;}
@@ -854,7 +854,7 @@ a{color:#000000; }
 .ajaxsearch .preview img{float:left;border:solid 1px #CCC}
 .header .form-search .ajaxsearch li.selected{background-color:#FBFBFB}
 /* CSS Document */
-input, select, textarea{border:solid 1px #d3d4d6;font-size:11px;}
+input, select, textarea{border:solid 1px #7f7f7f;font-size:11px;}
 #colhdg , .rollsort{
 /* Added new Heading */
 padding:6px;     background:#f4f4f4;    position:relative;    font-size:21px;    line-height:20px;    color:#333;    margin-bottom:3px;    font-family:'Roboto', sans-serif;    font-size:12px;    line-height:18px;    border:none;}
@@ -1325,7 +1325,7 @@ a{color:#000000;}
 .header-main .user-menu .block_header_top_right{float:right;width:300px;
 /* height:0px;*/
 top:0px;position:absolute;right:10px;}
-input, select, textarea{border:solid 1px #d3d4d6;font-size:11px;}
+input, select, textarea{border:solid 1px #7f7f7f;font-size:11px;}
 #colhdg , .rollsort{
 /* Added new Heading */
 font-size:16px;border:none;color:#888;font-weight:300;border-bottom:1px solid #e5e5e5;background:none;font-family:Arial, Helvetica, sans-serif;font-family:'Roboto'!important;text-align:center;color:#131688;font-size:14px;font-weight:normal;vertical-align:bottom;padding:10px;}

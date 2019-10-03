@@ -9471,7 +9471,7 @@ a {
 	right: 10px;
 }
 input, select, textarea {
-	border: solid 1px #d3d4d6;
+	border: solid 1px #7f7f7f;
 	font-size: 11px;
 }
 #colhdg , .rollsort {
@@ -10624,7 +10624,7 @@ caption, th, td {
 	background: #f9f9f9;
 }
 input, select, textarea {
-	border: solid 1px #d3d4d6;
+	border: solid 1px #7f7f7f;
 	font-size: 12px;
 	padding: 5px;
 }
