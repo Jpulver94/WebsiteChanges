@@ -1616,7 +1616,7 @@ caption, th, td{text-align:center;font-weight:normal;vertical-align:inherit;}
 .gobutton, .button1, .button2, .button3, .sendorder{float:none;background:#FF7900;box-shadow:none;height:auto;border:1px solid #333;margin:1px;color:white;padding:0px 5px;}
 #centeredmenu ul li a{padding-right:3px;padding-top:4px;margin:0;}
 .banner-block li a{display:block;border:1px solid #999999;border-bottom-color:#08436A;border-radius:5px;position:relative;overflow:hidden;background:#f9f9f9;}
-input, select, textarea{border:solid 1px #d3d4d6;font-size:12px;padding:5px;}
+input, select, textarea{border:solid 1px #7f7f7f;font-size:12px;padding:5px;}
 /* CSS Document FOR CART CSS ICON */
 .icon-cart{width:22px;height:22px;position:relative;overflow:hidden;xmargin-left:2px;xmargin-bottom:2px;}
 .icon-cart .cart-line-1{width:15%;height:7%;position:absolute;left:8%;top:25%;-webkit-transform:rotate(5deg);-moz-transform:rotate(5deg);-ms-transform:rotate(5deg);transform:rotate(5deg);background-color:#000;border-bottom-left-radius:35%;}
