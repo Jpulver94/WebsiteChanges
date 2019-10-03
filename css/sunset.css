@@ -2110,7 +2110,6 @@ img.PricingFormularyButton {
 	box-shadow: 0px 3px 1px #666, 0px 0px 0px 1px black;
 }
 .OutStock, .AltStock, .InStock {
-	box-shadow: 1px 1px 2px #666;
 	border-radius: 5px;
 }
 .OutStock { background-image: url("https://www.sunsetpharma.com/sunset/images/OutOfStock.png");}
