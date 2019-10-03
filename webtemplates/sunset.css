@@ -1305,7 +1305,7 @@ img.PricingFormularyButton{width:32px;    height:32px;}
 .PLClass.PricingQtyBox{float:right;margin-left:15px;}
 .PLClass.PricingUmBox{float:right;}
 .PLClass.PricingAddButton{-webkit-box-shadow:2px 2px 1px #666;-moz-box-shadow:2px 2px 1px #666;box-shadow:2px 2px 1px #666;border-radius:15px;display:inline-block;float:right;}
-.PLClass.PricingFormularyButton{-webkit-box-shadow:2px 2px 1px #666;-moz-box-shadow:2px 2px 1px #666;box-shadow:2px 2px 1px #666;border-radius:20px;display:inline-block;float:right;margin-left:15px;margin-right:15px;}
+.PLClass.PricingFormularyButton{border-radius:20px;display:inline-block;float:right;margin-left:15px;margin-right:15px;}
 .QtyBox,.inc{-webkit-box-shadow:2px 3px 0px #666,0px 0px 0px 1px black;-moz-box-shadow:2px 3px 0px #666,0px 0px 0px 1px black;box-shadow:2px 3px 0px #666,0px 0px 0px 1px black}
 .dec.qbutton{-webkit-box-shadow:0px 3px 1px #666,0px 0px 0px 1px black;-moz-box-shadow:0px 3px 1px #666,0px 0px 0px 1px black;box-shadow:0px 3px 1px #666,0px 0px 0px 1px black;}
 .OutStock,.AltStock,.InStock{box-shadow:1px 1px 2px #666;border-radius:5px;}
@@ -4523,9 +4523,9 @@ img.RemoveClass:hover{cursor:pointer; }
 .ReorderLine{background:none; }
 .whitebox{border:1px solid white; padding:7px; float:right; text-align:center; width:100%;}
 img#SRBodyLineImage{padding-left:0px; }
-.PricingFormularyButton img{width:32px;height:32px; -webkit-box-shadow:2px 2px 1px #666; -moz-box-shadow:2px 2px 1px #666; box-shadow:2px 2px 1px #666; border-radius:15px;}
-img.PricingAddButton{margin-right:10px;width:32px;height:32px; -webkit-box-shadow:2px 2px 1px #666; -moz-box-shadow:2px 2px 1px #666; box-shadow:2px 2px 1px #666; border-radius:15px;}
-img.PricingFormularyButton{width:32px;height:32px; -webkit-box-shadow:2px 2px 1px #666; -moz-box-shadow:2px 2px 1px #666; box-shadow:2px 2px 1px #666; border-radius:15px;}
+.PricingFormularyButton img{width:32px;height:32px; border-radius:15px;}
+img.PricingAddButton{margin-right:10px;width:32px;height:32px; border-radius:15px;}
+img.PricingFormularyButton{width:32px;height:32px;border-radius:15px;}
 .qwrap{width:125px!important;left:-45px;background:transparent!important;position:relative}
 .inc{margin:0 0 0 0!important;border-top-right-radius:5px!important;border-bottom-right-radius:5px!important;border-top-left-radius:0!important;border-bottom-left-radius:0!important;position:relative;left:120px}
 .dec{font-size:40px!important;margin:0 0 0 0!important;border-top-left-radius:5px!important;border-bottom-left-radius:5px!important;border-top-right-radius:0!important;border-bottom-right-radius:0!important;position:relative;left:17px}
@@ -4542,11 +4542,11 @@ img.PricingFormularyButton{width:32px;height:32px; -webkit-box-shadow:2px 2px 1p
 .nopad{padding:0;margin:0}
 .PLClass.PricingQtyBox{float:right;margin-left:15px}
 .PLClass.PricingUmBox{float:right}
-.PLClass.PricingAddButton{-webkit-box-shadow:2px 2px 1px #666;-moz-box-shadow:2px 2px 1px #666;box-shadow:2px 2px 1px #666;}
-.PLClass.PricingFormularyButton{-webkit-box-shadow:2px 2px 1px #666;-moz-box-shadow:2px 2px 1px #666;box-shadow:2px 2px 1px #666;border-radius:20px;display:inline-block;float:right;margin-left:15px;margin-right:15px}
+.PLClass.PricingAddButton{}
+.PLClass.PricingFormularyButton{border-radius:20px;display:inline-block;float:right;margin-left:15px;margin-right:15px}
 .QtyBox,.inc{-webkit-box-shadow:2px 3px 0 #666,0 0 0 1px black;-moz-box-shadow:2px 3px 0 #666,0 0 0 1px black;box-shadow:2px 3px 0 #666,0 0 0 1px black}
 .dec.qbutton{-webkit-box-shadow:0 3px 1px #666,0 0 0 1px black;-moz-box-shadow:0 3px 1px #666,0 0 0 1px black;box-shadow:0 3px 1px #666,0 0 0 1px black}
-.OutStock,.AltStock,.InStock{box-shadow:2px 2px 2px #666;-webkit-box-shadow:2px 2px 2px #666;-moz-box-shadow:2px 2px 2px #666;margin-right:5px;background-size:16px 16px!important;}
+.OutStock,.AltStock,.InStock{margin-right:5px;background-size:16px 16px!important;}
 /* New style override from sunset.css 7-24-19 */
 .no-side-pad{padding-left:0px !important;padding-right:0px !important;}
 .center{text-align:center;}
