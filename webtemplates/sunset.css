@@ -1635,7 +1635,7 @@ border-top:solid 1px #d3d4d6;border-left:solid 1px #d3d4d6;border-bottom:solid 1
 .dec{clear:both;}
 .#333bar{color:#333;width:100%}
 .topname{color:white !important;LINE-HEIGHT:50PX;VERTICAL-ALIGN:BASELINE;TEXT-TRANSFORM:NONE;}
-.sidebar{position:absolute;top:0px;display:none;BACKGROUND:WHITE;border-radius:4px;
+.sidebar{position:absolute;top:0px;display:none;BACKGROUND:WHITE;border-radius:0 0 6px 6px;
 /* opacity:5.8;*/
 }
 .block-title .title{border-bottom:none;color:#444444;font-weight:700;margin:0;text-transform:uppercase;}
@@ -4493,7 +4493,7 @@ p.text{margin:0px; }
 #ordercontent{color:#303030; line-height:25px; font-weight:bold; line-height:14px !important;}
 .sidemenu li:hover > ul{display:block; background:white;}
 .sidemenu li > ul{min-height:540px; min-width:295px;}
-.sidemenu li > ul{top:-8px;}
+.sidemenu li > ul{top:-8px;border-radius:0 0 6px 6px;}
 #defaultCountdown{padding:4px; font-size:10px; min-width:168px;}
 #tsell table td:hover{background-color:#FF7900; color:white;}
 #bsell table td:hover{background-color:#FF7900; color:white;}
