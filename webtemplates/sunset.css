@@ -4490,7 +4490,7 @@ p.text{margin:0px; }
 .sidemenu li a{padding:0px; }
 .sidemenu{margin-top:-10px; min-width:295px; }
 .sidemenu{margin-top:-10px; min-width:295px; color:#303030; line-height:25px; font-weight:bold; font-size:1em !important; line-height:14px !important;}
-#ordercontent{color:#303030; line-height:25px; font-weight:bold; font-size:1em !important; line-height:14px !important;}
+#ordercontent{color:#303030; line-height:25px; font-weight:bold; line-height:14px !important;}
 .sidemenu li:hover > ul{display:block; background:white;}
 .sidemenu li > ul{min-height:540px; min-width:295px;}
 .sidemenu li > ul{top:-8px;}
