@@ -28,7 +28,7 @@
 .header-products{overflow:hidden;padding-bottom:10px;-webkit-border-radius:6px 6px 6px 0;-moz-border-radius:6px 6px 6px 0;border-radius:6px 6px 6px 0;text-align:center;}
 .menu-text2 .text{background:url(https://sunset.tshinc.com/sunset/benefitpad/images//caret-gray.png) no-repeat scroll right transparent !important;}
 #mini-cart .block-title .summary{background:url(https://sunset.tshinc.com/sunset/benefitpad/images//caret-gray.png) no-repeat scroll right transparent !important;}
-#mini-cart .block-title{width:120px;}
+#mini-cart .block-title{width:120px; padding-left:30px;}
 #mini-cart .block-title .heading{width:44px !important;}
 .links .top-car{padding-left:0px !important;}
 .kcart{text-transform:none !important;}
@@ -73,7 +73,7 @@
 .footer-container2{border-top:none !important;background-color:#2b2b2b !important;padding-top:0px !important;margin-top:50px;}
 .footer-social{text-align:center;font-size:30px;}
 .kcart{font:bold 14px Arial,Helvetica,sans-serif;text-transform:uppercase;color:#fff ! important;}
-.block_header_top_right{color:#ccc;}
+.block_header_top_right{color:#ccc;padding-left:30px;}
 .mini-login > h4{font-size:1em !important;color:#ccc !important;}
 .mini-login > a{color:#fff !important;}
 .mini-login > h4 span{font-size:1em !important;}
@@ -1592,7 +1592,7 @@ b-saved{FONT-WEIGHT:normal;}
 img.lazy{max-width:100%;height:auto;opacity:1;}
 .mini-login > h4 p, .mini-login > h4 p a{color:#FF7900;;display:block;}
 #mini-cart .block-title .heading span{color:#FF7900;;}
-.mini-login{width:auto;}
+.mini-login{width:auto;padding-left:30px;}
 .mini-login .block-content div a.text-quicklogin{background:#FF7900;box-shadow:-1px -1px 0 #F48120, 1px -1px 0 #F48120, -1px 1px 0 #F48120, 1px 1px 0 #F48120;}
 .gobutton, .button1, .button2, .button3, .sendorder{background:#FF7900;box-shadow:-1px -1px 0 #F48120, 1px -1px 0 #F48120, -1px 1px 0 #F48120, 1px 1px 0 #F48120;}
 #centeredmenu ul ul{top:20px;background:white;}
@@ -4414,7 +4414,7 @@ b-saved{FONT-WEIGHT:normal;}
 img.lazy{max-width:100%;height:auto;opacity:1;}
 .mini-login > h4 p,.mini-login > h4 p a{color:#FF7900;;display:block;}
 #mini-cart .block-title .heading span{color:#FF7900;;}
-.mini-login{width:auto;}
+.mini-login{width:auto;padding-left:30px;}
 .mini-login .block-content div a.text-quicklogin{background:#FF7900;box-shadow:-1px -1px 0 #F48120,1px -1px 0 #F48120,-1px 1px 0 #F48120,1px 1px 0 #F48120;}
 .gobutton,.button1,.button2,.button3,.sendorder{background:#FF7900;box-shadow:-1px -1px 0 #F48120,1px -1px 0 #F48120,-1px 1px 0 #F48120,1px 1px 0 #F48120;}
 #centeredmenu ul ul{top:20px;background:white;}
