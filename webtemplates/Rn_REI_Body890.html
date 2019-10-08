@@ -256,7 +256,7 @@ table.table thead th.sorting_desc:after {
 	border: 0px !important;
 	background-color: #333;
 	color: #FFFFFF !important;
-	margin: 1px;
+	margin: 0 10px;
 	border-radius: 5px;
 	font-weight: 500;
 	padding: 10px 20px;
@@ -268,7 +268,7 @@ table.table thead th.sorting_desc:after {
 	background: none !important;
 	background-color: #FFFFFF;
 	border: 1px #717171 solid !important;
-	margin: 1px;
+	margin: 0 10px;
 	color: #717171 !important;
 	border-radius: 5px;
 	font-weight: 500;
@@ -287,6 +287,13 @@ div.dataTables_paginate a.first:before, div.dataTables_paginate a.previous:befor
 
 div.dataTables_paginate a.next:after, div.dataTables_paginate a.last:after {
 	display: none;
+}
+
+.dataTables_wrapper .dataTables_paginate {
+	float: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 </style>
