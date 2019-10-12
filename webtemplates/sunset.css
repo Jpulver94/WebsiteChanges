@@ -4389,6 +4389,8 @@ text-shadow:rgba(122,136,37,.7) 1px 1px 0;margin:0;padding:5px 10px;float:left;c
 #right{float:right;width:auto;position:absolute;top:-10px;right:10px;}
 .ac_results{background:white;width:50%!important}
 .ac_odd{background:white;}
+.ac_odd:hover{color:#FFFFFF!important;}
+.ac_even:hover{color:#FFFFFF!important;}
 @media only screen and (min-width:768px){span.toggle{display:none;}
 .footer-col-content,.block .block-content,.box-collateral-content{height:100% !important;display:block !important;opacity:1!important;}
 }
