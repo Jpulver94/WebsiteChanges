@@ -4538,7 +4538,7 @@ img.PricingFormularyButton{width:32px;height:32px;border-radius:15px;}
 .PLClass.PricingPhist{min-width:auto}
 .PRCXClass.PLClassLabel{background:#434343;color:white;min-width:auto;white-space:nowrap;text-align:center}
 .inforow{padding-top:10px!important}
-.SumSelect{width:95%; color:black;display:flex}
+.SumSelect{width:95%; color:black;display:flex;position:relative;z-index:1;}
 .nopad{padding:0;margin:0}
 .PLClass.PricingQtyBox{float:right;margin-left:15px}
 .PLClass.PricingUmBox{float:right}
