@@ -1700,7 +1700,7 @@ width: 100% ;
 /* Try to align the salesman user block vertically */
 .slsheader {top: 10px;}
 /* Why is the text so small and light?? */
-table, td, tr > p {font-size: 13px !important; font-weight: 600 !important;}
+table, td, tr > p {font-size: 14px !important; font-weight: 600 !important;}
 /* Bullets are missing? */
 ul.new-bullets {padding-left: 20px;}
 .new-bullets li {list-style-type: square;
