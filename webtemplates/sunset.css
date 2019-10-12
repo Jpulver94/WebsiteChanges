@@ -81,7 +81,7 @@
 .button-quicklogin{color:#FF7800 !important;}
 .knewsfeed{background-color:#ffe6a4;display:block;padding:30px 20px 30px 20px;height:600px;-webkit-border-radius:9;-moz-border-radius:9;border-radius:9px;}
 #buttoncategory:hover{background-color:#a4a4a4 !important;}
-#buttonsearch:hover{background-color:#ff7800 !important;color:#FFFFFF !important;}
+#buttonsearch:hover{background-color:#f79000 !important;color:#FFFFFF !important;}
 @media only screen and (max-width:504px){.top-icon-logo{display:none !important;}
 }
 @media only screen and (min-width:1280px) and (max-width:1600px){.container{width:1260px !important;}
