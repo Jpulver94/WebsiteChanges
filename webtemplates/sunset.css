@@ -1107,7 +1107,7 @@ text-shadow:rgba(122,136,37,.7) 1px 1px 0;    margin:0;    padding:5px 10px;    
 /* Try to align the salesman user block vertically */
 .slsheader{top:3px;}
 /* Why is the text so small and light?? */
-table,td,tr > p{font-size:13px !important; font-weight:600 !important;}
+table,td,tr > p{font-size:14px !important; font-weight:600 !important;}
 /* Bullets are missing? */
 ul.new-bullets{padding-left:20px;}
 .new-bullets li{list-style-type:square;    list-style-position:inside;    text-indent:-20px;    padding-left:20px;}
