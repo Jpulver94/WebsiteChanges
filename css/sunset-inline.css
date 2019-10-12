@@ -10627,6 +10627,7 @@ input, select, textarea {
 	border: solid 1px #7f7f7f;
 	font-size: 12px;
 	padding: 5px;
+	cursor: pointer;
 }
 /* CSS Document FOR CART CSS ICON */
 .icon-cart {
