@@ -2872,7 +2872,7 @@ AjaxSolr.TagcloudWidget = AjaxSolr.AbstractFacetWidget.extend({
 /*
  * jQuery Autocomplete plugin 1.1
  *
- * Copyright (c) 2009 Jörn Zaefferer
+ * Copyright (c) 2009 Jï¿½rn Zaefferer
  *
  * Dual licensed under the MIT and GPL licenses:
  *   http://www.opensource.org/licenses/mit-license.php
@@ -4148,7 +4148,7 @@ function gettopsellertsh() {
           bhtml = bhtml + '<tr><td class="ac_even"><a href=# onclick=javascript:setsearch("' + data.response.docs[i].aprodno + '") > <img style="float:left" height=30 width=30 src="' + image_url + data.response.docs[i].image + '" ></a><a href=# onclick=javascript:setsearch("' + data.response.docs[i].aprodno + '") > ' + data.response.docs[i].aprodno + ' - ' + pdesc + '</a></td> </tr>';
           lcount = false;
         } else {
-          bhtml = bhtml + '<tr><td class="ac_odd"><a href=# onclick=javascript:setsearch("' + data.response.docs[i].aprodno + '") > <img style="float:left" height=30 width=30 src="' + image_url + data.response.docs[i].image + '" ></a><a href=# onclick=javascript:setsearch("' + data.response.docs[i].aprodno + '") > ' + data.response.docs[i].aprodno + ' - ' + pdesc + ' </a></td> </tr>';
+          bhtml = bhtml + '<tr><td class="ac_odd"><a href=# class="s-link" onclick=javascript:setsearch("' + data.response.docs[i].aprodno + '") > <img style="float:left" height=30 width=30 src="' + image_url + data.response.docs[i].image + '" ></a><a href=# onclick=javascript:setsearch("' + data.response.docs[i].aprodno + '") > ' + data.response.docs[i].aprodno + ' - ' + pdesc + ' </a></td> </tr>';
           lcount = true;
         }
       }
