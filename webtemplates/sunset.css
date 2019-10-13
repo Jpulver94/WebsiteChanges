@@ -449,7 +449,7 @@ button.datepick-cmd{text-align:center;}
 #bsell table{border-collapse:collapse;font-family:"Lucida Sans Unicode","Lucida Grande",Sans-Serif;font-size:12px;text-align:center;width:100%;}
 #bsell table th{background:#add8e6;background-image:url(//hosting.tshinc.com/rn/images/bluemenu.jpg);border-bottom:1px solid #fff;border-top:4px solid #000;color:#fff;font-size:13px;font-weight:400;padding:8px;}
 #bsell table td{background:#FFF;border-bottom:1px solid #000;border-top:1px solid transparent;color:#669;padding:4px;text-align:left;vertical-align:top;}
-#bsell table td:hover{background-color:#0A246A;color:#FFF;}
+/*#bsell table td:hover{background-color:#0A246A;color:#FFF;}*/
 #bsell table td:hover a{color:#FFF;}
 #tsell a{text-decoration:none;}
 #tsell table{border-collapse:collapse;font-family:"Lucida Sans Unicode","Lucida Grande",Sans-Serif;font-size:12px;text-align:center;width:100%;}
@@ -1005,7 +1005,7 @@ img{max-width:100%; height:auto; width:auto\9;
 #bsell table{font-family:"Lucida Sans Unicode", "Lucida Grande", Sans-Serif;font-size:12px;text-align:center;border-collapse:collapse; width:100%;}
 #bsell table th{font-size:13px;font-weight:normal;background:#333;border-top:4px solid black;border-bottom:1px solid #fff;padding:8px;color:rgb(255,255,255);}
 #bsell table td{border-bottom:1px solid black;color:#669;background:white;border-top:1px solid transparent;padding:4px;vertical-align:top; text-align:left;}
-#bsell table td:hover{background-color:#0A246A; color:white;}
+/*#bsell table td:hover{background-color:#0A246A; color:white;}*/
 #bsell table td:hover a{color:white;}
 #tsell a{text-decoration:none; }
 #tsell table{font-family:"Lucida Sans Unicode", "Lucida Grande", Sans-Serif;font-size:12px;text-align:center;border-collapse:collapse; width:100%;}
@@ -1488,7 +1488,7 @@ img{max-width:100%;height:auto;width:auto\9;
 #bsell table{font-size:12px;text-align:center;border-collapse:collapse;width:100%;}
 #bsell table th{font-size:13px;font-weight:normal;background:#222;border-top:4px solid #333;border-bottom:1px solid #fff;padding:8px;color:rgb(255,255,255);}
 #bsell table td{border-bottom:1px solid #333;color:#669;background:white;border-top:1px solid transparent;padding:4px;vertical-align:top;text-align:left;}
-#bsell table td:hover{background-color:#FF7900;color:white;}
+/*#bsell table td:hover{background-color:#FF7900;color:white;}*/
 #bsell table td:hover a{color:white;}
 #tsell a{text-decoration:none;}
 #tsell table{font-size:12px;text-align:center;border-collapse:collapse;width:100%;}
@@ -4310,8 +4310,8 @@ img{max-width:100%;height:auto;width:auto\9;
 #bsell table{font-size:12px;text-align:center;border-collapse:collapse;width:100%;}
 #bsell table th{font-size:13px;font-weight:normal;background:#222;border-top:4px solid #333;border-bottom:1px solid #fff;padding:8px;color:rgb(255,255,255);}
 #bsell table td{border-bottom:1px solid #333;color:#669;background:white;border-top:1px solid transparent;padding:4px;vertical-align:top;text-align:left;}
-#bsell table td:hover{background-color:#12afa3;color:white;}
-#bsell table td:hover a{color:white;}
+/*#bsell table td:hover{background-color:#12afa3;color:white;}*/
+#bsell table td:hover a{color:black;}
 #tsell a{text-decoration:none;}
 #tsell table{font-size:12px;text-align:center;border-collapse:collapse;width:100%;}
 #tsell table th{font-size:10px;font-weight:normal;background:#222;border-top:4px solid #333;border-bottom:1px solid #fff;padding:8px;color:rgb(255,255,255);}
@@ -4496,7 +4496,7 @@ p.text{margin:0px; }
 .sidemenu li > ul{top:-8px;border-radius:0 0 6px 6px;}
 #defaultCountdown{padding:4px; font-size:10px; min-width:168px;}
 #tsell table td:hover{background-color:#FF7900; color:white;}
-#bsell table td:hover{background-color:#FF7900; color:white;}
+#bsell table td:hover{background-color:#FF7900; color:black;}
 .arbalbox{background:#333; color:white;}
 .ssInvoiceRow{padding:15px;}
 .ShowARCC .add{margin-top:0px; margin-left:51px;}
