@@ -4148,7 +4148,7 @@ function gettopsellertsh() {
           bhtml = bhtml + '<tr><td class="ac_even"><a href=# onclick=javascript:setsearch("' + data.response.docs[i].aprodno + '") > <img style="float:left" height=30 width=30 src="' + image_url + data.response.docs[i].image + '" ></a><a href=# onclick=javascript:setsearch("' + data.response.docs[i].aprodno + '") > ' + data.response.docs[i].aprodno + ' - ' + pdesc + '</a></td> </tr>';
           lcount = false;
         } else {
-          bhtml = bhtml + '<tr><td class="ac_odd"><a href=# class="s-link" onclick=javascript:setsearch("' + data.response.docs[i].aprodno + '") > <img style="float:left" height=30 width=30 src="' + image_url + data.response.docs[i].image + '" ></a><a href=# onclick=javascript:setsearch("' + data.response.docs[i].aprodno + '") > ' + data.response.docs[i].aprodno + ' - ' + pdesc + ' </a></td> </tr>';
+          bhtml = bhtml + '<tr><td class="ac_odd"><a href=# class=s-link onclick=javascript:setsearch("' + data.response.docs[i].aprodno + '") > <img style="float:left" height=30 width=30 src="' + image_url + data.response.docs[i].image + '" ></a><a href=# onclick=javascript:setsearch("' + data.response.docs[i].aprodno + '") > ' + data.response.docs[i].aprodno + ' - ' + pdesc + ' </a></td> </tr>';
           lcount = true;
         }
       }
