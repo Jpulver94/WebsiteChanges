@@ -4312,7 +4312,6 @@ img{max-width:100%;height:auto;width:auto\9;
 #bsell table td{border-bottom:1px solid #333;color:#669;background:white;border-top:1px solid transparent;padding:4px;vertical-align:top;text-align:left;}
 /*#bsell table td:hover{background-color:#12afa3;color:white;}*/
 #bsell table td:hover a{color:black;}
-#s-link:hover{color:white !important;}
 #tsell a{text-decoration:none;}
 #tsell table{font-size:12px;text-align:center;border-collapse:collapse;width:100%;}
 #tsell table th{font-size:10px;font-weight:normal;background:#222;border-top:4px solid #333;border-bottom:1px solid #fff;padding:8px;color:rgb(255,255,255);}
@@ -4497,7 +4496,7 @@ p.text{margin:0px; }
 .sidemenu li > ul{top:-8px;border-radius:0 0 6px 6px;}
 #defaultCountdown{padding:4px; font-size:10px; min-width:168px;}
 #tsell table td:hover{background-color:#FF7900; color:white;}
-#bsell table td:hover{background-color:#FF7900; color:black;}
+/*#bsell table td:hover{background-color:#FF7900; color:black;}*/
 .arbalbox{background:#333; color:white;}
 .ssInvoiceRow{padding:15px;}
 .ShowARCC .add{margin-top:0px; margin-left:51px;}
