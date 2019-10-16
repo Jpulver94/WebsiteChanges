@@ -3931,10 +3931,10 @@ $(window).load(function() {
   if (ShowSalesmanPricing == "Y") {
     var shtml = '';
 shtml += "<li style=\"border-top: 1px solid #c7c7c7;\">  <a class=\"menuItem1\" href=\"#\" onclick=\"javascript:changepath('SUSR')\">Sales Login</a>" ;
-shtml += " <div class=\"CreateCust\" > <a class=\"menuItem1\" href=\"#\" onclick=\"javascript:regme()\">Create Customer</a> </div>" ;
-shtml += " <div class=\"CreateProd\"> <a class=\"menuItem1\" href=\"#\" onclick=\"javascript:prodcreate()\">Create Product</a> </div>" ;
-shtml += " <div class=\"GPSales\" > <a class=\"menuItem1\" href=\"#\" onclick=\"javascript:changepath('CRM')\"> My Prospects (CRM) </a>" ;
-shtml += " <a class=\"menuItem1\" href=\"#\" onclick=\"javascript:regprospect()\">Create Prospect</a> </div> </li>" ;
+shtml += " <span class=\"CreateCust\" > <a class=\"menuItem1\" href=\"#\" onclick=\"javascript:regme()\">Create Customer</a> </span>" ;
+shtml += " <span class=\"CreateProd\"> <a class=\"menuItem1\" href=\"#\" onclick=\"javascript:prodcreate()\">Create Product</a> </span>" ;
+shtml += " <span class=\"GPSales\" > <a class=\"menuItem1\" href=\"#\" onclick=\"javascript:changepath('CRM')\"> My Prospects (CRM) </a> </span>" ;
+shtml += " <span class=\"GPSales\" > <a class=\"menuItem1\" href=\"#\" onclick=\"javascript:regprospect()\">Create Prospect</a> </span> </li>" ;
     $('.mini-login-menu ul').append(shtml);
   };
 });
