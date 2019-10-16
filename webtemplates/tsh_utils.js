@@ -3930,7 +3930,7 @@ $(window).load(function() {
 $(window).load(function() {
   if (ShowSalesmanPricing == "Y") {
     var shtml = '';
-shtml += "<li>  <a class=\"menuItem1\" href=\"#\" onclick=\"javascript:changepath('SUSR')\">Sales Login</a>" ;
+shtml += "<li style=\"border-top: 1px solid #c7c7c7;\">  <a class=\"menuItem1\" href=\"#\" onclick=\"javascript:changepath('SUSR')\">Sales Login</a>" ;
 shtml += " <div class=\"CreateCust\" > <a class=\"menuItem1\" href=\"#\" onclick=\"javascript:regme()\">Create Customer</a> </div>" ;
 shtml += " <div class=\"CreateProd\"> <a class=\"menuItem1\" href=\"#\" onclick=\"javascript:prodcreate()\">Create Product</a> </div>" ;
 shtml += " <div class=\"GPSales\" > <a class=\"menuItem1\" href=\"#\" onclick=\"javascript:changepath('CRM')\"> My Prospects (CRM) </a>" ;
