@@ -4314,7 +4314,7 @@ img{max-width:100%;height:auto;width:auto\9;
 #bsell table td:hover a{color:black;}
 #tsell a{text-decoration:none;}
 #tsell table{font-size:12px;text-align:center;border-collapse:collapse;width:100%;}
-#tsell table th{font-size:10px;font-weight:normal;background:#222;border-top:4px solid #333;border-bottom:1px solid #fff;padding:8px;color:rgb(255,255,255);}
+#tsell table th{font-size:12px;font-weight:normal;background:#FFFFFF;border-top:none;border-bottom:1px solid #fff;padding:4px;color:black;display:flex;}
 #tsell table td{border-bottom:1px solid #333;color:#FF7900;background:white;border-top:1px solid transparent;padding:4px;vertical-align:top;text-align:center;}
 /*#tsell table td:hover{background-color:#12afa3;color:white;}*/
 #tsell table td:hover a{color:white;}
