@@ -4435,7 +4435,7 @@ caption,th,td{text-align:center;font-weight:normal;vertical-align:inherit;}
 .header-main .user-menu{display:none;}
 }
 .TemplateStock{height:auto;}
-.gobutton,.button1,.button2,.button3,.sendorder{float:none;background:#FF7900;box-shadow:none;height:auto;border:1px solid #333;margin:1px;color:white;padding:0px 5px;}
+.gobutton,.button1,.button2,.button3,.sendorder{float:none;background:#FF7900;box-shadow:none;height:auto;border:1px solid #333;margin:15px 0 5px;color:white;padding:0px 5px;}
 #centeredmenu ul li a{padding-right:3px;padding-top:4px;margin:0;}
 .banner-block li a{display:block;border:1px solid #999999;border-bottom-color:#08436A;border-radius:5px;position:relative;overflow:hidden;background:#f9f9f9;}
 input,select,textarea{border:solid 1px #7f7f7f;font-size:12px;padding:5px;}
