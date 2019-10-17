@@ -772,7 +772,7 @@ table.ng-table td.small-padding{padding-top:5px; padding-bottom:5px; }
 table.ng-table td.medium-padding{padding-top:15px; padding-bottom:15px; }
 table.ng-table td.large-padding{padding-top:25px; padding-bottom:25px; }
 }
-.CheckoutText{font-size:14px; }
+.CheckoutText{font-size:14px;padding:unset;text-align:left;}
 .lazy{max-width:100%;max-height:95px;height:auto;width:auto;}
 #PIFBody img{max-width:100%;max-height:150px;height:auto;width:auto;}
 .PIImageDetail{max-width:100%;max-height:200px;height:auto;width:auto;}
