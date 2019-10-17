@@ -1565,7 +1565,7 @@ text-shadow:rgba(122,136,37,.7) 1px 1px 0;margin:0;padding:5px 10px;float:left;c
 #pager-footer span{padding-left:170px;}
 #menu-icon{display:block;cursor:pointer;padding:0 20px;margin-bottom:3px;width:100%;text-align:left;background-color:#323232;}
 #right{float:right;width:auto;position:absolute;top:-10px;right:10px;}
-.ac_results{background:white;width:50%!important;top:57px!important;}
+.ac_results{background:white;width:50%!important;top:57px!important;padding:0 5px;}
 .ac_odd{background:white;}
 @media only screen and (min-width:768px){span.toggle{display:none;}
 .footer-col-content, .block .block-content, .box-collateral-content{height:100% !important;display:block !important;opacity:1!important;}
@@ -4300,12 +4300,12 @@ border-bottom:1px solid #dadada;}
 filter:alpha(opacity=80);opacity:0.8;}
 .CsosHide{display:none;}
 .CreateCust,.CreateProd,.ShowBackord{display:none;}
-img{max-width:100%;height:auto;width:auto\9;
+img{max-width:100%;height:auto;width:auto\9;float:none!important;
 /* ie8 */
 }
 .lazy{max-width:100%;max-height:95px;height:auto;width:auto\9;}
 /* added for new auto complete */
-#bsell{margin:0px;padding:2px 5px;cursor:default;display:block;font:menu;font-size:12px;line-height:16px;Overflow:hidden;text-align:left;}
+#bsell{margin:0px;padding:unset;cursor:default;display:block;font:menu;font-size:12px;line-height:16px;Overflow:hidden;text-align:left;}
 #bsell a{text-decoration:none;}
 #bsell table{font-size:12px;text-align:center;border-collapse:collapse;width:100%;}
 #bsell table th{font-size:13px;font-weight:normal;background:#222;border-top:4px solid #333;border-bottom:1px solid #fff;padding:8px;color:rgb(255,255,255);}
