@@ -286,7 +286,7 @@ label{float:left;padding-top:4px;text-align:right;width:35%;}
 .right_descrtop{background-image:url(//hosting.tshinc.com/rn/images/right_top.jpg);float:left;height:14px;width:222px;}
 #right_livehelp{background-image:url(//hosting.tshinc.com/rn/images/livehelp.jpg);background-repeat:no-repeat;color:#FFF;float:left;height:156px;padding:15px;width:192px;}
 #right_livehelp a{color:#FFF;}
-.labelhide{background-color:#fff;color:#000;float:right;font-family:Tahoma,Tahoma,Tahoma;font-size:12px;font-style:normal;}
+.labelhide{background-color:#fff;color:#000;/*float:right;*/font-family:Tahoma,Tahoma,Tahoma;font-size:12px;font-style:normal;}
 .labelshow{background-color:#cac49b;color:#fff;font-family:Tahoma,Tahoma,Tahoma;font-size:12px;font-style:normal;}
 #PIbodywrap{float:left;height:auto;width:590px;}
 #PIbodyimage{float:left;font-family:Tahoma;font-size:11px;height:auto;padding-right:5px;width:260px;}
@@ -1211,7 +1211,7 @@ div.rollsorthov{padding:0px !important; margin:0px !important;}
 /* "Product Info" Page-Specific Tweaks */
 .PIWrap{border-radius:10px;}
 .DropStockReverse{padding:10px 5px; background-color:#1a1a1a; font-size:18px !important; text-align:center !important;}
-#PIFBodyprodinfo{margin-top:20px;}
+#PIFBodyprodinfo{margin-top:20px;margin-left:0 !important;}
 .PIDrugTable{border-collapse:collapse; width:90%;}
 .PIDrugTable td,.PIDrugTable th{border:1px solid #333; padding:10px;}
 .PIDrugTable td#colhdg{width:20%;}
