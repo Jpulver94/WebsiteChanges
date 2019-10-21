@@ -51,7 +51,7 @@ img.SunsetProdno{width:20px;}
 .PIDrugTable td.labelhide{float:left;width:80%}
 .PIWrap{width:100%;background:#333;color:white;padding:10px;float:left}
 .PIImageWrap{float:left;padding:10px}
-.PIProdInfoWrap{float:left;padding:10px;min-height:120px;/*font-size:12px;*/}
+.PIProdInfoWrap{float:left;padding:10px;min-height:120px;/*font-size:12px;*/margin-bottom:-80px;}
 .PIPriceWrap{padding:10px;float:right;min-height:120px;}
 img.SunsetProdno{width:20px}
 .PIimageDetail{width:150px;height:150px;padding:5px}
@@ -102,7 +102,7 @@ img.SunsetProdno{width:20px}
 
  Alt Name: [$CNV$PROD.MAST_USER$ALT.NAME$]
  <p style="float:right;">Stock Notification: <u>
-  <a href=# style="color:#FF7900 !important;" onclick=javascript:remindme('[PROD.NO]')> Remind Me </a>
+  <a href=# style="color:#FF7900 !important;z-index:20 !important;" onclick=javascript:remindme('[PROD.NO]')> Remind Me </a>
  </u></p>
   <BR>
    </div>
@@ -220,10 +220,10 @@ ploadi("[A.PROD.NO]","PRCXI2","#SProd2-[PROD.NO]") ;
 <div id="Suggdiv"></div>  <script type="text/javascript"> suggitems([PROD.NO]) ; </script>
 </div>
 <!-- end of suggested items -->
-<div class="row">
+<div class="row" style="margin-top: 20px;">
 	<div class="col-md-12 roundedbox2 fillgray">
 		<div class="col-md-12">
-			<h3>Your Purchase statistics for this product:</h3>
+			<h3 style="margin-top:0px;">Your Purchase statistics for this product:</h3>
 			<p>Note: All usage is displayed in the Stocking Unit of Measure.</p>
 		</div>
 		<div class="col-md-2">

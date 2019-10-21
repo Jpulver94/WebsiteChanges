@@ -1130,7 +1130,7 @@ a.ssLinkFix:hover{color:#F6AC21 !important; font-weight:900;}
 .button2{padding:10px 20px !important; font-size:12px !important; line-height:16px !important; white-space:nowrap; background:#434343 !important; border:0px !important; margin:1px; color:#FFFFFF; border-radius:5px !important; font-weight:500 !important;}
 .button2:hover,.buttonhov2{background:#000000 !important; border:0px !important; margin:1px; color:#FFFFFF; padding:10px 20px; border-radius:5px;}
 /* Full width on main content table */
-.col-md-12 table{width:100%;}
+.col-md-12 table{width:92%;}
 /* Misc New Classes */
 b{font-weight:900;}
 .hideme{display:none;}
@@ -1207,7 +1207,7 @@ div.rollsorthov{padding:0px !important; margin:0px !important;}
 .ssInfoTable tr td{border-bottom:1px solid #ddd; padding:5px 10px;}
 .ssInfoTable tr td:first-child{background-color:#ddd; border-bottom:1px solid #fff !important; width:120px;}
 .ssInfoTable tr:last-child td{border-bottom:none;}
-.roundedbox2{margin-top:20px;border-radius:5px;padding:10px;border:1px solid #ddd;}
+.roundedbox2{margin-top:20px;border-radius:5px;padding:10px;border:1px solid #ddd;width:92%;margin-left:0 !important;}
 /* "Product Info" Page-Specific Tweaks */
 .PIWrap{border-radius:10px;}
 .DropStockReverse{padding:10px 5px; background-color:#1a1a1a; font-size:18px !important; text-align:center !important;}
@@ -3211,7 +3211,7 @@ pre code{padding:0;font-size:inherit;color:inherit;white-space:pre-wrap;backgrou
 .col-sm-offset-0{margin-left:0;}
 }
 @media (min-width:992px){.col-md-1,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-10,.col-md-11,.col-md-12{float:left;}
-.col-md-12{width:100%;}
+.col-md-12{width:90%;margin-left:17px !important;}
 .col-md-11{width:91.66666667%;}
 .col-md-10{width:83.33333333%;}
 .col-md-9{width:75%;}
