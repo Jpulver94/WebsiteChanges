@@ -619,6 +619,16 @@ $(function() {
     });
   });
   $(function() {
+    $('.PricingAddButton img')
+    .mouseover(function () {
+        $(this).attr("src","https://www.sunsetpharma.com/sunset/images/AddToCartHover.png" ) ;
+     //   $(this).attr('title', 'Add this item to your cart');
+    })
+    .mouseout(function () {
+       $(this).attr("src","https://www.sunsetpharma.com/sunset/images/AddToCart.png" ) ;
+    });
+  });
+  $(function() {
     $('img.PricingFormularyButton')
     .mouseover(function () {
         $(this).attr("src","https://www.sunsetpharma.com/sunset/images/AddToFormularyHover.png" ) ;
