@@ -12,7 +12,7 @@
   </style>
   
   <div class="container" style="padding: 0; width:100% !important; max-width: 100% !important"> 
-  <div class="col-md-12 ssfirstrow"> 
+  <div class="col-md-12 ssfirstrow" style="width: 100%;"> 
  <form name=template action="login[SUFFIX]" method=post>
  <input type=hidden name=Aprod_string value="[APROD_STRING]">
  <input type=hidden name=prod_string value="[PROD_STRING]">
@@ -150,7 +150,7 @@
    </div>
  </div>
  --> 
- <div class="row">
+ <div class="row" style="margin-left:-30px !important;">
    <div class="col-md-12 ssfirstrow">
      <h3>[NO.ORDERS] orders have been placed for this account.</h3>
      <p>If you don't see the desired Web Order #, <a href="#" class="ssLinkFix" onclick="javascript:changepath('OOH','Y')">
@@ -158,7 +158,7 @@
    </div>
  </div>	
  <div class="row">
-   <div class="col-md-12 ssfirstrow roundedbox2 fillgray">
+   <div class="col-md-12 ssfirstrow roundedbox2 fillgray" style="width:60%;">
      <p>To see order detail, <b>Click on the Web Order # below</b>.</p>
      <p>Please Note: This inquiry is only showing orders after [WEB.ORDER.INQ.DATE].</p>
      <p>To find a specific order please enter a <b>Web Order # (6 digit)</b> or <b>Co # Order #</b> (8 digit) or <b>Customer PO #</b> below and <b>click GO</b>.</p>
@@ -169,7 +169,7 @@
  </div>
  <!-- New Sort and Items Selection Section --> 
  <div class="row" style="padding-top: 10px;">
-     <div class="col-md-5 col-sm-6 col-xs-12 col-lg-4">
+     <div class="col-md-5 col-sm-6 col-xs-12 col-lg-4" style="float:none;">
        <div class="backordersort" style="float: left;">
        <strong>Sort By:</strong>
           <select class="tallselect" name="Changesort" size="1" style="width: 160px;">
@@ -178,7 +178,7 @@
           <input type="button" class="gobutton" name="GO1" value="GO" onclick='javascript:changepath("COO","N")' onmouseover="this.className='gobutton gobuttonhov' ; window.status='Change Sort Method'" onmouseout="this.className='gobutton' ; window.status=''">
        </div>
      </div>
-     <div class="col-md-7 col-sm-6 col-xs-12 col-lg-8">
+     <div class="col-md-7 col-sm-6 col-xs-12 col-lg-8" style="width:97% !important;float:none;">
        <div class="backordersort" style="float: right;">
        <strong>Items per page:</strong>
           <select class="tallselect" name="itemspage" size="1" style="width: 111px;">
@@ -189,7 +189,7 @@
      </div>
  </div>
      
- <table class="ng-table">
+ <table class="ng-table" style="width:97%;">
                                 <tr class="ssHeadRow">
                                           <td id="colhdg" style="width:3%; text-align: center;">
                                              <font size="2"><b>Line No.</b></font>
