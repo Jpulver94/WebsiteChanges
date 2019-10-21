@@ -1600,7 +1600,7 @@ img.lazy{max-width:100%;height:auto;opacity:1;}
 a.menu_normallink:aftersaved{color:#F48120;content:"\f107";margin-right:0px;margin-left:3px;font-family:FontAwesome;font-weight:normal;font-size:10px;font-style:normal;text-decoration:inherit;-webkit-font-smoothing:antialiased;text-indent:0 !important;}
 #centeredmenu{float:left;}
 #colhdg, .rollsort{}
-caption, th, td{text-align:center;font-weight:normal;vertical-align:inherit;}
+caption, th, td{text-align:center;font-weight:normal;/*vertical-align:inherit;*/}
 .header-main .user-menu{border:none;}
 .header .logo img{max-width:100%;max-height:50px;top:1px;position:fixed;}
 #PageResults{vertical-align:top;}
