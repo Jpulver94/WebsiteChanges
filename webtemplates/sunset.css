@@ -378,7 +378,6 @@ img.selectphoto{border:1px solid #999;float:left;margin-right:5px;}
 .SRpagemove{font-family:arial;font-size:12px;text-align:center;}
 #SRpagemove a:link{color:#000;text-decoration:none;}
 #SRBodyLine{border-bottom:1px solid #000;clear:left;height:105px;padding-bottom:1px;width:720px;}
-#SRBodyLine, #SRBodytopwrap{width:84.5%;}
 #SRBodypicturewrap{float:left;height:auto;padding-left:5px;padding-top:5px;width:110px;}
 #SRbodyproddesc{background-color:#fff;float:left;font-family:arial;font-size:11px;height:auto;padding-left:5px;padding-top:5px;text-align:left;width:300px;}
 .iconclass{float:left;height:35px;width:30px;}
