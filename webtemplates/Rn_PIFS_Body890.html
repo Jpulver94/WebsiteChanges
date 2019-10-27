@@ -7,6 +7,7 @@
     FONT-SIZE: 14px;
     MIN-HEIGHT: 33px;
     padding: 10px;
+    text-align:left;
 }
 .SessClose {
     float: right;
@@ -15,7 +16,7 @@
 }
 </STYLE>
 <div id="PIFWrap">
-<div class="pifhdg" > Product Info: &nbsp; &nbsp;[A.PROD.NO]
+<div class="pifhdg" style="display:flex; justify-content:space-between; align-items:center;"> Product Info: &nbsp; &nbsp;[A.PROD.NO]
 <img onclick='$("#mouseoverhintbox").fadeOut("slow")' class="SessClose" style="width: 32px; cursor: pointer;" src="https://www.sunsetpharma.com/sunset/images/Remove.png">
  </div>
 
@@ -23,7 +24,7 @@
 <div id="PIFBody">
 <table border=0 cellpadding=0 cellspacing=0 background=white>
    <tr> 
-	  <td class="popuplabel" style="text-align: left; padding: 0px 5px;">Last Order: </td>
+	  <td class="popuplabel" style="text-align: left; padding: 0px 5px; padding-top: 7px;">Last Order: </td>
     <td class="popupdata" style="text-align: right; padding: 0px 5px;">[LAST.ORD] </td>
 	</tr>
    <tr> 
