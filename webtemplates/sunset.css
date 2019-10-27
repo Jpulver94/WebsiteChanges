@@ -358,6 +358,7 @@ img.selectphoto{border:1px solid #999;float:left;margin-right:5px;}
 #pager, #pager-header{text-align:right;display:inline;}
 #pager-header span{/*padding-left:30px;*/}
 #pager-footer span{/*padding-left:30px;*/}
+#pager li, #toppager li{padding-right:5px;}
 #pager li, .links li{display:inline;list-style-type:none;}
 #selection li{display:list-item;list-style-type:none;padding-right:0;}
 #sidebarselection li{list-style-type:none;}
