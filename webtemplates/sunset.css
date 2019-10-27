@@ -1002,13 +1002,13 @@ img{max-width:100%; height:auto; width:auto\9;
 /* added for new auto complete */
 #bsell{margin:0px;padding:2px 5px;cursor:default;display:block;font:menu;font-size:12px;line-height:16px;Overflow:hidden;text-align:left; }
 #bsell a{text-decoration:none; }
-#bsell table{font-family:"Lucida Sans Unicode", "Lucida Grande", Sans-Serif;font-size:12px;text-align:center;border-collapse:collapse; width:100%;}
+#bsell table{font-family:"Roboto","Lucida Sans Unicode", "Lucida Grande", Sans-Serif !important;font-size:12px;text-align:center;border-collapse:collapse; width:100%;}
 #bsell table th{font-size:13px;font-weight:normal;background:#333;border-top:4px solid black;border-bottom:1px solid #fff;padding:8px;color:rgb(255,255,255);}
 #bsell table td{border-bottom:1px solid black;color:#669;background:white;border-top:1px solid transparent;padding:4px;vertical-align:top; text-align:left;}
 /*#bsell table td:hover{background-color:#0A246A; color:white;}*/
 #bsell table td:hover a{color:white;}
 #tsell a{text-decoration:none; }
-#tsell table{font-family:"Lucida Sans Unicode", "Lucida Grande", Sans-Serif;font-size:12px;text-align:center;border-collapse:collapse; width:100%;}
+#tsell table{font-family:"Roboto","Lucida Sans Unicode", "Lucida Grande", Sans-Serif;font-size:12px !important;text-align:center;border-collapse:collapse; width:100%;}
 #tsell table th{font-size:10px;font-weight:normal;background:#333;border-top:4px solid black;border-bottom:1px solid #fff;padding:8px;color:rgb(255,255,255);}
 #tsell table td{border-bottom:1px solid black;color:#669;background:white;border-top:1px solid transparent;padding:4px;vertical-align:top; text-align:center;}
 /*#tsell table td:hover{background-color:#0A246A; color:white;}*/
