@@ -3066,7 +3066,7 @@ a.bg-warning:hover{background-color:#f7ecb5;}
 .bg-danger{background-color:#f2dede;}
 a.bg-danger:hover{background-color:#e4b9b9;}
 .page-header{padding-bottom:9px;margin:40px 0 20px;border-bottom:1px solid #eee;}
-ul,ol{margin-top:0;margin-bottom:10px;}
+ul,ol{margin-top:0;}
 ul ul,ol ul,ul ol,ol ol{margin-bottom:0;}
 .list-unstyled{padding-left:0;list-style:none;}
 .list-inline{padding-left:0;margin-left:-5px;list-style:none;}
