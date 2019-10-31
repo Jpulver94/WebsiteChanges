@@ -1,4 +1,7 @@
 /* sunset2.css */
+/* note 10-31-19 - all changes should be made in the web templates - not in external files 
+djf - this is not usedd internally.. 
+*/ 
 .max1920 {
 	margin: auto !important;
 	max-width: 1920px;
