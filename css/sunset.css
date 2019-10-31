@@ -374,9 +374,9 @@ background-image: linear-gradient(to right, #333333,	#484848);
 	margin-top: 50px;
 	/* djf updated for fixed to bottom 10-31-19 */ 
 	    position: fixed;
-    l    eft: 0;
-    bottom: 0;
-    right: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
 }
 .footer-social {
 	text-align: center;
