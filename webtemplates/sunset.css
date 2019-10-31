@@ -2,7 +2,6 @@
 /* CSS Document sunset combined style sheets 08-16-19
 use this for live changes to the internal site - updated djf 10-31-19
 */
-
 @import url('//fonts.googleapis.com/css?family=Roboto');
 @import url(//fonts.googleapis.com/css?family=Roboto:500,300,700,400,100,200,600);
 /* sunset2.css */
@@ -73,7 +72,7 @@ use this for live changes to the internal site - updated djf 10-31-19
 .kfootbtn{-webkit-border-radius:9;-moz-border-radius:9;border-radius:9px;font-family:Roboto;color:#ffffff;border:1px solid #434343;padding:10px 20px 10px 20px;text-decoration:none;line-height:1.25em;display:inline-block;margin-top:10px;min-width:290px;}
 .kfootbtn:hover{background:#FF7800;color:#2b2b2b;text-decoration:none;}
 .foot-head{font-weight:bold;font-size:1.5em;color:#959595;text-align:center;margin-bottom:0px;}
-.footer-container2{border-top:none !important;background-color:#2b2b2b !important;padding-top:0px !important;margin-top:50px; position: fixed; left: 0;bottom: 0;right: 0;}
+.footer-container2{z-index: 999999;border-top:none !important;background-color:#2b2b2b !important;padding-top:0px !important;margin-top:50px; position: fixed; left: 0;bottom: 0;right: 0;}
 .footer-social{text-align:center;font-size:30px;}
 .kcart{font:bold 14px Arial,Helvetica,sans-serif;text-transform:uppercase;color:#fff ! important;}
 .block_header_top_right{color:#ccc;padding-left:30px;}
@@ -4557,5 +4556,16 @@ img.PricingFormularyButton{width:32px;height:32px;border-radius:15px;}
 #colhdg , .rollsort{
 /* Added new Heading */
 padding-bottom:3px !important; padding-top:3px !important; vertical-align:middle;}
+#pagecontainer { 
+ /* added page container for main seciton of site. */ 
+     width: 85% !important;
+    max-width: 85% !important;
+    padding-top: 20px;
+    min-height: 100vh;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 230px;
+}
 
 
