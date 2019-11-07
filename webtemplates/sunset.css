@@ -4561,7 +4561,7 @@ padding-bottom:3px !important; padding-top:3px !important; vertical-align:middle
      width: 85% !important;
     max-width: 85% !important;
     padding-top: 20px;
-    min-height: 100vh;
+    /*min-height: 100vh;*/
     overflow: hidden;
     display: block;
     position: relative;
