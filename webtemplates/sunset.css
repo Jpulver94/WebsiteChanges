@@ -1782,7 +1782,7 @@ body{background:#CCC;background-color:#fff;color:#484848;font:normal .8em/1.2em 
 .sidemenu{background:none;background-color:#FFFFFF;text-align:left;font-family:'Roboto',Helvetica,sans-serif;font-size:12px;color:rgb(10,10,10);float:left;}
 .GridSRbodyproddesc{font-family:'Roboto';font-size:11px;text-align:left;padding-left:5px;padding-top:5px;float:left;width:190px;height:105px;background-color:rgba(0,0,0,0);}
 .GridSRbodyQTYLine{width:200px;height:175px;float:right;font-family:'Roboto';font-size:10px;padding-right:10px;}
-.altbox{border-radius:2px;border:1px solid #242729;text-align:left;padding:10px;box-shadow:0 1px 3px rgba(12,13,14,0.3);font-family:Roboto,'Helvetica Neue',Helvetica,sans-serif;z-index:100000;position:relative;font-size:12px;width:320px;display:flex;background:white;}
+.altbox{border-radius:2px;border:1px solid #242729;text-align:left;padding:10px;box-shadow:0 1px 3px rgba(12,13,14,0.3);font-family:Roboto,'Helvetica Neue',Helvetica,sans-serif;z-index:100000;position:relative;font-size:12px;width:100%;display:flex;background:white;}
 #srfootprints{color:black;text-align:center;font-family:'Roboto';font-size:11px;clear:left;border-bottom:1px solid black;}
 #SRsortby{
 /* width:276px;*/
