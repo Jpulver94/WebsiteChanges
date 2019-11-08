@@ -1677,7 +1677,7 @@ body.cms-index-index .main, body.cms-index-defaultindex .main{padding-top:0px}
 #SRsearchresults{float:left;width:98%;}
 .qbutton{cursor:pointer;width:15px;height:15px;float:right;text-align:center;font-size:12px;background:#827b7b;font-weight:600;color:black;margin:1px;BORDER-RADIUS:0px;border:1px solid black;}
 .qwrap{background:black;}
-.QtyBox{color:black;}
+.QtyBox{color:black;cursor:text;}
 .FaccordionButton{-moz-border-radius:0;-ms-border-radius:0;-o-border-radius:0;-webkit-border-radius:0;
 /* border:solid #ccc;*/
 border-bottom:1px solid #ccc;border-radius:0;border-width:0 0 1px;cursor:pointer;font-size:11px;font-weight:700;line-height:1.75em;margin:0;
