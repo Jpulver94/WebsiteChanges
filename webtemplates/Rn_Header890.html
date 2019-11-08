@@ -119,6 +119,26 @@ $(function() {
        $(this).attr("src","https://www.sunsetpharma.com/sunset/images/Remove.png" ) ;
     });
   });
+  $(function() {
+    $('img.PLClass PricingAddButton')
+    .mouseover(function () {
+        $(this).attr("src","https://www.sunsetpharma.com/sunset/images/AddToCartHover.png" ) ;
+     //   $(this).attr('title', 'Add this item to your cart');
+    })
+    .mouseout(function () {
+       $(this).attr("src","https://www.sunsetpharma.com/sunset/images/AddToCart.png" ) ;
+    });
+  });
+  $(function() {
+    $('img.PLClass PricingFormularyButton')
+    .mouseover(function () {
+        $(this).attr("src","https://www.sunsetpharma.com/sunset/images/AddToFormularyHover.png" ) ;
+     //   $(this).attr('title', 'Add this item to your cart');
+    })
+    .mouseout(function () {
+       $(this).attr("src","https://www.sunsetpharma.com/sunset/images/AddToFormulary.png" ) ;
+    });
+  });
 // added new showajaxhint functions 
 function showhintajax_sunset(pageurl, obj, e, tipwidth){
  offsetxpoint=1 //Customize x offset of tooltip
