@@ -1309,6 +1309,8 @@ img.PricingFormularyButton2{width:32px;    height:32px;}
 .inforow{padding-top:10px!important}
 .SumSelect{color:black;display:inline-block}
 .nopad{padding:0px;margin:0px}
+.PricingAddButton2{float:right;cursor:pointer;margin-right:10px;margin-left:15px;}
+.PricingFormularyButton2{float:right;cursor:pointer;margin-right:10px;}
 .PLClass.PricingQtyBox{float:right;margin-left:15px;}
 .PLClass.PricingUmBox{float:right;}
 .PLClass.PricingAddButton{border-radius:15px;display:inline-block;float:right;}
