@@ -1285,10 +1285,14 @@ div.SRBodybottomwrap{float:left;
 margin-top:5px;    background:black;    color:white;}
 #selection img{width:15px;    height:15px;}
 .PricingAddButton img{width:32px;    height:32px;}
+.PricingAddButton2 img{width:32px;    height:32px;}
 .RemoveClass{width:32px;    height:32px;}
 .PricingFormularyButton img{width:32px;    height:32px;}
+.PricingFormularyButton2 img{width:32px;    height:32px;}
 img.PricingAddButton{width:32px;    height:32px;}
+img.PricingAddButton2{width:32px;    height:32px;}
 img.PricingFormularyButton{width:32px;    height:32px;}
+img.PricingFormularyButton2{width:32px;    height:32px;}
 /* loaded prcx styles */
 /* updated from dj 5-22-19 */
 .qwrap{width:125px!important;left:-45px;background:transparent!important;position:relative}
@@ -4517,8 +4521,12 @@ p.text{margin:0px; }
 .shadowmouse{-moz-border-radius:15px;/* -moz-box-shadow:4px 4px 8px #000;*/ -ms-filter:none;/* -webkit-box-shadow:4px 4px 8px #000;*/ border-radius:15px;/* box-shadow:4px 4px 8px #000;*/ filter:none;}
 img.PricingAddButton{cursor:pointer; }
 img.PricingAddButton:hover{cursor:pointer; }
+img.PricingAddButton2{cursor:pointer; }
+img.PricingAddButton2:hover{cursor:pointer; }
 img.PricingFormularyButton{cursor:pointer;}
 img.PricingFormularyButton{cursor:pointer; }
+img.PricingFormularyButton2{cursor:pointer;}
+img.PricingFormularyButton2{cursor:pointer; }
 img.RemoveClass{cursor:pointer; }
 img.RemoveClass:hover{cursor:pointer; }
 .SumSelect{cursor:pointer;}
@@ -4527,8 +4535,11 @@ img.RemoveClass:hover{cursor:pointer; }
 .whitebox{border:1px solid white; padding:7px; float:right; text-align:center; width:100%;}
 img#SRBodyLineImage{padding-left:0px; }
 .PricingFormularyButton img{width:32px;height:32px; border-radius:15px;}
+.PricingFormularyButton2 img{width:32px;height:32px; border-radius:15px;}
 img.PricingAddButton{margin-right:10px;width:32px;height:32px; border-radius:15px;}
+img.PricingAddButton2{margin-right:10px;width:32px;height:32px; border-radius:15px;}
 img.PricingFormularyButton{width:32px;height:32px;border-radius:15px;}
+img.PricingFormularyButton2{width:32px;height:32px;border-radius:15px;}
 .qwrap{width:125px!important;left:-45px;background:transparent!important;position:relative}
 .inc{margin:0 0 0 0!important;border-top-right-radius:5px!important;border-bottom-right-radius:5px!important;border-top-left-radius:0!important;border-bottom-left-radius:0!important;position:relative;left:119px}
 .dec{font-size:40px!important;margin:0 0 0 0!important;border-top-left-radius:5px!important;border-bottom-left-radius:5px!important;border-top-right-radius:0!important;border-bottom-right-radius:0!important;position:relative;left:17px}
