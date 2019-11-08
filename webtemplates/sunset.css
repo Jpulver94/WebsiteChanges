@@ -803,7 +803,7 @@ background:#cccccc;    color:black;}
 10%,90%{-moz-transform:translateY(0px); }
 }
 .altbox{border-radius:2px;    border:1px solid #242729;    text-align:left;    padding:10px;    box-shadow:0 1px 3px rgba(12,13,14,0.3);    font-family:Arial, "Helvetica Neue", Helvetica, sans-serif;    z-index:100000;    position:relative;    font-size:12px;    width:100%;    display:none;    background:white; }
-a.togglenext{background-color:#f6f6f6;    border-bottom:#999 1px solid;    border-left:#999 1px solid;    border-right:#999 1px solid;    border-top:#999 1px solid;    color:BLACK; padding:5px; margin-top:40px; display:flex; justify-content:center; padding: 0 45.4%;}
+a.togglenext{background-color:#f6f6f6;    border-bottom:#999 1px solid;    border-left:#999 1px solid;    border-right:#999 1px solid;    border-top:#999 1px solid;    color:BLACK; padding:5px; margin-top:40px; display:flex; justify-content:center;}
 .togglebar{background-color:#f6f6f6;    border-bottom:#999 1px solid;    border-left:#999 1px solid;    border-right:#999 1px solid;    border-top:#999 1px solid;    color:BLACK;    float:left;    transform-origin:0% 100%;    transform:rotate(-90deg);    padding:5px;    top:30%;    position:fixed;    width:100px;    z-index:99999;}
 .QtyBox{border:none; }
 .qwrap{border:solid 1px #d3d4d6;    background:white;
