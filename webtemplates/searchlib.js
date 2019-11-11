@@ -4309,8 +4309,15 @@ if (assocA) { var aval = aval + assocA + ' OR ' ; }
       var aval = aval +  '99'  ; 
       var sval = '(' + sval + ') AND ( webprodassoc:(' + aval + ') )' ;
 }
+// Added categories filter
+var catginfo = $("#categories").val() ;
+  if (catginfo) {
+    var catginfo = catginfo + '|||' ;
+      var sval = '(' + sval + ') AND ( (searchcat:' + catginfo + ') )' ;
+  }
 return sval
 }
+
 // JavaScript Document FOR NEW Price Group Widget 
 (function($) {
   AjaxSolr.PriceGroupWidget = AjaxSolr.AbstractFacetWidget.extend({
