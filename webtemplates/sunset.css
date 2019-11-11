@@ -2,9 +2,10 @@
 /* CSS Document sunset combined style sheets 08-16-19
 use this for live changes to the internal site - updated djf 10-31-19
 */
-select#categories {    background: transparent;    border: none; }
 @import url('//fonts.googleapis.com/css?family=Roboto');
 @import url(//fonts.googleapis.com/css?family=Roboto:500,300,700,400,100,200,600);
+/* added drop down for categories */ 
+select#categories {    background: transparent;    border: none; }
 /* sunset2.css */
 .max1920{margin:auto !important;max-width:1920px;}
 .main-container{margin:auto !important;max-width:1280px;}
